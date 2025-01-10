@@ -31,6 +31,16 @@ namespace CapaPresentacion
             _Usuario = oUsuario;
             InitializeComponent();
             dgvdata.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
+            // Establece la altura predeterminada para todas las filas
+            dgvdata.RowTemplate.Height = 27; // Cambia el valor según lo que necesites
+
+            // Centramos solo las columnas que queremos
+            dgvdata.Columns["verDetalle"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvdata.Columns["EstadoEntrega"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            // Agrega más columnas según sea necesario
+
+
+
             //dgvdata.DefaultCellStyle.BackColor = System.Drawing.Color.Black;
             //dgvdata.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.Gray; // Cambia el color de fondo de las filas alternas
 
@@ -45,7 +55,11 @@ namespace CapaPresentacion
         {
             foreach (DataGridViewColumn columna in dgvdata.Columns)
             {
-                cbobusqueda.Items.Add(new OpcionCombo() { Valor = columna.Name, Texto = columna.HeaderText });
+                // Verifica si la columna no es del tipo DataGridViewButtonColumn
+                if (!(columna is DataGridViewButtonColumn))
+                {
+                    cbobusqueda.Items.Add(new OpcionCombo() { Valor = columna.Name, Texto = columna.HeaderText });
+                }
             }
 
             cbobusqueda.DisplayMember = "Texto";
@@ -54,7 +68,6 @@ namespace CapaPresentacion
             lblidusuario.Text = Convert.ToString(_Usuario.IdUsuario);
             lblidrol.Text = Convert.ToString(_Usuario.oRol.IdRol);
             lblapeusuario.Text = $"{Convert.ToString(_Usuario.Apellido)}, {Convert.ToString(_Usuario.Nombre)}";
-
 
         }
 
@@ -302,6 +315,27 @@ namespace CapaPresentacion
                         MessageBox.Show("Error al generar reporte", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
+            }
+        }
+
+        private void dgvdata_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+
+            if (e.ColumnIndex == 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                var w = Properties.Resources.editaricon.Width;
+                var h = Properties.Resources.editaricon.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w)/2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h)/2;
+
+                e.Graphics.DrawImage(Properties.Resources.editaricon, new Rectangle(x, y, w, h));
+                e.Handled = true;
             }
         }
 

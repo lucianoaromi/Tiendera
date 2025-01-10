@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "C:\\GitHub\\Restaurant\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{30D572DF-93B5-4C8C-BD0E-2A67FC7EFA66}|CapaPresentacion\\CapaPresentacion.csproj|c:\\github\\restaurant\\capapresentacion\\frmclientes.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{30D572DF-93B5-4C8C-BD0E-2A67FC7EFA66}|CapaPresentacion\\CapaPresentacion.csproj|solutionrelative:capapresentacion\\frmclientes.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{30D572DF-93B5-4C8C-BD0E-2A67FC7EFA66}|CapaPresentacion\\CapaPresentacion.csproj|c:\\github\\restaurant\\capapresentacion\\frmclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{30D572DF-93B5-4C8C-BD0E-2A67FC7EFA66}|CapaPresentacion\\CapaPresentacion.csproj|solutionrelative:capapresentacion\\frmclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{30D572DF-93B5-4C8C-BD0E-2A67FC7EFA66}|CapaPresentacion\\CapaPresentacion.csproj|c:\\github\\restaurant\\capapresentacion\\frmclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{30D572DF-93B5-4C8C-BD0E-2A67FC7EFA66}|CapaPresentacion\\CapaPresentacion.csproj|solutionrelative:capapresentacion\\frmclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{30D572DF-93B5-4C8C-BD0E-2A67FC7EFA66}|CapaPresentacion\\CapaPresentacion.csproj|c:\\github\\restaurant\\capapresentacion\\frmreportes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{30D572DF-93B5-4C8C-BD0E-2A67FC7EFA66}|CapaPresentacion\\CapaPresentacion.csproj|C:\\GitHub\\Restaurant\\capapresentacion\\frmreportes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{30D572DF-93B5-4C8C-BD0E-2A67FC7EFA66}|CapaPresentacion\\CapaPresentacion.csproj|solutionrelative:capapresentacion\\frmreportes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{30D572DF-93B5-4C8C-BD0E-2A67FC7EFA66}|CapaPresentacion\\CapaPresentacion.csproj|C:\\GitHub\\Restaurant\\capapresentacion\\frmreportes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{30D572DF-93B5-4C8C-BD0E-2A67FC7EFA66}|CapaPresentacion\\CapaPresentacion.csproj|solutionrelative:capapresentacion\\frmreportes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30D572DF-93B5-4C8C-BD0E-2A67FC7EFA66}|CapaPresentacion\\CapaPresentacion.csproj|C:\\GitHub\\Restaurant\\capapresentacion\\frmclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30D572DF-93B5-4C8C-BD0E-2A67FC7EFA66}|CapaPresentacion\\CapaPresentacion.csproj|solutionrelative:capapresentacion\\frmclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30D572DF-93B5-4C8C-BD0E-2A67FC7EFA66}|CapaPresentacion\\CapaPresentacion.csproj|C:\\GitHub\\Restaurant\\capapresentacion\\frmclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{30D572DF-93B5-4C8C-BD0E-2A67FC7EFA66}|CapaPresentacion\\CapaPresentacion.csproj|solutionrelative:capapresentacion\\frmclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30D572DF-93B5-4C8C-BD0E-2A67FC7EFA66}|CapaPresentacion\\CapaPresentacion.csproj|c:\\github\\restaurant\\capapresentacion\\frmreportes.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30D572DF-93B5-4C8C-BD0E-2A67FC7EFA66}|CapaPresentacion\\CapaPresentacion.csproj|solutionrelative:capapresentacion\\frmreportes.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,19 +30,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frmClientes.Designer.cs",
-              "DocumentMoniker": "C:\\GitHub\\Restaurant\\CapaPresentacion\\frmClientes.Designer.cs",
-              "RelativeDocumentMoniker": "CapaPresentacion\\frmClientes.Designer.cs",
-              "ToolTip": "C:\\GitHub\\Restaurant\\CapaPresentacion\\frmClientes.Designer.cs",
-              "RelativeToolTip": "CapaPresentacion\\frmClientes.Designer.cs",
-              "ViewState": "AgIAAK0BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "frmReportes.Designer.cs",
+              "DocumentMoniker": "C:\\GitHub\\Restaurant\\CapaPresentacion\\frmReportes.Designer.cs",
+              "RelativeDocumentMoniker": "CapaPresentacion\\frmReportes.Designer.cs",
+              "ToolTip": "C:\\GitHub\\Restaurant\\CapaPresentacion\\frmReportes.Designer.cs",
+              "RelativeToolTip": "CapaPresentacion\\frmReportes.Designer.cs",
+              "ViewState": "AgIAALkAAAAAAAAAAAAuwM0AAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-10T21:35:03.488Z",
+              "WhenOpened": "2025-01-10T21:52:22.543Z",
               "EditorCaption": ""
             },
             {
@@ -53,14 +53,14 @@
               "RelativeDocumentMoniker": "CapaPresentacion\\frmClientes.cs",
               "ToolTip": "C:\\GitHub\\Restaurant\\CapaPresentacion\\frmClientes.cs",
               "RelativeToolTip": "CapaPresentacion\\frmClientes.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAawCcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABABAAAAAAAAAAAawCABAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-10T21:32:01.771Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "frmClientes.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\GitHub\\Restaurant\\CapaPresentacion\\frmClientes.cs",
               "RelativeDocumentMoniker": "CapaPresentacion\\frmClientes.cs",
@@ -72,20 +72,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "frmReportes.cs",
               "DocumentMoniker": "C:\\GitHub\\Restaurant\\CapaPresentacion\\frmReportes.cs",
               "RelativeDocumentMoniker": "CapaPresentacion\\frmReportes.cs",
               "ToolTip": "C:\\GitHub\\Restaurant\\CapaPresentacion\\frmReportes.cs",
               "RelativeToolTip": "CapaPresentacion\\frmReportes.cs",
-              "ViewState": "AgIAALEAAAAAAAAAAAAAALcAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACYAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-10T15:47:51.899Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "frmReportes.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\GitHub\\Restaurant\\CapaPresentacion\\frmReportes.cs",
               "RelativeDocumentMoniker": "CapaPresentacion\\frmReportes.cs",

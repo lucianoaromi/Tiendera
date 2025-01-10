@@ -80,9 +80,9 @@ namespace CapaPresentacion
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.groupBox3);
             this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Location = new System.Drawing.Point(19, 28);
+            this.panel1.Location = new System.Drawing.Point(18, 28);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(945, 567);
+            this.panel1.Size = new System.Drawing.Size(974, 567);
             this.panel1.TabIndex = 0;
             // 
             // panel3
@@ -92,7 +92,7 @@ namespace CapaPresentacion
             this.panel3.Controls.Add(this.lblidusuario);
             this.panel3.Controls.Add(this.label11);
             this.panel3.Controls.Add(this.lblidrol);
-            this.panel3.Location = new System.Drawing.Point(15, 13);
+            this.panel3.Location = new System.Drawing.Point(31, 13);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(896, 50);
             this.panel3.TabIndex = 32;
@@ -146,9 +146,9 @@ namespace CapaPresentacion
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(814, 81);
+            this.button3.Location = new System.Drawing.Point(816, 81);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(117, 70);
+            this.button3.Size = new System.Drawing.Size(139, 70);
             this.button3.TabIndex = 16;
             this.button3.Text = "Generar Excel";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -164,7 +164,7 @@ namespace CapaPresentacion
             this.groupBox2.Controls.Add(this.btnbuscarpor);
             this.groupBox2.Controls.Add(this.txtbusqueda);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(349, 74);
+            this.groupBox2.Location = new System.Drawing.Point(365, 74);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(437, 79);
             this.groupBox2.TabIndex = 15;
@@ -235,7 +235,7 @@ namespace CapaPresentacion
             // 
             this.groupBox3.Controls.Add(this.dgvdata);
             this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(4, 172);
+            this.groupBox3.Location = new System.Drawing.Point(20, 172);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(936, 388);
             this.groupBox3.TabIndex = 4;
@@ -266,6 +266,7 @@ namespace CapaPresentacion
             this.dgvdata.Size = new System.Drawing.Size(930, 356);
             this.dgvdata.TabIndex = 11;
             this.dgvdata.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdata_CellContentClick);
+            this.dgvdata.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvdata_CellPainting);
             // 
             // groupBox1
             // 
@@ -275,7 +276,7 @@ namespace CapaPresentacion
             this.groupBox1.Controls.Add(this.txtfechainicio);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(14, 74);
+            this.groupBox1.Location = new System.Drawing.Point(30, 74);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(329, 79);
             this.groupBox1.TabIndex = 0;
@@ -337,14 +338,15 @@ namespace CapaPresentacion
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.panel2.Location = new System.Drawing.Point(11, 17);
+            this.panel2.Location = new System.Drawing.Point(10, 17);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(962, 588);
+            this.panel2.Size = new System.Drawing.Size(991, 588);
             this.panel2.TabIndex = 1;
             // 
             // verDetalle
             // 
-            this.verDetalle.HeaderText = "oo";
+            this.verDetalle.HeaderText = "Ver";
+            this.verDetalle.MinimumWidth = 6;
             this.verDetalle.Name = "verDetalle";
             this.verDetalle.ReadOnly = true;
             this.verDetalle.Width = 40;
@@ -421,7 +423,7 @@ namespace CapaPresentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 621);
+            this.ClientSize = new System.Drawing.Size(1013, 621);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Name = "frmReportes";
