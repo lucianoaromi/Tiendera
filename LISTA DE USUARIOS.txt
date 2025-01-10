@@ -1,0 +1,22 @@
+LISTA DE USUARIOS
+-------------------------------
+
+Usuario EMPLEADO num 1:
+Nro Documento:11111111
+Contraseña:123
+
+Usuario EMPLEADO num 2:
+Nro Documento:22222222
+Contraseña:123
+
+-------------------------------
+
+Usuario ADMINISTRADOR num 1:
+Nro Documento:33333333
+Contraseña:123
+
+-------------------------------
+
+Usuario SUPERADMINISTRADOR num 1:
+Nro Documento:44444444
+Contraseña:123

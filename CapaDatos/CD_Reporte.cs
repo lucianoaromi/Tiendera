@@ -1,0 +1,121 @@
+﻿using CapaEntidad;
+using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CapaDatos
+{
+    public class CD_Reporte
+    {
+
+        
+        public List<ReporteVenta> Venta(string fechainicio, string fechafin, int idusuario)
+        { 
+            List<ReporteVenta> lista = new List<ReporteVenta>();
+ 
+            using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+            {
+  
+                try
+                {
+                    StringBuilder query = new StringBuilder();
+                    SqlCommand cmd = new SqlCommand("sp_ReporteVentas3", oconexion);
+                    cmd.Parameters.AddWithValue("FechaInicio", fechainicio);
+                    cmd.Parameters.AddWithValue("FechaFin", fechafin);
+                    cmd.Parameters.AddWithValue("IdUsuario", idusuario);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    oconexion.Open();
+
+                   
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            
+                            lista.Add(new ReporteVenta()
+                            {
+                                
+                                FechaRegistro = dr["FechaRegistro"].ToString(),
+                                TipoDocumento = dr["TipoDocumento"].ToString(),
+                                NumeroDocumento = dr["NumeroDocumento"].ToString(),
+                                MontoTotal = dr["MontoTotal"].ToString(),
+                                UsuarioRegistro = dr["usuarioregistro"].ToString(),
+                                ApellidoCliente = dr["nombrecompletocliente"].ToString(),
+                                DesMetPago = dr["DesMetPago"].ToString(),
+                                EstadoEntrega = dr["EstadoEntrega"].ToString(), // Agregar el nuevo campo aquí
+                                IdVenta = dr["IdVenta"].ToString(),
+                            });
+                        }
+                    }
+
+                }
+                
+                catch (Exception ex)
+                {
+
+                    lista = new List<ReporteVenta>();
+                }
+
+            }
+
+            return lista;
+
+
+        }
+
+        // Nuevo método para actualizar el estado de entrega
+        public bool ActualizarEstadoEntrega(int idVenta, bool nuevoEstado, out string mensaje)
+        {
+            mensaje = string.Empty;
+
+            using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+            {
+                try
+                {
+                    oconexion.Open();
+
+                    using (SqlCommand cmd = new SqlCommand("usp_ActualizarEstadoEntrega", oconexion))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        // Parámetros de entrada
+                        cmd.Parameters.AddWithValue("@IdVenta", idVenta);
+                        cmd.Parameters.AddWithValue("@EstadoEntrega", nuevoEstado);
+
+                        // Parámetros de salida
+                        SqlParameter resultadoParam = new SqlParameter("@Resultado", SqlDbType.Bit)
+                        {
+                            Direction = ParameterDirection.Output
+                        };
+                        cmd.Parameters.Add(resultadoParam);
+
+                        SqlParameter mensajeParam = new SqlParameter("@Mensaje", SqlDbType.VarChar, 500)
+                        {
+                            Direction = ParameterDirection.Output
+                        };
+                        cmd.Parameters.Add(mensajeParam);
+
+                        // Ejecutar comando
+                        cmd.ExecuteNonQuery();
+
+                        // Recuperar valores de salida
+                        bool resultado = Convert.ToBoolean(resultadoParam.Value);
+                        mensaje = mensajeParam.Value.ToString();
+
+                        return resultado;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    mensaje = "Error de conexión: " + ex.Message;
+                    return false;
+                }
+            }
+        }
+    }    
+}
