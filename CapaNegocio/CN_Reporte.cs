@@ -11,6 +11,16 @@ namespace CapaNegocio
     public class CN_Reporte
     {
         private CD_Reporte objcd_reporte = new CD_Reporte();
+        private object cadena;
+
+        public CN_Reporte(object cadena)
+        {
+            this.cadena=cadena;
+        }
+
+        public CN_Reporte()
+        {
+        }
 
         public List<ReporteVenta> Venta(string fechainicio, string fechafin, int idusuario)
         {
@@ -18,10 +28,8 @@ namespace CapaNegocio
         }
 
 
-        // Nuevo método para cambiar el estado de entrega
-        public bool CambiarEstadoEntrega(int idVenta, bool nuevoEstado, out string mensaje)
+        public bool ActualizarEstadoVenta(int idVenta, bool nuevoEstado, out string mensaje)
         {
-            // Invoca el método de la capa de datos
             return objcd_reporte.ActualizarEstadoEntrega(idVenta, nuevoEstado, out mensaje);
         }
     }

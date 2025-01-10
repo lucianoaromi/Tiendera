@@ -1,4 +1,5 @@
-﻿using CapaEntidad;
+﻿using CapaDatos;
+using CapaEntidad;
 using CapaNegocio;
 using CapaPresentacion.Utilidades;
 using ClosedXML.Excel;
@@ -22,6 +23,9 @@ namespace CapaPresentacion
         private Usuario _Usuario;
         private int lastSelectedRow = -1;
 
+        private CN_Reporte ventaNegocio;
+        private object cadena;
+
         public frmReportes(Usuario oUsuario = null)
         {
             _Usuario = oUsuario;
@@ -29,6 +33,8 @@ namespace CapaPresentacion
             dgvdata.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             //dgvdata.DefaultCellStyle.BackColor = System.Drawing.Color.Black;
             //dgvdata.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.Gray; // Cambia el color de fondo de las filas alternas
+
+            ventaNegocio = new CN_Reporte(cadena);
 
         }
 
@@ -58,7 +64,6 @@ namespace CapaPresentacion
             List<ReporteVenta> lista = new List<ReporteVenta>();
             int idusuario = Convert.ToInt32(lblidusuario.Text);
 
-
             string fechaInicio = txtfechainicio.Value.ToString("dd/MM/yyyy");
             string fechaFin = txtfechafin.Value.ToString("dd/MM/yyyy");
             lista = new CN_Reporte().Venta(fechaInicio, fechaFin, idusuario);
@@ -81,11 +86,132 @@ namespace CapaPresentacion
                         rv.DesMetPago,
                         rv.EstadoEntrega, // Agregar el nuevo campo
                         rv.IdVenta,
-                    });
+                            });
+                    }
+            }
+
+            // Llama a la función para colorear las filas según el estado de entrega
+            CargarColoresFilas();
+        }
+
+        // Función para colorear las filas según el estado de entrega
+        private void CargarColoresFilas()
+        {
+            foreach (DataGridViewRow row in dgvdata.Rows)
+            {
+                string estadoEntrega = row.Cells["EstadoEntrega"].Value.ToString();
+
+                if (estadoEntrega == "Entregado")
+                {
+                    // Estado "Entregado", fila verde
+                    row.DefaultCellStyle.BackColor = System.Drawing.Color.Green;
+                    row.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
                 }
+                else if (estadoEntrega == "No entregado")
+                {
+                    // Estado "No entregado", fila roja
+                    row.DefaultCellStyle.BackColor = System.Drawing.Color.LightCoral;
+                    row.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
+                }
+                else
+                {
+                    // Si no tiene un estado definido, lo dejamos en blanco o aplicamos otro color por defecto
+                    row.DefaultCellStyle.BackColor = System.Drawing.Color.White;
+                    row.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
+                }
+            }
+        }
+
+        //---------------------------------------------------------------------------------------------------------------
+
+        private void dgvdata_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            // Llama a la función para colorear las filas según el estado de entrega
+            CargarColoresFilas();
+
+            // Verifica si se hizo clic en una celda válida y obtén el valor de la tercera columna
+            if (e.RowIndex >= 0) // Cambia el índice de la columna según tus necesidades
+            {
+                if (lastSelectedRow >= 0)
+                {
+                    dgvdata.Rows[lastSelectedRow].DefaultCellStyle.BackColor = dgvdata.DefaultCellStyle.BackColor;
+                }
+
+
+                // Obtén el valor de la tercera columna de la fila seleccionada
+                string valorColumna = dgvdata.Rows[e.RowIndex].Cells[2].Value.ToString();
+
+                // Crea una instancia del formulario Form2
+                frmDetalleVenta form2 = new frmDetalleVenta();
+
+                // Pasa el valor a la propiedad TextBox del segundo formulario
+                form2.txtbusqueda.Text = valorColumna;
+
+                CargarColoresFilas();
+
+                // Resalta la fila seleccionada
+                dgvdata.Rows[e.RowIndex].DefaultCellStyle.BackColor = System.Drawing.Color.Cyan;
+                dgvdata.Rows[e.RowIndex].DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
+
+                // Actualiza el índice de la última fila seleccionada
+                lastSelectedRow = e.RowIndex;
+
+                // Muestra el segundo formulario
+                form2.Show();
             }
 
         }
+
+        //--------------------------------------------------------------------------------------------------------------------------------------------
+
+        private void dgvdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Verifica si se hizo clic en el botón de la columna que contiene los botones
+            if (e.ColumnIndex == dgvdata.Columns["EstadoEntrega"].Index && e.RowIndex >= 0)
+            {
+                // Obtén el ID de la venta desde la primera columna
+                int idVenta = Convert.ToInt32(dgvdata.Rows[e.RowIndex].Cells["IdVenta"].Value);
+
+                // Obtén el estado actual desde la celda correspondiente
+                string estadoActual = dgvdata.Rows[e.RowIndex].Cells["EstadoEntrega"].Value.ToString();
+
+                // Determina el nuevo estado: si es "Entregado", lo cambiamos a "No entregado" y viceversa
+                bool nuevoEstado = (estadoActual == "Entregado") ? false : true;
+
+                // Llamamos a la capa de negocio para actualizar el estado
+                string mensaje;
+                bool resultado = ventaNegocio.ActualizarEstadoVenta(idVenta, nuevoEstado, out mensaje);
+
+                // Si la actualización fue exitosa, actualiza la celda en el DataGridView
+                if (resultado)
+                {
+                    dgvdata.Rows[e.RowIndex].Cells["EstadoEntrega"].Value = nuevoEstado ? "Entregado" : "No entregado";
+
+                    // Cambiar el color de la fila según el estado
+                    if (nuevoEstado)
+                    {
+                        // Estado "Entregado", fila verde
+                        dgvdata.Rows[e.RowIndex].DefaultCellStyle.BackColor = System.Drawing.Color.Green;
+                        dgvdata.Rows[e.RowIndex].DefaultCellStyle.ForeColor = System.Drawing.Color.White;
+                    }
+                    else
+                    {
+                        // Estado "No entregado", fila roja
+                        dgvdata.Rows[e.RowIndex].DefaultCellStyle.BackColor = System.Drawing.Color.LightCoral;
+                        dgvdata.Rows[e.RowIndex].DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
+                    }
+
+                    MessageBox.Show("Estado actualizado correctamente.");
+                }
+                else
+                {
+                    MessageBox.Show(mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        //---------------------------------------------------------------------------------------------------------------
 
         private void btnbuscarpor_Click(object sender, EventArgs e)
         {
@@ -169,43 +295,6 @@ namespace CapaPresentacion
                 }
             }
         }
-        
-        private void dgvdata_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // Verifica si se hizo clic en una celda válida y obtén el valor de la tercera columna
-            if (e.RowIndex >= 0) // Cambia el índice de la columna según tus necesidades
-            {
-                if (lastSelectedRow >= 0)
-                {
-                    dgvdata.Rows[lastSelectedRow].DefaultCellStyle.BackColor = dgvdata.DefaultCellStyle.BackColor;
-                }
-
-
-                // Obtén el valor de la tercera columna de la fila seleccionada
-                string valorColumna = dgvdata.Rows[e.RowIndex].Cells[2].Value.ToString();
-
-                // Crea una instancia del formulario Form2
-                frmDetalleVenta form2 = new frmDetalleVenta();
-
-                // Pasa el valor a la propiedad TextBox del segundo formulario
-                form2.txtbusqueda.Text = valorColumna;
-
-                // Resalta la fila seleccionada
-                dgvdata.Rows[e.RowIndex].DefaultCellStyle.BackColor = System.Drawing.Color.LightGreen;
-
-
-                // Actualiza el índice de la última fila seleccionada
-                lastSelectedRow = e.RowIndex;
-
-                // Muestra el segundo formulario
-                form2.Show();
-            }
-        }
-
-        //--------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
 
     }
 }

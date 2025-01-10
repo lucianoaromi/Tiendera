@@ -68,54 +68,45 @@ namespace CapaDatos
 
         }
 
-        // Nuevo método para actualizar el estado de entrega
-        public bool ActualizarEstadoEntrega(int idVenta, bool nuevoEstado, out string mensaje)
+        public bool ActualizarEstadoEntrega(int idVenta, bool estadoEntrega, out string mensaje)
         {
-            mensaje = string.Empty;
-
-            using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+            try
             {
-                try
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
-                    oconexion.Open();
+                    SqlCommand cmd = new SqlCommand("usp_ActualizarEstadoEntrega", oconexion);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@IdVenta", idVenta);
+                    cmd.Parameters.AddWithValue("@EstadoEntrega", estadoEntrega);
 
-                    using (SqlCommand cmd = new SqlCommand("usp_ActualizarEstadoEntrega", oconexion))
+                    SqlParameter resultadoParam = new SqlParameter("@Resultado", SqlDbType.Bit)
                     {
-                        cmd.CommandType = CommandType.StoredProcedure;
+                        Direction = ParameterDirection.Output
+                    };
+                    SqlParameter mensajeParam = new SqlParameter("@Mensaje", SqlDbType.VarChar, 500)
+                    {
+                        Direction = ParameterDirection.Output
+                    };
 
-                        // Parámetros de entrada
-                        cmd.Parameters.AddWithValue("@IdVenta", idVenta);
-                        cmd.Parameters.AddWithValue("@EstadoEntrega", nuevoEstado);
+                    cmd.Parameters.Add(resultadoParam);
+                    cmd.Parameters.Add(mensajeParam);
 
-                        // Parámetros de salida
-                        SqlParameter resultadoParam = new SqlParameter("@Resultado", SqlDbType.Bit)
-                        {
-                            Direction = ParameterDirection.Output
-                        };
-                        cmd.Parameters.Add(resultadoParam);
+                    oconexion.Open();
+                    cmd.ExecuteNonQuery();
 
-                        SqlParameter mensajeParam = new SqlParameter("@Mensaje", SqlDbType.VarChar, 500)
-                        {
-                            Direction = ParameterDirection.Output
-                        };
-                        cmd.Parameters.Add(mensajeParam);
+                    bool resultado = Convert.ToBoolean(resultadoParam.Value);
+                    mensaje = mensajeParam.Value.ToString();
 
-                        // Ejecutar comando
-                        cmd.ExecuteNonQuery();
-
-                        // Recuperar valores de salida
-                        bool resultado = Convert.ToBoolean(resultadoParam.Value);
-                        mensaje = mensajeParam.Value.ToString();
-
-                        return resultado;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    mensaje = "Error de conexión: " + ex.Message;
-                    return false;
+                    return resultado;
                 }
             }
+            catch (Exception ex)
+            {
+                mensaje = "Error al actualizar el estado: " + ex.Message;
+                return false;
+            }
         }
-    }    
+
+
+    }
 }
