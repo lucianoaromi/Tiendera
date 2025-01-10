@@ -39,10 +39,6 @@ namespace CapaPresentacion
             cboestado1.SelectedIndex = 0;
 
 
-
-
-
-
             foreach (DataGridViewColumn columna in dgvdata.Columns)
             {
                 if (columna.Visible == true && columna.Name != "btnseleccionar")
