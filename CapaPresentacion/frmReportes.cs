@@ -265,7 +265,7 @@ namespace CapaPresentacion
         }
 
         // Generar EXCEL
-        private void button3_Click(object sender, EventArgs e)
+        private void btnExcel_Click(object sender, EventArgs e)
         {
             if (dgvdata.Rows.Count < 1)
             {
