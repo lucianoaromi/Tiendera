@@ -161,7 +161,7 @@ go
 go
 
 --Consulta la Tabla Permiso
- select * from PERMISO
+select * from PERMISO
 go
 
 
@@ -374,11 +374,8 @@ begin
      set @Respuesta = 0
 	 set @Mensaje = ''
 
-
-
-	    delete from CLIENTE where IdCliente = @IdCliente
-		set @Respuesta = 1
-
+	delete from CLIENTE where IdCliente = @IdCliente
+	set @Respuesta = 1
 
 end
 
@@ -461,16 +458,12 @@ begin
      set @Respuesta = 0
 	 set @Mensaje = ''
 
-
-
-	    delete from CATEGORIA where IdCategoria = @IdCategoria
-		set @Respuesta = 1
-
+	delete from CATEGORIA where IdCategoria = @IdCategoria
+	set @Respuesta = 1
 
 end
 
 go
-
 
 ---------------- Se generan los metodos para manipular el formulario de PRODUCTOS ----------------
 
@@ -510,7 +503,6 @@ begin
         set @Mensaje = 'Código ya existente'
 
 end
-
 
 go
 
@@ -734,50 +726,50 @@ GO
 
 --------------------------------------------- Procedimiento para generar una venta ----------------------------------------------------------
 
---DECLARE @DetalleVenta EDetalle_Venta;
+DECLARE @DetalleVenta EDetalle_Venta;
 
---INSERT INTO @DetalleVenta (IdProducto, Precio, Cantidad, SubTotal)
---VALUES
---(1, 50.00, 2, 100.00),
---(2, 30.00, 3, 90.00),
---(3, 25.00, 1, 25.00);
+INSERT INTO @DetalleVenta (IdProducto, Precio, Cantidad, SubTotal)
+VALUES
+(1, 50.00, 2, 100.00),
+(2, 30.00, 3, 90.00),
+(3, 25.00, 1, 25.00);
 
---DECLARE @Resultado BIT;
---DECLARE @Mensaje VARCHAR(500);
+DECLARE @Resultado BIT;
+DECLARE @Mensaje VARCHAR(500);
 
 ---- Otros parámetros
---DECLARE @IdUsuario INT = 1;  -- Proporciona el valor correcto para @IdUsuario
---DECLARE @TipoDocumento VARCHAR(500) = 'Factura';  -- Proporciona el valor correcto para @TipoDocumento
---DECLARE @NumeroDocumento VARCHAR(500) = '00001';  -- Proporciona el valor correcto para @NumeroDocumento
---DECLARE @DocumentoCliente VARCHAR(500) = '123456789';  -- Proporciona el valor correcto para @DocumentoCliente
---DECLARE @ApellidoCliente VARCHAR(100) = 'Gómez';  -- Proporciona el valor correcto para @ApellidoCliente
---DECLARE @NombreCliente VARCHAR(100) = 'Ana';  -- Proporciona el valor correcto para @NombreCliente
---DECLARE @MontoPago DECIMAL(18, 2) = 300.00;  -- Proporciona el valor correcto para @MontoPago
---DECLARE @MontoCambio DECIMAL(18, 2) = 50.00;  -- Proporciona el valor correcto para @MontoCambio
---DECLARE @MontoTotal DECIMAL(18, 2) = 350.00;  -- Proporciona el valor correcto para @MontoTotal
---DECLARE @DesMetPago VARCHAR(100) = 'Efectivo';  -- Proporciona el valor correcto para @DesMetPago
+DECLARE @IdUsuario INT = 5;  -- Proporciona el valor correcto para @IdUsuario
+DECLARE @TipoDocumento VARCHAR(500) = 'Factura';  -- Proporciona el valor correcto para @TipoDocumento
+DECLARE @NumeroDocumento VARCHAR(500) = '00001';  -- Proporciona el valor correcto para @NumeroDocumento
+DECLARE @DocumentoCliente VARCHAR(500) = '123456789';  -- Proporciona el valor correcto para @DocumentoCliente
+DECLARE @ApellidoCliente VARCHAR(100) = 'Gómez';  -- Proporciona el valor correcto para @ApellidoCliente
+DECLARE @NombreCliente VARCHAR(100) = 'Ana';  -- Proporciona el valor correcto para @NombreCliente
+DECLARE @MontoPago DECIMAL(18, 2) = 300.00;  -- Proporciona el valor correcto para @MontoPago
+DECLARE @MontoCambio DECIMAL(18, 2) = 50.00;  -- Proporciona el valor correcto para @MontoCambio
+DECLARE @MontoTotal DECIMAL(18, 2) = 350.00;  -- Proporciona el valor correcto para @MontoTotal
+DECLARE @DesMetPago VARCHAR(100) = 'Efectivo';  -- Proporciona el valor correcto para @DesMetPago
 
----- Llamada al procedimiento almacenado
---EXEC usp_RegistrarVenta
---    @IdUsuario = @IdUsuario,
---    @TipoDocumento = @TipoDocumento,
---    @NumeroDocumento = @NumeroDocumento,
---    @DocumentoCliente = @DocumentoCliente,
---    @ApellidoCliente = @ApellidoCliente,
---    @NombreCliente = @NombreCliente,
---    @MontoPago = @MontoPago,
---    @MontoCambio = @MontoCambio,
---    @MontoTotal = @MontoTotal,
---    @DesMetPago = @DesMetPago,
---    @DetalleVenta = @DetalleVenta,  -- Pasa la tabla tipo como parámetro directamente
---    @Resultado = @Resultado OUTPUT,  -- Agrega los parámetros de salida
---    @Mensaje = @Mensaje OUTPUT;
+ --Llamada al procedimiento almacenado
+EXEC usp_RegistrarVenta
+    @IdUsuario = @IdUsuario,
+    @TipoDocumento = @TipoDocumento,
+    @NumeroDocumento = @NumeroDocumento,
+    @DocumentoCliente = @DocumentoCliente,
+    @ApellidoCliente = @ApellidoCliente,
+    @NombreCliente = @NombreCliente,
+    @MontoPago = @MontoPago,
+    @MontoCambio = @MontoCambio,
+    @MontoTotal = @MontoTotal,
+    @DesMetPago = @DesMetPago,
+    @DetalleVenta = @DetalleVenta,  -- Pasa la tabla tipo como parámetro directamente
+    @Resultado = @Resultado OUTPUT,  -- Agrega los parámetros de salida
+    @Mensaje = @Mensaje OUTPUT;
 
---IF @Resultado = 1
---    PRINT 'Venta registrada con éxito';
---ELSE
---    PRINT 'Error al registrar la venta. Mensaje: ' + @Mensaje;
-
+IF @Resultado = 1
+    PRINT 'Venta registrada con éxito';
+ELSE
+    PRINT 'Error al registrar la venta. Mensaje: ' + @Mensaje;
+go
 
 -------------------------------------- Consulta de Detalle de Venta ------------------------------------------
 
@@ -798,11 +790,8 @@ inner join PRODUCTO p on p.IdProducto = dv.IdProducto
 where dv.IdVenta = 1
 go
 
-
-
 ------------------------------------- Procedimiento Almacenado Reporte de Ventas -------------------------------------
 
-/*
 CREATE PROCEDURE sp_ReporteVentas(
     @FechaInicio VARCHAR(50),
     @FechaFin VARCHAR(50),
@@ -818,69 +807,7 @@ BEGIN
     BEGIN
         -- Si el IdUsuario no tiene ventas asociadas, traer todas las ventas
         SELECT
-            CONVERT(char(10), v.FechaRegistro, 103) AS [FechaRegistro],
-            V.TipoDocumento,
-            V.NumeroDocumento,
-            V.MontoTotal,
-            U.Apellido + ', ' + U.Nombre AS usuarioregistro,
-            C.Apellido + ', ' + C.Nombre AS nombrecompletocliente,
-            V.DesMetPago
-        FROM
-            VENTA V
-        INNER JOIN
-            USUARIO U ON V.IdUsuario = U.IdUsuario
-        LEFT JOIN
-            CLIENTE C ON V.DocumentoCliente = C.Documento
-        WHERE
-            V.FechaRegistro BETWEEN 
-                CONVERT(DATETIME, @FechaInicio, 103) 
-                AND DATEADD(SECOND, -1, DATEADD(DAY, 1, CONVERT(DATETIME, @FechaFin, 103)));
-    END
-    ELSE
-    BEGIN
-        -- Si el IdUsuario tiene ventas asociadas, traer solo sus ventas
-        SELECT
-            CONVERT(char(10), v.FechaRegistro, 103) AS [FechaRegistro],
-            V.TipoDocumento,
-            V.NumeroDocumento,
-            V.MontoTotal,
-            U.Apellido + ', ' + U.Nombre AS usuarioregistro,
-            C.Apellido + ', ' + C.Nombre AS nombrecompletocliente,
-            V.DesMetPago
-        FROM
-            VENTA V
-        INNER JOIN
-            USUARIO U ON V.IdUsuario = U.IdUsuario
-        LEFT JOIN
-            CLIENTE C ON V.DocumentoCliente = C.Documento
-        WHERE
-            V.FechaRegistro BETWEEN 
-                CONVERT(DATETIME, @FechaInicio, 103) 
-                AND DATEADD(SECOND, -1, DATEADD(DAY, 1, CONVERT(DATETIME, @FechaFin, 103)))
-            AND V.IdUsuario = @IdUsuario;
-    END
-END
-GO
-*/
-
-
---------------------------------------------------------------------------------------------------------------
-
-CREATE PROCEDURE sp_ReporteVentas(
-    @FechaInicio VARCHAR(50),
-    @FechaFin VARCHAR(50),
-    @IdUsuario INT
-)
-AS
-BEGIN
-    -- Establecer el formato de fecha para asegurar interpretación correcta
-    SET DATEFORMAT dmy;
-
-    -- Verificar si el IdUsuario tiene ventas asociadas
-    IF NOT EXISTS (SELECT 1 FROM VENTA WHERE IdUsuario = @IdUsuario)
-    BEGIN
-        -- Si el IdUsuario no tiene ventas asociadas, traer todas las ventas
-        SELECT
+            V.IdVenta,
             CONVERT(char(10), v.FechaRegistro, 103) AS [FechaRegistro],
             V.TipoDocumento,
             V.NumeroDocumento,
@@ -890,6 +817,7 @@ BEGIN
             V.DesMetPago,
             CASE 
                 WHEN V.EstadoEntrega = 1 THEN 'Entregado' 
+                WHEN V.EstadoEntrega IS NULL THEN 'No entregado'
                 ELSE 'No entregado' 
             END AS EstadoEntrega
         FROM
@@ -907,6 +835,7 @@ BEGIN
     BEGIN
         -- Si el IdUsuario tiene ventas asociadas, traer solo sus ventas
         SELECT
+            V.IdVenta,
             CONVERT(char(10), v.FechaRegistro, 103) AS [FechaRegistro],
             V.TipoDocumento,
             V.NumeroDocumento,
@@ -916,6 +845,7 @@ BEGIN
             V.DesMetPago,
             CASE 
                 WHEN V.EstadoEntrega = 1 THEN 'Entregado' 
+                WHEN V.EstadoEntrega IS NULL THEN 'No entregado'
                 ELSE 'No entregado' 
             END AS EstadoEntrega
         FROM
@@ -932,163 +862,69 @@ BEGIN
     END
 END
 GO
-
-
-
-
 
 ------------------------------------- Prueba de Procedimiento Almacenado -------------------------------------
 
+DECLARE @FechaInicio VARCHAR(50) = CONVERT(VARCHAR(10), GETDATE(), 103);
+DECLARE @FechaFin VARCHAR(50) = CONVERT(VARCHAR(10), GETDATE(), 103);
+DECLARE @IdUsuario INT = 5;
 
-DECLARE @FechaInicio VARCHAR(50) = '09/01/2025';
-DECLARE @FechaFin VARCHAR(50) = '09/01/2025';
-DECLARE @IdUsuario INT = 1;
+EXEC sp_ReporteVentas @FechaInicio, @FechaFin, @IdUsuario;
+GO
 
-EXEC sp_ReporteVentas3 @FechaInicio, @FechaFin, @IdUsuario;
+--------------------------- Funcion almacenada para cambiar estado de entregado ---------------------------------------
 
-
--------------------------------------------------------------------------------------------------------------
-
-CREATE PROCEDURE sp_ReporteVentas2(
-    @FechaInicio VARCHAR(50),
-    @FechaFin VARCHAR(50),
-    @IdUsuario INT
+CREATE PROCEDURE usp_ActualizarEstadoEntrega
+(
+    @IdVenta INT,          -- ID de la venta a actualizar
+    @EstadoEntrega BIT,    -- Nuevo estado: 1 para "Entregado", 0 para "No entregado"
+    @Resultado BIT OUTPUT, -- Indica si la operación fue exitosa
+    @Mensaje VARCHAR(500) OUTPUT -- Mensaje en caso de error
 )
 AS
 BEGIN
-    -- Establecer el formato de fecha para asegurar interpretación correcta
-    SET DATEFORMAT dmy;
+    BEGIN TRY
+        -- Inicializamos los valores de salida
+        SET @Resultado = 1;
+        SET @Mensaje = 'Estado actualizado correctamente.';
 
-    -- Verificar si el IdUsuario tiene ventas asociadas
-    IF NOT EXISTS (SELECT 1 FROM VENTA WHERE IdUsuario = @IdUsuario)
-    BEGIN
-        -- Si el IdUsuario no tiene ventas asociadas, traer todas las ventas
-        SELECT
-            CONVERT(char(10), v.FechaRegistro, 103) AS [FechaRegistro],
-            V.TipoDocumento,
-            V.NumeroDocumento,
-            V.MontoTotal,
-            U.Apellido + ', ' + U.Nombre AS usuarioregistro,
-            C.Apellido + ', ' + C.Nombre AS nombrecompletocliente,
-            V.DesMetPago,
-            CASE 
-                WHEN V.EstadoEntrega = 1 THEN 'Entregado' 
-                WHEN V.EstadoEntrega IS NULL THEN 'No entregado'
-                ELSE 'No entregado' 
-            END AS EstadoEntrega
-        FROM
-            VENTA V
-        INNER JOIN
-            USUARIO U ON V.IdUsuario = U.IdUsuario
-        LEFT JOIN
-            CLIENTE C ON V.DocumentoCliente = C.Documento
-        WHERE
-            V.FechaRegistro BETWEEN 
-                CONVERT(DATETIME, @FechaInicio, 103) 
-                AND DATEADD(SECOND, -1, DATEADD(DAY, 1, CONVERT(DATETIME, @FechaFin, 103)));
-    END
-    ELSE
-    BEGIN
-        -- Si el IdUsuario tiene ventas asociadas, traer solo sus ventas
-        SELECT
-            CONVERT(char(10), v.FechaRegistro, 103) AS [FechaRegistro],
-            V.TipoDocumento,
-            V.NumeroDocumento,
-            V.MontoTotal,
-            U.Apellido + ', ' + U.Nombre AS usuarioregistro,
-            C.Apellido + ', ' + C.Nombre AS nombrecompletocliente,
-            V.DesMetPago,
-            CASE 
-                WHEN V.EstadoEntrega = 1 THEN 'Entregado' 
-                WHEN V.EstadoEntrega IS NULL THEN 'No entregado'
-                ELSE 'No entregado' 
-            END AS EstadoEntrega
-        FROM
-            VENTA V
-        INNER JOIN
-            USUARIO U ON V.IdUsuario = U.IdUsuario
-        LEFT JOIN
-            CLIENTE C ON V.DocumentoCliente = C.Documento
-        WHERE
-            V.FechaRegistro BETWEEN 
-                CONVERT(DATETIME, @FechaInicio, 103) 
-                AND DATEADD(SECOND, -1, DATEADD(DAY, 1, CONVERT(DATETIME, @FechaFin, 103)))
-            AND V.IdUsuario = @IdUsuario;
-    END
-END
+        -- Actualizamos el estado de la venta
+        UPDATE VENTA
+        SET EstadoEntrega = @EstadoEntrega
+        WHERE IdVenta = @IdVenta;
+
+        -- Validamos si se encontró la venta
+        IF @@ROWCOUNT = 0
+        BEGIN
+            SET @Resultado = 0;
+            SET @Mensaje = 'Venta no encontrada.';
+        END
+    END TRY
+    BEGIN CATCH
+        -- En caso de error, devolvemos el mensaje del error
+        SET @Resultado = 0;
+        SET @Mensaje = ERROR_MESSAGE();
+    END CATCH;
+END;
 GO
 
+------------------------------ Permite modificar el estado de una venta --------------------------------------------
 
------------------------------------------------------------------------------------------------------------------
+DECLARE @Resultado BIT;
+DECLARE @Mensaje VARCHAR(500);
 
-CREATE PROCEDURE sp_ReporteVentas3(
-    @FechaInicio VARCHAR(50),
-    @FechaFin VARCHAR(50),
-    @IdUsuario INT
-)
-AS
-BEGIN
-    -- Establecer el formato de fecha para asegurar interpretación correcta
-    SET DATEFORMAT dmy;
+EXEC usp_ActualizarEstadoEntrega
+    @IdVenta = 1,
+    @EstadoEntrega = 0,
+    @Resultado = @Resultado OUTPUT,
+    @Mensaje = @Mensaje OUTPUT;
 
-    -- Verificar si el IdUsuario tiene ventas asociadas
-    IF NOT EXISTS (SELECT 1 FROM VENTA WHERE IdUsuario = @IdUsuario)
-    BEGIN
-        -- Si el IdUsuario no tiene ventas asociadas, traer todas las ventas
-        SELECT
-            V.IdVenta,
-            CONVERT(char(10), v.FechaRegistro, 103) AS [FechaRegistro],
-            V.TipoDocumento,
-            V.NumeroDocumento,
-            V.MontoTotal,
-            U.Apellido + ', ' + U.Nombre AS usuarioregistro,
-            C.Apellido + ', ' + C.Nombre AS nombrecompletocliente,
-            V.DesMetPago,
-            CASE 
-                WHEN V.EstadoEntrega = 1 THEN 'Entregado' 
-                WHEN V.EstadoEntrega IS NULL THEN 'No entregado'
-                ELSE 'No entregado' 
-            END AS EstadoEntrega
-        FROM
-            VENTA V
-        INNER JOIN
-            USUARIO U ON V.IdUsuario = U.IdUsuario
-        LEFT JOIN
-            CLIENTE C ON V.DocumentoCliente = C.Documento
-        WHERE
-            V.FechaRegistro BETWEEN 
-                CONVERT(DATETIME, @FechaInicio, 103) 
-                AND DATEADD(SECOND, -1, DATEADD(DAY, 1, CONVERT(DATETIME, @FechaFin, 103)));
-    END
-    ELSE
-    BEGIN
-        -- Si el IdUsuario tiene ventas asociadas, traer solo sus ventas
-        SELECT
-            V.IdVenta,
-            CONVERT(char(10), v.FechaRegistro, 103) AS [FechaRegistro],
-            V.TipoDocumento,
-            V.NumeroDocumento,
-            V.MontoTotal,
-            U.Apellido + ', ' + U.Nombre AS usuarioregistro,
-            C.Apellido + ', ' + C.Nombre AS nombrecompletocliente,
-            V.DesMetPago,
-            CASE 
-                WHEN V.EstadoEntrega = 1 THEN 'Entregado' 
-                WHEN V.EstadoEntrega IS NULL THEN 'No entregado'
-                ELSE 'No entregado' 
-            END AS EstadoEntrega
-        FROM
-            VENTA V
-        INNER JOIN
-            USUARIO U ON V.IdUsuario = U.IdUsuario
-        LEFT JOIN
-            CLIENTE C ON V.DocumentoCliente = C.Documento
-        WHERE
-            V.FechaRegistro BETWEEN 
-                CONVERT(DATETIME, @FechaInicio, 103) 
-                AND DATEADD(SECOND, -1, DATEADD(DAY, 1, CONVERT(DATETIME, @FechaFin, 103)))
-            AND V.IdUsuario = @IdUsuario;
-    END
-END
-GO
+SELECT @Resultado AS Resultado, @Mensaje AS Mensaje;
+go
+
+---------------------------------------------- Consulta de las ventas ----------------------------------------------
+
+SELECT IdVenta, TipoDocumento, NumeroDocumento, DocumentoCliente, ApellidoCliente, NombreCliente, MontoTotal, EstadoEntrega
+FROM VENTA;
+go
 

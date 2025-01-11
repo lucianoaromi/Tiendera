@@ -264,59 +264,60 @@ namespace CapaPresentacion
             }
         }
 
-        //Generar EXCEL
+        // Generar EXCEL
         private void button3_Click(object sender, EventArgs e)
         {
             if (dgvdata.Rows.Count < 1)
             {
-
                 MessageBox.Show("No hay registros para exportar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
+                return;
             }
-            else
+
+            DataTable dt = new DataTable();
+
+            // Excluir la primera y última columna
+            for (int i = 1; i < dgvdata.Columns.Count - 1; i++)
             {
-                DataTable dt = new DataTable();
+                dt.Columns.Add(dgvdata.Columns[i].HeaderText, typeof(string));
+            }
 
-                foreach (DataGridViewColumn columna in dgvdata.Columns)
+            foreach (DataGridViewRow row in dgvdata.Rows)
+            {
+                if (row.Visible)
                 {
-                    dt.Columns.Add(columna.HeaderText, typeof(string));
-                }
+                    List<object> valores = new List<object>();
 
-                foreach (DataGridViewRow row in dgvdata.Rows)
-                {
-                    if (row.Visible)
-                        dt.Rows.Add(new object[] {
-                            row.Cells[0].Value.ToString(),
-                            row.Cells[1].Value.ToString(),
-                            row.Cells[2].Value.ToString(),
-                            row.Cells[3].Value.ToString(),
-                            row.Cells[4].Value.ToString(),
-                            row.Cells[5].Value.ToString(),
-                            row.Cells[6].Value.ToString(),
-                        });
-                }
-
-                SaveFileDialog savefile = new SaveFileDialog();
-                savefile.FileName = string.Format("ReporteVentas_{0}.xlsx", DateTime.Now.ToString("ddMMyyyyHHmmss"));
-                savefile.Filter = "Excel Files | *.xlsx";
-
-                if (savefile.ShowDialog() == DialogResult.OK)
-                {
-                    try
+                    // Excluir valores de la primera y última columna
+                    for (int i = 1; i < dgvdata.Columns.Count - 1; i++)
                     {
-                        XLWorkbook wb = new XLWorkbook();
-                        var hoja = wb.Worksheets.Add(dt, "Informe");
-                        wb.SaveAs(savefile.FileName);
-                        MessageBox.Show("Reporte Generado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        valores.Add(row.Cells[i].Value?.ToString() ?? "");
+                    }
 
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Error al generar reporte", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    }
+                    dt.Rows.Add(valores.ToArray());
+                }
+            }
+
+            SaveFileDialog savefile = new SaveFileDialog();
+            savefile.FileName = string.Format("ReporteVentas_{0}.xlsx", DateTime.Now.ToString("ddMMyyyyHHmmss"));
+            savefile.Filter = "Excel Files | *.xlsx";
+
+            if (savefile.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    XLWorkbook wb = new XLWorkbook();
+                    var hoja = wb.Worksheets.Add(dt, "Informe");
+                    wb.SaveAs(savefile.FileName);
+                    MessageBox.Show("Reporte Generado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch
+                {
+                    MessageBox.Show("Error al generar reporte", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
         }
+
+
 
         // Muestra Icono en el boton de ver detlle
         private void dgvdata_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)

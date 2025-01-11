@@ -23,7 +23,7 @@ namespace CapaDatos
                 try
                 {
                     StringBuilder query = new StringBuilder();
-                    SqlCommand cmd = new SqlCommand("sp_ReporteVentas3", oconexion);
+                    SqlCommand cmd = new SqlCommand("sp_ReporteVentas", oconexion);
                     cmd.Parameters.AddWithValue("FechaInicio", fechainicio);
                     cmd.Parameters.AddWithValue("FechaFin", fechafin);
                     cmd.Parameters.AddWithValue("IdUsuario", idusuario);
