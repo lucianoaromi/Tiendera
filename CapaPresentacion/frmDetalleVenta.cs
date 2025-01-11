@@ -35,6 +35,18 @@ namespace CapaPresentacion
 
         private void frmDetalleVenta_Load(object sender, EventArgs e)
         {
+            txtfecha.ReadOnly = true;
+            txttipodocumento.ReadOnly = true;
+            txtusuarioapellido.ReadOnly = true;
+            txtusuarionombre.ReadOnly = true;
+            txtdoccliente.ReadOnly = true;
+            txtapellidocliente.ReadOnly = true;
+            txtnombrecliente.ReadOnly = true;
+            txtmontototal.ReadOnly = true;
+            txtmontopago.ReadOnly = true;
+            txtmontocambio.ReadOnly = true;
+            txtmetodopago.ReadOnly = true;
+
             txtbusqueda.Select();
 
             //___________________________________________________________
@@ -44,35 +56,37 @@ namespace CapaPresentacion
             {
                 txtnumerodocumento.Text = oVenta.NumeroDocumento;
 
-                //Informacion del Vendedor
+                // Informacion del Vendedor
                 txtfecha.Text = oVenta.FechaRegistro;
                 txttipodocumento.Text = oVenta.TipoDocumento;
                 txtusuarioapellido.Text = oVenta.oUsuario.Apellido;
                 txtusuarionombre.Text = oVenta.oUsuario2.Nombre;
 
-                //Informacion del Cliente
+                // Informacion del Cliente
                 txtdoccliente.Text = oVenta.DocumentoCliente;
                 txtapellidocliente.Text = oVenta.ApellidoCliente;
                 txtnombrecliente.Text = oVenta.NombreCliente;
 
-                //Lista de productos vendidos
+                // Lista de productos vendidos
                 dgvdata.Rows.Clear();
                 foreach (Detalle_Venta dv in oVenta.oDetalle_Venta)
                 {
                     dgvdata.Rows.Add(new object[] { dv.oProducto.Nombre, dv.Precio, dv.Cantidad, dv.SubTotal });
-
                 }
 
-                //Informacion de los distintos montos
+                // Informacion de los distintos montos
                 txtmontototal.Text = oVenta.MontoTotal.ToString("0.00");
                 txtmontopago.Text = oVenta.MontoPago.ToString("0.00");
                 txtmontocambio.Text = oVenta.MontoCambio.ToString("0.00");
                 txtmetodopago.Text = oVenta.DesMetPago;
-            }
 
-            //___________________________________________________________
+                // Desmarca cualquier fila seleccionada
+                dgvdata.ClearSelection();
+            }
         }
 
+
+        // Boton que busca la venta segun el numero ingresado
         private void btnbuscar_Click_1(object sender, EventArgs e)
         {
             Venta oVenta = new CN_Venta().ObtenerVenta(txtbusqueda.Text);
@@ -81,32 +95,45 @@ namespace CapaPresentacion
             {
                 txtnumerodocumento.Text = oVenta.NumeroDocumento;
 
-                //Informacion del Vendedor
+                // Información del Vendedor
                 txtfecha.Text = oVenta.FechaRegistro;
-                txttipodocumento.Text = oVenta.TipoDocumento; 
+                txttipodocumento.Text = oVenta.TipoDocumento;
                 txtusuarioapellido.Text = oVenta.oUsuario.Apellido;
                 txtusuarionombre.Text = oVenta.oUsuario2.Nombre;
 
-                //Informacion del Cliente
-                txtdoccliente.Text = oVenta.DocumentoCliente; 
+                // Información del Cliente
+                txtdoccliente.Text = oVenta.DocumentoCliente;
                 txtapellidocliente.Text = oVenta.ApellidoCliente;
                 txtnombrecliente.Text = oVenta.NombreCliente;
 
-                //Lista de productos vendidos
+                // Lista de productos vendidos
                 dgvdata.Rows.Clear();
                 foreach (Detalle_Venta dv in oVenta.oDetalle_Venta)
                 {
                     dgvdata.Rows.Add(new object[] { dv.oProducto.Nombre, dv.Precio, dv.Cantidad, dv.SubTotal });
-                    
                 }
 
-                //Informacion de los distintos montos
+                // Restablecer colores de todas las filas
+                foreach (DataGridViewRow row in dgvdata.Rows)
+                {
+                    row.DefaultCellStyle.BackColor = dgvdata.DefaultCellStyle.BackColor;
+                    row.DefaultCellStyle.ForeColor = dgvdata.DefaultCellStyle.ForeColor;
+                }
+
+                // Deseleccionar la primera fila
+                if (dgvdata.Rows.Count > 0)
+                {
+                    dgvdata.ClearSelection();
+                }
+
+                // Información de los distintos montos
                 txtmontototal.Text = oVenta.MontoTotal.ToString("0.00");
-                txtmontopago.Text = oVenta.MontoPago.ToString("0.00"); 
+                txtmontopago.Text = oVenta.MontoPago.ToString("0.00");
                 txtmontocambio.Text = oVenta.MontoCambio.ToString("0.00");
                 txtmetodopago.Text = oVenta.DesMetPago;
             }
         }
+
 
         private void btnlimpiar_Click_1(object sender, EventArgs e)
         {

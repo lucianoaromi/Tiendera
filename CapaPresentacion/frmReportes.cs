@@ -115,8 +115,6 @@ namespace CapaPresentacion
         private void CargarColoresFilas()
         {
 
-
-
             foreach (DataGridViewRow row in dgvdata.Rows)
             {
                 string estadoEntrega = row.Cells["EstadoEntrega"].Value.ToString();
@@ -200,7 +198,7 @@ namespace CapaPresentacion
             //----------------------
 
             // Verifica si se hizo clic en una celda válida y si corresponde a la columna del botón
-            if (e.RowIndex >= 0 && e.ColumnIndex == dgvdata.Columns["verDetalle"].Index) // Reemplaza "BotonColumnName" con el nombre real de tu columna de botón
+            if (e.RowIndex >= 0 && e.ColumnIndex == dgvdata.Columns["verDetalle"].Index) 
             {
                 if (lastSelectedRow >= 0)
                 {
@@ -235,6 +233,7 @@ namespace CapaPresentacion
 
         //---------------------------------------------------------------------------------------------------------------
 
+        // Busca entre los resultados del Datagrid
         private void btnbuscarpor_Click(object sender, EventArgs e)
         {
             string columnaFiltro = ((OpcionCombo)cbobusqueda.SelectedItem).Valor.ToString();
@@ -255,6 +254,7 @@ namespace CapaPresentacion
             }
         }
 
+        // Limpia la busqueda
         private void button1_Click(object sender, EventArgs e)
         {
             txtbusqueda.Text = "";
@@ -318,6 +318,7 @@ namespace CapaPresentacion
             }
         }
 
+        // Muestra Icono en el boton de ver detlle
         private void dgvdata_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if (e.RowIndex < 0)

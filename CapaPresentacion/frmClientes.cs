@@ -145,7 +145,14 @@ namespace CapaPresentacion
 
         private void Limpiar()
         {
+            // Restablecer colores originales de todas las filas del DataGridView
+            foreach (DataGridViewRow row in dgvdata.Rows)
+            {
+                row.DefaultCellStyle.BackColor = dgvdata.DefaultCellStyle.BackColor;
+                row.DefaultCellStyle.ForeColor = dgvdata.DefaultCellStyle.ForeColor;
+            }
 
+            // Limpiar los campos de texto y combo box
             txtindicecliente.Text = "-1";
             txtidcliente.Text = "0";
             txtdocumento1.Text = "";
@@ -156,9 +163,10 @@ namespace CapaPresentacion
             txttelefono1.Text = "";
             cboestado1.SelectedIndex = 0;
 
-            //El foco se va a el textbox documento
+            // Establecer el foco en el TextBox documento
             txtdocumento1.Select();
         }
+
 
         //Muestra la imagen de tilde en el DataGrid
         private void dgvdata_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -248,11 +256,19 @@ namespace CapaPresentacion
             {
                 int indice = e.RowIndex;
 
-                if (indice >=0)
+                if (indice >= 0)
                 {
+                    // Establecer color blanco a todas las filas para restablecer
+                    foreach (DataGridViewRow row in dgvdata.Rows)
+                    {
+                        row.DefaultCellStyle.BackColor = dgvdata.DefaultCellStyle.BackColor;
+                    }
 
+                    // Marcar la fila seleccionada con color verde
+                    dgvdata.Rows[indice].DefaultCellStyle.BackColor = System.Drawing.Color.LightCoral;
+
+                    // Asignar valores a los controles de texto
                     txtindicecliente.Text = indice.ToString();
-
                     txtidcliente.Text = dgvdata.Rows[indice].Cells["Id"].Value.ToString();
                     txtdocumento1.Text = dgvdata.Rows[indice].Cells["Documento"].Value.ToString();
                     txtapellido1.Text = dgvdata.Rows[indice].Cells["Apellido"].Value.ToString();
@@ -261,7 +277,7 @@ namespace CapaPresentacion
                     txtcorreo1.Text = dgvdata.Rows[indice].Cells["Correo"].Value.ToString();
                     txttelefono1.Text = dgvdata.Rows[indice].Cells["Telefono"].Value.ToString();
 
-
+                    // Seleccionar el estado correspondiente en el combo box
                     foreach (OpcionCombo oc in cboestado1.Items)
                     {
                         if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["EstadoValor"].Value))
@@ -274,6 +290,7 @@ namespace CapaPresentacion
                 }
             }
         }
+
 
         private void btnlimpiarbusqueda_Click_1(object sender, EventArgs e)
         {
