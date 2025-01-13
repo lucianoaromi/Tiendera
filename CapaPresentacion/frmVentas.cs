@@ -229,7 +229,7 @@ namespace CapaPresentacion
                 oUsuario = new Usuario() { IdUsuario = _Usuario.IdUsuario },
                 TipoDocumento = ((OpcionCombo)cbotipodocumento.SelectedItem).Texto,
                 NumeroDocumento = numeroDocumento,
-                DocumentoCliente = txtdocumentocliente.Text,
+                DocumentoCliente = txtidcliente.Text,
                 ApellidoCliente = txtapellidocliente.Text,
                 NombreCliente = txtnombrecliente.Text,
                 MontoPago = Convert.ToDecimal(txtpagacon.Text),

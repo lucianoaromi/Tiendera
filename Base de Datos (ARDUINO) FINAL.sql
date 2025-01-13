@@ -670,6 +670,7 @@ VALUES
 
 
 ---------------- Se generan los metodos para manipular el formulario de Ventas ----------------
+
 CREATE TYPE dbo.EDetalle_Venta AS TABLE
 (
     IdProducto INT,
@@ -741,7 +742,7 @@ DECLARE @Mensaje VARCHAR(500);
 DECLARE @IdUsuario INT = 5;  -- Proporciona el valor correcto para @IdUsuario
 DECLARE @TipoDocumento VARCHAR(500) = 'Factura';  -- Proporciona el valor correcto para @TipoDocumento
 DECLARE @NumeroDocumento VARCHAR(500) = '00001';  -- Proporciona el valor correcto para @NumeroDocumento
-DECLARE @DocumentoCliente VARCHAR(500) = '123456789';  -- Proporciona el valor correcto para @DocumentoCliente
+DECLARE @DocumentoCliente VARCHAR(500) = '1';  -- Proporciona el valor correcto para @DocumentoCliente
 DECLARE @ApellidoCliente VARCHAR(100) = 'Gómez';  -- Proporciona el valor correcto para @ApellidoCliente
 DECLARE @NombreCliente VARCHAR(100) = 'Ana';  -- Proporciona el valor correcto para @NombreCliente
 DECLARE @MontoPago DECIMAL(18, 2) = 300.00;  -- Proporciona el valor correcto para @MontoPago
@@ -853,7 +854,7 @@ BEGIN
         INNER JOIN
             USUARIO U ON V.IdUsuario = U.IdUsuario
         LEFT JOIN
-            CLIENTE C ON V.DocumentoCliente = C.Documento
+            CLIENTE C ON V.DocumentoCliente = C.IdCliente
         WHERE
             V.FechaRegistro BETWEEN 
                 CONVERT(DATETIME, @FechaInicio, 103) 

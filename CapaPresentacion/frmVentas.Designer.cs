@@ -124,8 +124,8 @@ namespace CapaPresentacion
             // 
             // txtnumventa
             // 
-            this.txtnumventa.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.txtnumventa.Location = new System.Drawing.Point(743, 8);
+            this.txtnumventa.BackColor = System.Drawing.Color.White;
+            this.txtnumventa.Location = new System.Drawing.Point(707, 8);
             this.txtnumventa.Name = "txtnumventa";
             this.txtnumventa.ReadOnly = true;
             this.txtnumventa.Size = new System.Drawing.Size(49, 20);
@@ -134,23 +134,22 @@ namespace CapaPresentacion
             // 
             // txtidproducto
             // 
-            this.txtidproducto.BackColor = System.Drawing.Color.DarkCyan;
-            this.txtidproducto.Location = new System.Drawing.Point(797, 8);
+            this.txtidproducto.BackColor = System.Drawing.Color.White;
+            this.txtidproducto.Location = new System.Drawing.Point(762, 8);
             this.txtidproducto.Name = "txtidproducto";
             this.txtidproducto.ReadOnly = true;
-            this.txtidproducto.Size = new System.Drawing.Size(27, 20);
+            this.txtidproducto.Size = new System.Drawing.Size(43, 20);
             this.txtidproducto.TabIndex = 17;
             this.txtidproducto.Visible = false;
             // 
             // txtidcliente
             // 
-            this.txtidcliente.BackColor = System.Drawing.Color.DarkCyan;
-            this.txtidcliente.Location = new System.Drawing.Point(830, 8);
+            this.txtidcliente.BackColor = System.Drawing.Color.White;
+            this.txtidcliente.Location = new System.Drawing.Point(812, 8);
             this.txtidcliente.Name = "txtidcliente";
             this.txtidcliente.ReadOnly = true;
-            this.txtidcliente.Size = new System.Drawing.Size(27, 20);
+            this.txtidcliente.Size = new System.Drawing.Size(45, 20);
             this.txtidcliente.TabIndex = 18;
-            this.txtidcliente.Visible = false;
             // 
             // label11
             // 
