@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,25 +43,26 @@ namespace CapaPresentacion.Modales
             foreach (Cliente item in listaCliente)
             {
                 dgvdata.Rows.Add(new object[] {
-            "",
-            item.IdCliente,
-            item.Documento,
-            item.Apellido,
-            item.Nombre,
-            item.Direccion,
-            item.Correo,
-            item.Telefono,
-            item.Estado ? 1 : 0,
-            item.Estado ? "Activo" : "No Activo",
-        });
+                    "",
+                    item.IdCliente,
+                    //item.Documento,
+                    item.Apellido,
+                    item.Nombre,
+                    item.Direccion,
+                    //item.Correo,
+                    item.Telefono,
+                    item.Estado ? 1 : 0,
+                    item.Estado ? "Activo" : "No Activo",
+                });
             }
         }
 
-
+        //------------------------------------------------------------------------------------------------------------------------------------------
 
         private void btnbuscar_Click_1(object sender, EventArgs e)
         {
             string columnaFiltro = ((OpcionCombo)cbobusqueda.SelectedItem).Valor.ToString();
+            string busquedaNormalizada = NormalizarTexto(txtbusqueda.Text.Trim().ToUpper());
 
             if (dgvdata.Rows.Count > 0)
             {
@@ -68,7 +70,10 @@ namespace CapaPresentacion.Modales
                 {
                     if (row.Cells[columnaFiltro].Value != null)
                     {
-                        if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtbusqueda.Text.Trim().ToUpper()))
+                        string cellValue = row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper();
+                        string cellValueNormalizada = NormalizarTexto(cellValue);
+
+                        if (cellValueNormalizada.Contains(busquedaNormalizada))
                         {
                             row.Visible = true;
                         }
@@ -80,6 +85,25 @@ namespace CapaPresentacion.Modales
                 }
             }
         }
+
+        // Método para normalizar y eliminar los acentos
+        private string NormalizarTexto(string texto)
+        {
+            string normalizedString = texto.Normalize(NormalizationForm.FormD);
+            StringBuilder stringBuilder = new StringBuilder();
+
+            foreach (char c in normalizedString)
+            {
+                if (CharUnicodeInfo.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark)
+                {
+                    stringBuilder.Append(c);
+                }
+            }
+
+            return stringBuilder.ToString().Normalize(NormalizationForm.FormC);
+        }
+
+        //------------------------------------------------------------------------------------------------------------------------------------------
 
         private void descripcionTextBox_TextChanged(object sender, EventArgs e)
         {
@@ -108,7 +132,7 @@ namespace CapaPresentacion.Modales
                 _Cliente = new Cliente()
                 {
                     IdCliente = Convert.ToInt32(dgvdata.Rows[iRow].Cells["Id"].Value.ToString()),
-                    Documento = dgvdata.Rows[iRow].Cells["Documento"].Value.ToString(),
+                    //Documento = dgvdata.Rows[iRow].Cells["Documento"].Value.ToString(),
                     Nombre = dgvdata.Rows[iRow].Cells["Nombre"].Value.ToString(),
                     Apellido = dgvdata.Rows[iRow].Cells["Apellido"].Value.ToString(),
 

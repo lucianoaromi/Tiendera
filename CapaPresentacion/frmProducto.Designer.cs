@@ -130,7 +130,7 @@ namespace CapaPresentacion
             this.txtdescripcion.Name = "txtdescripcion";
             this.txtdescripcion.Size = new System.Drawing.Size(148, 33);
             this.txtdescripcion.TabIndex = 5;
-            this.txtdescripcion.TextChanged += new System.EventHandler(this.descripcionTextBox_TextChanged);
+            
             // 
             // txtnombre
             // 

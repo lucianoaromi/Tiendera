@@ -29,17 +29,15 @@ go
 
 create table CLIENTE(
 IdCliente int primary key identity,
-Documento varchar(50),
 Apellido varchar(50),
 Nombre varchar(50),
 Direccion varchar(100),
-Correo varchar(50),
 Telefono varchar(50),
 Estado bit,
 FechaRegistro datetime default getdate()
 )
-go
 
+go
 create table USUARIO(
 IdUsuario int primary key identity,
 Documento varchar(50),
@@ -284,83 +282,64 @@ go
 
 ---------------- Se generan los metodos para manipular el formulario de CLIENTES ----------------
 
---Declaracion de Variables para manejo de los metodos
-declare @idclientegenerado int
-declare @mensaje varchar(500)
-go
-
+-- Declaración de Variables para manejo de los métodos
+DECLARE @idclientegenerado INT;
+DECLARE @mensaje VARCHAR(500);
+GO
 
 CREATE PROC SP_REGISTRARCLIENTE(
-@Documento varchar(50),
-@Apellido varchar(100),
-@Nombre varchar(100),
-@Direccion varchar(100),
-@Correo varchar(100),
-@Telefono varchar(100),
-@Estado bit,
-@IdClienteResultado int output,
-@Mensaje varchar(500) output
+    @Apellido VARCHAR(100),
+    @Nombre VARCHAR(100),
+    @Direccion VARCHAR(100),
+    @Telefono VARCHAR(100),
+    @Estado BIT,
+    @IdClienteResultado INT OUTPUT,
+    @Mensaje VARCHAR(500) OUTPUT
 )
-as
-begin
-     set @IdClienteResultado = 0
-	 set @Mensaje = ''
+AS
+BEGIN
+    SET @IdClienteResultado = 0;
+    SET @Mensaje = '';
 
-	 if not exists(select * from CLIENTE where Documento = @Documento)
-	 begin
-	      insert into cliente(Documento,Apellido,Nombre,Direccion,Correo,Telefono,Estado) values
-		  (@Documento,@Apellido,@Nombre,@Direccion,@Correo,@Telefono,@Estado)
+    -- Inserción del cliente sin el campo Documento
+    INSERT INTO cliente (Apellido, Nombre, Direccion, Telefono, Estado) 
+    VALUES (@Apellido, @Nombre, @Direccion, @Telefono, @Estado);
 
-		  set @IdClienteResultado = SCOPE_IDENTITY()
-
-     end
-	 else
-	     set @Mensaje = 'Numero de documento ya existente'
-
-end
-
-go
+    -- Recuperar el ID generado
+    SET @IdClienteResultado = SCOPE_IDENTITY();
+END;
+GO
 
 -------------------------------------------------------------------------------------------------------------------
 
 CREATE PROC SP_EDITARCLIENTE(
-@IdCliente int, 
-@Documento varchar(50),
-@Apellido varchar(100),
-@Nombre varchar(100),
-@Direccion varchar(100),
-@Correo varchar(100),
-@Telefono varchar(100),
-@Estado bit,
-@Respuesta bit output,
-@Mensaje varchar(500) output
+    @IdCliente INT,
+    @Apellido VARCHAR(100),
+    @Nombre VARCHAR(100),
+    @Direccion VARCHAR(100),    
+    @Telefono VARCHAR(100),
+    @Estado BIT,
+    @Respuesta BIT OUTPUT,
+    @Mensaje VARCHAR(500) OUTPUT
 )
-as
-begin
-     set @Respuesta = 0
-	 set @Mensaje = ''
+AS
+BEGIN
+    SET @Respuesta = 0;
+    SET @Mensaje = '';
 
-	 if not exists(select * from CLIENTE where Documento = @Documento and IdCliente != @IdCliente)
-	 begin
-	      update cliente set 
-		  Documento = @Documento,
-		  Apellido = @Apellido,
-		  Nombre = @Nombre,
-		  Direccion = @Direccion,
-		  Correo = @Correo,
-		  Telefono = @Telefono,
-		  Estado = @Estado
-		  where IdCliente = @IdCliente
+    -- Actualización de cliente sin validar Documento
+    UPDATE cliente
+    SET 
+        Apellido = @Apellido,
+        Nombre = @Nombre,
+        Direccion = @Direccion,      
+        Telefono = @Telefono,
+        Estado = @Estado
+    WHERE IdCliente = @IdCliente;
 
-		  set @Respuesta = 1
-
-     end
-	 else
-	     set @Mensaje = '!Numero de documento ya existente!'
-
-end
-
-go
+    SET @Respuesta = 1;
+END;
+GO
 
 -------------------------------------------------------------------------------------------------------------------
 
@@ -607,18 +586,18 @@ select * from usuario
 -------------------------------------------------------------------------------------------------------------------
 
 -- Generar 10 registros en la tabla CLIENTE con números de documento de Argentina (DNI)
-INSERT INTO CLIENTE (Documento, Apellido, Nombre, Direccion, Correo, Telefono, Estado)
+INSERT INTO CLIENTE (Apellido, Nombre, Direccion, Telefono, Estado)
 VALUES
-('12345678', 'Gómez', 'Ana', 'Calle 123', 'ana@gmail.com', '123456789', 1),
-('87654321', 'López', 'Juan', 'Avenida 456', 'juan@gmail.com', '987654321', 1),
-('11223344', 'Rodríguez', 'Lucía', 'Calle Principal', 'lucia@gmail.com', '555555555', 1),
-('55443322', 'Martínez', 'Carlos', 'Boulevard 789', 'carlos@gmail.com', '777777777', 1),
-('48765432', 'Fernández', 'Sofía', 'Calle Secundaria', 'sofia@gmail.com', '999999999', 1),
-('31223344', 'Pérez', 'Luis', 'Calle de la Plaza', 'luis@gmail.com', '111111111', 1),
-('35443322', 'García', 'María', 'Avenida Central', 'maria@gmail.com', '222222222', 1),
-('98765432', 'Díaz', 'Pedro', 'Calle 456', 'pedro@gmail.com', '333333333', 1),
-('37654321', 'Vargas', 'Elena', 'Calle 789', 'elena@gmail.com', '444444444', 1),
-('32345678', 'Sánchez', 'Jorge', 'Avenida 123', 'jorge@gmail.com', '666666666', 1);
+('Gómez', 'Ana', 'Calle 123', '123456789', 1),
+('López', 'Juan', 'Avenida 456', '987654321', 1),
+('Rodríguez', 'Lucía', 'Calle Principal', '555555555', 1),
+('Martínez', 'Carlos', 'Boulevard 789', '777777777', 1),
+('Fernández', 'Sofía', 'Calle Secundaria', '999999999', 1),
+('Pérez', 'Luis', 'Calle de la Plaza', '111111111', 1),
+('García', 'María', 'Avenida Central', '222222222', 1),
+('Díaz', 'Pedro', 'Calle 456', '333333333', 1),
+('Vargas', 'Elena', 'Calle 789', '444444444', 1),
+('Sánchez', 'Jorge', 'Avenida 123', '666666666', 1);
 
 
 select * from cliente
@@ -751,6 +730,7 @@ DECLARE @MontoTotal DECIMAL(18, 2) = 350.00;  -- Proporciona el valor correcto p
 DECLARE @DesMetPago VARCHAR(100) = 'Efectivo';  -- Proporciona el valor correcto para @DesMetPago
 
  --Llamada al procedimiento almacenado
+
 EXEC usp_RegistrarVenta
     @IdUsuario = @IdUsuario,
     @TipoDocumento = @TipoDocumento,
@@ -826,7 +806,7 @@ BEGIN
         INNER JOIN
             USUARIO U ON V.IdUsuario = U.IdUsuario
         LEFT JOIN
-            CLIENTE C ON V.DocumentoCliente = C.Documento
+            CLIENTE C ON V.DocumentoCliente = C.IdCliente
         WHERE
             V.FechaRegistro BETWEEN 
                 CONVERT(DATETIME, @FechaInicio, 103) 
@@ -862,7 +842,8 @@ BEGIN
             AND V.IdUsuario = @IdUsuario;
     END
 END
-GO
+
+go
 
 ------------------------------------- Prueba de Procedimiento Almacenado -------------------------------------
 
@@ -916,7 +897,7 @@ DECLARE @Mensaje VARCHAR(500);
 
 EXEC usp_ActualizarEstadoEntrega
     @IdVenta = 1,
-    @EstadoEntrega = 0,
+    @EstadoEntrega = 1,
     @Resultado = @Resultado OUTPUT,
     @Mensaje = @Mensaje OUTPUT;
 

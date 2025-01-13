@@ -30,8 +30,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mdClientes));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -49,17 +49,15 @@
             this.btnbuscar = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvdata = new System.Windows.Forms.DataGridView();
+            this.btnguardar = new FontAwesome.Sharp.IconButton();
             this.btnseleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EstadoValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnguardar = new FontAwesome.Sharp.IconButton();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).BeginInit();
@@ -246,24 +244,22 @@
             // dgvdata
             // 
             this.dgvdata.AllowUserToAddRows = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvdata.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.btnseleccionar,
             this.Id,
-            this.Documento,
             this.Apellido,
             this.Nombre,
             this.Direccion,
-            this.Correo,
             this.Telefono,
             this.EstadoValor,
             this.Estado});
@@ -273,13 +269,32 @@
             this.dgvdata.Name = "dgvdata";
             this.dgvdata.ReadOnly = true;
             this.dgvdata.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvdata.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvdata.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvdata.RowTemplate.Height = 28;
             this.dgvdata.Size = new System.Drawing.Size(1146, 556);
             this.dgvdata.TabIndex = 22;
             this.dgvdata.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdata_CellDoubleClick_1);
+            // 
+            // btnguardar
+            // 
+            this.btnguardar.BackColor = System.Drawing.Color.Black;
+            this.btnguardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnguardar.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnguardar.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnguardar.ForeColor = System.Drawing.Color.White;
+            this.btnguardar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnguardar.IconColor = System.Drawing.Color.White;
+            this.btnguardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnguardar.IconSize = 25;
+            this.btnguardar.Location = new System.Drawing.Point(30, 410);
+            this.btnguardar.Name = "btnguardar";
+            this.btnguardar.Size = new System.Drawing.Size(170, 30);
+            this.btnguardar.TabIndex = 16;
+            this.btnguardar.Text = "Guardar";
+            this.btnguardar.UseVisualStyleBackColor = false;
             // 
             // btnseleccionar
             // 
@@ -298,14 +313,6 @@
             this.Id.ReadOnly = true;
             this.Id.Visible = false;
             this.Id.Width = 125;
-            // 
-            // Documento
-            // 
-            this.Documento.HeaderText = "Documento";
-            this.Documento.MinimumWidth = 6;
-            this.Documento.Name = "Documento";
-            this.Documento.ReadOnly = true;
-            this.Documento.Width = 90;
             // 
             // Apellido
             // 
@@ -331,14 +338,6 @@
             this.Direccion.ReadOnly = true;
             this.Direccion.Width = 125;
             // 
-            // Correo
-            // 
-            this.Correo.HeaderText = "Correo";
-            this.Correo.MinimumWidth = 6;
-            this.Correo.Name = "Correo";
-            this.Correo.ReadOnly = true;
-            this.Correo.Width = 150;
-            // 
             // Telefono
             // 
             this.Telefono.HeaderText = "Telefono";
@@ -363,25 +362,6 @@
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;
             this.Estado.Width = 125;
-            // 
-            // btnguardar
-            // 
-            this.btnguardar.BackColor = System.Drawing.Color.Black;
-            this.btnguardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnguardar.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnguardar.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnguardar.ForeColor = System.Drawing.Color.White;
-            this.btnguardar.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnguardar.IconColor = System.Drawing.Color.White;
-            this.btnguardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnguardar.IconSize = 25;
-            this.btnguardar.Location = new System.Drawing.Point(30, 410);
-            this.btnguardar.Name = "btnguardar";
-            this.btnguardar.Size = new System.Drawing.Size(170, 30);
-            this.btnguardar.TabIndex = 16;
-            this.btnguardar.Text = "Guardar";
-            this.btnguardar.UseVisualStyleBackColor = false;
             // 
             // mdClientes
             // 
@@ -435,11 +415,9 @@
         private System.Windows.Forms.Button btnbuscar;
         private System.Windows.Forms.DataGridViewButtonColumn btnseleccionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Documento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn EstadoValor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;

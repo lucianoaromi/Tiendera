@@ -15,6 +15,7 @@ using CapaEntidad;
 using CapaNegocio;
 using System.Windows.Controls;
 using System.Windows.Documents;
+using System.Globalization;
 
 namespace CapaPresentacion
 {
@@ -206,11 +207,14 @@ namespace CapaPresentacion
             Limpiar();
         }
 
-//------------------------------------------------------------------------------------------------------------------------------------------
+        //------------------------------------------------------------------------------------------------------------------------------------------
+
+        //------------------------------------------------------------------------------------------------------------------------------------------
 
         private void btnbuscar_Click_1(object sender, EventArgs e)
         {
             string columnaFiltro = ((OpcionCombo)cbobusqueda.SelectedItem).Valor.ToString();
+            string busquedaNormalizada = NormalizarTexto(txtbusqueda.Text.Trim().ToUpper());
 
             if (dgvdata.Rows.Count > 0)
             {
@@ -218,7 +222,10 @@ namespace CapaPresentacion
                 {
                     if (row.Cells[columnaFiltro].Value != null)
                     {
-                        if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtbusqueda.Text.Trim().ToUpper()))
+                        string cellValue = row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper();
+                        string cellValueNormalizada = NormalizarTexto(cellValue);
+
+                        if (cellValueNormalizada.Contains(busquedaNormalizada))
                         {
                             row.Visible = true;
                         }
@@ -231,7 +238,24 @@ namespace CapaPresentacion
             }
         }
 
+        // Método para normalizar y eliminar los acentos
+        private string NormalizarTexto(string texto)
+        {
+            string normalizedString = texto.Normalize(NormalizationForm.FormD);
+            StringBuilder stringBuilder = new StringBuilder();
 
+            foreach (char c in normalizedString)
+            {
+                if (CharUnicodeInfo.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark)
+                {
+                    stringBuilder.Append(c);
+                }
+            }
+
+            return stringBuilder.ToString().Normalize(NormalizationForm.FormC);
+        }
+
+        //------------------------------------------------------------------------------------------------------------------------------------------
 
         private void dgvdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

@@ -29,7 +29,7 @@ namespace CapaDatos
                     StringBuilder query = new StringBuilder();
 
                     //Consulta a la BD la tabla Usuario
-                    query.AppendLine("select c.IdCliente,c.Documento,c.Apellido,c.Nombre,c.Direccion,c.Correo,c.Telefono,c.Estado from cliente c");
+                    query.AppendLine("select c.IdCliente,c.Apellido,c.Nombre,c.Direccion,c.Telefono,c.Estado from cliente c");
 
                     //r y u son objetos de tipo Rol y Usuario respectivamente
                     //query.AppendLine("inner join rol r on r.IdRol = u.IdRol");
@@ -49,11 +49,11 @@ namespace CapaDatos
                             lista.Add(new Cliente()
                             {
                                 IdCliente = Convert.ToInt32(dr["IdCliente"]),
-                                Documento = dr["Documento"].ToString(),
+                                //Documento = dr["Documento"].ToString(),
                                 Apellido = dr["Apellido"].ToString(),
                                 Nombre = dr["Nombre"].ToString(),
                                 Direccion = dr["Direccion"].ToString(),
-                                Correo = dr["Correo"].ToString(),
+                                //Correo = dr["Correo"].ToString(),
                                 Telefono = dr["Telefono"].ToString(),
                                 Estado = Convert.ToBoolean(dr["Estado"]),
 
@@ -95,11 +95,11 @@ namespace CapaDatos
                     SqlCommand cmd = new SqlCommand("SP_REGISTRARCLIENTE".ToString(), oconexion);
 
                     //Parametros de entrada
-                    cmd.Parameters.AddWithValue("Documento", obj.Documento);
+                    //cmd.Parameters.AddWithValue("Documento", obj.Documento);
                     cmd.Parameters.AddWithValue("Apellido", obj.Apellido);
                     cmd.Parameters.AddWithValue("Nombre", obj.Nombre);
                     cmd.Parameters.AddWithValue("Direccion", obj.Direccion);
-                    cmd.Parameters.AddWithValue("Correo", obj.Correo);
+                    //cmd.Parameters.AddWithValue("Correo", obj.Correo);
                     cmd.Parameters.AddWithValue("Telefono", obj.Telefono);
                     cmd.Parameters.AddWithValue("Estado", obj.Estado);
 
@@ -147,11 +147,11 @@ namespace CapaDatos
 
                     //Parametros de entrada
                     cmd.Parameters.AddWithValue("IdCliente", obj.IdCliente);
-                    cmd.Parameters.AddWithValue("Documento", obj.Documento);
+                    //cmd.Parameters.AddWithValue("Documento", obj.Documento);
                     cmd.Parameters.AddWithValue("Apellido", obj.Apellido);
                     cmd.Parameters.AddWithValue("Nombre", obj.Nombre);
                     cmd.Parameters.AddWithValue("Direccion", obj.Direccion);
-                    cmd.Parameters.AddWithValue("Correo", obj.Correo);
+                    //cmd.Parameters.AddWithValue("Correo", obj.Correo);
                     cmd.Parameters.AddWithValue("Telefono", obj.Telefono);
                     cmd.Parameters.AddWithValue("Estado", obj.Estado);
 
@@ -216,8 +216,6 @@ namespace CapaDatos
             {
                 respuesta = false;
                 Mensaje = ex.Message;
-
-
             }
 
             return respuesta;
