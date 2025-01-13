@@ -66,11 +66,9 @@ namespace CapaPresentacion
             this.dgvdata = new System.Windows.Forms.DataGridView();
             this.btnseleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EstadoValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -446,11 +444,9 @@ namespace CapaPresentacion
             this.dgvdata.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.btnseleccionar,
             this.Id,
-            this.Documento,
             this.Apellido,
             this.Nombre,
             this.Direccion,
-            this.Correo,
             this.Telefono,
             this.EstadoValor,
             this.Estado});
@@ -486,14 +482,6 @@ namespace CapaPresentacion
             this.Id.Visible = false;
             this.Id.Width = 125;
             // 
-            // Documento
-            // 
-            this.Documento.HeaderText = "Documento";
-            this.Documento.MinimumWidth = 6;
-            this.Documento.Name = "Documento";
-            this.Documento.ReadOnly = true;
-            this.Documento.Width = 90;
-            // 
             // Apellido
             // 
             this.Apellido.HeaderText = "Apellido";
@@ -517,14 +505,6 @@ namespace CapaPresentacion
             this.Direccion.Name = "Direccion";
             this.Direccion.ReadOnly = true;
             this.Direccion.Width = 120;
-            // 
-            // Correo
-            // 
-            this.Correo.HeaderText = "Correo";
-            this.Correo.MinimumWidth = 6;
-            this.Correo.Name = "Correo";
-            this.Correo.ReadOnly = true;
-            this.Correo.Width = 140;
             // 
             // Telefono
             // 
@@ -615,11 +595,9 @@ namespace CapaPresentacion
         private System.Windows.Forms.Button btnlimpiar;
         private DataGridViewButtonColumn btnseleccionar;
         private DataGridViewTextBoxColumn Id;
-        private DataGridViewTextBoxColumn Documento;
         private DataGridViewTextBoxColumn Apellido;
         private DataGridViewTextBoxColumn Nombre;
         private DataGridViewTextBoxColumn Direccion;
-        private DataGridViewTextBoxColumn Correo;
         private DataGridViewTextBoxColumn Telefono;
         private DataGridViewTextBoxColumn EstadoValor;
         private DataGridViewTextBoxColumn Estado;

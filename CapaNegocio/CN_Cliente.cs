@@ -27,15 +27,6 @@ namespace CapaNegocio
         {
             Mensaje = string.Empty;
 
-            if (string.IsNullOrEmpty(obj.Documento))
-            {
-                Mensaje += "Es necesario el documento\n";
-            }
-            else if (obj.Documento.Length != 8 || !EsNumero(obj.Documento))
-            {
-                Mensaje += "El número de documento debe tener exactamente 8 dígitos numéricos\n";
-            }
-
             if (string.IsNullOrEmpty(obj.Apellido))
             {
                 Mensaje += "Es necesario el Apellido del usuario\n";
@@ -80,10 +71,6 @@ namespace CapaNegocio
         {
             Mensaje = string.Empty;
 
-            if (obj.Documento == "")
-            {
-                Mensaje += "Es necesario el documento\n";
-            }
 
             if (obj.Apellido == "")
             {

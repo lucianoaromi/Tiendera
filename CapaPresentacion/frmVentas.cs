@@ -41,7 +41,7 @@ namespace CapaPresentacion
                 if (result == DialogResult.OK)
                 {
                     txtidcliente.Text = modal._Cliente.IdCliente.ToString();
-                    txtdocumentocliente.Text = modal._Cliente.Documento.ToString();
+                    
                     txtnombrecliente.Text = modal._Cliente.Nombre.ToString();
                     txtapellidocliente.Text = modal._Cliente.Apellido;
 
@@ -177,11 +177,6 @@ namespace CapaPresentacion
 
         private void btnventa_Click_1(object sender, EventArgs e)
         {
-            if (txtdocumentocliente.Text == "")
-            {
-                MessageBox.Show("Debe ingresar Documento del cliente.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
 
             if (txtapellidocliente.Text == "")
             {
