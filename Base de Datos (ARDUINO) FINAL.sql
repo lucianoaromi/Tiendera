@@ -588,6 +588,7 @@ select * from usuario
 -- Generar 10 registros en la tabla CLIENTE con números de documento de Argentina (DNI)
 INSERT INTO CLIENTE (Apellido, Nombre, Direccion, Telefono, Estado)
 VALUES
+('(A)ANONIMO', '(A)ANONIMO', '(A)ANONIMO', '0000000000', 1),
 ('Gómez', 'Ana', 'Calle 123', '123456789', 1),
 ('López', 'Juan', 'Avenida 456', '987654321', 1),
 ('Rodríguez', 'Lucía', 'Calle Principal', '555555555', 1),
@@ -596,8 +597,7 @@ VALUES
 ('Pérez', 'Luis', 'Calle de la Plaza', '111111111', 1),
 ('García', 'María', 'Avenida Central', '222222222', 1),
 ('Díaz', 'Pedro', 'Calle 456', '333333333', 1),
-('Vargas', 'Elena', 'Calle 789', '444444444', 1),
-('Sánchez', 'Jorge', 'Avenida 123', '666666666', 1);
+('Vargas', 'Elena', 'Calle 789', '444444444', 1);
 
 
 select * from cliente

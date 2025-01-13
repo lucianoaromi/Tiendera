@@ -33,11 +33,7 @@ namespace CapaPresentacion
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmClientes));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtdocumento1 = new System.Windows.Forms.TextBox();
-            this.txtcorreo1 = new System.Windows.Forms.TextBox();
             this.txtapellido1 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.cboestado1 = new System.Windows.Forms.ComboBox();
@@ -78,56 +74,20 @@ namespace CapaPresentacion
             ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).BeginInit();
             this.SuspendLayout();
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(9, 34);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Nro Documento:";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.DarkSlateGray;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(9, 85);
+            this.label3.Location = new System.Drawing.Point(9, 50);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Apellido:";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(8, 239);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Correo:";
-            // 
-            // txtdocumento1
-            // 
-            this.txtdocumento1.Location = new System.Drawing.Point(11, 50);
-            this.txtdocumento1.Name = "txtdocumento1";
-            this.txtdocumento1.Size = new System.Drawing.Size(148, 20);
-            this.txtdocumento1.TabIndex = 4;
-            // 
-            // txtcorreo1
-            // 
-            this.txtcorreo1.Location = new System.Drawing.Point(10, 255);
-            this.txtcorreo1.Name = "txtcorreo1";
-            this.txtcorreo1.Size = new System.Drawing.Size(148, 20);
-            this.txtcorreo1.TabIndex = 5;
-            // 
             // txtapellido1
             // 
-            this.txtapellido1.Location = new System.Drawing.Point(11, 101);
+            this.txtapellido1.Location = new System.Drawing.Point(11, 66);
             this.txtapellido1.Name = "txtapellido1";
             this.txtapellido1.Size = new System.Drawing.Size(148, 20);
             this.txtapellido1.TabIndex = 6;
@@ -137,7 +97,7 @@ namespace CapaPresentacion
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.DarkSlateGray;
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(7, 344);
+            this.label8.Location = new System.Drawing.Point(7, 288);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(43, 13);
             this.label8.TabIndex = 12;
@@ -147,7 +107,7 @@ namespace CapaPresentacion
             // 
             this.cboestado1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboestado1.FormattingEnabled = true;
-            this.cboestado1.Location = new System.Drawing.Point(9, 360);
+            this.cboestado1.Location = new System.Drawing.Point(9, 304);
             this.cboestado1.Name = "cboestado1";
             this.cboestado1.Size = new System.Drawing.Size(148, 21);
             this.cboestado1.TabIndex = 15;
@@ -182,7 +142,7 @@ namespace CapaPresentacion
             this.btnguardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnguardar.ForeColor = System.Drawing.Color.White;
             this.btnguardar.Image = ((System.Drawing.Image)(resources.GetObject("btnguardar.Image")));
-            this.btnguardar.Location = new System.Drawing.Point(23, 405);
+            this.btnguardar.Location = new System.Drawing.Point(23, 391);
             this.btnguardar.Name = "btnguardar";
             this.btnguardar.Size = new System.Drawing.Size(122, 35);
             this.btnguardar.TabIndex = 39;
@@ -229,7 +189,7 @@ namespace CapaPresentacion
             this.btnlimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnlimpiar.ForeColor = System.Drawing.Color.White;
             this.btnlimpiar.Image = ((System.Drawing.Image)(resources.GetObject("btnlimpiar.Image")));
-            this.btnlimpiar.Location = new System.Drawing.Point(23, 451);
+            this.btnlimpiar.Location = new System.Drawing.Point(23, 444);
             this.btnlimpiar.Name = "btnlimpiar";
             this.btnlimpiar.Size = new System.Drawing.Size(122, 35);
             this.btnlimpiar.TabIndex = 37;
@@ -252,7 +212,7 @@ namespace CapaPresentacion
             // 
             // txttelefono1
             // 
-            this.txttelefono1.Location = new System.Drawing.Point(10, 306);
+            this.txttelefono1.Location = new System.Drawing.Point(10, 250);
             this.txttelefono1.Name = "txttelefono1";
             this.txttelefono1.Size = new System.Drawing.Size(148, 20);
             this.txttelefono1.TabIndex = 30;
@@ -262,7 +222,7 @@ namespace CapaPresentacion
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.DarkSlateGray;
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(8, 290);
+            this.label6.Location = new System.Drawing.Point(8, 234);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 13);
             this.label6.TabIndex = 29;
@@ -270,9 +230,10 @@ namespace CapaPresentacion
             // 
             // txtdireccion1
             // 
-            this.txtdireccion1.Location = new System.Drawing.Point(10, 204);
+            this.txtdireccion1.Location = new System.Drawing.Point(10, 169);
+            this.txtdireccion1.Multiline = true;
             this.txtdireccion1.Name = "txtdireccion1";
-            this.txtdireccion1.Size = new System.Drawing.Size(148, 20);
+            this.txtdireccion1.Size = new System.Drawing.Size(148, 51);
             this.txtdireccion1.TabIndex = 32;
             // 
             // label5
@@ -280,7 +241,7 @@ namespace CapaPresentacion
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.DarkSlateGray;
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(8, 188);
+            this.label5.Location = new System.Drawing.Point(8, 153);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 13);
             this.label5.TabIndex = 31;
@@ -288,7 +249,7 @@ namespace CapaPresentacion
             // 
             // txtnombre1
             // 
-            this.txtnombre1.Location = new System.Drawing.Point(11, 153);
+            this.txtnombre1.Location = new System.Drawing.Point(11, 118);
             this.txtnombre1.Name = "txtnombre1";
             this.txtnombre1.Size = new System.Drawing.Size(148, 20);
             this.txtnombre1.TabIndex = 30;
@@ -298,7 +259,7 @@ namespace CapaPresentacion
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.DarkSlateGray;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(9, 137);
+            this.label1.Location = new System.Drawing.Point(9, 102);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 29;
@@ -504,7 +465,7 @@ namespace CapaPresentacion
             this.Direccion.MinimumWidth = 6;
             this.Direccion.Name = "Direccion";
             this.Direccion.ReadOnly = true;
-            this.Direccion.Width = 120;
+            this.Direccion.Width = 170;
             // 
             // Telefono
             // 
@@ -541,11 +502,7 @@ namespace CapaPresentacion
             this.Controls.Add(this.cboestado1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtapellido1);
-            this.Controls.Add(this.txtcorreo1);
-            this.Controls.Add(this.txtdocumento1);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Name = "frmClientes";
             this.Text = "frmClientes";
@@ -562,11 +519,7 @@ namespace CapaPresentacion
         }
 
         #endregion
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtdocumento1;
-        private System.Windows.Forms.TextBox txtcorreo1;
         private System.Windows.Forms.TextBox txtapellido1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cboestado1;

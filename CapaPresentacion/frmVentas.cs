@@ -254,7 +254,7 @@ namespace CapaPresentacion
                 }
 
 
-                txtdocumentocliente.Text = "";
+                //txtdocumentocliente.Text = "";
                 txtapellidocliente.Text = "";
                 txtnombrecliente.Text = "";
                 dgvdata.Rows.Clear();
@@ -301,7 +301,7 @@ namespace CapaPresentacion
             // Limpiar los TextBox después de agregar los datos
             txtnombrecliente.Clear();
             txtapellidocliente.Clear();
-            txtdocumentocliente.Clear();
+            txtidcliente.Clear();
         }
 
         private void dgvdata_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)

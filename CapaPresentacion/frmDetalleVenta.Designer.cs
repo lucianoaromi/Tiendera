@@ -323,9 +323,9 @@ namespace CapaPresentacion
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(43, 27);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(100, 13);
+            this.label5.Size = new System.Drawing.Size(65, 13);
             this.label5.TabIndex = 2;
-            this.label5.Text = "Documento Cliente:";
+            this.label5.Text = "Nro. Cliente:";
             // 
             // txtapellidocliente
             // 

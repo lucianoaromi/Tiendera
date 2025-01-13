@@ -31,7 +31,7 @@ namespace CapaPresentacion
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVentas));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtnumventa = new System.Windows.Forms.TextBox();
@@ -69,7 +69,6 @@ namespace CapaPresentacion
             this.txtapellidocliente = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtdocumentocliente = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -115,7 +114,6 @@ namespace CapaPresentacion
             this.panel3.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panel3.Controls.Add(this.txtnumventa);
             this.panel3.Controls.Add(this.txtidproducto);
-            this.panel3.Controls.Add(this.txtidcliente);
             this.panel3.Controls.Add(this.label11);
             this.panel3.Location = new System.Drawing.Point(22, 8);
             this.panel3.Name = "panel3";
@@ -145,10 +143,10 @@ namespace CapaPresentacion
             // txtidcliente
             // 
             this.txtidcliente.BackColor = System.Drawing.Color.White;
-            this.txtidcliente.Location = new System.Drawing.Point(812, 8);
+            this.txtidcliente.Location = new System.Drawing.Point(22, 46);
             this.txtidcliente.Name = "txtidcliente";
             this.txtidcliente.ReadOnly = true;
-            this.txtidcliente.Size = new System.Drawing.Size(45, 20);
+            this.txtidcliente.Size = new System.Drawing.Size(79, 20);
             this.txtidcliente.TabIndex = 18;
             // 
             // label11
@@ -318,14 +316,14 @@ namespace CapaPresentacion
             this.Cantidad,
             this.SubTotal,
             this.btneliminar});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvdata.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvdata.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvdata.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvdata.Location = new System.Drawing.Point(6, 19);
             this.dgvdata.Name = "dgvdata";
@@ -426,12 +424,12 @@ namespace CapaPresentacion
             // 
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.txtnombrecliente);
+            this.groupBox2.Controls.Add(this.txtidcliente);
             this.groupBox2.Controls.Add(this.btnbuscarcliente);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.txtapellidocliente);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.txtdocumentocliente);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(340, 63);
             this.groupBox2.Name = "groupBox2";
@@ -519,15 +517,7 @@ namespace CapaPresentacion
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 13);
             this.label4.TabIndex = 2;
-            this.label4.Text = "Documento:";
-            // 
-            // txtdocumentocliente
-            // 
-            this.txtdocumentocliente.Location = new System.Drawing.Point(18, 46);
-            this.txtdocumentocliente.Name = "txtdocumentocliente";
-            this.txtdocumentocliente.ReadOnly = true;
-            this.txtdocumentocliente.Size = new System.Drawing.Size(96, 20);
-            this.txtdocumentocliente.TabIndex = 1;
+            this.label4.Text = "Nro. Cliente:";
             // 
             // groupBox1
             // 
@@ -738,7 +728,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtdocumentocliente;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txttotalpagar;
         private System.Windows.Forms.TextBox txtapellidocliente;

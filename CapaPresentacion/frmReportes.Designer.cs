@@ -418,6 +418,7 @@ namespace CapaPresentacion
             this.IdVenta.HeaderText = ".";
             this.IdVenta.Name = "IdVenta";
             this.IdVenta.ReadOnly = true;
+            this.IdVenta.Visible = false;
             // 
             // frmReportes
             // 

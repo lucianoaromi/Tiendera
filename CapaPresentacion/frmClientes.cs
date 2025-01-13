@@ -15,6 +15,7 @@ using CapaEntidad;
 using CapaNegocio;
 using System.Windows.Controls;
 using System.Windows.Documents;
+using System.Globalization;
 
 namespace CapaPresentacion
 {
@@ -155,16 +156,16 @@ namespace CapaPresentacion
             // Limpiar los campos de texto y combo box
             txtindicecliente.Text = "-1";
             txtidcliente.Text = "0";
-            txtdocumento1.Text = "";
+            //txtdocumento1.Text = "";
             txtapellido1.Text = "";
             txtnombre1.Text = "";
             txtdireccion1.Text = "";
-            txtcorreo1.Text = "";
+            //txtcorreo1.Text = "";
             txttelefono1.Text = "";
             cboestado1.SelectedIndex = 0;
 
             // Establecer el foco en el TextBox documento
-            txtdocumento1.Select();
+            txtapellido1.Select();
         }
 
 
@@ -225,11 +226,12 @@ namespace CapaPresentacion
             Limpiar();
         }
 
-//------------------------------------------------------------------------------------------------------------------------------------------
+        //------------------------------------------------------------------------------------------------------------------------------------------
 
         private void btnbuscar_Click_1(object sender, EventArgs e)
         {
             string columnaFiltro = ((OpcionCombo)cbobusqueda.SelectedItem).Valor.ToString();
+            string busquedaNormalizada = NormalizarTexto(txtbusqueda.Text.Trim().ToUpper());
 
             if (dgvdata.Rows.Count > 0)
             {
@@ -237,7 +239,10 @@ namespace CapaPresentacion
                 {
                     if (row.Cells[columnaFiltro].Value != null)
                     {
-                        if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtbusqueda.Text.Trim().ToUpper()))
+                        string cellValue = row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper();
+                        string cellValueNormalizada = NormalizarTexto(cellValue);
+
+                        if (cellValueNormalizada.Contains(busquedaNormalizada))
                         {
                             row.Visible = true;
                         }
@@ -249,6 +254,25 @@ namespace CapaPresentacion
                 }
             }
         }
+
+        // Método para normalizar y eliminar los acentos
+        private string NormalizarTexto(string texto)
+        {
+            string normalizedString = texto.Normalize(NormalizationForm.FormD);
+            StringBuilder stringBuilder = new StringBuilder();
+
+            foreach (char c in normalizedString)
+            {
+                if (CharUnicodeInfo.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark)
+                {
+                    stringBuilder.Append(c);
+                }
+            }
+
+            return stringBuilder.ToString().Normalize(NormalizationForm.FormC);
+        }
+
+        //------------------------------------------------------------------------------------------------------------------------------------------
 
         private void dgvdata_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
