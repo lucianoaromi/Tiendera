@@ -29,6 +29,7 @@ namespace CapaPresentacion
 
         private void frmClientes_Load(object sender, EventArgs e)
         {
+
             cboestado1.Items.Add(new OpcionCombo() { Valor = 1, Texto = "Activo" });
             cboestado1.Items.Add(new OpcionCombo() { Valor = 0, Texto = "No Activo" });
             //Especifica que solo se debe mostrar el dato de nombre "Texto"
@@ -64,6 +65,17 @@ namespace CapaPresentacion
                });
             }
 
+            //------------------- Secuencia con Tab -------------------
+
+            txtapellido1.Focus();
+            txtapellido1.SelectAll();
+            txtnombre1.TabIndex = 1;
+            txtdireccion1.TabIndex = 2;
+            txttelefono1.TabIndex = 3;
+            cboestado1.TabIndex = 4;
+            btnguardar.TabIndex = 5;
+
+            //---------------------------------------------------------
 
         }
 
@@ -93,7 +105,7 @@ namespace CapaPresentacion
 
                 if (idclientegenerado != 0)
                 {
-                  dgvdata.Rows.Add(new object[] {"",idclientegenerado,txtdocumento1.Text,txtapellido1.Text,txtnombre1.Text,txtdireccion1.Text,txtcorreo1.Text,txttelefono1.Text,
+                  dgvdata.Rows.Add(new object[] {"",idclientegenerado,txtapellido1.Text,txtnombre1.Text,txtdireccion1.Text,txttelefono1.Text,
 
                    ((OpcionCombo)cboestado1.SelectedItem).Valor.ToString(),
                    ((OpcionCombo)cboestado1.SelectedItem).Texto.ToString()
@@ -122,7 +134,6 @@ namespace CapaPresentacion
                     row.Cells["Nombre"].Value = txtnombre1.Text;
                     row.Cells["Direccion"].Value = txtdireccion1.Text;
                     row.Cells["Telefono"].Value = txttelefono1.Text;
-
                     row.Cells["EstadoValor"].Value = ((OpcionCombo)cboestado1.SelectedItem).Valor.ToString();
                     row.Cells["Estado"].Value = ((OpcionCombo)cboestado1.SelectedItem).Texto.ToString();
 
@@ -151,7 +162,6 @@ namespace CapaPresentacion
             // Limpiar los campos de texto y combo box
             txtindicecliente.Text = "-1";
             txtidcliente.Text = "0";
-            txtdocumento1.Text = "";
             txtapellido1.Text = "";
             txtnombre1.Text = "";
             txtdireccion1.Text = "";
@@ -159,7 +169,7 @@ namespace CapaPresentacion
             cboestado1.SelectedIndex = 0;
 
             // Establecer el foco en el TextBox documento
-            txtdocumento1.Select();
+            txtapellido1.Select();
         }
 
 
@@ -315,5 +325,13 @@ namespace CapaPresentacion
             }
         }
 
+        private void txttelefono1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permitir solo números y la tecla de retroceso
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;  // Esto evita que se ingrese el carácter
+            }
+        }
     }
 }
