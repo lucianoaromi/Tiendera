@@ -29,9 +29,11 @@ go
 
 create table CLIENTE(
 IdCliente int primary key identity,
+Documento varchar(50),
 Apellido varchar(50),
 Nombre varchar(50),
 Direccion varchar(100),
+Correo varchar(50),
 Telefono varchar(50),
 Estado bit,
 FechaRegistro datetime default getdate()
@@ -282,64 +284,83 @@ go
 
 ---------------- Se generan los metodos para manipular el formulario de CLIENTES ----------------
 
--- Declaración de Variables para manejo de los métodos
-DECLARE @idclientegenerado INT;
-DECLARE @mensaje VARCHAR(500);
-GO
+--Declaracion de Variables para manejo de los metodos
+declare @idclientegenerado int
+declare @mensaje varchar(500)
+go
+
 
 CREATE PROC SP_REGISTRARCLIENTE(
-    @Apellido VARCHAR(100),
-    @Nombre VARCHAR(100),
-    @Direccion VARCHAR(100),
-    @Telefono VARCHAR(100),
-    @Estado BIT,
-    @IdClienteResultado INT OUTPUT,
-    @Mensaje VARCHAR(500) OUTPUT
+@Documento varchar(50),
+@Apellido varchar(100),
+@Nombre varchar(100),
+@Direccion varchar(100),
+@Correo varchar(100),
+@Telefono varchar(100),
+@Estado bit,
+@IdClienteResultado int output,
+@Mensaje varchar(500) output
 )
-AS
-BEGIN
-    SET @IdClienteResultado = 0;
-    SET @Mensaje = '';
+as
+begin
+     set @IdClienteResultado = 0
+	 set @Mensaje = ''
 
-    -- Inserción del cliente sin el campo Documento
-    INSERT INTO cliente (Apellido, Nombre, Direccion, Telefono, Estado) 
-    VALUES (@Apellido, @Nombre, @Direccion, @Telefono, @Estado);
+	 if not exists(select * from CLIENTE where Documento = @Documento)
+	 begin
+	      insert into cliente(Documento,Apellido,Nombre,Direccion,Correo,Telefono,Estado) values
+		  (@Documento,@Apellido,@Nombre,@Direccion,@Correo,@Telefono,@Estado)
 
-    -- Recuperar el ID generado
-    SET @IdClienteResultado = SCOPE_IDENTITY();
-END;
-GO
+		  set @IdClienteResultado = SCOPE_IDENTITY()
+
+     end
+	 else
+	     set @Mensaje = 'Numero de documento ya existente'
+
+end
+
+go
 
 -------------------------------------------------------------------------------------------------------------------
 
 CREATE PROC SP_EDITARCLIENTE(
-    @IdCliente INT,
-    @Apellido VARCHAR(100),
-    @Nombre VARCHAR(100),
-    @Direccion VARCHAR(100),    
-    @Telefono VARCHAR(100),
-    @Estado BIT,
-    @Respuesta BIT OUTPUT,
-    @Mensaje VARCHAR(500) OUTPUT
+@IdCliente int, 
+@Documento varchar(50),
+@Apellido varchar(100),
+@Nombre varchar(100),
+@Direccion varchar(100),
+@Correo varchar(100),
+@Telefono varchar(100),
+@Estado bit,
+@Respuesta bit output,
+@Mensaje varchar(500) output
 )
-AS
-BEGIN
-    SET @Respuesta = 0;
-    SET @Mensaje = '';
+as
+begin
+     set @Respuesta = 0
+	 set @Mensaje = ''
 
-    -- Actualización de cliente sin validar Documento
-    UPDATE cliente
-    SET 
-        Apellido = @Apellido,
-        Nombre = @Nombre,
-        Direccion = @Direccion,      
-        Telefono = @Telefono,
-        Estado = @Estado
-    WHERE IdCliente = @IdCliente;
+	 if not exists(select * from CLIENTE where Documento = @Documento and IdCliente != @IdCliente)
+	 begin
+	      update cliente set 
+		  Documento = @Documento,
+		  Apellido = @Apellido,
+		  Nombre = @Nombre,
+		  Direccion = @Direccion,
+		  Correo = @Correo,
+		  Telefono = @Telefono,
+		  Estado = @Estado
+		  where IdCliente = @IdCliente
 
-    SET @Respuesta = 1;
-END;
-GO
+		  set @Respuesta = 1
+
+     end
+	 else
+	     set @Mensaje = '!Numero de documento ya existente!'
+
+end
+
+go
 
 -------------------------------------------------------------------------------------------------------------------
 
@@ -586,18 +607,18 @@ select * from usuario
 -------------------------------------------------------------------------------------------------------------------
 
 -- Generar 10 registros en la tabla CLIENTE con números de documento de Argentina (DNI)
-INSERT INTO CLIENTE (Apellido, Nombre, Direccion, Telefono, Estado)
+INSERT INTO CLIENTE (Documento, Apellido, Nombre, Direccion, Correo, Telefono, Estado)
 VALUES
-('Gómez', 'Ana', 'Calle 123', '123456789', 1),
-('López', 'Juan', 'Avenida 456', '987654321', 1),
-('Rodríguez', 'Lucía', 'Calle Principal', '555555555', 1),
-('Martínez', 'Carlos', 'Boulevard 789', '777777777', 1),
-('Fernández', 'Sofía', 'Calle Secundaria', '999999999', 1),
-('Pérez', 'Luis', 'Calle de la Plaza', '111111111', 1),
-('García', 'María', 'Avenida Central', '222222222', 1),
-('Díaz', 'Pedro', 'Calle 456', '333333333', 1),
-('Vargas', 'Elena', 'Calle 789', '444444444', 1),
-('Sánchez', 'Jorge', 'Avenida 123', '666666666', 1);
+('12345678', 'Gómez', 'Ana', 'Calle 123', 'ana@gmail.com', '123456789', 1),
+('87654321', 'López', 'Juan', 'Avenida 456', 'juan@gmail.com', '987654321', 1),
+('11223344', 'Rodríguez', 'Lucía', 'Calle Principal', 'lucia@gmail.com', '555555555', 1),
+('55443322', 'Martínez', 'Carlos', 'Boulevard 789', 'carlos@gmail.com', '777777777', 1),
+('48765432', 'Fernández', 'Sofía', 'Calle Secundaria', 'sofia@gmail.com', '999999999', 1),
+('31223344', 'Pérez', 'Luis', 'Calle de la Plaza', 'luis@gmail.com', '111111111', 1),
+('35443322', 'García', 'María', 'Avenida Central', 'maria@gmail.com', '222222222', 1),
+('98765432', 'Díaz', 'Pedro', 'Calle 456', 'pedro@gmail.com', '333333333', 1),
+('37654321', 'Vargas', 'Elena', 'Calle 789', 'elena@gmail.com', '444444444', 1),
+('32345678', 'Sánchez', 'Jorge', 'Avenida 123', 'jorge@gmail.com', '666666666', 1);
 
 
 select * from cliente
@@ -646,10 +667,9 @@ VALUES
 ('ARD018', 'Módulo RTC DS3231', 'Módulo de tiempo real para llevar el tiempo', 3, 13, 6000.00, 1),
 ('ARD019', 'Kit de Sensores Arduino', 'Kit variado con sensores para proyectos', 2, 19, 16500.00, 1),
 ('ARD020', 'Display 7 Segmentos', 'Display para mostrar números en proyectos', 1, 33, 3300.00, 1);
-go
+
 
 ---------------- Se generan los metodos para manipular el formulario de Ventas ----------------
-
 CREATE TYPE dbo.EDetalle_Venta AS TABLE
 (
     IdProducto INT,
@@ -659,11 +679,13 @@ CREATE TYPE dbo.EDetalle_Venta AS TABLE
 );
 GO
 
+
 CREATE PROCEDURE usp_RegistrarVenta
 (
     @IdUsuario INT,
     @TipoDocumento VARCHAR(500),
     @NumeroDocumento VARCHAR(500),
+    @DocumentoCliente VARCHAR(500),
     @ApellidoCliente VARCHAR(100),
     @NombreCliente VARCHAR(100),
     @MontoPago DECIMAL(18, 2),
@@ -683,13 +705,11 @@ BEGIN
 
         BEGIN TRANSACTION Registro;
 
-        -- Inserción en la tabla VENTA sin DocumentoCliente
-        INSERT INTO VENTA(IdUsuario, TipoDocumento, NumeroDocumento, ApellidoCliente, NombreCliente, MontoPago, MontoCambio, MontoTotal, DesMetPago, EstadoEntrega)
-        VALUES (@IdUsuario, @TipoDocumento, @NumeroDocumento, @ApellidoCliente, @NombreCliente, @MontoPago, @MontoCambio, @MontoTotal, @DesMetPago, 0);
+        INSERT INTO VENTA(IdUsuario, TipoDocumento, NumeroDocumento, DocumentoCliente, ApellidoCliente, NombreCliente, MontoPago, MontoCambio, MontoTotal, DesMetPago, EstadoEntrega)
+        VALUES (@IdUsuario, @TipoDocumento, @NumeroDocumento, @DocumentoCliente, @ApellidoCliente, @NombreCliente, @MontoPago, @MontoCambio, @MontoTotal, @DesMetPago, 0);
 
         SET @IdVenta = SCOPE_IDENTITY();
 
-        -- Inserción en la tabla DETALLE_VENTA
         INSERT INTO DETALLE_VENTA(IdVenta, IdProducto, Precio, Cantidad, SubTotal)
         SELECT @IdVenta, IdProducto, Precio, Cantidad, SubTotal FROM @DetalleVenta;
 
@@ -702,6 +722,7 @@ BEGIN
     END CATCH;
 END;
 GO
+
 
 --------------------------------------------- Procedimiento para generar una venta ----------------------------------------------------------
 
@@ -720,6 +741,7 @@ DECLARE @Mensaje VARCHAR(500);
 DECLARE @IdUsuario INT = 5;  -- Proporciona el valor correcto para @IdUsuario
 DECLARE @TipoDocumento VARCHAR(500) = 'Factura';  -- Proporciona el valor correcto para @TipoDocumento
 DECLARE @NumeroDocumento VARCHAR(500) = '00001';  -- Proporciona el valor correcto para @NumeroDocumento
+DECLARE @DocumentoCliente VARCHAR(500) = '123456789';  -- Proporciona el valor correcto para @DocumentoCliente
 DECLARE @ApellidoCliente VARCHAR(100) = 'Gómez';  -- Proporciona el valor correcto para @ApellidoCliente
 DECLARE @NombreCliente VARCHAR(100) = 'Ana';  -- Proporciona el valor correcto para @NombreCliente
 DECLARE @MontoPago DECIMAL(18, 2) = 300.00;  -- Proporciona el valor correcto para @MontoPago
@@ -727,11 +749,12 @@ DECLARE @MontoCambio DECIMAL(18, 2) = 50.00;  -- Proporciona el valor correcto p
 DECLARE @MontoTotal DECIMAL(18, 2) = 350.00;  -- Proporciona el valor correcto para @MontoTotal
 DECLARE @DesMetPago VARCHAR(100) = 'Efectivo';  -- Proporciona el valor correcto para @DesMetPago
 
--- Llamada al procedimiento almacenado
+ --Llamada al procedimiento almacenado
 EXEC usp_RegistrarVenta
     @IdUsuario = @IdUsuario,
     @TipoDocumento = @TipoDocumento,
     @NumeroDocumento = @NumeroDocumento,
+    @DocumentoCliente = @DocumentoCliente,
     @ApellidoCliente = @ApellidoCliente,
     @NombreCliente = @NombreCliente,
     @MontoPago = @MontoPago,
@@ -746,12 +769,12 @@ IF @Resultado = 1
     PRINT 'Venta registrada con éxito';
 ELSE
     PRINT 'Error al registrar la venta. Mensaje: ' + @Mensaje;
-GO
+go
 
 -------------------------------------- Consulta de Detalle de Venta ------------------------------------------
 
 select v.IdVenta,u.Apellido,u.Nombre,
-v.ApellidoCliente,v.NombreCliente,
+v.DocumentoCliente, v.ApellidoCliente,v.NombreCliente,
 v.TipoDocumento,v.NumeroDocumento,
 v.MontoPago,v.MontoCambio,v.MontoTotal,v.DesMetPago,
 convert (char(10),v.FechaRegistro,103)[FechaRegistro]
@@ -785,20 +808,24 @@ BEGIN
         -- Si el IdUsuario no tiene ventas asociadas, traer todas las ventas
         SELECT
             V.IdVenta,
-            CONVERT(char(10), V.FechaRegistro, 103) AS [FechaRegistro],
+            CONVERT(char(10), v.FechaRegistro, 103) AS [FechaRegistro],
             V.TipoDocumento,
             V.NumeroDocumento,
             V.MontoTotal,
             U.Apellido + ', ' + U.Nombre AS usuarioregistro,
+            C.Apellido + ', ' + C.Nombre AS nombrecompletocliente,
             V.DesMetPago,
             CASE 
                 WHEN V.EstadoEntrega = 1 THEN 'Entregado' 
+                WHEN V.EstadoEntrega IS NULL THEN 'No entregado'
                 ELSE 'No entregado' 
             END AS EstadoEntrega
         FROM
             VENTA V
         INNER JOIN
             USUARIO U ON V.IdUsuario = U.IdUsuario
+        LEFT JOIN
+            CLIENTE C ON V.DocumentoCliente = C.Documento
         WHERE
             V.FechaRegistro BETWEEN 
                 CONVERT(DATETIME, @FechaInicio, 103) 
@@ -809,20 +836,24 @@ BEGIN
         -- Si el IdUsuario tiene ventas asociadas, traer solo sus ventas
         SELECT
             V.IdVenta,
-            CONVERT(char(10), V.FechaRegistro, 103) AS [FechaRegistro],
+            CONVERT(char(10), v.FechaRegistro, 103) AS [FechaRegistro],
             V.TipoDocumento,
             V.NumeroDocumento,
             V.MontoTotal,
             U.Apellido + ', ' + U.Nombre AS usuarioregistro,
+            C.Apellido + ', ' + C.Nombre AS nombrecompletocliente,
             V.DesMetPago,
             CASE 
                 WHEN V.EstadoEntrega = 1 THEN 'Entregado' 
+                WHEN V.EstadoEntrega IS NULL THEN 'No entregado'
                 ELSE 'No entregado' 
             END AS EstadoEntrega
         FROM
             VENTA V
         INNER JOIN
             USUARIO U ON V.IdUsuario = U.IdUsuario
+        LEFT JOIN
+            CLIENTE C ON V.DocumentoCliente = C.Documento
         WHERE
             V.FechaRegistro BETWEEN 
                 CONVERT(DATETIME, @FechaInicio, 103) 
@@ -893,6 +924,7 @@ go
 
 ---------------------------------------------- Consulta de las ventas ----------------------------------------------
 
-SELECT IdVenta, TipoDocumento, NumeroDocumento, ApellidoCliente, NombreCliente, MontoTotal, EstadoEntrega
+SELECT IdVenta, TipoDocumento, NumeroDocumento, DocumentoCliente, ApellidoCliente, NombreCliente, MontoTotal, EstadoEntrega
 FROM VENTA;
 go
+

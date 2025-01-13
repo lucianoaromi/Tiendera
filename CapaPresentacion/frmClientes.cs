@@ -29,7 +29,6 @@ namespace CapaPresentacion
 
         private void frmClientes_Load(object sender, EventArgs e)
         {
-
             cboestado1.Items.Add(new OpcionCombo() { Valor = 1, Texto = "Activo" });
             cboestado1.Items.Add(new OpcionCombo() { Valor = 0, Texto = "No Activo" });
             //Especifica que solo se debe mostrar el dato de nombre "Texto"
@@ -59,23 +58,12 @@ namespace CapaPresentacion
 
             foreach (Cliente item in listaCliente)
             {
-                dgvdata.Rows.Add(new object[] {"", item.IdCliente,item.Apellido,item.Nombre,item.Direccion,item.Telefono,
+                dgvdata.Rows.Add(new object[] {"", item.IdCliente,item.Documento,item.Apellido,item.Nombre,item.Direccion,item.Correo,item.Telefono,
                    item.Estado ==  true ? 1 : 0,
                    item.Estado == true ? "Activo" : "No Activo",
                });
             }
 
-            //------------------- Secuencia con Tab -------------------
-
-            txtapellido1.Focus();
-            txtapellido1.SelectAll();
-            txtnombre1.TabIndex = 1;
-            txtdireccion1.TabIndex = 2;
-            txttelefono1.TabIndex = 3;
-            cboestado1.TabIndex = 4;
-            btnguardar.TabIndex = 5;
-
-            //---------------------------------------------------------
 
         }
 
@@ -87,10 +75,11 @@ namespace CapaPresentacion
             Cliente objcliente = new Cliente()
             {
                 IdCliente = Convert.ToInt32(txtidcliente.Text),
-                
+                Documento = txtdocumento1.Text,
                 Apellido = txtapellido1.Text,
                 Nombre = txtnombre1.Text,
                 Direccion = txtdireccion1.Text,
+                Correo = txtcorreo1.Text,
                 Telefono = txttelefono1.Text,
 
 
@@ -105,7 +94,7 @@ namespace CapaPresentacion
 
                 if (idclientegenerado != 0)
                 {
-                  dgvdata.Rows.Add(new object[] {"",idclientegenerado,txtapellido1.Text,txtnombre1.Text,txtdireccion1.Text,txttelefono1.Text,
+                  dgvdata.Rows.Add(new object[] {"",idclientegenerado,txtdocumento1.Text,txtapellido1.Text,txtnombre1.Text,txtdireccion1.Text,txtcorreo1.Text,txttelefono1.Text,
 
                    ((OpcionCombo)cboestado1.SelectedItem).Valor.ToString(),
                    ((OpcionCombo)cboestado1.SelectedItem).Texto.ToString()
@@ -129,11 +118,15 @@ namespace CapaPresentacion
                     //Se obtiene la fila seleccionada en el datagrid
                     DataGridViewRow row = dgvdata.Rows[Convert.ToInt32(txtindicecliente.Text)];
                     //Se realiza el llamado a las filas del datagrid
-                    row.Cells["Id"].Value = txtidcliente.Text;                   
+                    row.Cells["Id"].Value = txtidcliente.Text;
+                    row.Cells["Documento"].Value = txtdocumento1.Text;
                     row.Cells["Apellido"].Value = txtapellido1.Text;
                     row.Cells["Nombre"].Value = txtnombre1.Text;
                     row.Cells["Direccion"].Value = txtdireccion1.Text;
                     row.Cells["Telefono"].Value = txttelefono1.Text;
+                    row.Cells["Correo"].Value = txtcorreo1.Text;
+
+
                     row.Cells["EstadoValor"].Value = ((OpcionCombo)cboestado1.SelectedItem).Valor.ToString();
                     row.Cells["Estado"].Value = ((OpcionCombo)cboestado1.SelectedItem).Texto.ToString();
 
@@ -162,14 +155,16 @@ namespace CapaPresentacion
             // Limpiar los campos de texto y combo box
             txtindicecliente.Text = "-1";
             txtidcliente.Text = "0";
+            txtdocumento1.Text = "";
             txtapellido1.Text = "";
             txtnombre1.Text = "";
             txtdireccion1.Text = "";
+            txtcorreo1.Text = "";
             txttelefono1.Text = "";
             cboestado1.SelectedIndex = 0;
 
             // Establecer el foco en el TextBox documento
-            txtapellido1.Select();
+            txtdocumento1.Select();
         }
 
 
@@ -274,10 +269,12 @@ namespace CapaPresentacion
 
                     // Asignar valores a los controles de texto
                     txtindicecliente.Text = indice.ToString();
-                    txtidcliente.Text = dgvdata.Rows[indice].Cells["Id"].Value.ToString();                   
+                    txtidcliente.Text = dgvdata.Rows[indice].Cells["Id"].Value.ToString();
+                    txtdocumento1.Text = dgvdata.Rows[indice].Cells["Documento"].Value.ToString();
                     txtapellido1.Text = dgvdata.Rows[indice].Cells["Apellido"].Value.ToString();
                     txtnombre1.Text = dgvdata.Rows[indice].Cells["Nombre"].Value.ToString();
                     txtdireccion1.Text = dgvdata.Rows[indice].Cells["Direccion"].Value.ToString();
+                    txtcorreo1.Text = dgvdata.Rows[indice].Cells["Correo"].Value.ToString();
                     txttelefono1.Text = dgvdata.Rows[indice].Cells["Telefono"].Value.ToString();
 
                     // Seleccionar el estado correspondiente en el combo box
@@ -325,13 +322,5 @@ namespace CapaPresentacion
             }
         }
 
-        private void txttelefono1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Permitir solo números y la tecla de retroceso
-            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
-            {
-                e.Handled = true;  // Esto evita que se ingrese el carácter
-            }
-        }
     }
 }

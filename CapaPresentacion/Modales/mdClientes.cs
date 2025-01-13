@@ -42,16 +42,17 @@ namespace CapaPresentacion.Modales
             foreach (Cliente item in listaCliente)
             {
                 dgvdata.Rows.Add(new object[] {
-                    "",
-                    item.IdCliente,
-            
-                    item.Apellido,
-                    item.Nombre,
-                    item.Direccion,
-                    item.Telefono,
-                    item.Estado ? 1 : 0,
-                    item.Estado ? "Activo" : "No Activo",
-                });
+            "",
+            item.IdCliente,
+            item.Documento,
+            item.Apellido,
+            item.Nombre,
+            item.Direccion,
+            item.Correo,
+            item.Telefono,
+            item.Estado ? 1 : 0,
+            item.Estado ? "Activo" : "No Activo",
+        });
             }
         }
 
@@ -107,7 +108,7 @@ namespace CapaPresentacion.Modales
                 _Cliente = new Cliente()
                 {
                     IdCliente = Convert.ToInt32(dgvdata.Rows[iRow].Cells["Id"].Value.ToString()),
-                    
+                    Documento = dgvdata.Rows[iRow].Cells["Documento"].Value.ToString(),
                     Nombre = dgvdata.Rows[iRow].Cells["Nombre"].Value.ToString(),
                     Apellido = dgvdata.Rows[iRow].Cells["Apellido"].Value.ToString(),
 
