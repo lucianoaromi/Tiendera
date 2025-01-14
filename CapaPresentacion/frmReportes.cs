@@ -75,39 +75,10 @@ namespace CapaPresentacion
 
         private void btnbuscarreporte_Click(object sender, EventArgs e)
         {
-            List<ReporteVenta> lista = new List<ReporteVenta>();
-            int idusuario = Convert.ToInt32(lblidusuario.Text);
+            CargarDatosVentas();
 
-            string fechaInicio = txtfechainicio.Value.ToString("dd/MM/yyyy");
-            string fechaFin = txtfechafin.Value.ToString("dd/MM/yyyy");
-            lista = new CN_Reporte().Venta(fechaInicio, fechaFin, idusuario);
-
-            dgvdata.Rows.Clear();
-
-            foreach (ReporteVenta rv in lista)
-            {
-                // Verifica las condiciones antes de agregar la fila
-                if (lblidrol.Text == "2" || lblapeusuario.Text == rv.UsuarioRegistro) //|| lblapeusuario.Text == rv.UsuarioRegistro
-                {
-                    dgvdata.Rows.Add(new object[]
-                    {
-                null, // Placeholder para la columna del botón
-                rv.FechaRegistro,
-                rv.TipoDocumento,
-                rv.NumeroDocumento,
-                rv.MontoTotal,
-                rv.UsuarioRegistro,
-                rv.ApellidoCliente,
-                rv.DesMetPago,
-                rv.EstadoEntrega, // Agregar el nuevo campo
-                rv.IdVenta,
-                    });
-                }
-            }
-
-            // Llama a la función para colorear las filas según el estado de entrega
-            CargarColoresFilas();
         }
+
 
         // Función para colorear las filas según el estado de entrega
         private void CargarColoresFilas()
@@ -141,9 +112,8 @@ namespace CapaPresentacion
                     if (cell is DataGridViewButtonCell)
                     {
                         DataGridViewButtonCell buttonCell = cell as DataGridViewButtonCell;
-                        buttonCell.Style.BackColor = System.Drawing.Color.Gray;   // Fondo gris
-                        buttonCell.Style.ForeColor = System.Drawing.Color.White; // Texto blanco
-                        buttonCell.Style.Font = new System.Drawing.Font("Calibri", 9, FontStyle.Regular);
+                        buttonCell.Style.Font = new System.Drawing.Font("Segoe UI", 9, FontStyle.Italic);
+
 
                         buttonCell.Style.BackColor = System.Drawing.Color.Gray;  // Fondo gris
                         buttonCell.Style.ForeColor = System.Drawing.Color.White; // Texto en blanco para contraste
@@ -160,7 +130,7 @@ namespace CapaPresentacion
             dgvdata.DefaultCellStyle.SelectionBackColor = dgvdata.DefaultCellStyle.BackColor;
             dgvdata.DefaultCellStyle.SelectionForeColor = dgvdata.DefaultCellStyle.ForeColor;
 
-            // Opcional: Asegúrate de que las filas alternas también se vean igual
+            // Opcional: Las filas alternas también se vean igual
             dgvdata.AlternatingRowsDefaultCellStyle.SelectionBackColor = dgvdata.AlternatingRowsDefaultCellStyle.BackColor;
             dgvdata.AlternatingRowsDefaultCellStyle.SelectionForeColor = dgvdata.AlternatingRowsDefaultCellStyle.ForeColor;
         }
@@ -206,6 +176,7 @@ namespace CapaPresentacion
                     }
 
                     MessageBox.Show("Estado actualizado correctamente.");
+
                 }
                 else
                 {
@@ -214,6 +185,11 @@ namespace CapaPresentacion
             }
 
             //----------------------
+
+
+            CargarDatosVentas();
+
+
 
             // Verifica si se hizo clic en una celda válida y si corresponde a la columna del botón
             if (e.RowIndex >= 0 && e.ColumnIndex == dgvdata.Columns["verDetalle"].Index) 
@@ -250,6 +226,57 @@ namespace CapaPresentacion
         }
 
         //---------------------------------------------------------------------------------------------------------------
+
+        //ººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººº
+        private void CargarDatosVentas()
+        {
+            // Crear la lista para almacenar los datos
+            List<ReporteVenta> lista = new List<ReporteVenta>();
+
+            // Obtener el ID del usuario y las fechas de inicio y fin
+            int idusuario = Convert.ToInt32(lblidusuario.Text);
+            string fechaInicio = txtfechainicio.Value.ToString("dd/MM/yyyy");
+            string fechaFin = txtfechafin.Value.ToString("dd/MM/yyyy");
+
+            // Llamar al método de la capa de negocio para obtener los datos
+            lista = new CN_Reporte().Venta(fechaInicio, fechaFin, idusuario);
+
+            // Ordenar la lista: "No entregado" primero, respetando el orden original para cada estado
+            lista = lista.OrderBy(rv => rv.EstadoEntrega != "No entregado").ThenBy(rv => rv.FechaRegistro).ToList();
+
+            // Limpiar las filas existentes en el DataGridView
+            dgvdata.Rows.Clear();
+
+            // Agregar las filas al DataGridView
+            foreach (ReporteVenta rv in lista)
+            {
+                // Verifica las condiciones antes de agregar la fila
+                if (lblidrol.Text == "2" || lblapeusuario.Text == rv.UsuarioRegistro)
+                {
+                    dgvdata.Rows.Add(new object[]
+                    {
+                        null, // Placeholder para la columna del botón
+                        rv.FechaRegistro,
+                        rv.TipoDocumento,
+                        rv.NumeroDocumento,
+                        rv.MontoTotal,
+                        rv.UsuarioRegistro,
+                        rv.ApellidoCliente,
+                        rv.DesMetPago,
+                        rv.EstadoEntrega, // Agregar el nuevo campo
+                        rv.IdVenta,
+                    });
+                }
+            }
+
+            // Llama a la función para colorear las filas según el estado de entrega
+            CargarColoresFilas();
+        }
+
+        //ººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººº
+
+
+
 
         // Busca entre los resultados del Datagrid
         private void btnbuscarpor_Click(object sender, EventArgs e)
