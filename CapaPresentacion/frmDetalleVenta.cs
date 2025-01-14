@@ -155,7 +155,7 @@ namespace CapaPresentacion
         private void btnpdf_Click_1(object sender, EventArgs e)
         {
             SaveFileDialog savefile = new SaveFileDialog();
-            
+
             //savefile.FileName = string.Format("{0}.pdf", DateTime.Now.ToString("ddMMyyyyHHmmss"));
             savefile.FileName = string.Format("{0}.pdf", DateTime.Now.ToString("dd-MM-yyyy_(HHmmss)"));
 
@@ -200,7 +200,7 @@ namespace CapaPresentacion
                     img.ScaleToFit(60, 60);
                     img.Alignment = iTextSharp.text.Image.UNDERLYING;
 
-                    img.SetAbsolutePosition(10,100);
+                    img.SetAbsolutePosition(10, 100);
                     img.SetAbsolutePosition(pdfDoc.LeftMargin, pdfDoc.Top - 60);
                     pdfDoc.Add(img);
 
@@ -217,6 +217,9 @@ namespace CapaPresentacion
 
             }
         }
+
+
+
 
     }
 }
