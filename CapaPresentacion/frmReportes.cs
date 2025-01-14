@@ -91,20 +91,18 @@ namespace CapaPresentacion
                 {
                     dgvdata.Rows.Add(new object[]
                     {
-                        null, // Placeholder para la columna del botón
-                        rv.FechaRegistro,
-                        rv.TipoDocumento,
-                        rv.NumeroDocumento,
-                        rv.MontoTotal,
-                        rv.UsuarioRegistro,
-                        rv.ApellidoCliente,
-                        rv.DesMetPago,
-                        rv.EstadoEntrega, // Agregar el nuevo campo
-                        rv.IdVenta,
-
+                null, // Placeholder para la columna del botón
+                rv.FechaRegistro,
+                rv.TipoDocumento,
+                rv.NumeroDocumento,
+                rv.MontoTotal,
+                rv.UsuarioRegistro,
+                rv.ApellidoCliente,
+                rv.DesMetPago,
+                rv.EstadoEntrega, // Agregar el nuevo campo
+                rv.IdVenta,
                     });
                 }
-            
             }
 
             // Llama a la función para colorear las filas según el estado de entrega
@@ -114,7 +112,6 @@ namespace CapaPresentacion
         // Función para colorear las filas según el estado de entrega
         private void CargarColoresFilas()
         {
-
             foreach (DataGridViewRow row in dgvdata.Rows)
             {
                 string estadoEntrega = row.Cells["EstadoEntrega"].Value.ToString();
@@ -137,6 +134,26 @@ namespace CapaPresentacion
                     row.DefaultCellStyle.BackColor = System.Drawing.Color.White;
                     row.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
                 }
+
+                // Cambiar el estilo del botón a gris (fondo y texto)
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (cell is DataGridViewButtonCell)
+                    {
+                        DataGridViewButtonCell buttonCell = cell as DataGridViewButtonCell;
+                        buttonCell.Style.BackColor = System.Drawing.Color.Gray;   // Fondo gris
+                        buttonCell.Style.ForeColor = System.Drawing.Color.White; // Texto blanco
+                        buttonCell.Style.Font = new System.Drawing.Font("Calibri", 9, FontStyle.Regular);
+
+                        buttonCell.Style.BackColor = System.Drawing.Color.Gray;  // Fondo gris
+                        buttonCell.Style.ForeColor = System.Drawing.Color.White; // Texto en blanco para contraste
+                        buttonCell.FlatStyle = FlatStyle.Flat;                  // Estilo plano para eliminar bordes
+                        buttonCell.Style.SelectionBackColor = System.Drawing.Color.Gray; // Fondo gris cuando se selecciona
+                        buttonCell.Style.SelectionForeColor = System.Drawing.Color.White; // Texto blanco cuando se selecciona
+
+
+                    }
+                }
             }
 
             // Configurar colores para que la selección no sea visible
@@ -147,6 +164,7 @@ namespace CapaPresentacion
             dgvdata.AlternatingRowsDefaultCellStyle.SelectionBackColor = dgvdata.AlternatingRowsDefaultCellStyle.BackColor;
             dgvdata.AlternatingRowsDefaultCellStyle.SelectionForeColor = dgvdata.AlternatingRowsDefaultCellStyle.ForeColor;
         }
+
 
         //--------------------------------------------------------------------------------------------------------------------------------------------
 
