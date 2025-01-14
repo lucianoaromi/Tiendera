@@ -33,7 +33,19 @@
         .totals-row {
             font-size: 16px;
             font-weight: bold;
-            background-color: #e8f0fe;
+            background-color: #e8f0fe; /* Mantengo el fondo celeste en la fila de total */
+        }
+
+        /* Estilo para el lema de agradecimiento sin fondo */
+        .thank-you {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+            padding: 10px;
+            font-family: 'Arial', sans-serif; /* Tipografía moderna */
+            color: #333; /* Color oscuro para las letras */
+            background-color: transparent; /* Sin fondo */
         }
     </style>
 </head>
@@ -67,7 +79,7 @@
                         <td style="width:80%;border-bottom:1px solid black">@CLIENTEA, @CLIENTEN</td>
                     </tr>
                     <tr>
-                        <td>Documento:</td>
+                        <td>Nro de cliente:</td>
                         <td style="border-bottom:1px solid black">@DOCUMENTO</td>
                     </tr>
                     <tr>
@@ -107,7 +119,16 @@
             </td>
         </tr>
     </table>
+
+    <!-- Lema de agradecimiento sin fondo y con tipografía personalizada -->
+    <div class="thank-you">
+        ¡Gracias por su compra!
+    </div>
+
 </body>
 </html>
+
+
+
 
 
