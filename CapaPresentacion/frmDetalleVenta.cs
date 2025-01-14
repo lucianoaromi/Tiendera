@@ -182,8 +182,6 @@ namespace CapaPresentacion
             PaginaHTML_Texto = PaginaHTML_Texto.Replace("@FILAS", filas);
             PaginaHTML_Texto = PaginaHTML_Texto.Replace("@TOTAL", total.ToString());
 
-
-
             if (savefile.ShowDialog() == DialogResult.OK)
             {
                 using (FileStream stream = new FileStream(savefile.FileName, FileMode.Create))
@@ -204,7 +202,6 @@ namespace CapaPresentacion
                     img.SetAbsolutePosition(pdfDoc.LeftMargin, pdfDoc.Top - 60);
                     pdfDoc.Add(img);
 
-
                     //pdfDoc.Add(new Phrase("Hola Mundo"));
                     using (StringReader sr = new StringReader(PaginaHTML_Texto))
                     {
@@ -215,8 +212,11 @@ namespace CapaPresentacion
                     stream.Close();
                 }
 
+                // Cierra el formulario después de guardar el archivo
+                this.Close();
             }
         }
+
 
 
 
