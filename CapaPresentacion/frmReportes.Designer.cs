@@ -46,13 +46,6 @@ namespace CapaPresentacion
             this.txtbusqueda = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvdata = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnbuscarreporte = new System.Windows.Forms.Button();
-            this.txtfechafin = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtfechainicio = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.verDetalle = new System.Windows.Forms.DataGridViewButtonColumn();
             this.FechaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipoDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,6 +57,13 @@ namespace CapaPresentacion
             this.EstadoPago = new System.Windows.Forms.DataGridViewButtonColumn();
             this.EstadoEntrega = new System.Windows.Forms.DataGridViewButtonColumn();
             this.IdVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnbuscarreporte = new System.Windows.Forms.Button();
+            this.txtfechafin = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtfechainicio = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -81,9 +81,9 @@ namespace CapaPresentacion
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.groupBox3);
             this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Location = new System.Drawing.Point(21, 28);
+            this.panel1.Location = new System.Drawing.Point(20, 28);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1013, 567);
+            this.panel1.Size = new System.Drawing.Size(1034, 567);
             this.panel1.TabIndex = 0;
             // 
             // panel3
@@ -147,7 +147,7 @@ namespace CapaPresentacion
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(855, 81);
+            this.button3.Location = new System.Drawing.Point(847, 83);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(139, 70);
             this.button3.TabIndex = 16;
@@ -236,7 +236,7 @@ namespace CapaPresentacion
             this.groupBox3.ForeColor = System.Drawing.Color.White;
             this.groupBox3.Location = new System.Drawing.Point(5, 172);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1002, 388);
+            this.groupBox3.Size = new System.Drawing.Size(1026, 388);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Informacion de Ventas";
@@ -263,84 +263,9 @@ namespace CapaPresentacion
             this.dgvdata.Name = "dgvdata";
             this.dgvdata.ReadOnly = true;
             this.dgvdata.RowHeadersWidth = 51;
-            this.dgvdata.Size = new System.Drawing.Size(996, 356);
+            this.dgvdata.Size = new System.Drawing.Size(1020, 356);
             this.dgvdata.TabIndex = 11;
             this.dgvdata.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdata_CellContentClick);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btnbuscarreporte);
-            this.groupBox1.Controls.Add(this.txtfechafin);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtfechainicio);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(30, 74);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(329, 79);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Por periodo";
-            // 
-            // btnbuscarreporte
-            // 
-            this.btnbuscarreporte.BackColor = System.Drawing.Color.Black;
-            this.btnbuscarreporte.FlatAppearance.BorderColor = System.Drawing.Color.Turquoise;
-            this.btnbuscarreporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGreen;
-            this.btnbuscarreporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnbuscarreporte.ForeColor = System.Drawing.Color.Turquoise;
-            this.btnbuscarreporte.Image = ((System.Drawing.Image)(resources.GetObject("btnbuscarreporte.Image")));
-            this.btnbuscarreporte.Location = new System.Drawing.Point(257, 29);
-            this.btnbuscarreporte.Name = "btnbuscarreporte";
-            this.btnbuscarreporte.Size = new System.Drawing.Size(60, 40);
-            this.btnbuscarreporte.TabIndex = 10;
-            this.btnbuscarreporte.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnbuscarreporte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnbuscarreporte.UseVisualStyleBackColor = false;
-            this.btnbuscarreporte.Click += new System.EventHandler(this.btnbuscarreporte_Click);
-            // 
-            // txtfechafin
-            // 
-            this.txtfechafin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txtfechafin.Location = new System.Drawing.Point(133, 44);
-            this.txtfechafin.Name = "txtfechafin";
-            this.txtfechafin.Size = new System.Drawing.Size(111, 20);
-            this.txtfechafin.TabIndex = 14;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(125, 24);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(24, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Fin:";
-            // 
-            // txtfechainicio
-            // 
-            this.txtfechainicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txtfechainicio.Location = new System.Drawing.Point(11, 44);
-            this.txtfechainicio.Name = "txtfechainicio";
-            this.txtfechainicio.Size = new System.Drawing.Size(111, 20);
-            this.txtfechainicio.TabIndex = 13;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Inicio:";
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel2.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.panel2.Location = new System.Drawing.Point(13, 17);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1030, 588);
-            this.panel2.TabIndex = 1;
             // 
             // verDetalle
             // 
@@ -425,11 +350,86 @@ namespace CapaPresentacion
             this.IdVenta.ReadOnly = true;
             this.IdVenta.Visible = false;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnbuscarreporte);
+            this.groupBox1.Controls.Add(this.txtfechafin);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txtfechainicio);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Location = new System.Drawing.Point(30, 74);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(329, 79);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Por periodo";
+            // 
+            // btnbuscarreporte
+            // 
+            this.btnbuscarreporte.BackColor = System.Drawing.Color.Black;
+            this.btnbuscarreporte.FlatAppearance.BorderColor = System.Drawing.Color.Turquoise;
+            this.btnbuscarreporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGreen;
+            this.btnbuscarreporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnbuscarreporte.ForeColor = System.Drawing.Color.Turquoise;
+            this.btnbuscarreporte.Image = ((System.Drawing.Image)(resources.GetObject("btnbuscarreporte.Image")));
+            this.btnbuscarreporte.Location = new System.Drawing.Point(257, 29);
+            this.btnbuscarreporte.Name = "btnbuscarreporte";
+            this.btnbuscarreporte.Size = new System.Drawing.Size(60, 40);
+            this.btnbuscarreporte.TabIndex = 10;
+            this.btnbuscarreporte.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnbuscarreporte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnbuscarreporte.UseVisualStyleBackColor = false;
+            this.btnbuscarreporte.Click += new System.EventHandler(this.btnbuscarreporte_Click);
+            // 
+            // txtfechafin
+            // 
+            this.txtfechafin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtfechafin.Location = new System.Drawing.Point(133, 44);
+            this.txtfechafin.Name = "txtfechafin";
+            this.txtfechafin.Size = new System.Drawing.Size(111, 20);
+            this.txtfechafin.TabIndex = 14;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(125, 24);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(24, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Fin:";
+            // 
+            // txtfechainicio
+            // 
+            this.txtfechainicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtfechainicio.Location = new System.Drawing.Point(11, 44);
+            this.txtfechainicio.Name = "txtfechainicio";
+            this.txtfechainicio.Size = new System.Drawing.Size(111, 20);
+            this.txtfechainicio.TabIndex = 13;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Inicio:";
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel2.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.panel2.Location = new System.Drawing.Point(12, 17);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1051, 588);
+            this.panel2.TabIndex = 1;
+            // 
             // frmReportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1052, 621);
+            this.ClientSize = new System.Drawing.Size(1075, 621);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Name = "frmReportes";
