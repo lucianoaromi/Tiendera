@@ -61,6 +61,7 @@ namespace CapaPresentacion
             this.UsuarioRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ApellidoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MetodoPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoPago = new System.Windows.Forms.DataGridViewButtonColumn();
             this.EstadoEntrega = new System.Windows.Forms.DataGridViewButtonColumn();
             this.IdVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
@@ -80,9 +81,9 @@ namespace CapaPresentacion
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.groupBox3);
             this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Location = new System.Drawing.Point(18, 28);
+            this.panel1.Location = new System.Drawing.Point(21, 28);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(974, 567);
+            this.panel1.Size = new System.Drawing.Size(1013, 567);
             this.panel1.TabIndex = 0;
             // 
             // panel3
@@ -146,7 +147,7 @@ namespace CapaPresentacion
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(816, 81);
+            this.button3.Location = new System.Drawing.Point(855, 81);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(139, 70);
             this.button3.TabIndex = 16;
@@ -154,7 +155,6 @@ namespace CapaPresentacion
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // groupBox2
             // 
@@ -186,7 +186,6 @@ namespace CapaPresentacion
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label6
             // 
@@ -235,9 +234,9 @@ namespace CapaPresentacion
             // 
             this.groupBox3.Controls.Add(this.dgvdata);
             this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(20, 172);
+            this.groupBox3.Location = new System.Drawing.Point(5, 172);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(936, 388);
+            this.groupBox3.Size = new System.Drawing.Size(1002, 388);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Informacion de Ventas";
@@ -256,6 +255,7 @@ namespace CapaPresentacion
             this.UsuarioRegistro,
             this.ApellidoCliente,
             this.MetodoPago,
+            this.EstadoPago,
             this.EstadoEntrega,
             this.IdVenta});
             this.dgvdata.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -263,10 +263,9 @@ namespace CapaPresentacion
             this.dgvdata.Name = "dgvdata";
             this.dgvdata.ReadOnly = true;
             this.dgvdata.RowHeadersWidth = 51;
-            this.dgvdata.Size = new System.Drawing.Size(930, 356);
+            this.dgvdata.Size = new System.Drawing.Size(996, 356);
             this.dgvdata.TabIndex = 11;
             this.dgvdata.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdata_CellContentClick);
-            this.dgvdata.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvdata_CellPainting);
             // 
             // groupBox1
             // 
@@ -338,9 +337,9 @@ namespace CapaPresentacion
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.panel2.Location = new System.Drawing.Point(10, 17);
+            this.panel2.Location = new System.Drawing.Point(13, 17);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(991, 588);
+            this.panel2.Size = new System.Drawing.Size(1030, 588);
             this.panel2.TabIndex = 1;
             // 
             // verDetalle
@@ -407,9 +406,15 @@ namespace CapaPresentacion
             this.MetodoPago.ReadOnly = true;
             this.MetodoPago.Width = 90;
             // 
+            // EstadoPago
+            // 
+            this.EstadoPago.HeaderText = "Pago";
+            this.EstadoPago.Name = "EstadoPago";
+            this.EstadoPago.ReadOnly = true;
+            // 
             // EstadoEntrega
             // 
-            this.EstadoEntrega.HeaderText = "Estado";
+            this.EstadoEntrega.HeaderText = "Entregado";
             this.EstadoEntrega.Name = "EstadoEntrega";
             this.EstadoEntrega.ReadOnly = true;
             // 
@@ -424,7 +429,7 @@ namespace CapaPresentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1013, 621);
+            this.ClientSize = new System.Drawing.Size(1052, 621);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Name = "frmReportes";
@@ -475,6 +480,7 @@ namespace CapaPresentacion
         private DataGridViewTextBoxColumn UsuarioRegistro;
         private DataGridViewTextBoxColumn ApellidoCliente;
         private DataGridViewTextBoxColumn MetodoPago;
+        private DataGridViewButtonColumn EstadoPago;
         private DataGridViewButtonColumn EstadoEntrega;
         private DataGridViewTextBoxColumn IdVenta;
     }

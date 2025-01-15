@@ -7,8 +7,24 @@
       "RelativeMoniker": "D:0:0:{30D572DF-93B5-4C8C-BD0E-2A67FC7EFA66}|CapaPresentacion\\CapaPresentacion.csproj|solutionrelative:capapresentacion\\frmreportes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{30D572DF-93B5-4C8C-BD0E-2A67FC7EFA66}|CapaPresentacion\\CapaPresentacion.csproj|C:\\GitHub\\Restaurant\\capapresentacion\\frmreportes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{30D572DF-93B5-4C8C-BD0E-2A67FC7EFA66}|CapaPresentacion\\CapaPresentacion.csproj|c:\\github\\restaurant\\capapresentacion\\frmreportes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{30D572DF-93B5-4C8C-BD0E-2A67FC7EFA66}|CapaPresentacion\\CapaPresentacion.csproj|solutionrelative:capapresentacion\\frmreportes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F7F39C4-620F-48F4-9415-CA6680AC30FF}|CapaNegocio\\CapaNegocio.csproj|c:\\github\\restaurant\\capanegocio\\cn_reporte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F7F39C4-620F-48F4-9415-CA6680AC30FF}|CapaNegocio\\CapaNegocio.csproj|solutionrelative:capanegocio\\cn_reporte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BC2B10B0-4A98-49E7-8A29-58316990E9B7}|CapaDatos\\CapaDatos.csproj|c:\\github\\restaurant\\capadatos\\cd_reporte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BC2B10B0-4A98-49E7-8A29-58316990E9B7}|CapaDatos\\CapaDatos.csproj|solutionrelative:capadatos\\cd_reporte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F7FBF92-A4AA-4186-9334-AD344B8036C5}|CapaEntidad\\CapaEntidad.csproj|c:\\github\\restaurant\\capaentidad\\reporteventa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F7FBF92-A4AA-4186-9334-AD344B8036C5}|CapaEntidad\\CapaEntidad.csproj|solutionrelative:capaentidad\\reporteventa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F7FBF92-A4AA-4186-9334-AD344B8036C5}|CapaEntidad\\CapaEntidad.csproj|c:\\github\\restaurant\\capaentidad\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F7FBF92-A4AA-4186-9334-AD344B8036C5}|CapaEntidad\\CapaEntidad.csproj|solutionrelative:capaentidad\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,8 +34,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CN_Reporte.cs",
+              "DocumentMoniker": "C:\\GitHub\\Restaurant\\CapaNegocio\\CN_Reporte.cs",
+              "RelativeDocumentMoniker": "CapaNegocio\\CN_Reporte.cs",
+              "ToolTip": "C:\\GitHub\\Restaurant\\CapaNegocio\\CN_Reporte.cs",
+              "RelativeToolTip": "CapaNegocio\\CN_Reporte.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-15T01:46:16.805Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -28,9 +57,9 @@
               "RelativeDocumentMoniker": "CapaPresentacion\\frmReportes.cs",
               "ToolTip": "C:\\GitHub\\Restaurant\\CapaPresentacion\\frmReportes.cs*",
               "RelativeToolTip": "CapaPresentacion\\frmReportes.cs*",
-              "ViewState": "AgIAADMAAAAAAAAAAAAAAE4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAQwIYAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-14T02:55:50.576Z",
+              "WhenOpened": "2025-01-15T00:12:48.023Z",
               "EditorCaption": ""
             },
             {
@@ -42,8 +71,47 @@
               "ToolTip": "C:\\GitHub\\Restaurant\\CapaPresentacion\\frmReportes.cs [Dise\u00F1o]*",
               "RelativeToolTip": "CapaPresentacion\\frmReportes.cs [Dise\u00F1o]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-14T02:55:46.549Z",
+              "WhenOpened": "2025-01-15T00:12:44.792Z",
               "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ReporteVenta.cs",
+              "DocumentMoniker": "C:\\GitHub\\Restaurant\\CapaEntidad\\ReporteVenta.cs",
+              "RelativeDocumentMoniker": "CapaEntidad\\ReporteVenta.cs",
+              "ToolTip": "C:\\GitHub\\Restaurant\\CapaEntidad\\ReporteVenta.cs",
+              "RelativeToolTip": "CapaEntidad\\ReporteVenta.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-15T00:10:02.329Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CD_Reporte.cs",
+              "DocumentMoniker": "C:\\GitHub\\Restaurant\\CapaDatos\\CD_Reporte.cs",
+              "RelativeDocumentMoniker": "CapaDatos\\CD_Reporte.cs",
+              "ToolTip": "C:\\GitHub\\Restaurant\\CapaDatos\\CD_Reporte.cs",
+              "RelativeToolTip": "CapaDatos\\CD_Reporte.cs",
+              "ViewState": "AgIAAHcAAAAAAAAAAAAmwG8AAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-15T00:08:44.88Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Venta.cs",
+              "DocumentMoniker": "C:\\GitHub\\Restaurant\\CapaEntidad\\Venta.cs",
+              "RelativeDocumentMoniker": "CapaEntidad\\Venta.cs",
+              "ToolTip": "C:\\GitHub\\Restaurant\\CapaEntidad\\Venta.cs",
+              "RelativeToolTip": "CapaEntidad\\Venta.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-15T00:06:46.24Z",
+              "EditorCaption": ""
             }
           ]
         }

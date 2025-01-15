@@ -1,11 +1,9 @@
 /*
 
 CREATE DATABASE ARDUINO_BD
-
 GO
 
 USE ARDUINO_BD
-
 GO
 
 */
@@ -25,8 +23,6 @@ FechaRegistro datetime default getdate()
 )
 go
 
-
-
 create table CLIENTE(
 IdCliente int primary key identity,
 Apellido varchar(50),
@@ -36,8 +32,8 @@ Telefono varchar(50),
 Estado bit,
 FechaRegistro datetime default getdate()
 )
-
 go
+
 create table USUARIO(
 IdUsuario int primary key identity,
 Documento varchar(50),
@@ -51,8 +47,6 @@ Estado bit,
 FechaRegistro datetime default getdate()
 )
 go
-
-
 
 create table CATEGORIA(
 IdCategoria int primary key identity,
@@ -76,8 +70,6 @@ FechaRegistro datetime default getdate()
 )
 go
 
-
-
 create table VENTA(
 IdVenta int primary key identity,
 IdUsuario int references USUARIO(IdUsuario),
@@ -92,7 +84,9 @@ MontoTotal decimal(10,2),
 DesMetPago varchar(100),
 FechaRegistro datetime default getdate(),
 
-EstadoEntrega BIT DEFAULT 0
+EstadoEntrega BIT DEFAULT 0,
+EstadoPago BIT DEFAULT 0,
+
 )
 go
 
@@ -194,11 +188,9 @@ begin
 		  (@Documento,@Apellido,@Nombre,@Direccion,@Correo,@Clave,@IdRol,@Estado)
 
 		  set @IdUsuarioResultado = SCOPE_IDENTITY()
-
      end
 	 else
 	     set @Mensaje = 'Numero de documento ya existente'
-
 end
 
 go
@@ -274,7 +266,6 @@ begin
 	    delete from USUARIO where IdUsuario = @IdUsuario
 		set @Respuesta = 1
 	 end
-
 end
 
 go
@@ -355,7 +346,6 @@ begin
 
 	delete from CLIENTE where IdCliente = @IdCliente
 	set @Respuesta = 1
-
 end
 
 go
@@ -416,7 +406,6 @@ begin
 		  where IdCategoria = @IdCategoria
 
 		  set @Respuesta = 1
-
      end
 	 else
 	     set @Mensaje = '!La Categoria ya existente!'
@@ -685,8 +674,8 @@ BEGIN
 
         BEGIN TRANSACTION Registro;
 
-        INSERT INTO VENTA(IdUsuario, TipoDocumento, NumeroDocumento, DocumentoCliente, ApellidoCliente, NombreCliente, MontoPago, MontoCambio, MontoTotal, DesMetPago, EstadoEntrega)
-        VALUES (@IdUsuario, @TipoDocumento, @NumeroDocumento, @DocumentoCliente, @ApellidoCliente, @NombreCliente, @MontoPago, @MontoCambio, @MontoTotal, @DesMetPago, 0);
+        INSERT INTO VENTA(IdUsuario, TipoDocumento, NumeroDocumento, DocumentoCliente, ApellidoCliente, NombreCliente, MontoPago, MontoCambio, MontoTotal, DesMetPago, EstadoEntrega, EstadoPago)
+        VALUES (@IdUsuario, @TipoDocumento, @NumeroDocumento, @DocumentoCliente, @ApellidoCliente, @NombreCliente, @MontoPago, @MontoCambio, @MontoTotal, @DesMetPago, 0, 0);
 
         SET @IdVenta = SCOPE_IDENTITY();
 
@@ -798,9 +787,12 @@ BEGIN
             V.DesMetPago,
             CASE 
                 WHEN V.EstadoEntrega = 1 THEN 'Entregado' 
-                WHEN V.EstadoEntrega IS NULL THEN 'No entregado'
                 ELSE 'No entregado' 
-            END AS EstadoEntrega
+            END AS EstadoEntrega,
+            CASE 
+                WHEN V.EstadoPago = 1 THEN 'Pagado' 
+                ELSE 'No pagado' 
+            END AS EstadoPago
         FROM
             VENTA V
         INNER JOIN
@@ -826,9 +818,12 @@ BEGIN
             V.DesMetPago,
             CASE 
                 WHEN V.EstadoEntrega = 1 THEN 'Entregado' 
-                WHEN V.EstadoEntrega IS NULL THEN 'No entregado'
                 ELSE 'No entregado' 
-            END AS EstadoEntrega
+            END AS EstadoEntrega,
+            CASE 
+                WHEN V.EstadoPago = 1 THEN 'Pagado' 
+                ELSE 'No pagado' 
+            END AS EstadoPago
         FROM
             VENTA V
         INNER JOIN
@@ -843,7 +838,8 @@ BEGIN
     END
 END
 
-go
+GO
+
 
 ------------------------------------- Prueba de Procedimiento Almacenado -------------------------------------
 
@@ -890,7 +886,7 @@ BEGIN
 END;
 GO
 
------------------------------- Permite modificar el estado de una venta --------------------------------------------
+------------------------------ Permite modificar el estado de entrega --------------------------------------------
 
 DECLARE @Resultado BIT;
 DECLARE @Mensaje VARCHAR(500);
@@ -904,9 +900,60 @@ EXEC usp_ActualizarEstadoEntrega
 SELECT @Resultado AS Resultado, @Mensaje AS Mensaje;
 go
 
+------------------------------ Funcion almacenada para cambiar estado de pago --------------------------------------
+
+CREATE PROCEDURE usp_ActualizarEstadoPago
+(
+    @IdVenta INT,          -- ID de la venta a actualizar
+    @EstadoPago BIT,       -- Nuevo estado: 1 para "Pagado", 0 para "No pagado"
+    @Resultado BIT OUTPUT, -- Indica si la operación fue exitosa
+    @Mensaje VARCHAR(500) OUTPUT -- Mensaje en caso de error
+)
+AS
+BEGIN
+    BEGIN TRY
+        -- Inicializamos los valores de salida
+        SET @Resultado = 1;
+        SET @Mensaje = 'Estado de pago actualizado correctamente.';
+
+        -- Actualizamos el estado de pago de la venta
+        UPDATE VENTA
+        SET EstadoPago = @EstadoPago
+        WHERE IdVenta = @IdVenta;
+
+        -- Validamos si se encontró la venta
+        IF @@ROWCOUNT = 0
+        BEGIN
+            SET @Resultado = 0;
+            SET @Mensaje = 'Venta no encontrada.';
+        END
+    END TRY
+    BEGIN CATCH
+        -- En caso de error, devolvemos el mensaje del error
+        SET @Resultado = 0;
+        SET @Mensaje = ERROR_MESSAGE();
+    END CATCH;
+END;
+GO
+
+------------------------------ Permite modificar el estado de pago --------------------------------------------
+
+DECLARE @Resultado BIT;
+DECLARE @Mensaje VARCHAR(500);
+
+EXEC usp_ActualizarEstadoPago
+    @IdVenta = 1,
+    @EstadoPago = 1,
+    @Resultado = @Resultado OUTPUT,
+    @Mensaje = @Mensaje OUTPUT;
+
+SELECT @Resultado AS Resultado, @Mensaje AS Mensaje;
+go
+
+
 ---------------------------------------------- Consulta de las ventas ----------------------------------------------
 
-SELECT IdVenta, TipoDocumento, NumeroDocumento, DocumentoCliente, ApellidoCliente, NombreCliente, MontoTotal, EstadoEntrega
+SELECT IdVenta, TipoDocumento, NumeroDocumento, DocumentoCliente, ApellidoCliente, NombreCliente, MontoTotal, EstadoEntrega, EstadoPago
 FROM VENTA;
 go
 

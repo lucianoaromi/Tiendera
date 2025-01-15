@@ -32,5 +32,10 @@ namespace CapaNegocio
         {
             return objcd_reporte.ActualizarEstadoEntrega(idVenta, nuevoEstado, out mensaje);
         }
+
+        public bool ActualizarEstadoPago(int idVenta, bool nuevoEstado, out string mensaje)
+        {
+            return objcd_reporte.ActualizarEstadoPago(idVenta, nuevoEstado, out mensaje);
+        }
     }
 }

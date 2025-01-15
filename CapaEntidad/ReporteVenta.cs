@@ -16,6 +16,7 @@ namespace CapaEntidad
         public string ApellidoCliente { get; set; }
         public string DesMetPago { get; set; }
         public string EstadoEntrega { get; set; }  // Nuevo campo para almacenar el estado de entrega
+        public string EstadoPago { get; set; }  // Nuevo campo para almacenar el estado de pagp
         public string IdVenta { get; set; }
     }
 }

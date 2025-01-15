@@ -48,6 +48,7 @@ namespace CapaDatos
                                 ApellidoCliente = dr["nombrecompletocliente"].ToString(),
                                 DesMetPago = dr["DesMetPago"].ToString(),
                                 EstadoEntrega = dr["EstadoEntrega"].ToString(), // Agregar el nuevo campo aquí
+                                EstadoPago = dr["EstadoPago"].ToString(), // Agregar el nuevo campo aquí
                                 IdVenta = dr["IdVenta"].ToString(),
                             });
                         }
@@ -78,6 +79,46 @@ namespace CapaDatos
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@IdVenta", idVenta);
                     cmd.Parameters.AddWithValue("@EstadoEntrega", estadoEntrega);
+
+                    SqlParameter resultadoParam = new SqlParameter("@Resultado", SqlDbType.Bit)
+                    {
+                        Direction = ParameterDirection.Output
+                    };
+                    SqlParameter mensajeParam = new SqlParameter("@Mensaje", SqlDbType.VarChar, 500)
+                    {
+                        Direction = ParameterDirection.Output
+                    };
+
+                    cmd.Parameters.Add(resultadoParam);
+                    cmd.Parameters.Add(mensajeParam);
+
+                    oconexion.Open();
+                    cmd.ExecuteNonQuery();
+
+                    bool resultado = Convert.ToBoolean(resultadoParam.Value);
+                    mensaje = mensajeParam.Value.ToString();
+
+                    return resultado;
+                }
+            }
+            catch (Exception ex)
+            {
+                mensaje = "Error al actualizar el estado: " + ex.Message;
+                return false;
+            }
+        }
+
+
+        public bool ActualizarEstadoPago(int idVenta, bool estadoPago, out string mensaje)
+        {
+            try
+            {
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+                {
+                    SqlCommand cmd = new SqlCommand("usp_ActualizarEstadoPago", oconexion);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@IdVenta", idVenta);
+                    cmd.Parameters.AddWithValue("@EstadoPago", estadoPago);
 
                     SqlParameter resultadoParam = new SqlParameter("@Resultado", SqlDbType.Bit)
                     {
