@@ -840,16 +840,6 @@ END
 
 GO
 
-
-------------------------------------- Prueba de Procedimiento Almacenado -------------------------------------
-
-DECLARE @FechaInicio VARCHAR(50) = CONVERT(VARCHAR(10), GETDATE(), 103);
-DECLARE @FechaFin VARCHAR(50) = CONVERT(VARCHAR(10), GETDATE(), 103);
-DECLARE @IdUsuario INT = 5;
-
-EXEC sp_ReporteVentas @FechaInicio, @FechaFin, @IdUsuario;
-GO
-
 --------------------------- Funcion almacenada para cambiar estado de entregado ---------------------------------------
 
 CREATE PROCEDURE usp_ActualizarEstadoEntrega
@@ -956,4 +946,13 @@ go
 SELECT IdVenta, TipoDocumento, NumeroDocumento, DocumentoCliente, ApellidoCliente, NombreCliente, MontoTotal, EstadoEntrega, EstadoPago
 FROM VENTA;
 go
+
+------------------------------------- Prueba de Procedimiento Almacenado -------------------------------------
+
+DECLARE @FechaInicio VARCHAR(50) = CONVERT(VARCHAR(10), GETDATE(), 103);
+DECLARE @FechaFin VARCHAR(50) = CONVERT(VARCHAR(10), GETDATE(), 103);
+DECLARE @IdUsuario INT = 5;
+
+EXEC sp_ReporteVentas @FechaInicio, @FechaFin, @IdUsuario;
+GO
 
