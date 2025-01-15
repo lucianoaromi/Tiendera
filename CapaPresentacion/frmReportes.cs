@@ -83,7 +83,7 @@ namespace CapaPresentacion
                 else if (estadoEntrega == "No entregado" && estadoPago == "No pagado")
                 {
                     row.DefaultCellStyle.BackColor = System.Drawing.Color.LightCoral;  // Rojo
-                    row.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
+                    row.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
                 }
                 else if (estadoEntrega == "Entregado" && estadoPago == "No pagado")
                 {
@@ -119,7 +119,7 @@ namespace CapaPresentacion
                     if (nuevoEstado)
                     {
                         //dgvdata.Rows[e.RowIndex].DefaultCellStyle.BackColor = System.Drawing.Color.Green;
-                        dgvdata.Rows[e.RowIndex].DefaultCellStyle.ForeColor = System.Drawing.Color.White;
+                        dgvdata.Rows[e.RowIndex].DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
                     }
                     else
                     {
@@ -150,7 +150,7 @@ namespace CapaPresentacion
                     if (nuevoEstado)
                     {
                         //dgvdata.Rows[e.RowIndex].DefaultCellStyle.BackColor = System.Drawing.Color.Green;
-                        dgvdata.Rows[e.RowIndex].DefaultCellStyle.ForeColor = System.Drawing.Color.White;
+                        dgvdata.Rows[e.RowIndex].DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
                     }
                     else
                     {
@@ -165,7 +165,7 @@ namespace CapaPresentacion
                 }
             }
 
-            CargarDatosVentas();
+            CargarColoresFilas();
 
             // Verifica si se hizo clic en una celda válida y si corresponde a la columna del botón
             if (e.RowIndex >= 0 && e.ColumnIndex == dgvdata.Columns["verDetalle"].Index)
@@ -199,6 +199,8 @@ namespace CapaPresentacion
                 // Muestra el segundo formulario
                 form2.Show();
             }
+
+            //CargarDatosVentas();
         }
 
         private void CargarDatosVentas()
@@ -260,6 +262,11 @@ namespace CapaPresentacion
                     }
                 }
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            CargarDatosVentas();
         }
     }
 }

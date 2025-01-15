@@ -64,6 +64,7 @@ namespace CapaPresentacion
             this.txtfechainicio = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -76,6 +77,7 @@ namespace CapaPresentacion
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.groupBox2);
@@ -147,9 +149,9 @@ namespace CapaPresentacion
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(847, 83);
+            this.button3.Location = new System.Drawing.Point(895, 83);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(139, 70);
+            this.button3.Size = new System.Drawing.Size(127, 70);
             this.button3.TabIndex = 16;
             this.button3.Text = "Generar Excel";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -425,6 +427,25 @@ namespace CapaPresentacion
             this.panel2.Size = new System.Drawing.Size(1051, 588);
             this.panel2.TabIndex = 1;
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Black;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Turquoise;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGreen;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Turquoise;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(819, 83);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(60, 70);
+            this.button2.TabIndex = 33;
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button2.UseCompatibleTextRendering = true;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // frmReportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -483,5 +504,6 @@ namespace CapaPresentacion
         private DataGridViewButtonColumn EstadoPago;
         private DataGridViewButtonColumn EstadoEntrega;
         private DataGridViewTextBoxColumn IdVenta;
+        private Button button2;
     }
 }
