@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -61,9 +62,26 @@ namespace CapaPresentacion.Modales
             }
         }
 
-        //------------------------------------------------------------------------------------------------------------------------------------------
 
-        private void btnbuscar_Click_1(object sender, EventArgs e)
+        // Método para normalizar y eliminar los acentos
+        private string NormalizarTexto(string texto)
+        {
+            string normalizedString = texto.Normalize(NormalizationForm.FormD);
+            StringBuilder stringBuilder = new StringBuilder();
+
+            foreach (char c in normalizedString)
+            {
+                if (CharUnicodeInfo.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark)
+                {
+                    stringBuilder.Append(c);
+                }
+            }
+
+            return stringBuilder.ToString().Normalize(NormalizationForm.FormC);
+        }
+
+
+        private void buscar()
         {
             string columnaFiltro = ((OpcionCombo)cbobusqueda.SelectedItem).Valor.ToString();
             string busquedaNormalizada = NormalizarTexto(txtbusqueda.Text.Trim().ToUpper());
@@ -90,39 +108,14 @@ namespace CapaPresentacion.Modales
             }
         }
 
-        // Método para normalizar y eliminar los acentos
-        private string NormalizarTexto(string texto)
+        //------------------------------------------------------------------------------------------------------------------------------------------
+
+        private void btnbuscar_Click_1(object sender, EventArgs e)
         {
-            string normalizedString = texto.Normalize(NormalizationForm.FormD);
-            StringBuilder stringBuilder = new StringBuilder();
-
-            foreach (char c in normalizedString)
-            {
-                if (CharUnicodeInfo.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark)
-                {
-                    stringBuilder.Append(c);
-                }
-            }
-
-            return stringBuilder.ToString().Normalize(NormalizationForm.FormC);
+            buscar();
         }
 
         //------------------------------------------------------------------------------------------------------------------------------------------
-
-        private void descripcionTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvdata_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
-        {
-
-        }
-
-        private void dgvdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
 
         private void btnlimpiarbusqueda_Click(object sender, EventArgs e)
@@ -156,5 +149,26 @@ namespace CapaPresentacion.Modales
             }
         }
 
+        private void txtbusqueda_KeyPress_2(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                buscar();
+            }
+                
+        }
+
+        private void txtbusqueda_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                buscar();
+            }
+        }
     }
 }

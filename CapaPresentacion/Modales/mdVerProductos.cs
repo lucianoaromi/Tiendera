@@ -62,7 +62,25 @@ namespace CapaPresentacion.Modales
 
         //------------------------------------------------------------------------------------------------------------------------------------------
 
-        private void btnbuscar_Click(object sender, EventArgs e)
+        // Método para normalizar y eliminar los acentos
+        private string NormalizarTexto(string texto)
+        {
+            string normalizedString = texto.Normalize(NormalizationForm.FormD);
+            StringBuilder stringBuilder = new StringBuilder();
+
+            foreach (char c in normalizedString)
+            {
+                if (CharUnicodeInfo.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark)
+                {
+                    stringBuilder.Append(c);
+                }
+            }
+
+            return stringBuilder.ToString().Normalize(NormalizationForm.FormC);
+        }
+
+
+        private void buscar()
         {
             string columnaFiltro = ((OpcionCombo)cbobusqueda.SelectedItem).Valor.ToString();
             string busquedaNormalizada = NormalizarTexto(txtbusqueda.Text.Trim().ToUpper());
@@ -89,21 +107,9 @@ namespace CapaPresentacion.Modales
             }
         }
 
-        // Método para normalizar y eliminar los acentos
-        private string NormalizarTexto(string texto)
+        private void btnbuscar_Click(object sender, EventArgs e)
         {
-            string normalizedString = texto.Normalize(NormalizationForm.FormD);
-            StringBuilder stringBuilder = new StringBuilder();
-
-            foreach (char c in normalizedString)
-            {
-                if (CharUnicodeInfo.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark)
-                {
-                    stringBuilder.Append(c);
-                }
-            }
-
-            return stringBuilder.ToString().Normalize(NormalizationForm.FormC);
+            buscar();
         }
 
         //------------------------------------------------------------------------------------------------------------------------------------------
@@ -115,6 +121,11 @@ namespace CapaPresentacion.Modales
             {
                 row.Visible = true;
             }
+        }
+
+        private void txtbusqueda_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            buscar();
         }
     }
 }

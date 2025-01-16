@@ -176,41 +176,36 @@ namespace CapaPresentacion
             txtprecio.Text ="";
             cbocategoria.SelectedIndex = 0;
             cboestado.SelectedIndex = 0;
-            //El foco se va a el textbox documento
+            //El foco se va a el textbox codigo
             txtcodigo.Select();
         }
 
         private void btneliminar_Click_1(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(txtid.Text) != 0)
-            {
-                if (MessageBox.Show("¿Desea eliminar el Producto?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    string mensaje = string.Empty;
-                    Producto obj = new Producto()
-                    {
-                        IdProducto = Convert.ToInt32(txtid.Text)
-                    };
-
-
-                    bool respuesta = new CN_Producto().Eliminar(obj, out mensaje);
-
-                    if (respuesta)
-                    {
-                        dgvdata.Rows.RemoveAt(Convert.ToInt32(txtindice.Text));
-                        Limpiar();
-                    }
-                    else
-                    {
-                        MessageBox.Show(mensaje, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    }
-                }
-            }
+            buscar();
         }
 
         //------------------------------------------------------------------------------------------------------------------------------------------
 
-        private void btnbuscar_Click(object sender, EventArgs e)
+        // Método para normalizar y eliminar los acentos
+        private string NormalizarTexto(string texto)
+        {
+            string normalizedString = texto.Normalize(NormalizationForm.FormD);
+            StringBuilder stringBuilder = new StringBuilder();
+
+            foreach (char c in normalizedString)
+            {
+                if (CharUnicodeInfo.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark)
+                {
+                    stringBuilder.Append(c);
+                }
+            }
+
+            return stringBuilder.ToString().Normalize(NormalizationForm.FormC);
+        }
+
+
+        private void buscar()
         {
             string columnaFiltro = ((OpcionCombo)cbobusqueda.SelectedItem).Valor.ToString();
             string busquedaNormalizada = NormalizarTexto(txtbusqueda.Text.Trim().ToUpper());
@@ -237,21 +232,11 @@ namespace CapaPresentacion
             }
         }
 
-        // Método para normalizar y eliminar los acentos
-        private string NormalizarTexto(string texto)
+
+
+        private void btnbuscar_Click(object sender, EventArgs e)
         {
-            string normalizedString = texto.Normalize(NormalizationForm.FormD);
-            StringBuilder stringBuilder = new StringBuilder();
-
-            foreach (char c in normalizedString)
-            {
-                if (CharUnicodeInfo.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark)
-                {
-                    stringBuilder.Append(c);
-                }
-            }
-
-            return stringBuilder.ToString().Normalize(NormalizationForm.FormC);
+            buscar();
         }
 
         //------------------------------------------------------------------------------------------------------------------------------------------
@@ -334,5 +319,45 @@ namespace CapaPresentacion
             }
         }
 
+        //---------------------------------------------------------------------------------------------------------------
+
+        private void txtstock_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verifica si el carácter ingresado no es un número ni un carácter de control (como Backspace)
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Cancela la entrada del carácter
+            }
+        }
+
+        private void txtprecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+
+            // Permite números, el punto decimal (.) y el signo negativo (-)
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '.' && e.KeyChar != '-' && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+            // Asegúrate de que solo haya un punto decimal
+            if (e.KeyChar == '.' && textBox.Text.Contains("."))
+            {
+                e.Handled = true;
+            }
+
+            // Asegúrate de que el signo negativo solo esté al inicio
+            if (e.KeyChar == '-' && textBox.SelectionStart != 0)
+            {
+                e.Handled = true;
+            }
+        }
+
+        //---------------------------------------------------------------------------------------------------------------
+
+        private void txtbusqueda_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            buscar();
+        }
     }
 }
