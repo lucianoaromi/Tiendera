@@ -15,7 +15,7 @@ namespace CapaPresentacion
 {
     public partial class frmBackup : Form
     {
-        SqlConnection con=new SqlConnection("server= .\\luciano320; database = ARDUINO_BD; integrated security = true");
+        SqlConnection con=new SqlConnection("server= .\\luciano320; database = RESTAURANT_DB; integrated security = true");
 
         public frmBackup()
         {
@@ -106,5 +106,9 @@ namespace CapaPresentacion
             }
         }
 
+        private void frmBackup_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

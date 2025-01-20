@@ -13,7 +13,7 @@ namespace CapaPresentacion.Db
 
         public DbConnection()
         {
-            connectionString = "Data Source=LUCIANO320\\LUCIANO320;Initial Catalog=ARDUINO_BD;Integrated Security=True;Encrypt=False";
+            connectionString = "Data Source=LUCIANO320\\LUCIANO320;Initial Catalog=RESTAURANT_DB;Integrated Security=True;Encrypt=False";
         }
 
         protected SqlConnection GetConnection()
