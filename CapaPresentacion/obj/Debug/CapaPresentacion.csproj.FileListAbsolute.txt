@@ -361,3 +361,5 @@ C:\GitHub\Restaurant\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.CoreComp
 C:\GitHub\Restaurant\CapaPresentacion\obj\Debug\CapaPres.61CA7C38.Up2Date
 C:\GitHub\Restaurant\CapaPresentacion\obj\Debug\CapaPresentacion.exe
 C:\GitHub\Restaurant\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
+C:\GitHub\Restaurant\CapaPresentacion\obj\Debug\CapaPresentacion.FrmActivacion.resources
+C:\GitHub\Restaurant\CapaPresentacion\obj\Debug\CapaPresentacion.frmAdmLicencia.resources

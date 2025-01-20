@@ -238,6 +238,18 @@
       <DependentUpon>ARDUINO_BDDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Db\DbConnection.cs" />
+    <Compile Include="FrmActivacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmActivacion.Designer.cs">
+      <DependentUpon>FrmActivacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmLicencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmLicencia.Designer.cs">
+      <DependentUpon>frmAdmLicencia.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBackup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -337,6 +349,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Utilidades\OpcionCombo.cs" />
+    <EmbeddedResource Include="FrmActivacion.resx">
+      <DependentUpon>FrmActivacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmLicencia.resx">
+      <DependentUpon>frmAdmLicencia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBackup.resx">
       <DependentUpon>frmBackup.cs</DependentUpon>
     </EmbeddedResource>

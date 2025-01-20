@@ -192,8 +192,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ARDUINO_BDDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="CD_AdmLicencia.cs" />
     <Compile Include="CD_Categoria.cs" />
     <Compile Include="CD_Cliente.cs" />
+    <Compile Include="CD_Licencia.cs" />
     <Compile Include="CD_Permiso.cs" />
     <Compile Include="CD_Producto.cs" />
     <Compile Include="CD_Reporte.cs" />
@@ -207,7 +209,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="SoftwareStateDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapaEntidad\CapaEntidad.csproj">

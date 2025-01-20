@@ -8,16 +8,16 @@ using System.Data.SqlClient;
 
 namespace CapaDatos
 {
-    public class SoftwareStateDAL
+    public class CD_Licencia
     {
-        private readonly string connectionString = "Data Source=LUCIANO320\\LUCIANO320;Initial Catalog=ARDUINO_BD;Integrated Security=True;Encrypt=False";
+        private readonly string connectionString = "Data Source=LUCIANO320\\LUCIANO320;Initial Catalog=LICENCIA_DB;Integrated Security=True;Encrypt=False";
 
         // Método para obtener el estado del software
-        public SoftwareState ObtenerEstado()
+        public CE_Licencia ObtenerEstado()
         {
-            SoftwareState estado = null;
+            CE_Licencia estado = null;
 
-            using (SqlConnection conn = new SqlConnection(Conexion.cadena))
+            using (SqlConnection conn = new SqlConnection(Conexion.cadena))//Conexion.cadena
             {
                 conn.Open();
                 string query = "SELECT FechaInicio, DiasPermitidos, Activado, CodigoActivacion, FechaActivacion FROM SoftwareState";
@@ -27,7 +27,7 @@ namespace CapaDatos
                 {
                     if (reader.Read())
                     {
-                        estado = new SoftwareState
+                        estado = new CE_Licencia
                         {
                             FechaInicio = Convert.ToDateTime(reader["FechaInicio"]),
                             DiasPermitidos = Convert.ToInt32(reader["DiasPermitidos"]),
@@ -41,11 +41,11 @@ namespace CapaDatos
             return estado;
         }
 
-        public void ActualizarEstado(bool activado, DateTime? fechaActivacion = null, string codigo = null)
+        public bool ActualizarEstado(bool activado, DateTime? fechaActivacion = null, string codigo = null)
         {
             try
             {
-                using (SqlConnection conn = new SqlConnection(connectionString))
+                using (SqlConnection conn = new SqlConnection(Conexion.cadena))
                 {
                     conn.Open();
 
@@ -57,9 +57,11 @@ namespace CapaDatos
                         cmd.Parameters.AddWithValue("@Activado", activado);
                         cmd.Parameters.AddWithValue("@FechaActivacion", fechaActivacion.HasValue ? (object)fechaActivacion.Value : DBNull.Value);
                         cmd.Parameters.AddWithValue("@Codigo", !string.IsNullOrEmpty(codigo) ? (object)codigo : DBNull.Value);
-                        cmd.Parameters.AddWithValue("@FechaActivacion", fechaActivacion.HasValue ? (object)fechaActivacion.Value : DBNull.Value);
 
-                        cmd.ExecuteNonQuery();
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        // Retorna true si se actualizó al menos una fila, de lo contrario false
+                        return rowsAffected > 0;
                     }
                 }
             }
@@ -67,8 +69,11 @@ namespace CapaDatos
             {
                 // Manejo de excepciones
                 Console.WriteLine("Error de base de datos: " + ex.Message);
+                return false; // Retorna false si ocurrió un error
             }
         }
+
+
 
 
     }

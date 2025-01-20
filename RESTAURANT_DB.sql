@@ -1,9 +1,9 @@
 /*
 
-CREATE DATABASE ARDUINO_BD
+CREATE DATABASE RESTAURANT_DB
 GO
 
-USE ARDUINO_BD
+USE RESTAURANT_DB
 GO
 
 */
@@ -956,3 +956,138 @@ DECLARE @IdUsuario INT = 5;
 EXEC sp_ReporteVentas @FechaInicio, @FechaFin, @IdUsuario;
 GO
 
+
+
+--########################################################################################################################################
+
+CREATE TABLE SoftwareState (
+    ID INT PRIMARY KEY IDENTITY(1,1),  
+    FechaInicio DATE NOT NULL,              -- Registra la fecha de la primera ejecución.
+    DiasPermitidos INT NOT NULL DEFAULT 30,
+	Activado BIT NOT NULL DEFAULT 0,     	-- Indica si el software está activado (1) o no (0).
+    CodigoActivacion NVARCHAR(50),	        -- Almacena el código que permitirá desbloquear el software.	
+    FechaActivacion DATETIME NULL,			-- Fecha en la que se activó el software.
+);
+go
+
+---------------- Se generan los metodos para manipular el formulario de LICENCIAS ----------------
+
+-- Declaración de Variables para manejo de los métodos
+DECLARE @idlicenciagenerado INT;
+DECLARE @mensaje VARCHAR(500);
+GO
+
+CREATE PROC SP_REGISTRARLICENCIA(
+    @CodigoActivacion VARCHAR(50),
+    @Activado BIT,
+    @FechaInicio DATE, -- Solo la fecha
+    @FechaActivacion DATETIME,  -- Solo la hora
+	@DiasPermitidos INT,
+    
+    -- Parámetros de Salida (OUTPUT):
+    @IdLicenciaResultado INT OUTPUT, 
+    @Mensaje VARCHAR(500) OUTPUT
+)
+AS
+BEGIN
+    -- Inicializa las variables de salida:
+    SET @IdLicenciaResultado = 0;
+    SET @Mensaje = '';
+
+    -- Valida si el número de documento ya está registrado
+    IF NOT EXISTS (SELECT 1 FROM SoftwareState WHERE CodigoActivacion = @CodigoActivacion)
+    BEGIN
+        INSERT INTO SoftwareState (CodigoActivacion, Activado, FechaInicio, FechaActivacion, DiasPermitidos)
+        VALUES (@CodigoActivacion, @Activado, @FechaInicio, @FechaActivacion, @DiasPermitidos);
+
+        -- Obtiene el ID generado automáticamente (clave primaria)
+        SET @IdLicenciaResultado = SCOPE_IDENTITY();
+        SET @Mensaje = 'Licencia registrada exitosamente.';
+    END
+    ELSE
+    BEGIN
+        SET @Mensaje = 'Número de Activacion ya existente.';
+    END
+END;
+GO
+
+-------------------------------------------------------------------------------------------------------------------
+
+CREATE PROC SP_EDITARLICENCIA(
+    @ID INT, 
+    @CodigoActivacion VARCHAR(50),
+    @Activado BIT,
+    @FechaInicio DATE, -- Solo la fecha
+    @FechaActivacion DATETIME,  -- Solo la hora
+	@DiasPermitidos INT,
+
+    -- Parámetros de Salida (OUTPUT):
+    @Respuesta BIT OUTPUT,
+    @Mensaje VARCHAR(500) OUTPUT
+)
+AS
+BEGIN
+    -- Inicializar variables de salida:
+    SET @Respuesta = 0;
+    SET @Mensaje = '';
+
+    -- Comprueba si ya existe otro cliente con el mismo número de documento que no sea el cliente actual.
+    IF NOT EXISTS (SELECT 1 FROM SoftwareState WHERE CodigoActivacion = @CodigoActivacion AND ID != @ID)
+    BEGIN
+        -- Actualizar el cliente
+        UPDATE SoftwareState
+        SET 
+            CodigoActivacion = @CodigoActivacion,
+            Activado = @Activado,
+            FechaInicio = @FechaInicio,
+            FechaActivacion = @FechaActivacion,
+			DiasPermitidos = @DiasPermitidos
+
+        WHERE ID = @ID; -- Asegura que la operación afecte únicamente al cliente identificado.
+
+        SET @Respuesta = 1; -- Indica que la operación fue exitosa.
+        SET @Mensaje = 'Licencia actualizada correctamente.';
+    END
+    ELSE
+    BEGIN
+        SET @Mensaje = '¡Número de Activacion ya existente!';
+    END
+END;
+GO
+
+-------------------------------------------------------------------------------------------------------------------
+
+CREATE PROC SP_ELIMINARLICENCIA(
+@ID int, 
+@Respuesta bit output,
+@Mensaje varchar(500) output
+)
+as
+begin
+     set @Respuesta = 0
+	 set @Mensaje = ''
+
+		delete from SoftwareState where ID = @ID
+		set @Respuesta = 1
+
+end
+go
+
+-------------------------------------------------------------------------------------------------------------------
+
+-- Inserta el primer registro con un código de activación "" de 15 dias de muestra.
+INSERT INTO SoftwareState (FechaInicio, Activado, CodigoActivacion, DiasPermitidos, FechaActivacion)
+VALUES 
+    (GETDATE(), 0, '11111111', 0, GETDATE());
+GO
+
+select * from SoftwareState
+go
+
+----------------------------------
+/*
+
+DELETE FROM SoftwareState;
+
+*/
+--########################################################################################################################################

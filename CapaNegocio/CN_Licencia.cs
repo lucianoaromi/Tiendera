@@ -9,13 +9,13 @@ using CapaDatos;
 
 namespace CapaNegocio
 {
-    public class SoftwareStateBLL
+    public class CN_Licencia
     {
-        private readonly SoftwareStateDAL _softwareStateDAL;
+        private readonly CD_Licencia _softwareStateDAL;
 
-        public SoftwareStateBLL()
+        public CN_Licencia()
         {
-            _softwareStateDAL = new SoftwareStateDAL();
+            _softwareStateDAL = new CD_Licencia();
         }
 
         // Método para verificar si el software puede usarse
@@ -41,6 +41,8 @@ namespace CapaNegocio
         }
 
         // Método para activar el software con un código
+        // Método para activar el software con un código
+        // Método para activar el software con un código
         public bool ActivarSoftware(string codigo)
         {
             var estado = _softwareStateDAL.ObtenerEstado();
@@ -60,12 +62,24 @@ namespace CapaNegocio
             if (estado.CodigoActivacion == codigo)
             {
                 // Actualiza el estado a activado y registra la fecha de activación
-                _softwareStateDAL.ActualizarEstado(activado: true, fechaActivacion: DateTime.Now, codigo: estado.CodigoActivacion);
-                return true;
+                bool resultado = _softwareStateDAL.ActualizarEstado(activado: true, fechaActivacion: DateTime.Now, codigo: estado.CodigoActivacion);
+
+                if (resultado)
+                {
+                    Console.WriteLine("El software ha sido activado correctamente.");
+                    return true;
+                }
+                else
+                {
+                    Console.WriteLine("Hubo un problema al actualizar el estado de activación.");
+                    return false;
+                }
             }
 
             return false; // Código incorrecto
         }
+
+
 
     }
 }
