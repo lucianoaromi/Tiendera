@@ -31,12 +31,11 @@ namespace CapaPresentacion
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVentas));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtnumventa = new System.Windows.Forms.TextBox();
             this.txtidproducto = new System.Windows.Forms.TextBox();
-            this.txtidcliente = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -64,6 +63,7 @@ namespace CapaPresentacion
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.txtnombrecliente = new System.Windows.Forms.TextBox();
+            this.txtidcliente = new System.Windows.Forms.TextBox();
             this.btnbuscarcliente = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.txtapellidocliente = new System.Windows.Forms.TextBox();
@@ -139,15 +139,6 @@ namespace CapaPresentacion
             this.txtidproducto.Size = new System.Drawing.Size(43, 20);
             this.txtidproducto.TabIndex = 17;
             this.txtidproducto.Visible = false;
-            // 
-            // txtidcliente
-            // 
-            this.txtidcliente.BackColor = System.Drawing.Color.White;
-            this.txtidcliente.Location = new System.Drawing.Point(22, 46);
-            this.txtidcliente.Name = "txtidcliente";
-            this.txtidcliente.ReadOnly = true;
-            this.txtidcliente.Size = new System.Drawing.Size(79, 20);
-            this.txtidcliente.TabIndex = 18;
             // 
             // label11
             // 
@@ -316,14 +307,14 @@ namespace CapaPresentacion
             this.Cantidad,
             this.SubTotal,
             this.btneliminar});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvdata.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvdata.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvdata.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvdata.Location = new System.Drawing.Point(6, 19);
             this.dgvdata.Name = "dgvdata";
@@ -463,6 +454,15 @@ namespace CapaPresentacion
             this.txtnombrecliente.ReadOnly = true;
             this.txtnombrecliente.Size = new System.Drawing.Size(125, 20);
             this.txtnombrecliente.TabIndex = 13;
+            // 
+            // txtidcliente
+            // 
+            this.txtidcliente.BackColor = System.Drawing.Color.White;
+            this.txtidcliente.Location = new System.Drawing.Point(22, 46);
+            this.txtidcliente.Name = "txtidcliente";
+            this.txtidcliente.ReadOnly = true;
+            this.txtidcliente.Size = new System.Drawing.Size(79, 20);
+            this.txtidcliente.TabIndex = 18;
             // 
             // btnbuscarcliente
             // 
@@ -697,6 +697,7 @@ namespace CapaPresentacion
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(964, 621);
             this.Controls.Add(this.panel2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmVentas";
             this.Text = "frmVentas";
             this.Load += new System.EventHandler(this.frmVentas_Load);

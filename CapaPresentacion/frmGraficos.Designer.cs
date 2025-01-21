@@ -535,6 +535,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(967, 621);
             this.Controls.Add(this.panel2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmGraficos";
             this.Text = "frmGraficos";
             ((System.ComponentModel.ISupportInitialize)(this.chartGrossRevenue)).EndInit();

@@ -631,6 +631,7 @@ namespace CapaPresentacion
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmUsuarios";
             this.Text = "frmUsuarios";
             this.Load += new System.EventHandler(this.frmUsuarios_Load);
