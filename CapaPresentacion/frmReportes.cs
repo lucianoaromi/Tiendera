@@ -82,8 +82,8 @@ namespace CapaPresentacion
                 }
                 else if (estadoEntrega == "NO" && estadoPago == "NO")
                 {
-                    row.DefaultCellStyle.BackColor = System.Drawing.Color.LightCoral;  // Rojo
-                    row.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
+                    row.DefaultCellStyle.BackColor = System.Drawing.Color.Red;  // Rojo
+                    row.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
                 }
                 else if (estadoEntrega == "SI" && estadoPago == "NO")
                 {
@@ -213,10 +213,14 @@ namespace CapaPresentacion
             lista = new CN_Reporte().Venta(fechaInicio, fechaFin, idusuario);
 
             lista = lista
-                .OrderBy(rv => rv.EstadoEntrega != "NO")
-                .ThenBy(rv => rv.EstadoPago != "NO")
-                .ThenBy(rv => rv.FechaRegistro)
+                .OrderBy(rv =>
+                    rv.EstadoEntrega == "NO" && rv.EstadoPago == "NO" ? 1 :
+                    rv.EstadoEntrega == "SI" && rv.EstadoPago == "NO" ? 2 :
+                    rv.EstadoEntrega == "NO" && rv.EstadoPago == "SI" ? 3 :
+                    4) // Para "EstadoEntrega" == "SI" && "EstadoPago" == "SI"
+                .ThenBy(rv => rv.FechaRegistro) // Orden adicional por fecha si hay empates
                 .ToList();
+
 
             dgvdata.Rows.Clear();
 
