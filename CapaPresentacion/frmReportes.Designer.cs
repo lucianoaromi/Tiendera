@@ -32,6 +32,7 @@ namespace CapaPresentacion
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReportes));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblapeusuario = new System.Windows.Forms.TextBox();
             this.lblidusuario = new System.Windows.Forms.TextBox();
@@ -64,7 +65,6 @@ namespace CapaPresentacion
             this.txtfechainicio = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -88,6 +88,25 @@ namespace CapaPresentacion
             this.panel1.Size = new System.Drawing.Size(1034, 567);
             this.panel1.TabIndex = 0;
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Black;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Turquoise;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGreen;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Turquoise;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(819, 83);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(60, 70);
+            this.button2.TabIndex = 33;
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button2.UseCompatibleTextRendering = true;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.DarkSlateGray;
@@ -108,6 +127,7 @@ namespace CapaPresentacion
             this.lblapeusuario.Name = "lblapeusuario";
             this.lblapeusuario.Size = new System.Drawing.Size(155, 20);
             this.lblapeusuario.TabIndex = 31;
+            this.lblapeusuario.Visible = false;
             // 
             // lblidusuario
             // 
@@ -118,6 +138,7 @@ namespace CapaPresentacion
             this.lblidusuario.ReadOnly = true;
             this.lblidusuario.Size = new System.Drawing.Size(37, 20);
             this.lblidusuario.TabIndex = 16;
+            this.lblidusuario.Visible = false;
             // 
             // label11
             // 
@@ -139,6 +160,7 @@ namespace CapaPresentacion
             this.lblidrol.ReadOnly = true;
             this.lblidrol.Size = new System.Drawing.Size(37, 20);
             this.lblidrol.TabIndex = 17;
+            this.lblidrol.Visible = false;
             // 
             // button3
             // 
@@ -426,25 +448,6 @@ namespace CapaPresentacion
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1051, 588);
             this.panel2.TabIndex = 1;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Black;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Turquoise;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGreen;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Turquoise;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(819, 83);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(60, 70);
-            this.button2.TabIndex = 33;
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseCompatibleTextRendering = true;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // frmReportes
             // 
