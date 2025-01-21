@@ -786,12 +786,12 @@ BEGIN
             C.Apellido + ', ' + C.Nombre AS nombrecompletocliente,
             V.DesMetPago,
             CASE 
-                WHEN V.EstadoEntrega = 1 THEN 'Entregado' 
-                ELSE 'No entregado' 
+                WHEN V.EstadoEntrega = 1 THEN 'SI' 
+                ELSE 'NO' 
             END AS EstadoEntrega,
             CASE 
-                WHEN V.EstadoPago = 1 THEN 'Pagado' 
-                ELSE 'No pagado' 
+                WHEN V.EstadoPago = 1 THEN 'SI' 
+                ELSE 'NO' 
             END AS EstadoPago
         FROM
             VENTA V
@@ -817,12 +817,12 @@ BEGIN
             C.Apellido + ', ' + C.Nombre AS nombrecompletocliente,
             V.DesMetPago,
             CASE 
-                WHEN V.EstadoEntrega = 1 THEN 'Entregado' 
-                ELSE 'No entregado' 
+                WHEN V.EstadoEntrega = 1 THEN 'SI' 
+                ELSE 'NO' 
             END AS EstadoEntrega,
             CASE 
-                WHEN V.EstadoPago = 1 THEN 'Pagado' 
-                ELSE 'No pagado' 
+                WHEN V.EstadoPago = 1 THEN 'SI' 
+                ELSE 'NO' 
             END AS EstadoPago
         FROM
             VENTA V

@@ -70,22 +70,22 @@ namespace CapaPresentacion
                 string estadoPago = row.Cells["EstadoPago"].Value.ToString();
 
                 // Combinaciones de estados
-                if (estadoEntrega == "Entregado" && estadoPago == "Pagado")
+                if (estadoEntrega == "SI" && estadoPago == "SI")
                 {
                     row.DefaultCellStyle.BackColor = System.Drawing.Color.Green;  // Verde
                     row.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
                 }
-                else if (estadoEntrega == "No entregado" && estadoPago == "Pagado")
+                else if (estadoEntrega == "NO" && estadoPago == "SI")
                 {
                     row.DefaultCellStyle.BackColor = System.Drawing.Color.Orange;  // Naranja
                     row.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
                 }
-                else if (estadoEntrega == "No entregado" && estadoPago == "No pagado")
+                else if (estadoEntrega == "NO" && estadoPago == "NO")
                 {
                     row.DefaultCellStyle.BackColor = System.Drawing.Color.LightCoral;  // Rojo
                     row.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
                 }
-                else if (estadoEntrega == "Entregado" && estadoPago == "No pagado")
+                else if (estadoEntrega == "SI" && estadoPago == "NO")
                 {
                     row.DefaultCellStyle.BackColor = System.Drawing.Color.LightCoral;  // Color por defecto
                     row.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
@@ -108,14 +108,14 @@ namespace CapaPresentacion
             {
                 int idVenta = Convert.ToInt32(dgvdata.Rows[e.RowIndex].Cells["IdVenta"].Value);
                 string estadoActual = dgvdata.Rows[e.RowIndex].Cells["EstadoPago"].Value.ToString();
-                bool nuevoEstado = (estadoActual == "Pagado") ? false : true;
+                bool nuevoEstado = (estadoActual == "SI") ? false : true;
 
                 string mensaje;
                 bool resultado = ventaNegocio.ActualizarEstadoPago(idVenta, nuevoEstado, out mensaje);
 
                 if (resultado)
                 {
-                    dgvdata.Rows[e.RowIndex].Cells["EstadoPago"].Value = nuevoEstado ? "Pagado" : "No pagado";
+                    dgvdata.Rows[e.RowIndex].Cells["EstadoPago"].Value = nuevoEstado ? "SI" : "NO";
                     if (nuevoEstado)
                     {
                         //dgvdata.Rows[e.RowIndex].DefaultCellStyle.BackColor = System.Drawing.Color.Green;
@@ -139,14 +139,14 @@ namespace CapaPresentacion
             {
                 int idVenta = Convert.ToInt32(dgvdata.Rows[e.RowIndex].Cells["IdVenta"].Value);
                 string estadoActual = dgvdata.Rows[e.RowIndex].Cells["EstadoEntrega"].Value.ToString();
-                bool nuevoEstado = (estadoActual == "Entregado") ? false : true;
+                bool nuevoEstado = (estadoActual == "SI") ? false : true;
 
                 string mensaje;
                 bool resultado = ventaNegocio.ActualizarEstadoVenta(idVenta, nuevoEstado, out mensaje);
 
                 if (resultado)
                 {
-                    dgvdata.Rows[e.RowIndex].Cells["EstadoEntrega"].Value = nuevoEstado ? "Entregado" : "No entregado";
+                    dgvdata.Rows[e.RowIndex].Cells["EstadoEntrega"].Value = nuevoEstado ? "SI" : "NO";
                     if (nuevoEstado)
                     {
                         //dgvdata.Rows[e.RowIndex].DefaultCellStyle.BackColor = System.Drawing.Color.Green;
@@ -213,8 +213,8 @@ namespace CapaPresentacion
             lista = new CN_Reporte().Venta(fechaInicio, fechaFin, idusuario);
 
             lista = lista
-                .OrderBy(rv => rv.EstadoEntrega != "No entregado")
-                .ThenBy(rv => rv.EstadoPago != "No pagado")
+                .OrderBy(rv => rv.EstadoEntrega != "NO")
+                .ThenBy(rv => rv.EstadoPago != "NO")
                 .ThenBy(rv => rv.FechaRegistro)
                 .ToList();
 
