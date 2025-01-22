@@ -424,7 +424,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1125, 74);
             this.panel1.TabIndex = 4;
-            //this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
             // pictureBox5
@@ -471,7 +470,6 @@
             this.Name = "Inicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Inicio_Load);
-            //this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Inicio_MouseDown);
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
             this.contenedor.ResumeLayout(false);

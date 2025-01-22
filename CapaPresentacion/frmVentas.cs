@@ -444,5 +444,62 @@ namespace CapaPresentacion
                 form2.Show();
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            using (var modal = new mdClientes())
+            {
+                var result = modal.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    txtidcliente.Text = modal._Cliente.IdCliente.ToString();
+                    //txtdocumentocliente.Text = modal._Cliente.Documento.ToString();
+                    txtnombrecliente.Text = modal._Cliente.Nombre.ToString();
+                    txtapellidocliente.Text = modal._Cliente.Apellido;
+
+                }
+                else
+                {
+                    txtcodigoproducto.Select();
+                }
+
+
+            }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            LimpiarCliente();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            using (var modal = new mdProducto())
+            {
+                var result = modal.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    txtidproducto.Text = modal._Producto.IdProducto.ToString();
+                    txtcodigoproducto.Text = modal._Producto.Codigo.ToString();
+                    txtnombreproducto.Text = modal._Producto.Nombre;
+                    txtstock.Text = modal._Producto.Stock.ToString();
+                    txtpreciounidad.Text = modal._Producto.Precio.ToString();
+                    txtcantidad.Select();
+                }
+                else
+                {
+                    txtcodigoproducto.Select();
+                }
+
+
+            }
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            limpiarproducto();
+        }
     }
 }

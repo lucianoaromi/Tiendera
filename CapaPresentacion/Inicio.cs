@@ -278,5 +278,6 @@ namespace CapaPresentacion
                 SendMessage(this.Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
             }
         }
+
     }
 }

@@ -59,19 +59,15 @@ namespace CapaPresentacion
             this.cbotipodocumento = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.txtnombrecliente = new System.Windows.Forms.TextBox();
             this.txtidcliente = new System.Windows.Forms.TextBox();
-            this.btnbuscarcliente = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.txtapellidocliente = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.txtcantidad = new System.Windows.Forms.NumericUpDown();
-            this.btnbuscarproducto = new System.Windows.Forms.Button();
             this.txtpreciounidad = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -88,6 +84,10 @@ namespace CapaPresentacion
             this.panel5 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).BeginInit();
@@ -98,6 +98,10 @@ namespace CapaPresentacion
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -396,10 +400,10 @@ namespace CapaPresentacion
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.pictureBox2);
             this.groupBox2.Controls.Add(this.txtnombrecliente);
+            this.groupBox2.Controls.Add(this.pictureBox1);
             this.groupBox2.Controls.Add(this.txtidcliente);
-            this.groupBox2.Controls.Add(this.btnbuscarcliente);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.txtapellidocliente);
             this.groupBox2.Controls.Add(this.label3);
@@ -412,24 +416,6 @@ namespace CapaPresentacion
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Informacion Cliente";
-            // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Turquoise;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGreen;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Turquoise;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(493, 28);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(60, 40);
-            this.button1.TabIndex = 40;
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // txtnombrecliente
             // 
@@ -447,26 +433,6 @@ namespace CapaPresentacion
             this.txtidcliente.ReadOnly = true;
             this.txtidcliente.Size = new System.Drawing.Size(79, 21);
             this.txtidcliente.TabIndex = 18;
-            // 
-            // btnbuscarcliente
-            // 
-            this.btnbuscarcliente.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnbuscarcliente.BackColor = System.Drawing.Color.Black;
-            this.btnbuscarcliente.FlatAppearance.BorderColor = System.Drawing.Color.Turquoise;
-            this.btnbuscarcliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGreen;
-            this.btnbuscarcliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnbuscarcliente.ForeColor = System.Drawing.Color.Turquoise;
-            this.btnbuscarcliente.Image = ((System.Drawing.Image)(resources.GetObject("btnbuscarcliente.Image")));
-            this.btnbuscarcliente.Location = new System.Drawing.Point(424, 28);
-            this.btnbuscarcliente.Margin = new System.Windows.Forms.Padding(2);
-            this.btnbuscarcliente.Name = "btnbuscarcliente";
-            this.btnbuscarcliente.Size = new System.Drawing.Size(60, 40);
-            this.btnbuscarcliente.TabIndex = 40;
-            this.btnbuscarcliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnbuscarcliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnbuscarcliente.UseCompatibleTextRendering = true;
-            this.btnbuscarcliente.UseVisualStyleBackColor = false;
-            this.btnbuscarcliente.Click += new System.EventHandler(this.btnbuscarcliente_Click_1);
             // 
             // label12
             // 
@@ -505,10 +471,10 @@ namespace CapaPresentacion
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.pictureBox3);
+            this.groupBox1.Controls.Add(this.pictureBox4);
             this.groupBox1.Controls.Add(this.button7);
-            this.groupBox1.Controls.Add(this.button6);
             this.groupBox1.Controls.Add(this.txtcantidad);
-            this.groupBox1.Controls.Add(this.btnbuscarproducto);
             this.groupBox1.Controls.Add(this.txtpreciounidad);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.label13);
@@ -522,7 +488,7 @@ namespace CapaPresentacion
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(20, 132);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(910, 102);
+            this.groupBox1.Size = new System.Drawing.Size(910, 108);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Seleccionar producto";
@@ -536,34 +502,17 @@ namespace CapaPresentacion
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.White;
             this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.Location = new System.Drawing.Point(726, 59);
+            this.button7.Location = new System.Drawing.Point(799, 19);
             this.button7.Margin = new System.Windows.Forms.Padding(2);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(170, 35);
+            this.button7.Size = new System.Drawing.Size(97, 78);
             this.button7.TabIndex = 39;
-            this.button7.Text = "AGREGAR A LA LISTA";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button7.Text = "AGREGAR";
+            this.button7.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button7.UseCompatibleTextRendering = true;
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click_1);
-            // 
-            // button6
-            // 
-            this.button6.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button6.BackColor = System.Drawing.Color.Black;
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.Turquoise;
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGreen;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.Turquoise;
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.Location = new System.Drawing.Point(816, 14);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(80, 40);
-            this.button6.TabIndex = 40;
-            this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click_1);
             // 
             // txtcantidad
             // 
@@ -571,23 +520,6 @@ namespace CapaPresentacion
             this.txtcantidad.Name = "txtcantidad";
             this.txtcantidad.Size = new System.Drawing.Size(108, 21);
             this.txtcantidad.TabIndex = 32;
-            // 
-            // btnbuscarproducto
-            // 
-            this.btnbuscarproducto.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnbuscarproducto.BackColor = System.Drawing.Color.Black;
-            this.btnbuscarproducto.FlatAppearance.BorderColor = System.Drawing.Color.Turquoise;
-            this.btnbuscarproducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGreen;
-            this.btnbuscarproducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnbuscarproducto.ForeColor = System.Drawing.Color.Turquoise;
-            this.btnbuscarproducto.Image = ((System.Drawing.Image)(resources.GetObject("btnbuscarproducto.Image")));
-            this.btnbuscarproducto.Location = new System.Drawing.Point(726, 14);
-            this.btnbuscarproducto.Name = "btnbuscarproducto";
-            this.btnbuscarproducto.Size = new System.Drawing.Size(80, 40);
-            this.btnbuscarproducto.TabIndex = 40;
-            this.btnbuscarproducto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnbuscarproducto.UseVisualStyleBackColor = false;
-            this.btnbuscarproducto.Click += new System.EventHandler(this.btnbuscarproducto_Click_1);
             // 
             // txtpreciounidad
             // 
@@ -742,6 +674,50 @@ namespace CapaPresentacion
             this.textBox2.Text = "0";
             this.textBox2.Visible = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(417, 15);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(55, 55);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 31;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(484, 15);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(55, 55);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 50;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(742, 35);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 51;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(683, 35);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 51;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
             // frmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -772,6 +748,10 @@ namespace CapaPresentacion
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -815,10 +795,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txtcambio;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnbuscarcliente;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button btnbuscarproducto;
         private System.Windows.Forms.Button btnventa;
         private System.Windows.Forms.Button button7;
         private TextBox txtnumventa;
@@ -835,5 +811,9 @@ namespace CapaPresentacion
         private Panel panel5;
         private TextBox textBox1;
         private TextBox textBox2;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
+        private PictureBox pictureBox3;
+        private PictureBox pictureBox4;
     }
 }
