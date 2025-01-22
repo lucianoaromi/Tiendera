@@ -85,7 +85,7 @@
             this.menu.Location = new System.Drawing.Point(0, 65);
             this.menu.Name = "menu";
             this.menu.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menu.Size = new System.Drawing.Size(94, 616);
+            this.menu.Size = new System.Drawing.Size(94, 646);
             this.menu.TabIndex = 0;
             this.menu.Text = "menuStrip1";
             // 
@@ -275,7 +275,7 @@
             this.menutitulo.Name = "menutitulo";
             this.menutitulo.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
             this.menutitulo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menutitulo.Size = new System.Drawing.Size(1104, 65);
+            this.menutitulo.Size = new System.Drawing.Size(1116, 65);
             this.menutitulo.TabIndex = 1;
             this.menutitulo.Text = "menuStrip2";
             // 
@@ -299,7 +299,7 @@
             this.lblusuario.BackColor = System.Drawing.Color.Black;
             this.lblusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblusuario.ForeColor = System.Drawing.Color.White;
-            this.lblusuario.Location = new System.Drawing.Point(854, 27);
+            this.lblusuario.Location = new System.Drawing.Point(866, 27);
             this.lblusuario.Name = "lblusuario";
             this.lblusuario.Size = new System.Drawing.Size(117, 17);
             this.lblusuario.TabIndex = 5;
@@ -312,7 +312,7 @@
             this.contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contenedor.Location = new System.Drawing.Point(94, 65);
             this.contenedor.Name = "contenedor";
-            this.contenedor.Size = new System.Drawing.Size(1010, 616);
+            this.contenedor.Size = new System.Drawing.Size(1022, 646);
             this.contenedor.TabIndex = 3;
             // 
             // panelvista
@@ -322,7 +322,7 @@
             this.panelvista.Controls.Add(this.pictureBox2);
             this.panelvista.Controls.Add(this.lblfecha);
             this.panelvista.Controls.Add(this.lblusuarioinicio);
-            this.panelvista.Location = new System.Drawing.Point(119, 94);
+            this.panelvista.Location = new System.Drawing.Point(125, 109);
             this.panelvista.Name = "panelvista";
             this.panelvista.Size = new System.Drawing.Size(773, 477);
             this.panelvista.TabIndex = 4;
@@ -406,7 +406,7 @@
             this.pictureBox4.BackColor = System.Drawing.Color.Black;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.InitialImage = null;
-            this.pictureBox4.Location = new System.Drawing.Point(1045, 22);
+            this.pictureBox4.Location = new System.Drawing.Point(1057, 22);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(25, 25);
             this.pictureBox4.TabIndex = 4;
@@ -416,7 +416,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1104, 681);
+            this.ClientSize = new System.Drawing.Size(1116, 711);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.txtidusuario);
             this.Controls.Add(this.pictureBox1);
