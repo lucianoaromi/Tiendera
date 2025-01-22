@@ -501,5 +501,191 @@ namespace CapaPresentacion
         {
             limpiarproducto();
         }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            decimal precio = 0;
+            bool producto_existe = false;
+
+            // Verifica que se seleccione un producto
+            if (int.Parse(txtidproducto.Text) == 0)
+            {
+                MessageBox.Show("Debe seleccionar un producto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            // Para el formado de moneda sea correcto
+            if (!decimal.TryParse(txtpreciounidad.Text, out precio))
+            {
+                MessageBox.Show("Precio - Formato de número incorrecto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtpreciounidad.Select();
+                return;
+            }
+
+            // Verifica si la cantidad es mayor al stock disponible o si es 0
+            if (Convert.ToInt32(txtcantidad.Value) > Convert.ToInt32(txtstock.Text) || Convert.ToInt32(txtcantidad.Value) == 0)
+            {
+                MessageBox.Show("La cantidad no es válida", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            // Analiza si el producto existe
+            foreach (DataGridViewRow fila in dgvdata.Rows)
+            {
+                if (fila.Cells["IdProducto"].Value.ToString() == txtidproducto.Text)
+                {
+                    producto_existe = true;
+                    break;
+                }
+            }
+
+            if (!producto_existe)
+            {
+                bool respuesta = new CN_Venta().RestarStock(
+                    Convert.ToInt32(txtidproducto.Text),
+                    Convert.ToInt32(txtcantidad.Value.ToString())
+                );
+
+                if (respuesta)
+                {
+                    // Agrega la condición para verificar si el stock es mayor a 0 antes de agregar al DataGridView
+                    if (Convert.ToInt32(txtstock.Text) > 0)
+                    {
+                        dgvdata.Rows.Add(new object[]
+                        {
+                          txtidproducto.Text,
+                          txtnombreproducto.Text,
+                          precio.ToString("0.00"),
+                          txtcantidad.Value.ToString(),
+                          (txtcantidad.Value * precio).ToString("0.00")
+                        });
+
+                        calcularTotal();
+                        limpiarproducto();
+                        txtcodigoproducto.Select();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se puede agregar un producto con stock 0", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
+            }
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+
+            if (txtapellidocliente.Text == "")
+            {
+                MessageBox.Show("Debe ingresar Apellido del cliente.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            if (txtnombrecliente.Text == "")
+            {
+                MessageBox.Show("Debe ingresar Nombre del cliente.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+
+            if (dgvdata.Rows.Count < 1)
+            {
+                MessageBox.Show("La lista de compra está vacía.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            DataTable detalle_venta = new DataTable();
+
+            detalle_venta.Columns.Add("IdProducto", typeof(int));
+            detalle_venta.Columns.Add("Precio", typeof(decimal));
+            detalle_venta.Columns.Add("Cantidad", typeof(int));
+            detalle_venta.Columns.Add("SubTotal", typeof(decimal));
+
+            foreach (DataGridViewRow row in dgvdata.Rows)
+            {
+                detalle_venta.Rows.Add(new object[]
+                {
+                    row.Cells["IdProducto"].Value.ToString(),
+                    row.Cells["Precio"].Value.ToString(),
+                    row.Cells["Cantidad"].Value.ToString(),
+                    row.Cells["SubTotal"].Value.ToString()
+                });
+            }
+
+            int idcorrelativo = new CN_Venta().ObtenerCorrelativo();
+            string numeroDocumento = string.Format("{0:00000}", idcorrelativo);
+            calcularcambio();
+
+            Venta oVenta = new Venta()
+            {
+                oUsuario = new Usuario() { IdUsuario = _Usuario.IdUsuario },
+                TipoDocumento = ((OpcionCombo)cbotipodocumento.SelectedItem).Texto,
+                NumeroDocumento = numeroDocumento,
+                DocumentoCliente = txtidcliente.Text,
+                ApellidoCliente = txtapellidocliente.Text,
+                NombreCliente = txtnombrecliente.Text,
+                MontoPago = Convert.ToDecimal(txtpagacon.Text),
+                MontoCambio = Convert.ToDecimal(txtcambio.Text),
+                MontoTotal = Convert.ToDecimal(txttotalpagar.Text),
+                DesMetPago = ((OpcionCombo)cbometodopago.SelectedItem).Texto,
+            };
+
+            string mensaje = string.Empty;
+            bool respuesta = new CN_Venta().Registrar(oVenta, detalle_venta, out mensaje);
+
+            if (respuesta)
+            {
+                var result = MessageBox.Show(
+                    "Número de venta generado: \n" + numeroDocumento + "\n\n¿Desea imprimir el PDF?",
+                    "Mensaje",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Information
+                );
+
+                if (result == DialogResult.Yes)
+                {
+                    // Llama al código para generar e imprimir el PDF
+                    frmDetalleVenta form2 = new frmDetalleVenta();
+                    form2.txtbusqueda.Text = numeroDocumento; // Pasa el número de venta al segundo formulario
+                    form2.Show();
+                }
+
+
+                //txtdocumentocliente.Text = "";
+                txtapellidocliente.Text = "";
+                txtnombrecliente.Text = "";
+                dgvdata.Rows.Clear();
+                calcularTotal();
+                txtpagacon.Text = "";
+                txtcambio.Text = "";
+                txtnumventa.Text = numeroDocumento.ToString();
+
+            }
+            else
+            {
+                MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            // Verifica si el TextBox está vacío
+            if (string.IsNullOrEmpty(txtnumventa.Text))
+            {
+                MessageBox.Show("No se ha registrado ninguna venta para imprimir", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+
+                // Crea una instancia del segundo formulario
+                frmDetalleVenta form2 = new frmDetalleVenta();
+
+                // Pasa el contenido del TextBox de Form1 al TextBox de Form2
+                form2.txtbusqueda.Text = txtnumventa.Text;
+
+                // Muestra el segundo formulario
+                form2.Show();
+            }
+        }
     }
 }

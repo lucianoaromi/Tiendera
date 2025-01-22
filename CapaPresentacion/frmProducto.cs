@@ -359,5 +359,19 @@ namespace CapaPresentacion
         {
             buscar();
         }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            buscar();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            txtbusqueda.Text = "";
+            foreach (DataGridViewRow row in dgvdata.Rows)
+            {
+                row.Visible = true;
+            }
+        }
     }
 }

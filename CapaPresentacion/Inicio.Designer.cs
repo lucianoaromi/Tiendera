@@ -293,7 +293,7 @@
             this.lblusuario.BackColor = System.Drawing.Color.Black;
             this.lblusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblusuario.ForeColor = System.Drawing.Color.White;
-            this.lblusuario.Location = new System.Drawing.Point(923, 50);
+            this.lblusuario.Location = new System.Drawing.Point(891, 50);
             this.lblusuario.Name = "lblusuario";
             this.lblusuario.Size = new System.Drawing.Size(117, 17);
             this.lblusuario.TabIndex = 5;
@@ -402,7 +402,7 @@
             this.pictureBox4.BackColor = System.Drawing.Color.Black;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.InitialImage = null;
-            this.pictureBox4.Location = new System.Drawing.Point(892, 42);
+            this.pictureBox4.Location = new System.Drawing.Point(860, 42);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(25, 25);
             this.pictureBox4.TabIndex = 4;
@@ -450,6 +450,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.Black;
             this.panel2.Controls.Add(this.menu);
             this.panel2.Controls.Add(this.contenedor);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;

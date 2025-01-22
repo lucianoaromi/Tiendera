@@ -29,16 +29,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mdProducto));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mdProducto));
             this.label7 = new System.Windows.Forms.Label();
             this.cbobusqueda = new System.Windows.Forms.ComboBox();
             this.txtbuscar = new System.Windows.Forms.Panel();
             this.txtbusqueda = new System.Windows.Forms.TextBox();
-            this.btnlimpiarbusqueda = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.btnbuscar = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvdata = new System.Windows.Forms.DataGridView();
             this.btnseleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -52,9 +50,13 @@
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EstadoValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.txtbuscar.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
@@ -83,10 +85,10 @@
             // txtbuscar
             // 
             this.txtbuscar.BackColor = System.Drawing.Color.DarkCyan;
+            this.txtbuscar.Controls.Add(this.pictureBox3);
+            this.txtbuscar.Controls.Add(this.pictureBox4);
             this.txtbuscar.Controls.Add(this.txtbusqueda);
-            this.txtbuscar.Controls.Add(this.btnlimpiarbusqueda);
             this.txtbuscar.Controls.Add(this.label10);
-            this.txtbuscar.Controls.Add(this.btnbuscar);
             this.txtbuscar.Controls.Add(this.label7);
             this.txtbuscar.Controls.Add(this.cbobusqueda);
             this.txtbuscar.Dock = System.Windows.Forms.DockStyle.Top;
@@ -105,24 +107,6 @@
             this.txtbusqueda.TabIndex = 30;
             this.txtbusqueda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbusqueda_KeyPress_2);
             // 
-            // btnlimpiarbusqueda
-            // 
-            this.btnlimpiarbusqueda.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnlimpiarbusqueda.BackColor = System.Drawing.Color.Black;
-            this.btnlimpiarbusqueda.FlatAppearance.BorderColor = System.Drawing.Color.Turquoise;
-            this.btnlimpiarbusqueda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGreen;
-            this.btnlimpiarbusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnlimpiarbusqueda.ForeColor = System.Drawing.Color.White;
-            this.btnlimpiarbusqueda.Image = ((System.Drawing.Image)(resources.GetObject("btnlimpiarbusqueda.Image")));
-            this.btnlimpiarbusqueda.Location = new System.Drawing.Point(1069, 11);
-            this.btnlimpiarbusqueda.Name = "btnlimpiarbusqueda";
-            this.btnlimpiarbusqueda.Size = new System.Drawing.Size(60, 40);
-            this.btnlimpiarbusqueda.TabIndex = 29;
-            this.btnlimpiarbusqueda.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnlimpiarbusqueda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnlimpiarbusqueda.UseVisualStyleBackColor = false;
-            this.btnlimpiarbusqueda.Click += new System.EventHandler(this.btnlimpiarbusqueda_Click);
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -133,26 +117,6 @@
             this.label10.Size = new System.Drawing.Size(145, 32);
             this.label10.TabIndex = 28;
             this.label10.Text = "Productos";
-            // 
-            // btnbuscar
-            // 
-            this.btnbuscar.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnbuscar.BackColor = System.Drawing.Color.Black;
-            this.btnbuscar.FlatAppearance.BorderColor = System.Drawing.Color.Turquoise;
-            this.btnbuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGreen;
-            this.btnbuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnbuscar.ForeColor = System.Drawing.Color.White;
-            this.btnbuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnbuscar.Image")));
-            this.btnbuscar.Location = new System.Drawing.Point(1000, 11);
-            this.btnbuscar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnbuscar.Name = "btnbuscar";
-            this.btnbuscar.Size = new System.Drawing.Size(60, 40);
-            this.btnbuscar.TabIndex = 28;
-            this.btnbuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnbuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnbuscar.UseCompatibleTextRendering = true;
-            this.btnbuscar.UseVisualStyleBackColor = false;
-            this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click_1);
             // 
             // panel3
             // 
@@ -287,6 +251,28 @@
             this.Estado.ReadOnly = true;
             this.Estado.Width = 125;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(1065, 6);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 56;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(1006, 6);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 57;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
             // mdProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -304,6 +290,8 @@
             this.txtbuscar.PerformLayout();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -315,8 +303,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView dgvdata;
-        private System.Windows.Forms.Button btnlimpiarbusqueda;
-        private System.Windows.Forms.Button btnbuscar;
         private System.Windows.Forms.DataGridViewButtonColumn btnseleccionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
@@ -329,5 +315,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn EstadoValor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         private System.Windows.Forms.TextBox txtbusqueda;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }

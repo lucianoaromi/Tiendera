@@ -31,8 +31,8 @@ namespace CapaPresentacion
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmClientes));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label3 = new System.Windows.Forms.Label();
             this.txtapellido1 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -55,8 +55,8 @@ namespace CapaPresentacion
             this.cbobusqueda = new System.Windows.Forms.ComboBox();
             this.txtbusqueda = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnlimpiarbusqueda = new System.Windows.Forms.Button();
-            this.btnbuscar = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvdata = new System.Windows.Forms.DataGridView();
@@ -70,6 +70,8 @@ namespace CapaPresentacion
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).BeginInit();
             this.SuspendLayout();
@@ -293,7 +295,7 @@ namespace CapaPresentacion
             this.label7.BackColor = System.Drawing.Color.DarkCyan;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(262, 24);
+            this.label7.Location = new System.Drawing.Point(312, 23);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(81, 17);
             this.label7.TabIndex = 23;
@@ -304,7 +306,7 @@ namespace CapaPresentacion
             this.cbobusqueda.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.cbobusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbobusqueda.FormattingEnabled = true;
-            this.cbobusqueda.Location = new System.Drawing.Point(358, 22);
+            this.cbobusqueda.Location = new System.Drawing.Point(408, 21);
             this.cbobusqueda.Name = "cbobusqueda";
             this.cbobusqueda.Size = new System.Drawing.Size(148, 23);
             this.cbobusqueda.TabIndex = 24;
@@ -312,7 +314,7 @@ namespace CapaPresentacion
             // txtbusqueda
             // 
             this.txtbusqueda.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.txtbusqueda.Location = new System.Drawing.Point(522, 23);
+            this.txtbusqueda.Location = new System.Drawing.Point(571, 21);
             this.txtbusqueda.Name = "txtbusqueda";
             this.txtbusqueda.Size = new System.Drawing.Size(148, 21);
             this.txtbusqueda.TabIndex = 25;
@@ -320,8 +322,8 @@ namespace CapaPresentacion
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkCyan;
-            this.panel2.Controls.Add(this.btnlimpiarbusqueda);
-            this.panel2.Controls.Add(this.btnbuscar);
+            this.panel2.Controls.Add(this.pictureBox3);
+            this.panel2.Controls.Add(this.pictureBox4);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.txtbusqueda);
@@ -330,46 +332,30 @@ namespace CapaPresentacion
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(172, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(832, 60);
+            this.panel2.Size = new System.Drawing.Size(869, 60);
             this.panel2.TabIndex = 27;
             // 
-            // btnlimpiarbusqueda
+            // pictureBox3
             // 
-            this.btnlimpiarbusqueda.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnlimpiarbusqueda.BackColor = System.Drawing.Color.Black;
-            this.btnlimpiarbusqueda.FlatAppearance.BorderColor = System.Drawing.Color.Turquoise;
-            this.btnlimpiarbusqueda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGreen;
-            this.btnlimpiarbusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnlimpiarbusqueda.ForeColor = System.Drawing.Color.White;
-            this.btnlimpiarbusqueda.Image = ((System.Drawing.Image)(resources.GetObject("btnlimpiarbusqueda.Image")));
-            this.btnlimpiarbusqueda.Location = new System.Drawing.Point(755, 11);
-            this.btnlimpiarbusqueda.Name = "btnlimpiarbusqueda";
-            this.btnlimpiarbusqueda.Size = new System.Drawing.Size(60, 40);
-            this.btnlimpiarbusqueda.TabIndex = 27;
-            this.btnlimpiarbusqueda.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnlimpiarbusqueda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnlimpiarbusqueda.UseVisualStyleBackColor = false;
-            this.btnlimpiarbusqueda.Click += new System.EventHandler(this.btnlimpiarbusqueda_Click_1);
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(782, 5);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 52;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
-            // btnbuscar
+            // pictureBox4
             // 
-            this.btnbuscar.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnbuscar.BackColor = System.Drawing.Color.Black;
-            this.btnbuscar.FlatAppearance.BorderColor = System.Drawing.Color.Turquoise;
-            this.btnbuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGreen;
-            this.btnbuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnbuscar.ForeColor = System.Drawing.Color.White;
-            this.btnbuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnbuscar.Image")));
-            this.btnbuscar.Location = new System.Drawing.Point(684, 11);
-            this.btnbuscar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnbuscar.Name = "btnbuscar";
-            this.btnbuscar.Size = new System.Drawing.Size(60, 40);
-            this.btnbuscar.TabIndex = 26;
-            this.btnbuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnbuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnbuscar.UseCompatibleTextRendering = true;
-            this.btnbuscar.UseVisualStyleBackColor = false;
-            this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click_1);
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(723, 5);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 53;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // label10
             // 
@@ -388,21 +374,21 @@ namespace CapaPresentacion
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(172, 60);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(832, 556);
+            this.panel3.Size = new System.Drawing.Size(869, 556);
             this.panel3.TabIndex = 28;
             // 
             // dgvdata
             // 
             this.dgvdata.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvdata.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.btnseleccionar,
@@ -419,11 +405,11 @@ namespace CapaPresentacion
             this.dgvdata.Name = "dgvdata";
             this.dgvdata.ReadOnly = true;
             this.dgvdata.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvdata.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvdata.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvdata.RowTemplate.Height = 28;
-            this.dgvdata.Size = new System.Drawing.Size(832, 556);
+            this.dgvdata.Size = new System.Drawing.Size(869, 556);
             this.dgvdata.TabIndex = 22;
             this.dgvdata.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdata_CellContentClick_1);
             this.dgvdata.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvdata_CellPainting_1);
@@ -498,7 +484,7 @@ namespace CapaPresentacion
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1004, 616);
+            this.ClientSize = new System.Drawing.Size(1041, 616);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.cboestado1);
@@ -514,6 +500,8 @@ namespace CapaPresentacion
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).EndInit();
             this.ResumeLayout(false);
@@ -544,8 +532,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.DataGridView dgvdata;
         private System.Windows.Forms.TextBox txtindicecliente;
         private System.Windows.Forms.TextBox txtidcliente;
-        private System.Windows.Forms.Button btnlimpiarbusqueda;
-        private System.Windows.Forms.Button btnbuscar;
         private System.Windows.Forms.Button btnguardar;
         private System.Windows.Forms.Button btneliminar;
         private System.Windows.Forms.Button btnlimpiar;
@@ -557,5 +543,7 @@ namespace CapaPresentacion
         private DataGridViewTextBoxColumn Telefono;
         private DataGridViewTextBoxColumn EstadoValor;
         private DataGridViewTextBoxColumn Estado;
+        private PictureBox pictureBox3;
+        private PictureBox pictureBox4;
     }
 }
