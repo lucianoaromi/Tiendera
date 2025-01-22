@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGraficos));
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
             this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
             this.lblTotalProfit = new System.Windows.Forms.Label();
@@ -63,6 +64,10 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.chartGrossRevenue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartTopProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUnderstock)).BeginInit();
@@ -75,6 +80,10 @@
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // dtpStartDate
@@ -82,7 +91,7 @@
             this.dtpStartDate.CalendarTrailingForeColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dtpStartDate.CustomFormat = "MMM dd, yyyy";
             this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpStartDate.Location = new System.Drawing.Point(562, 99);
+            this.dtpStartDate.Location = new System.Drawing.Point(562, 112);
             this.dtpStartDate.Name = "dtpStartDate";
             this.dtpStartDate.Size = new System.Drawing.Size(109, 20);
             this.dtpStartDate.TabIndex = 0;
@@ -92,7 +101,7 @@
             this.dtpEndDate.CalendarTrailingForeColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dtpEndDate.CustomFormat = "MMM dd, yyyy";
             this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpEndDate.Location = new System.Drawing.Point(684, 99);
+            this.dtpEndDate.Location = new System.Drawing.Point(684, 112);
             this.dtpEndDate.Name = "dtpEndDate";
             this.dtpEndDate.Size = new System.Drawing.Size(109, 20);
             this.dtpEndDate.TabIndex = 1;
@@ -113,59 +122,59 @@
             this.chartGrossRevenue.BackColor = System.Drawing.Color.DarkSlateGray;
             this.chartGrossRevenue.BackImageTransparentColor = System.Drawing.Color.White;
             this.chartGrossRevenue.BackSecondaryColor = System.Drawing.Color.White;
-            chartArea1.BackColor = System.Drawing.Color.DarkSlateGray;
-            chartArea1.BackImageTransparentColor = System.Drawing.Color.IndianRed;
-            chartArea1.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.TileFlipX;
-            chartArea1.BackSecondaryColor = System.Drawing.Color.IndianRed;
-            chartArea1.BorderColor = System.Drawing.Color.IndianRed;
-            chartArea1.CursorX.LineColor = System.Drawing.Color.White;
-            chartArea1.CursorX.SelectionColor = System.Drawing.Color.IndianRed;
-            chartArea1.CursorY.LineColor = System.Drawing.Color.White;
-            chartArea1.CursorY.SelectionColor = System.Drawing.Color.White;
-            chartArea1.Name = "ChartArea1";
-            chartArea1.ShadowColor = System.Drawing.Color.WhiteSmoke;
-            this.chartGrossRevenue.ChartAreas.Add(chartArea1);
-            legend1.BackColor = System.Drawing.Color.DarkSlateGray;
-            legend1.BackImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            legend1.BackSecondaryColor = System.Drawing.Color.Brown;
-            legend1.BorderColor = System.Drawing.Color.WhiteSmoke;
-            legend1.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
-            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
-            legend1.ForeColor = System.Drawing.Color.White;
-            legend1.HeaderSeparatorColor = System.Drawing.Color.White;
-            legend1.InterlacedRowsColor = System.Drawing.Color.White;
-            legend1.ItemColumnSeparatorColor = System.Drawing.Color.White;
-            legend1.Name = "Legend1";
-            legend1.ShadowColor = System.Drawing.Color.White;
-            legend1.TitleAlignment = System.Drawing.StringAlignment.Far;
-            legend1.TitleBackColor = System.Drawing.Color.White;
-            legend1.TitleForeColor = System.Drawing.Color.White;
-            legend1.TitleSeparatorColor = System.Drawing.Color.White;
-            this.chartGrossRevenue.Legends.Add(legend1);
+            chartArea3.BackColor = System.Drawing.Color.DarkSlateGray;
+            chartArea3.BackImageTransparentColor = System.Drawing.Color.IndianRed;
+            chartArea3.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.TileFlipX;
+            chartArea3.BackSecondaryColor = System.Drawing.Color.IndianRed;
+            chartArea3.BorderColor = System.Drawing.Color.IndianRed;
+            chartArea3.CursorX.LineColor = System.Drawing.Color.White;
+            chartArea3.CursorX.SelectionColor = System.Drawing.Color.IndianRed;
+            chartArea3.CursorY.LineColor = System.Drawing.Color.White;
+            chartArea3.CursorY.SelectionColor = System.Drawing.Color.White;
+            chartArea3.Name = "ChartArea1";
+            chartArea3.ShadowColor = System.Drawing.Color.WhiteSmoke;
+            this.chartGrossRevenue.ChartAreas.Add(chartArea3);
+            legend3.BackColor = System.Drawing.Color.DarkSlateGray;
+            legend3.BackImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            legend3.BackSecondaryColor = System.Drawing.Color.Brown;
+            legend3.BorderColor = System.Drawing.Color.WhiteSmoke;
+            legend3.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
+            legend3.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend3.ForeColor = System.Drawing.Color.White;
+            legend3.HeaderSeparatorColor = System.Drawing.Color.White;
+            legend3.InterlacedRowsColor = System.Drawing.Color.White;
+            legend3.ItemColumnSeparatorColor = System.Drawing.Color.White;
+            legend3.Name = "Legend1";
+            legend3.ShadowColor = System.Drawing.Color.White;
+            legend3.TitleAlignment = System.Drawing.StringAlignment.Far;
+            legend3.TitleBackColor = System.Drawing.Color.White;
+            legend3.TitleForeColor = System.Drawing.Color.White;
+            legend3.TitleSeparatorColor = System.Drawing.Color.White;
+            this.chartGrossRevenue.Legends.Add(legend3);
             this.chartGrossRevenue.Location = new System.Drawing.Point(2, 20);
             this.chartGrossRevenue.Name = "chartGrossRevenue";
-            series1.BackImageTransparentColor = System.Drawing.Color.White;
-            series1.BackSecondaryColor = System.Drawing.Color.White;
-            series1.ChartArea = "ChartArea1";
-            series1.EmptyPointStyle.BackImageTransparentColor = System.Drawing.Color.White;
-            series1.EmptyPointStyle.BackSecondaryColor = System.Drawing.Color.White;
-            series1.EmptyPointStyle.BorderColor = System.Drawing.Color.White;
-            series1.EmptyPointStyle.Color = System.Drawing.Color.White;
-            series1.EmptyPointStyle.LabelBackColor = System.Drawing.Color.White;
-            series1.EmptyPointStyle.LabelBorderColor = System.Drawing.Color.White;
-            series1.EmptyPointStyle.LabelForeColor = System.Drawing.Color.White;
-            series1.EmptyPointStyle.MarkerColor = System.Drawing.Color.White;
-            series1.LabelBackColor = System.Drawing.Color.White;
-            series1.LabelBorderColor = System.Drawing.Color.White;
-            series1.LabelForeColor = System.Drawing.Color.White;
-            series1.Legend = "Legend1";
-            series1.MarkerBorderColor = System.Drawing.Color.White;
-            series1.MarkerColor = System.Drawing.Color.White;
-            series1.Name = "Pesos $";
-            series1.ShadowColor = System.Drawing.Color.White;
-            series1.SmartLabelStyle.CalloutBackColor = System.Drawing.Color.White;
-            series1.SmartLabelStyle.CalloutLineColor = System.Drawing.Color.White;
-            this.chartGrossRevenue.Series.Add(series1);
+            series3.BackImageTransparentColor = System.Drawing.Color.White;
+            series3.BackSecondaryColor = System.Drawing.Color.White;
+            series3.ChartArea = "ChartArea1";
+            series3.EmptyPointStyle.BackImageTransparentColor = System.Drawing.Color.White;
+            series3.EmptyPointStyle.BackSecondaryColor = System.Drawing.Color.White;
+            series3.EmptyPointStyle.BorderColor = System.Drawing.Color.White;
+            series3.EmptyPointStyle.Color = System.Drawing.Color.White;
+            series3.EmptyPointStyle.LabelBackColor = System.Drawing.Color.White;
+            series3.EmptyPointStyle.LabelBorderColor = System.Drawing.Color.White;
+            series3.EmptyPointStyle.LabelForeColor = System.Drawing.Color.White;
+            series3.EmptyPointStyle.MarkerColor = System.Drawing.Color.White;
+            series3.LabelBackColor = System.Drawing.Color.White;
+            series3.LabelBorderColor = System.Drawing.Color.White;
+            series3.LabelForeColor = System.Drawing.Color.White;
+            series3.Legend = "Legend1";
+            series3.MarkerBorderColor = System.Drawing.Color.White;
+            series3.MarkerColor = System.Drawing.Color.White;
+            series3.Name = "Pesos $";
+            series3.ShadowColor = System.Drawing.Color.White;
+            series3.SmartLabelStyle.CalloutBackColor = System.Drawing.Color.White;
+            series3.SmartLabelStyle.CalloutLineColor = System.Drawing.Color.White;
+            this.chartGrossRevenue.Series.Add(series3);
             this.chartGrossRevenue.Size = new System.Drawing.Size(493, 187);
             this.chartGrossRevenue.TabIndex = 12;
             this.chartGrossRevenue.Text = "chart1";
@@ -176,73 +185,73 @@
             this.chartTopProducts.BackImageTransparentColor = System.Drawing.Color.White;
             this.chartTopProducts.BackSecondaryColor = System.Drawing.Color.White;
             this.chartTopProducts.BorderlineColor = System.Drawing.SystemColors.ControlDarkDark;
-            chartArea2.BackColor = System.Drawing.Color.DarkSlateGray;
-            chartArea2.BackImageTransparentColor = System.Drawing.Color.White;
-            chartArea2.BackSecondaryColor = System.Drawing.Color.White;
-            chartArea2.BorderColor = System.Drawing.Color.White;
-            chartArea2.Name = "ChartArea1";
-            chartArea2.ShadowColor = System.Drawing.Color.Red;
-            this.chartTopProducts.ChartAreas.Add(chartArea2);
+            chartArea4.BackColor = System.Drawing.Color.DarkSlateGray;
+            chartArea4.BackImageTransparentColor = System.Drawing.Color.White;
+            chartArea4.BackSecondaryColor = System.Drawing.Color.White;
+            chartArea4.BorderColor = System.Drawing.Color.White;
+            chartArea4.Name = "ChartArea1";
+            chartArea4.ShadowColor = System.Drawing.Color.Red;
+            this.chartTopProducts.ChartAreas.Add(chartArea4);
             this.chartTopProducts.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.BackColor = System.Drawing.Color.DarkSlateGray;
-            legend2.BackImageTransparentColor = System.Drawing.Color.Transparent;
-            legend2.BackSecondaryColor = System.Drawing.Color.DarkSlateGray;
-            legend2.BorderColor = System.Drawing.Color.Transparent;
-            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend2.ForeColor = System.Drawing.Color.White;
-            legend2.HeaderSeparatorColor = System.Drawing.Color.DarkSlateGray;
-            legend2.InterlacedRowsColor = System.Drawing.Color.Black;
-            legend2.IsEquallySpacedItems = true;
-            legend2.ItemColumnSeparatorColor = System.Drawing.Color.DarkSlateGray;
-            legend2.Name = "Legend1";
-            legend2.ShadowColor = System.Drawing.Color.DarkOrange;
-            legend2.TitleBackColor = System.Drawing.Color.DarkSlateGray;
-            legend2.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            legend2.TitleForeColor = System.Drawing.Color.DarkSlateGray;
-            legend2.TitleSeparatorColor = System.Drawing.Color.Chocolate;
-            this.chartTopProducts.Legends.Add(legend2);
+            legend4.BackColor = System.Drawing.Color.DarkSlateGray;
+            legend4.BackImageTransparentColor = System.Drawing.Color.Transparent;
+            legend4.BackSecondaryColor = System.Drawing.Color.DarkSlateGray;
+            legend4.BorderColor = System.Drawing.Color.Transparent;
+            legend4.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend4.ForeColor = System.Drawing.Color.White;
+            legend4.HeaderSeparatorColor = System.Drawing.Color.DarkSlateGray;
+            legend4.InterlacedRowsColor = System.Drawing.Color.Black;
+            legend4.IsEquallySpacedItems = true;
+            legend4.ItemColumnSeparatorColor = System.Drawing.Color.DarkSlateGray;
+            legend4.Name = "Legend1";
+            legend4.ShadowColor = System.Drawing.Color.DarkOrange;
+            legend4.TitleBackColor = System.Drawing.Color.DarkSlateGray;
+            legend4.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend4.TitleForeColor = System.Drawing.Color.DarkSlateGray;
+            legend4.TitleSeparatorColor = System.Drawing.Color.Chocolate;
+            this.chartTopProducts.Legends.Add(legend4);
             this.chartTopProducts.Location = new System.Drawing.Point(3, 16);
             this.chartTopProducts.Name = "chartTopProducts";
-            series2.BackImageTransparentColor = System.Drawing.Color.IndianRed;
-            series2.BackSecondaryColor = System.Drawing.Color.IndianRed;
-            series2.BorderColor = System.Drawing.Color.Transparent;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series2.Color = System.Drawing.Color.Black;
-            series2.CustomProperties = "PieLineColor=DimGray, CollectedColor=64\\, 64\\, 64";
-            series2.EmptyPointStyle.BackImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            series2.EmptyPointStyle.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            series2.EmptyPointStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            series2.EmptyPointStyle.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            series2.EmptyPointStyle.CustomProperties = "PieLineColor=64\\, 64\\, 64";
-            series2.EmptyPointStyle.LabelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            series2.EmptyPointStyle.LabelBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            series2.EmptyPointStyle.LabelBorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
-            series2.EmptyPointStyle.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            series2.EmptyPointStyle.MarkerColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            series2.EmptyPointStyle.MarkerImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            series2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            series2.IsValueShownAsLabel = true;
-            series2.LabelBackColor = System.Drawing.Color.Transparent;
-            series2.LabelBorderColor = System.Drawing.Color.Transparent;
-            series2.LabelBorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDotDot;
-            series2.LabelForeColor = System.Drawing.Color.White;
-            series2.Legend = "Legend1";
-            series2.MarkerBorderColor = System.Drawing.Color.Black;
-            series2.MarkerColor = System.Drawing.Color.Black;
-            series2.MarkerImageTransparentColor = System.Drawing.Color.Black;
-            series2.Name = "Series1";
-            series2.ShadowColor = System.Drawing.Color.RosyBrown;
-            this.chartTopProducts.Series.Add(series2);
+            series4.BackImageTransparentColor = System.Drawing.Color.IndianRed;
+            series4.BackSecondaryColor = System.Drawing.Color.IndianRed;
+            series4.BorderColor = System.Drawing.Color.Transparent;
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series4.Color = System.Drawing.Color.Black;
+            series4.CustomProperties = "PieLineColor=DimGray, CollectedColor=64\\, 64\\, 64";
+            series4.EmptyPointStyle.BackImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            series4.EmptyPointStyle.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            series4.EmptyPointStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            series4.EmptyPointStyle.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            series4.EmptyPointStyle.CustomProperties = "PieLineColor=64\\, 64\\, 64";
+            series4.EmptyPointStyle.LabelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            series4.EmptyPointStyle.LabelBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            series4.EmptyPointStyle.LabelBorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
+            series4.EmptyPointStyle.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            series4.EmptyPointStyle.MarkerColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            series4.EmptyPointStyle.MarkerImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            series4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            series4.IsValueShownAsLabel = true;
+            series4.LabelBackColor = System.Drawing.Color.Transparent;
+            series4.LabelBorderColor = System.Drawing.Color.Transparent;
+            series4.LabelBorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDotDot;
+            series4.LabelForeColor = System.Drawing.Color.White;
+            series4.Legend = "Legend1";
+            series4.MarkerBorderColor = System.Drawing.Color.Black;
+            series4.MarkerColor = System.Drawing.Color.Black;
+            series4.MarkerImageTransparentColor = System.Drawing.Color.Black;
+            series4.Name = "Series1";
+            series4.ShadowColor = System.Drawing.Color.RosyBrown;
+            this.chartTopProducts.Series.Add(series4);
             this.chartTopProducts.Size = new System.Drawing.Size(383, 436);
             this.chartTopProducts.TabIndex = 13;
             this.chartTopProducts.Text = "chart2";
-            title1.Alignment = System.Drawing.ContentAlignment.MiddleLeft;
-            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            title1.ForeColor = System.Drawing.Color.White;
-            title1.Name = "Title1";
-            title1.Text = "Top 5 Productos";
-            this.chartTopProducts.Titles.Add(title1);
+            title2.Alignment = System.Drawing.ContentAlignment.MiddleLeft;
+            title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            title2.ForeColor = System.Drawing.Color.White;
+            title2.Name = "Title1";
+            title2.Text = "Top 5 Productos";
+            this.chartTopProducts.Titles.Add(title2);
             // 
             // label10
             // 
@@ -313,6 +322,10 @@
             // 
             this.panel6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel6.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel6.Controls.Add(this.pictureBox2);
+            this.panel6.Controls.Add(this.pictureBox3);
+            this.panel6.Controls.Add(this.pictureBox1);
+            this.panel6.Controls.Add(this.pictureBox4);
             this.panel6.Controls.Add(this.label14);
             this.panel6.Controls.Add(this.groupBox7);
             this.panel6.Controls.Add(this.dtpEndDate);
@@ -404,7 +417,7 @@
             this.btnOkCustomDate.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnOkCustomDate.IconColor = System.Drawing.Color.Black;
             this.btnOkCustomDate.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnOkCustomDate.Location = new System.Drawing.Point(805, 95);
+            this.btnOkCustomDate.Location = new System.Drawing.Point(805, 108);
             this.btnOkCustomDate.Name = "btnOkCustomDate";
             this.btnOkCustomDate.Size = new System.Drawing.Size(50, 28);
             this.btnOkCustomDate.TabIndex = 24;
@@ -418,9 +431,9 @@
             this.btnThisMonth.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnThisMonth.IconColor = System.Drawing.Color.Black;
             this.btnThisMonth.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnThisMonth.Location = new System.Drawing.Point(881, 38);
+            this.btnThisMonth.Location = new System.Drawing.Point(438, 19);
             this.btnThisMonth.Name = "btnThisMonth";
-            this.btnThisMonth.Size = new System.Drawing.Size(92, 28);
+            this.btnThisMonth.Size = new System.Drawing.Size(65, 28);
             this.btnThisMonth.TabIndex = 23;
             this.btnThisMonth.Text = "Meses";
             this.btnThisMonth.UseVisualStyleBackColor = true;
@@ -432,9 +445,9 @@
             this.btnLast30Days.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnLast30Days.IconColor = System.Drawing.Color.Black;
             this.btnLast30Days.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLast30Days.Location = new System.Drawing.Point(771, 38);
+            this.btnLast30Days.Location = new System.Drawing.Point(353, 19);
             this.btnLast30Days.Name = "btnLast30Days";
-            this.btnLast30Days.Size = new System.Drawing.Size(92, 28);
+            this.btnLast30Days.Size = new System.Drawing.Size(79, 28);
             this.btnLast30Days.TabIndex = 22;
             this.btnLast30Days.Text = "Ultimos 30 dias";
             this.btnLast30Days.UseVisualStyleBackColor = true;
@@ -446,9 +459,9 @@
             this.btnLast7Days.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnLast7Days.IconColor = System.Drawing.Color.Black;
             this.btnLast7Days.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLast7Days.Location = new System.Drawing.Point(662, 38);
+            this.btnLast7Days.Location = new System.Drawing.Point(270, 19);
             this.btnLast7Days.Name = "btnLast7Days";
-            this.btnLast7Days.Size = new System.Drawing.Size(92, 28);
+            this.btnLast7Days.Size = new System.Drawing.Size(77, 28);
             this.btnLast7Days.TabIndex = 21;
             this.btnLast7Days.Text = "Ultimos 7 dias";
             this.btnLast7Days.UseVisualStyleBackColor = true;
@@ -460,9 +473,9 @@
             this.btnToday.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnToday.IconColor = System.Drawing.Color.Black;
             this.btnToday.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnToday.Location = new System.Drawing.Point(554, 38);
+            this.btnToday.Location = new System.Drawing.Point(194, 19);
             this.btnToday.Name = "btnToday";
-            this.btnToday.Size = new System.Drawing.Size(92, 28);
+            this.btnToday.Size = new System.Drawing.Size(70, 28);
             this.btnToday.TabIndex = 20;
             this.btnToday.Text = "Hoy";
             this.btnToday.UseVisualStyleBackColor = true;
@@ -474,7 +487,7 @@
             this.btnCustomDate.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnCustomDate.IconColor = System.Drawing.Color.Black;
             this.btnCustomDate.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCustomDate.Location = new System.Drawing.Point(866, 95);
+            this.btnCustomDate.Location = new System.Drawing.Point(866, 108);
             this.btnCustomDate.Name = "btnCustomDate";
             this.btnCustomDate.Size = new System.Drawing.Size(107, 28);
             this.btnCustomDate.TabIndex = 19;
@@ -529,6 +542,46 @@
             this.panel2.Size = new System.Drawing.Size(1030, 640);
             this.panel2.TabIndex = 19;
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(781, 13);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(85, 85);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 54;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(877, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(85, 85);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 55;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(688, 13);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(85, 85);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 57;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(592, 13);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(85, 85);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 56;
+            this.pictureBox3.TabStop = false;
+            // 
             // frmGraficos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -555,6 +608,10 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -589,5 +646,9 @@
         private System.Windows.Forms.Label lblTotalRevenue;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
