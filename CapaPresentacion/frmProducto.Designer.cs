@@ -145,7 +145,7 @@ namespace CapaPresentacion
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(7, 337);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(43, 13);
+            this.label8.Size = new System.Drawing.Size(48, 15);
             this.label8.TabIndex = 12;
             this.label8.Text = "Estado:";
             // 
@@ -156,7 +156,7 @@ namespace CapaPresentacion
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(6, 184);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(52, 13);
+            this.label9.Size = new System.Drawing.Size(60, 15);
             this.label9.TabIndex = 13;
             this.label9.Text = "Categoria";
             // 
@@ -166,7 +166,7 @@ namespace CapaPresentacion
             this.cbocategoria.FormattingEnabled = true;
             this.cbocategoria.Location = new System.Drawing.Point(8, 201);
             this.cbocategoria.Name = "cbocategoria";
-            this.cbocategoria.Size = new System.Drawing.Size(149, 21);
+            this.cbocategoria.Size = new System.Drawing.Size(149, 23);
             this.cbocategoria.TabIndex = 14;
             // 
             // cboestado
@@ -175,7 +175,7 @@ namespace CapaPresentacion
             this.cboestado.FormattingEnabled = true;
             this.cboestado.Location = new System.Drawing.Point(9, 354);
             this.cboestado.Name = "cboestado";
-            this.cboestado.Size = new System.Drawing.Size(148, 21);
+            this.cboestado.Size = new System.Drawing.Size(148, 23);
             this.cboestado.TabIndex = 15;
             // 
             // panel1
@@ -196,6 +196,7 @@ namespace CapaPresentacion
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(172, 616);
@@ -261,7 +262,7 @@ namespace CapaPresentacion
             // 
             this.txtstock.Location = new System.Drawing.Point(8, 253);
             this.txtstock.Name = "txtstock";
-            this.txtstock.Size = new System.Drawing.Size(149, 20);
+            this.txtstock.Size = new System.Drawing.Size(149, 21);
             this.txtstock.TabIndex = 32;
             this.txtstock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtstock_KeyPress);
             // 
@@ -269,7 +270,7 @@ namespace CapaPresentacion
             // 
             this.txtprecio.Location = new System.Drawing.Point(9, 304);
             this.txtprecio.Name = "txtprecio";
-            this.txtprecio.Size = new System.Drawing.Size(148, 20);
+            this.txtprecio.Size = new System.Drawing.Size(148, 21);
             this.txtprecio.TabIndex = 31;
             this.txtprecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtprecio_KeyPress);
             // 
@@ -280,7 +281,7 @@ namespace CapaPresentacion
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(6, 288);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.Size = new System.Drawing.Size(45, 15);
             this.label1.TabIndex = 30;
             this.label1.Text = "Precio:";
             // 
@@ -289,7 +290,7 @@ namespace CapaPresentacion
             this.txtindice.BackColor = System.Drawing.Color.DimGray;
             this.txtindice.Location = new System.Drawing.Point(101, 6);
             this.txtindice.Name = "txtindice";
-            this.txtindice.Size = new System.Drawing.Size(20, 20);
+            this.txtindice.Size = new System.Drawing.Size(20, 21);
             this.txtindice.TabIndex = 1;
             this.txtindice.Text = "-1";
             this.txtindice.Visible = false;
@@ -301,7 +302,7 @@ namespace CapaPresentacion
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(6, 237);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 13);
+            this.label5.Size = new System.Drawing.Size(40, 15);
             this.label5.TabIndex = 29;
             this.label5.Text = "Stock:";
             // 
@@ -310,7 +311,7 @@ namespace CapaPresentacion
             this.txtid.BackColor = System.Drawing.Color.DimGray;
             this.txtid.Location = new System.Drawing.Point(136, 6);
             this.txtid.Name = "txtid";
-            this.txtid.Size = new System.Drawing.Size(20, 20);
+            this.txtid.Size = new System.Drawing.Size(20, 21);
             this.txtid.TabIndex = 0;
             this.txtid.Text = "0";
             this.txtid.Visible = false;
@@ -458,7 +459,7 @@ namespace CapaPresentacion
             this.cbobusqueda.FormattingEnabled = true;
             this.cbobusqueda.Location = new System.Drawing.Point(340, 21);
             this.cbobusqueda.Name = "cbobusqueda";
-            this.cbobusqueda.Size = new System.Drawing.Size(148, 21);
+            this.cbobusqueda.Size = new System.Drawing.Size(148, 23);
             this.cbobusqueda.TabIndex = 24;
             // 
             // txtbusqueda
@@ -466,7 +467,7 @@ namespace CapaPresentacion
             this.txtbusqueda.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtbusqueda.Location = new System.Drawing.Point(505, 22);
             this.txtbusqueda.Name = "txtbusqueda";
-            this.txtbusqueda.Size = new System.Drawing.Size(148, 20);
+            this.txtbusqueda.Size = new System.Drawing.Size(148, 21);
             this.txtbusqueda.TabIndex = 25;
             this.txtbusqueda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbusqueda_KeyPress);
             // 
@@ -480,6 +481,7 @@ namespace CapaPresentacion
             this.panel2.Controls.Add(this.txtbusqueda);
             this.panel2.Controls.Add(this.cbobusqueda);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(172, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(812, 60);

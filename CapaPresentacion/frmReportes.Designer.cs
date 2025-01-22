@@ -33,17 +33,6 @@ namespace CapaPresentacion
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReportes));
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvdata = new System.Windows.Forms.DataGridView();
-            this.verDetalle = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.FechaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumeroDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MontoTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UsuarioRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ApellidoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MetodoPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstadoPago = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.EstadoEntrega = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.IdVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblapeusuario = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -66,6 +55,17 @@ namespace CapaPresentacion
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtindice = new System.Windows.Forms.TextBox();
             this.txtid = new System.Windows.Forms.TextBox();
+            this.verDetalle = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.FechaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumeroDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MontoTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UsuarioRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ApellidoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MetodoPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoPago = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.EstadoEntrega = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.IdVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).BeginInit();
             this.panel4.SuspendLayout();
@@ -111,91 +111,6 @@ namespace CapaPresentacion
             this.dgvdata.TabIndex = 11;
             this.dgvdata.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdata_CellContentClick);
             this.dgvdata.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvdata_CellPainting);
-            // 
-            // verDetalle
-            // 
-            this.verDetalle.HeaderText = "Ver";
-            this.verDetalle.MinimumWidth = 6;
-            this.verDetalle.Name = "verDetalle";
-            this.verDetalle.ReadOnly = true;
-            this.verDetalle.Width = 40;
-            // 
-            // FechaRegistro
-            // 
-            this.FechaRegistro.HeaderText = "Fecha Registro";
-            this.FechaRegistro.MinimumWidth = 6;
-            this.FechaRegistro.Name = "FechaRegistro";
-            this.FechaRegistro.ReadOnly = true;
-            this.FechaRegistro.Width = 90;
-            // 
-            // TipoDocumento
-            // 
-            this.TipoDocumento.HeaderText = "Tipo Documento";
-            this.TipoDocumento.MinimumWidth = 6;
-            this.TipoDocumento.Name = "TipoDocumento";
-            this.TipoDocumento.ReadOnly = true;
-            this.TipoDocumento.Width = 80;
-            // 
-            // NumeroDocumento
-            // 
-            this.NumeroDocumento.HeaderText = "Nro documento";
-            this.NumeroDocumento.MinimumWidth = 6;
-            this.NumeroDocumento.Name = "NumeroDocumento";
-            this.NumeroDocumento.ReadOnly = true;
-            this.NumeroDocumento.Width = 80;
-            // 
-            // MontoTotal
-            // 
-            this.MontoTotal.HeaderText = "Monto Total";
-            this.MontoTotal.MinimumWidth = 6;
-            this.MontoTotal.Name = "MontoTotal";
-            this.MontoTotal.ReadOnly = true;
-            this.MontoTotal.Width = 80;
-            // 
-            // UsuarioRegistro
-            // 
-            this.UsuarioRegistro.HeaderText = "Vendedor";
-            this.UsuarioRegistro.MinimumWidth = 6;
-            this.UsuarioRegistro.Name = "UsuarioRegistro";
-            this.UsuarioRegistro.ReadOnly = true;
-            this.UsuarioRegistro.Width = 150;
-            // 
-            // ApellidoCliente
-            // 
-            this.ApellidoCliente.HeaderText = "Cliente";
-            this.ApellidoCliente.MinimumWidth = 6;
-            this.ApellidoCliente.Name = "ApellidoCliente";
-            this.ApellidoCliente.ReadOnly = true;
-            this.ApellidoCliente.Width = 150;
-            // 
-            // MetodoPago
-            // 
-            this.MetodoPago.HeaderText = "Metodo Pago";
-            this.MetodoPago.MinimumWidth = 6;
-            this.MetodoPago.Name = "MetodoPago";
-            this.MetodoPago.ReadOnly = true;
-            this.MetodoPago.Width = 90;
-            // 
-            // EstadoPago
-            // 
-            this.EstadoPago.HeaderText = "Pago";
-            this.EstadoPago.Name = "EstadoPago";
-            this.EstadoPago.ReadOnly = true;
-            this.EstadoPago.Width = 70;
-            // 
-            // EstadoEntrega
-            // 
-            this.EstadoEntrega.HeaderText = "Entregado";
-            this.EstadoEntrega.Name = "EstadoEntrega";
-            this.EstadoEntrega.ReadOnly = true;
-            this.EstadoEntrega.Width = 70;
-            // 
-            // IdVenta
-            // 
-            this.IdVenta.HeaderText = ".";
-            this.IdVenta.Name = "IdVenta";
-            this.IdVenta.ReadOnly = true;
-            this.IdVenta.Visible = false;
             // 
             // panel4
             // 
@@ -282,6 +197,7 @@ namespace CapaPresentacion
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // lblidrol
             // 
@@ -301,6 +217,7 @@ namespace CapaPresentacion
             this.groupBox2.Controls.Add(this.cbobusqueda);
             this.groupBox2.Controls.Add(this.btnbuscarpor);
             this.groupBox2.Controls.Add(this.txtbusqueda);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(353, 55);
             this.groupBox2.Name = "groupBox2";
@@ -330,7 +247,7 @@ namespace CapaPresentacion
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(11, 27);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 13);
+            this.label6.Size = new System.Drawing.Size(62, 15);
             this.label6.TabIndex = 2;
             this.label6.Text = "Filtrar por:";
             // 
@@ -339,7 +256,7 @@ namespace CapaPresentacion
             this.cbobusqueda.FormattingEnabled = true;
             this.cbobusqueda.Location = new System.Drawing.Point(14, 44);
             this.cbobusqueda.Name = "cbobusqueda";
-            this.cbobusqueda.Size = new System.Drawing.Size(119, 21);
+            this.cbobusqueda.Size = new System.Drawing.Size(119, 23);
             this.cbobusqueda.TabIndex = 15;
             // 
             // btnbuscarpor
@@ -365,7 +282,7 @@ namespace CapaPresentacion
             // 
             this.txtbusqueda.Location = new System.Drawing.Point(145, 45);
             this.txtbusqueda.Name = "txtbusqueda";
-            this.txtbusqueda.Size = new System.Drawing.Size(121, 20);
+            this.txtbusqueda.Size = new System.Drawing.Size(121, 21);
             this.txtbusqueda.TabIndex = 6;
             // 
             // groupBox1
@@ -375,6 +292,7 @@ namespace CapaPresentacion
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtfechainicio);
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(19, 55);
             this.groupBox1.Name = "groupBox1";
@@ -405,15 +323,15 @@ namespace CapaPresentacion
             this.txtfechafin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.txtfechafin.Location = new System.Drawing.Point(133, 44);
             this.txtfechafin.Name = "txtfechafin";
-            this.txtfechafin.Size = new System.Drawing.Size(111, 20);
+            this.txtfechafin.Size = new System.Drawing.Size(111, 21);
             this.txtfechafin.TabIndex = 14;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(125, 24);
+            this.label2.Location = new System.Drawing.Point(131, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(24, 13);
+            this.label2.Size = new System.Drawing.Size(27, 15);
             this.label2.TabIndex = 3;
             this.label2.Text = "Fin:";
             // 
@@ -422,7 +340,7 @@ namespace CapaPresentacion
             this.txtfechainicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.txtfechainicio.Location = new System.Drawing.Point(11, 44);
             this.txtfechainicio.Name = "txtfechainicio";
-            this.txtfechainicio.Size = new System.Drawing.Size(111, 20);
+            this.txtfechainicio.Size = new System.Drawing.Size(111, 21);
             this.txtfechainicio.TabIndex = 13;
             // 
             // label1
@@ -430,7 +348,7 @@ namespace CapaPresentacion
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(7, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(39, 15);
             this.label1.TabIndex = 2;
             this.label1.Text = "Inicio:";
             // 
@@ -464,6 +382,92 @@ namespace CapaPresentacion
             this.txtid.TabIndex = 0;
             this.txtid.Text = "0";
             this.txtid.Visible = false;
+            // 
+            // verDetalle
+            // 
+            this.verDetalle.HeaderText = "Ver";
+            this.verDetalle.MinimumWidth = 6;
+            this.verDetalle.Name = "verDetalle";
+            this.verDetalle.ReadOnly = true;
+            this.verDetalle.Width = 40;
+            // 
+            // FechaRegistro
+            // 
+            this.FechaRegistro.HeaderText = "Fecha Registro";
+            this.FechaRegistro.MinimumWidth = 6;
+            this.FechaRegistro.Name = "FechaRegistro";
+            this.FechaRegistro.ReadOnly = true;
+            this.FechaRegistro.Width = 90;
+            // 
+            // TipoDocumento
+            // 
+            this.TipoDocumento.HeaderText = "Tipo Documento";
+            this.TipoDocumento.MinimumWidth = 6;
+            this.TipoDocumento.Name = "TipoDocumento";
+            this.TipoDocumento.ReadOnly = true;
+            this.TipoDocumento.Visible = false;
+            this.TipoDocumento.Width = 80;
+            // 
+            // NumeroDocumento
+            // 
+            this.NumeroDocumento.HeaderText = "Nro documento";
+            this.NumeroDocumento.MinimumWidth = 6;
+            this.NumeroDocumento.Name = "NumeroDocumento";
+            this.NumeroDocumento.ReadOnly = true;
+            this.NumeroDocumento.Width = 80;
+            // 
+            // MontoTotal
+            // 
+            this.MontoTotal.HeaderText = "Monto Total";
+            this.MontoTotal.MinimumWidth = 6;
+            this.MontoTotal.Name = "MontoTotal";
+            this.MontoTotal.ReadOnly = true;
+            this.MontoTotal.Width = 80;
+            // 
+            // UsuarioRegistro
+            // 
+            this.UsuarioRegistro.HeaderText = "Vendedor";
+            this.UsuarioRegistro.MinimumWidth = 6;
+            this.UsuarioRegistro.Name = "UsuarioRegistro";
+            this.UsuarioRegistro.ReadOnly = true;
+            this.UsuarioRegistro.Width = 150;
+            // 
+            // ApellidoCliente
+            // 
+            this.ApellidoCliente.HeaderText = "Cliente";
+            this.ApellidoCliente.MinimumWidth = 6;
+            this.ApellidoCliente.Name = "ApellidoCliente";
+            this.ApellidoCliente.ReadOnly = true;
+            this.ApellidoCliente.Width = 150;
+            // 
+            // MetodoPago
+            // 
+            this.MetodoPago.HeaderText = "Metodo Pago";
+            this.MetodoPago.MinimumWidth = 6;
+            this.MetodoPago.Name = "MetodoPago";
+            this.MetodoPago.ReadOnly = true;
+            this.MetodoPago.Width = 90;
+            // 
+            // EstadoPago
+            // 
+            this.EstadoPago.HeaderText = "Pago";
+            this.EstadoPago.Name = "EstadoPago";
+            this.EstadoPago.ReadOnly = true;
+            this.EstadoPago.Width = 70;
+            // 
+            // EstadoEntrega
+            // 
+            this.EstadoEntrega.HeaderText = "Entregado";
+            this.EstadoEntrega.Name = "EstadoEntrega";
+            this.EstadoEntrega.ReadOnly = true;
+            this.EstadoEntrega.Width = 70;
+            // 
+            // IdVenta
+            // 
+            this.IdVenta.HeaderText = ".";
+            this.IdVenta.Name = "IdVenta";
+            this.IdVenta.ReadOnly = true;
+            this.IdVenta.Visible = false;
             // 
             // frmReportes
             // 
@@ -513,6 +517,9 @@ namespace CapaPresentacion
         private Panel panel4;
         private Label label3;
         private DataGridView dgvdata;
+        private Panel panel2;
+        private TextBox txtindice;
+        private TextBox txtid;
         private DataGridViewButtonColumn verDetalle;
         private DataGridViewTextBoxColumn FechaRegistro;
         private DataGridViewTextBoxColumn TipoDocumento;
@@ -524,8 +531,5 @@ namespace CapaPresentacion
         private DataGridViewButtonColumn EstadoPago;
         private DataGridViewButtonColumn EstadoEntrega;
         private DataGridViewTextBoxColumn IdVenta;
-        private Panel panel2;
-        private TextBox txtindice;
-        private TextBox txtid;
     }
 }

@@ -129,6 +129,7 @@ namespace CapaPresentacion
             this.panel1.Controls.Add(this.txtindice);
             this.panel1.Controls.Add(this.txtid);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(172, 616);
@@ -158,7 +159,7 @@ namespace CapaPresentacion
             this.txtindicecliente.ForeColor = System.Drawing.Color.White;
             this.txtindicecliente.Location = new System.Drawing.Point(99, 4);
             this.txtindicecliente.Name = "txtindicecliente";
-            this.txtindicecliente.Size = new System.Drawing.Size(30, 20);
+            this.txtindicecliente.Size = new System.Drawing.Size(30, 21);
             this.txtindicecliente.TabIndex = 34;
             this.txtindicecliente.Text = "-1";
             this.txtindicecliente.Visible = false;
@@ -205,7 +206,7 @@ namespace CapaPresentacion
             this.txtidcliente.ForeColor = System.Drawing.Color.White;
             this.txtidcliente.Location = new System.Drawing.Point(137, 4);
             this.txtidcliente.Name = "txtidcliente";
-            this.txtidcliente.Size = new System.Drawing.Size(31, 20);
+            this.txtidcliente.Size = new System.Drawing.Size(31, 21);
             this.txtidcliente.TabIndex = 33;
             this.txtidcliente.Text = "0";
             this.txtidcliente.Visible = false;
@@ -214,7 +215,7 @@ namespace CapaPresentacion
             // 
             this.txttelefono1.Location = new System.Drawing.Point(10, 250);
             this.txttelefono1.Name = "txttelefono1";
-            this.txttelefono1.Size = new System.Drawing.Size(148, 20);
+            this.txttelefono1.Size = new System.Drawing.Size(148, 21);
             this.txttelefono1.TabIndex = 30;
             // 
             // label6
@@ -224,7 +225,7 @@ namespace CapaPresentacion
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(8, 234);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 13);
+            this.label6.Size = new System.Drawing.Size(58, 15);
             this.label6.TabIndex = 29;
             this.label6.Text = "Telefono:";
             // 
@@ -243,7 +244,7 @@ namespace CapaPresentacion
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(8, 153);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 13);
+            this.label5.Size = new System.Drawing.Size(62, 15);
             this.label5.TabIndex = 31;
             this.label5.Text = "Direccion:";
             // 
@@ -251,7 +252,7 @@ namespace CapaPresentacion
             // 
             this.txtnombre1.Location = new System.Drawing.Point(11, 118);
             this.txtnombre1.Name = "txtnombre1";
-            this.txtnombre1.Size = new System.Drawing.Size(148, 20);
+            this.txtnombre1.Size = new System.Drawing.Size(148, 21);
             this.txtnombre1.TabIndex = 30;
             // 
             // label1
@@ -261,7 +262,7 @@ namespace CapaPresentacion
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(9, 102);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.Size = new System.Drawing.Size(55, 15);
             this.label1.TabIndex = 29;
             this.label1.Text = "Nombre:";
             // 
@@ -270,7 +271,7 @@ namespace CapaPresentacion
             this.txtindice.BackColor = System.Drawing.Color.DimGray;
             this.txtindice.Location = new System.Drawing.Point(162, 14);
             this.txtindice.Name = "txtindice";
-            this.txtindice.Size = new System.Drawing.Size(1, 20);
+            this.txtindice.Size = new System.Drawing.Size(1, 21);
             this.txtindice.TabIndex = 1;
             this.txtindice.Text = "-1";
             this.txtindice.Visible = false;
@@ -280,7 +281,7 @@ namespace CapaPresentacion
             this.txtid.BackColor = System.Drawing.Color.DimGray;
             this.txtid.Location = new System.Drawing.Point(191, 14);
             this.txtid.Name = "txtid";
-            this.txtid.Size = new System.Drawing.Size(1, 20);
+            this.txtid.Size = new System.Drawing.Size(1, 21);
             this.txtid.TabIndex = 0;
             this.txtid.Text = "0";
             this.txtid.Visible = false;
@@ -305,7 +306,7 @@ namespace CapaPresentacion
             this.cbobusqueda.FormattingEnabled = true;
             this.cbobusqueda.Location = new System.Drawing.Point(358, 22);
             this.cbobusqueda.Name = "cbobusqueda";
-            this.cbobusqueda.Size = new System.Drawing.Size(148, 21);
+            this.cbobusqueda.Size = new System.Drawing.Size(148, 23);
             this.cbobusqueda.TabIndex = 24;
             // 
             // txtbusqueda
@@ -313,7 +314,7 @@ namespace CapaPresentacion
             this.txtbusqueda.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtbusqueda.Location = new System.Drawing.Point(522, 23);
             this.txtbusqueda.Name = "txtbusqueda";
-            this.txtbusqueda.Size = new System.Drawing.Size(148, 20);
+            this.txtbusqueda.Size = new System.Drawing.Size(148, 21);
             this.txtbusqueda.TabIndex = 25;
             // 
             // panel2
@@ -326,11 +327,11 @@ namespace CapaPresentacion
             this.panel2.Controls.Add(this.txtbusqueda);
             this.panel2.Controls.Add(this.cbobusqueda);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(172, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(832, 60);
             this.panel2.TabIndex = 27;
-            
             // 
             // btnlimpiarbusqueda
             // 

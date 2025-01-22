@@ -77,7 +77,7 @@
             this.cbobusqueda.FormattingEnabled = true;
             this.cbobusqueda.Location = new System.Drawing.Point(676, 22);
             this.cbobusqueda.Name = "cbobusqueda";
-            this.cbobusqueda.Size = new System.Drawing.Size(148, 21);
+            this.cbobusqueda.Size = new System.Drawing.Size(148, 23);
             this.cbobusqueda.TabIndex = 24;
             // 
             // txtbusqueda
@@ -85,7 +85,7 @@
             this.txtbusqueda.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtbusqueda.Location = new System.Drawing.Point(841, 22);
             this.txtbusqueda.Name = "txtbusqueda";
-            this.txtbusqueda.Size = new System.Drawing.Size(148, 20);
+            this.txtbusqueda.Size = new System.Drawing.Size(148, 21);
             this.txtbusqueda.TabIndex = 25;
             this.txtbusqueda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbusqueda_KeyPress);
             // 
@@ -99,6 +99,7 @@
             this.txtbuscar.Controls.Add(this.txtbusqueda);
             this.txtbuscar.Controls.Add(this.cbobusqueda);
             this.txtbuscar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtbuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbuscar.Location = new System.Drawing.Point(0, 0);
             this.txtbuscar.Name = "txtbuscar";
             this.txtbuscar.Size = new System.Drawing.Size(1146, 60);

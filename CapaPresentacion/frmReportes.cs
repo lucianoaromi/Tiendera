@@ -72,7 +72,7 @@ namespace CapaPresentacion
                 // Combinaciones de estados
                 if (estadoEntrega == "SI" && estadoPago == "SI")
                 {
-                    row.DefaultCellStyle.BackColor = System.Drawing.Color.Green;  // Verde
+                    row.DefaultCellStyle.BackColor = System.Drawing.Color.DarkGreen;  // Verde
                     row.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
                 }
                 else if (estadoEntrega == "NO" && estadoPago == "SI")
@@ -82,7 +82,7 @@ namespace CapaPresentacion
                 }
                 else if (estadoEntrega == "NO" && estadoPago == "NO")
                 {
-                    row.DefaultCellStyle.BackColor = System.Drawing.Color.Red;  // Rojo
+                    row.DefaultCellStyle.BackColor = System.Drawing.Color.DarkRed;  // Rojo
                     row.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
                 }
                 else if (estadoEntrega == "SI" && estadoPago == "NO")
@@ -292,6 +292,11 @@ namespace CapaPresentacion
                 e.Graphics.DrawImage(Properties.Resources.editaricon, new Rectangle(x, y, w, h));
                 e.Handled = true;
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
