@@ -243,10 +243,10 @@ namespace CapaPresentacion
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.Turquoise;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(784, 55);
+            this.button2.Location = new System.Drawing.Point(783, 60);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(64, 79);
+            this.button2.Size = new System.Drawing.Size(64, 75);
             this.button2.TabIndex = 33;
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -274,9 +274,9 @@ namespace CapaPresentacion
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(862, 54);
+            this.button3.Location = new System.Drawing.Point(861, 59);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(97, 79);
+            this.button3.Size = new System.Drawing.Size(97, 75);
             this.button3.TabIndex = 16;
             this.button3.Text = "Excel";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
