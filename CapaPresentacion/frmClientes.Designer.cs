@@ -330,6 +330,7 @@ namespace CapaPresentacion
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(832, 60);
             this.panel2.TabIndex = 27;
+            
             // 
             // btnlimpiarbusqueda
             // 

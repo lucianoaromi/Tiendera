@@ -80,11 +80,10 @@ namespace CapaPresentacion
             this.panel1.Controls.Add(this.dgvdata);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(50, 0);
+            this.panel1.Location = new System.Drawing.Point(32, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(959, 621);
+            this.panel1.Size = new System.Drawing.Size(977, 621);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // dgvdata
             // 
@@ -108,9 +107,10 @@ namespace CapaPresentacion
             this.dgvdata.Name = "dgvdata";
             this.dgvdata.ReadOnly = true;
             this.dgvdata.RowHeadersWidth = 51;
-            this.dgvdata.Size = new System.Drawing.Size(959, 471);
+            this.dgvdata.Size = new System.Drawing.Size(977, 471);
             this.dgvdata.TabIndex = 11;
             this.dgvdata.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdata_CellContentClick);
+            this.dgvdata.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvdata_CellPainting);
             // 
             // verDetalle
             // 
@@ -211,7 +211,7 @@ namespace CapaPresentacion
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(959, 150);
+            this.panel4.Size = new System.Drawing.Size(977, 150);
             this.panel4.TabIndex = 28;
             // 
             // lblapeusuario
@@ -243,7 +243,7 @@ namespace CapaPresentacion
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.Turquoise;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(776, 55);
+            this.button2.Location = new System.Drawing.Point(784, 55);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(64, 79);
@@ -274,7 +274,7 @@ namespace CapaPresentacion
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(846, 54);
+            this.button3.Location = new System.Drawing.Point(862, 54);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(97, 79);
             this.button3.TabIndex = 16;
@@ -442,7 +442,7 @@ namespace CapaPresentacion
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(51, 621);
+            this.panel2.Size = new System.Drawing.Size(34, 621);
             this.panel2.TabIndex = 34;
             // 
             // txtindice

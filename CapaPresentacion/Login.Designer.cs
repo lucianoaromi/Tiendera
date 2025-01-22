@@ -54,7 +54,7 @@
             // 
             this.txtdocumento.Location = new System.Drawing.Point(235, 65);
             this.txtdocumento.Name = "txtdocumento";
-            this.txtdocumento.Size = new System.Drawing.Size(260, 20);
+            this.txtdocumento.Size = new System.Drawing.Size(233, 20);
             this.txtdocumento.TabIndex = 3;
             // 
             // txtclave
@@ -62,7 +62,7 @@
             this.txtclave.Location = new System.Drawing.Point(235, 118);
             this.txtclave.Name = "txtclave";
             this.txtclave.PasswordChar = '*';
-            this.txtclave.Size = new System.Drawing.Size(260, 20);
+            this.txtclave.Size = new System.Drawing.Size(233, 20);
             this.txtclave.TabIndex = 4;
             // 
             // label3
@@ -96,7 +96,7 @@
             this.btningresar.IconSize = 20;
             this.btningresar.Location = new System.Drawing.Point(235, 165);
             this.btningresar.Name = "btningresar";
-            this.btningresar.Size = new System.Drawing.Size(118, 31);
+            this.btningresar.Size = new System.Drawing.Size(109, 31);
             this.btningresar.TabIndex = 7;
             this.btningresar.Text = "Ingresar";
             this.btningresar.UseVisualStyleBackColor = true;
@@ -111,9 +111,9 @@
             this.btncancelar.IconColor = System.Drawing.Color.White;
             this.btncancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btncancelar.IconSize = 20;
-            this.btncancelar.Location = new System.Drawing.Point(377, 165);
+            this.btncancelar.Location = new System.Drawing.Point(360, 165);
             this.btncancelar.Name = "btncancelar";
-            this.btncancelar.Size = new System.Drawing.Size(118, 31);
+            this.btncancelar.Size = new System.Drawing.Size(109, 31);
             this.btncancelar.TabIndex = 8;
             this.btncancelar.Text = "Cancelar";
             this.btncancelar.UseVisualStyleBackColor = true;
@@ -135,7 +135,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkCyan;
-            this.ClientSize = new System.Drawing.Size(522, 222);
+            this.ClientSize = new System.Drawing.Size(498, 222);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btncancelar);
             this.Controls.Add(this.btningresar);
