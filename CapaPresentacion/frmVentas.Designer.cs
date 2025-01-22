@@ -109,7 +109,7 @@ namespace CapaPresentacion
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel1.BackColor = System.Drawing.Color.DarkCyan;
             this.panel1.Controls.Add(this.groupBox3);
             this.panel1.Location = new System.Drawing.Point(34, 246);
             this.panel1.Name = "panel1";
@@ -118,6 +118,7 @@ namespace CapaPresentacion
             // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.Color.Teal;
             this.groupBox3.Controls.Add(this.pictureBox7);
             this.groupBox3.Controls.Add(this.pictureBox6);
             this.groupBox3.Controls.Add(this.txtpagacon);
@@ -131,9 +132,9 @@ namespace CapaPresentacion
             this.groupBox3.Controls.Add(this.txttotalpagar);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(6, 12);
+            this.groupBox3.Location = new System.Drawing.Point(19, 13);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(939, 371);
+            this.groupBox3.Size = new System.Drawing.Size(921, 366);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Lista de Productos";
@@ -141,7 +142,7 @@ namespace CapaPresentacion
             // pictureBox7
             // 
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(873, 305);
+            this.pictureBox7.Location = new System.Drawing.Point(855, 300);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(60, 60);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -152,7 +153,7 @@ namespace CapaPresentacion
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(809, 41);
+            this.pictureBox6.Location = new System.Drawing.Point(791, 41);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(110, 110);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -162,7 +163,7 @@ namespace CapaPresentacion
             // 
             // txtpagacon
             // 
-            this.txtpagacon.Location = new System.Drawing.Point(677, 98);
+            this.txtpagacon.Location = new System.Drawing.Point(659, 98);
             this.txtpagacon.Name = "txtpagacon";
             this.txtpagacon.Size = new System.Drawing.Size(113, 21);
             this.txtpagacon.TabIndex = 36;
@@ -172,7 +173,7 @@ namespace CapaPresentacion
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(678, 82);
+            this.label16.Location = new System.Drawing.Point(660, 82);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(62, 15);
             this.label16.TabIndex = 35;
@@ -180,7 +181,7 @@ namespace CapaPresentacion
             // 
             // txtcambio
             // 
-            this.txtcambio.Location = new System.Drawing.Point(677, 150);
+            this.txtcambio.Location = new System.Drawing.Point(659, 150);
             this.txtcambio.Name = "txtcambio";
             this.txtcambio.ReadOnly = true;
             this.txtcambio.Size = new System.Drawing.Size(113, 21);
@@ -189,7 +190,7 @@ namespace CapaPresentacion
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(678, 134);
+            this.label9.Location = new System.Drawing.Point(660, 134);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(53, 15);
             this.label9.TabIndex = 33;
@@ -209,11 +210,11 @@ namespace CapaPresentacion
             this.SubTotal,
             this.btneliminar});
             this.dgvdata.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgvdata.Location = new System.Drawing.Point(12, 19);
+            this.dgvdata.Location = new System.Drawing.Point(12, 23);
             this.dgvdata.Name = "dgvdata";
             this.dgvdata.ReadOnly = true;
             this.dgvdata.RowHeadersWidth = 51;
-            this.dgvdata.Size = new System.Drawing.Size(655, 342);
+            this.dgvdata.Size = new System.Drawing.Size(633, 330);
             this.dgvdata.TabIndex = 21;
             this.dgvdata.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdata_CellContentClick);
             this.dgvdata.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvdata_CellPainting);
@@ -270,7 +271,7 @@ namespace CapaPresentacion
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(679, 29);
+            this.label6.Location = new System.Drawing.Point(661, 29);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(94, 15);
             this.label6.TabIndex = 17;
@@ -280,7 +281,7 @@ namespace CapaPresentacion
             // cbometodopago
             // 
             this.cbometodopago.FormattingEnabled = true;
-            this.cbometodopago.Location = new System.Drawing.Point(677, 45);
+            this.cbometodopago.Location = new System.Drawing.Point(659, 45);
             this.cbometodopago.Name = "cbometodopago";
             this.cbometodopago.Size = new System.Drawing.Size(117, 23);
             this.cbometodopago.TabIndex = 20;
@@ -290,7 +291,7 @@ namespace CapaPresentacion
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(678, 304);
+            this.label10.Location = new System.Drawing.Point(660, 304);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(106, 20);
             this.label10.TabIndex = 11;
@@ -298,7 +299,7 @@ namespace CapaPresentacion
             // 
             // txttotalpagar
             // 
-            this.txttotalpagar.Location = new System.Drawing.Point(677, 328);
+            this.txttotalpagar.Location = new System.Drawing.Point(659, 328);
             this.txttotalpagar.Name = "txttotalpagar";
             this.txttotalpagar.ReadOnly = true;
             this.txttotalpagar.Size = new System.Drawing.Size(117, 21);
@@ -699,7 +700,7 @@ namespace CapaPresentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.BackColor = System.Drawing.Color.DarkCyan;
             this.ClientSize = new System.Drawing.Size(1019, 641);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
