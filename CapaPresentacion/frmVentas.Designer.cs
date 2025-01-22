@@ -352,7 +352,7 @@ namespace CapaPresentacion
             this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.Color.White;
-            this.groupBox4.Location = new System.Drawing.Point(18, 47);
+            this.groupBox4.Location = new System.Drawing.Point(20, 47);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(336, 79);
             this.groupBox4.TabIndex = 30;
@@ -406,7 +406,7 @@ namespace CapaPresentacion
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(360, 47);
+            this.groupBox2.Location = new System.Drawing.Point(362, 47);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(568, 79);
             this.groupBox2.TabIndex = 4;
@@ -520,7 +520,7 @@ namespace CapaPresentacion
             this.groupBox1.Controls.Add(this.txtcodigoproducto);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(18, 132);
+            this.groupBox1.Location = new System.Drawing.Point(20, 132);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(910, 102);
             this.groupBox1.TabIndex = 0;

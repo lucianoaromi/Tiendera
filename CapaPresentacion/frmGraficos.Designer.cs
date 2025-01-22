@@ -82,7 +82,7 @@
             this.dtpStartDate.CalendarTrailingForeColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dtpStartDate.CustomFormat = "MMM dd, yyyy";
             this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpStartDate.Location = new System.Drawing.Point(484, 81);
+            this.dtpStartDate.Location = new System.Drawing.Point(562, 99);
             this.dtpStartDate.Name = "dtpStartDate";
             this.dtpStartDate.Size = new System.Drawing.Size(109, 20);
             this.dtpStartDate.TabIndex = 0;
@@ -92,7 +92,7 @@
             this.dtpEndDate.CalendarTrailingForeColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dtpEndDate.CustomFormat = "MMM dd, yyyy";
             this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpEndDate.Location = new System.Drawing.Point(606, 81);
+            this.dtpEndDate.Location = new System.Drawing.Point(684, 99);
             this.dtpEndDate.Name = "dtpEndDate";
             this.dtpEndDate.Size = new System.Drawing.Size(109, 20);
             this.dtpEndDate.TabIndex = 1;
@@ -142,7 +142,7 @@
             legend1.TitleForeColor = System.Drawing.Color.White;
             legend1.TitleSeparatorColor = System.Drawing.Color.White;
             this.chartGrossRevenue.Legends.Add(legend1);
-            this.chartGrossRevenue.Location = new System.Drawing.Point(4, 17);
+            this.chartGrossRevenue.Location = new System.Drawing.Point(2, 20);
             this.chartGrossRevenue.Name = "chartGrossRevenue";
             series1.BackImageTransparentColor = System.Drawing.Color.White;
             series1.BackSecondaryColor = System.Drawing.Color.White;
@@ -166,7 +166,7 @@
             series1.SmartLabelStyle.CalloutBackColor = System.Drawing.Color.White;
             series1.SmartLabelStyle.CalloutLineColor = System.Drawing.Color.White;
             this.chartGrossRevenue.Series.Add(series1);
-            this.chartGrossRevenue.Size = new System.Drawing.Size(482, 187);
+            this.chartGrossRevenue.Size = new System.Drawing.Size(493, 187);
             this.chartGrossRevenue.TabIndex = 12;
             this.chartGrossRevenue.Text = "chart1";
             // 
@@ -234,7 +234,7 @@
             series2.Name = "Series1";
             series2.ShadowColor = System.Drawing.Color.RosyBrown;
             this.chartTopProducts.Series.Add(series2);
-            this.chartTopProducts.Size = new System.Drawing.Size(341, 421);
+            this.chartTopProducts.Size = new System.Drawing.Size(383, 436);
             this.chartTopProducts.TabIndex = 13;
             this.chartTopProducts.Text = "chart2";
             title1.Alignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -292,7 +292,7 @@
             this.label14.BackColor = System.Drawing.Color.DarkSlateGray;
             this.label14.Font = new System.Drawing.Font("Leelawadee", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Gold;
-            this.label14.Location = new System.Drawing.Point(21, 13);
+            this.label14.Location = new System.Drawing.Point(24, 19);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(164, 32);
             this.label14.TabIndex = 14;
@@ -306,7 +306,7 @@
             this.dgvUnderstock.Name = "dgvUnderstock";
             this.dgvUnderstock.ReadOnly = true;
             this.dgvUnderstock.RowHeadersWidth = 51;
-            this.dgvUnderstock.Size = new System.Drawing.Size(349, 188);
+            this.dgvUnderstock.Size = new System.Drawing.Size(382, 203);
             this.dgvUnderstock.TabIndex = 0;
             // 
             // panel6
@@ -330,18 +330,18 @@
             this.panel6.Controls.Add(this.groupBox1);
             this.panel6.Controls.Add(this.groupBox2);
             this.panel6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel6.Location = new System.Drawing.Point(8, 9);
+            this.panel6.Location = new System.Drawing.Point(13, 11);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(915, 574);
+            this.panel6.Size = new System.Drawing.Size(1004, 618);
             this.panel6.TabIndex = 18;
             // 
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.chartTopProducts);
             this.groupBox7.ForeColor = System.Drawing.Color.White;
-            this.groupBox7.Location = new System.Drawing.Point(535, 124);
+            this.groupBox7.Location = new System.Drawing.Point(583, 142);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(347, 440);
+            this.groupBox7.Size = new System.Drawing.Size(389, 455);
             this.groupBox7.TabIndex = 21;
             this.groupBox7.TabStop = false;
             // 
@@ -349,7 +349,7 @@
             // 
             this.groupBox6.Controls.Add(this.lblNumOrders);
             this.groupBox6.ForeColor = System.Drawing.Color.White;
-            this.groupBox6.Location = new System.Drawing.Point(21, 56);
+            this.groupBox6.Location = new System.Drawing.Point(32, 74);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(114, 49);
             this.groupBox6.TabIndex = 22;
@@ -370,7 +370,7 @@
             // 
             this.groupBox5.Controls.Add(this.lblTotalRevenue);
             this.groupBox5.ForeColor = System.Drawing.Color.White;
-            this.groupBox5.Location = new System.Drawing.Point(141, 56);
+            this.groupBox5.Location = new System.Drawing.Point(152, 74);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(162, 49);
             this.groupBox5.TabIndex = 22;
@@ -391,7 +391,7 @@
             // 
             this.groupBox4.Controls.Add(this.lblTotalProfit);
             this.groupBox4.ForeColor = System.Drawing.Color.White;
-            this.groupBox4.Location = new System.Drawing.Point(307, 56);
+            this.groupBox4.Location = new System.Drawing.Point(318, 74);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(162, 49);
             this.groupBox4.TabIndex = 21;
@@ -404,7 +404,7 @@
             this.btnOkCustomDate.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnOkCustomDate.IconColor = System.Drawing.Color.Black;
             this.btnOkCustomDate.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnOkCustomDate.Location = new System.Drawing.Point(727, 77);
+            this.btnOkCustomDate.Location = new System.Drawing.Point(805, 95);
             this.btnOkCustomDate.Name = "btnOkCustomDate";
             this.btnOkCustomDate.Size = new System.Drawing.Size(50, 28);
             this.btnOkCustomDate.TabIndex = 24;
@@ -418,7 +418,7 @@
             this.btnThisMonth.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnThisMonth.IconColor = System.Drawing.Color.Black;
             this.btnThisMonth.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnThisMonth.Location = new System.Drawing.Point(803, 20);
+            this.btnThisMonth.Location = new System.Drawing.Point(881, 38);
             this.btnThisMonth.Name = "btnThisMonth";
             this.btnThisMonth.Size = new System.Drawing.Size(92, 28);
             this.btnThisMonth.TabIndex = 23;
@@ -432,7 +432,7 @@
             this.btnLast30Days.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnLast30Days.IconColor = System.Drawing.Color.Black;
             this.btnLast30Days.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLast30Days.Location = new System.Drawing.Point(690, 21);
+            this.btnLast30Days.Location = new System.Drawing.Point(771, 38);
             this.btnLast30Days.Name = "btnLast30Days";
             this.btnLast30Days.Size = new System.Drawing.Size(92, 28);
             this.btnLast30Days.TabIndex = 22;
@@ -446,7 +446,7 @@
             this.btnLast7Days.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnLast7Days.IconColor = System.Drawing.Color.Black;
             this.btnLast7Days.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLast7Days.Location = new System.Drawing.Point(575, 21);
+            this.btnLast7Days.Location = new System.Drawing.Point(662, 38);
             this.btnLast7Days.Name = "btnLast7Days";
             this.btnLast7Days.Size = new System.Drawing.Size(92, 28);
             this.btnLast7Days.TabIndex = 21;
@@ -460,7 +460,7 @@
             this.btnToday.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnToday.IconColor = System.Drawing.Color.Black;
             this.btnToday.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnToday.Location = new System.Drawing.Point(460, 21);
+            this.btnToday.Location = new System.Drawing.Point(554, 38);
             this.btnToday.Name = "btnToday";
             this.btnToday.Size = new System.Drawing.Size(92, 28);
             this.btnToday.TabIndex = 20;
@@ -474,7 +474,7 @@
             this.btnCustomDate.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnCustomDate.IconColor = System.Drawing.Color.Black;
             this.btnCustomDate.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCustomDate.Location = new System.Drawing.Point(788, 77);
+            this.btnCustomDate.Location = new System.Drawing.Point(866, 95);
             this.btnCustomDate.Name = "btnCustomDate";
             this.btnCustomDate.Size = new System.Drawing.Size(107, 28);
             this.btnCustomDate.TabIndex = 19;
@@ -489,9 +489,9 @@
             this.groupBox3.Controls.Add(this.lblNumProducts);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(21, 352);
+            this.groupBox3.Location = new System.Drawing.Point(31, 367);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(125, 212);
+            this.groupBox3.Size = new System.Drawing.Size(125, 227);
             this.groupBox3.TabIndex = 20;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Contador Total";
@@ -500,9 +500,9 @@
             // 
             this.groupBox1.Controls.Add(this.dgvUnderstock);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(154, 352);
+            this.groupBox1.Location = new System.Drawing.Point(164, 370);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(361, 212);
+            this.groupBox1.Size = new System.Drawing.Size(393, 227);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Productos de bajo stock";
@@ -511,9 +511,9 @@
             // 
             this.groupBox2.Controls.Add(this.chartGrossRevenue);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(21, 124);
+            this.groupBox2.Location = new System.Drawing.Point(30, 139);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(494, 212);
+            this.groupBox2.Size = new System.Drawing.Size(526, 212);
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ingresos brutos";
@@ -521,19 +521,19 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BackColor = System.Drawing.Color.MediumTurquoise;
             this.panel2.Controls.Add(this.panel6);
-            this.panel2.Location = new System.Drawing.Point(12, 15);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(933, 592);
+            this.panel2.Size = new System.Drawing.Size(1030, 640);
             this.panel2.TabIndex = 19;
             // 
             // frmGraficos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(967, 621);
+            this.ClientSize = new System.Drawing.Size(1030, 640);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmGraficos";

@@ -10,14 +10,30 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaPresentacion.Modales;
 
+
 //Llamo a las Capas relacionadas
 using CapaEntidad;
 using CapaNegocio;
+using System.Runtime.InteropServices;
 
 namespace CapaPresentacion
 {
     public partial class Inicio : Form
     {
+        // Importa la función de usuario para mover la ventana
+        [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+        [DllImport("user32.dll", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        private const int WM_NCLBUTTONDOWN = 0xA1;
+        private const int HTCAPTION = 0x2;
+
+
+
+
+
         //Se crea una variable de tipo Usuario, global para todos los metodos de esta clase
         private static Usuario usuarioActual;
         //Almacena el menu activo
@@ -222,6 +238,45 @@ namespace CapaPresentacion
         private void panelclousing()
         {
             panelvista.Visible = false;
+        }
+
+        private void lblusuario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+        /*
+        private void Inicio_MouseDown(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }*/
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(this.Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
+            }
         }
     }
 }

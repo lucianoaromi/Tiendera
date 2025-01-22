@@ -46,7 +46,6 @@
             this.menubackup = new FontAwesome.Sharp.IconMenuItem();
             this.menuverproductos = new FontAwesome.Sharp.IconMenuItem();
             this.menuacercade = new FontAwesome.Sharp.IconMenuItem();
-            this.menutitulo = new System.Windows.Forms.MenuStrip();
             this.label1 = new System.Windows.Forms.Label();
             this.lblusuario = new System.Windows.Forms.Label();
             this.contenedor = new System.Windows.Forms.Panel();
@@ -59,12 +58,20 @@
             this.txtidusuario = new System.Windows.Forms.TextBox();
             this.timerReloj = new System.Windows.Forms.Timer(this.components);
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.menu.SuspendLayout();
             this.contenedor.SuspendLayout();
             this.panelvista.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menu
@@ -82,10 +89,10 @@
             this.menubackup,
             this.menuverproductos,
             this.menuacercade});
-            this.menu.Location = new System.Drawing.Point(0, 65);
+            this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
             this.menu.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menu.Size = new System.Drawing.Size(94, 646);
+            this.menu.Size = new System.Drawing.Size(94, 651);
             this.menu.TabIndex = 0;
             this.menu.Text = "menuStrip1";
             // 
@@ -266,26 +273,13 @@
             this.menuacercade.Text = "Guia";
             this.menuacercade.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
-            // menutitulo
-            // 
-            this.menutitulo.AutoSize = false;
-            this.menutitulo.BackColor = System.Drawing.Color.Black;
-            this.menutitulo.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menutitulo.Location = new System.Drawing.Point(0, 0);
-            this.menutitulo.Name = "menutitulo";
-            this.menutitulo.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menutitulo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menutitulo.Size = new System.Drawing.Size(1116, 65);
-            this.menutitulo.TabIndex = 1;
-            this.menutitulo.Text = "menuStrip2";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Black;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(79, 17);
+            this.label1.Location = new System.Drawing.Point(91, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(141, 31);
             this.label1.TabIndex = 2;
@@ -299,20 +293,22 @@
             this.lblusuario.BackColor = System.Drawing.Color.Black;
             this.lblusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblusuario.ForeColor = System.Drawing.Color.White;
-            this.lblusuario.Location = new System.Drawing.Point(866, 27);
+            this.lblusuario.Location = new System.Drawing.Point(923, 50);
             this.lblusuario.Name = "lblusuario";
             this.lblusuario.Size = new System.Drawing.Size(117, 17);
             this.lblusuario.TabIndex = 5;
             this.lblusuario.Text = "(Tipo de usuario)";
+            this.lblusuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblusuario.Click += new System.EventHandler(this.lblusuario_Click);
             // 
             // contenedor
             // 
             this.contenedor.BackColor = System.Drawing.Color.DarkSlateGray;
             this.contenedor.Controls.Add(this.panelvista);
-            this.contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.contenedor.Location = new System.Drawing.Point(94, 65);
+            this.contenedor.Dock = System.Windows.Forms.DockStyle.Right;
+            this.contenedor.Location = new System.Drawing.Point(97, 0);
             this.contenedor.Name = "contenedor";
-            this.contenedor.Size = new System.Drawing.Size(1022, 646);
+            this.contenedor.Size = new System.Drawing.Size(1028, 651);
             this.contenedor.TabIndex = 3;
             // 
             // panelvista
@@ -322,7 +318,7 @@
             this.panelvista.Controls.Add(this.pictureBox2);
             this.panelvista.Controls.Add(this.lblfecha);
             this.panelvista.Controls.Add(this.lblusuarioinicio);
-            this.panelvista.Location = new System.Drawing.Point(125, 109);
+            this.panelvista.Location = new System.Drawing.Point(128, 111);
             this.panelvista.Name = "panelvista";
             this.panelvista.Size = new System.Drawing.Size(773, 477);
             this.panelvista.TabIndex = 4;
@@ -379,7 +375,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Black;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 8);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(86, 57);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -389,7 +385,7 @@
             // txtidusuario
             // 
             this.txtidusuario.BackColor = System.Drawing.Color.Black;
-            this.txtidusuario.Location = new System.Drawing.Point(1108, 0);
+            this.txtidusuario.Location = new System.Drawing.Point(993, 6);
             this.txtidusuario.Name = "txtidusuario";
             this.txtidusuario.Size = new System.Drawing.Size(36, 20);
             this.txtidusuario.TabIndex = 7;
@@ -406,29 +402,76 @@
             this.pictureBox4.BackColor = System.Drawing.Color.Black;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.InitialImage = null;
-            this.pictureBox4.Location = new System.Drawing.Point(1057, 22);
+            this.pictureBox4.Location = new System.Drawing.Point(892, 42);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(25, 25);
             this.pictureBox4.TabIndex = 4;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel1.Controls.Add(this.pictureBox5);
+            this.panel1.Controls.Add(this.pictureBox3);
+            this.panel1.Controls.Add(this.pictureBox4);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.lblusuario);
+            this.panel1.Controls.Add(this.txtidusuario);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1125, 74);
+            this.panel1.TabIndex = 4;
+            //this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(1035, 6);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 9;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(1076, 6);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 8;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.menu);
+            this.panel2.Controls.Add(this.contenedor);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 74);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1125, 651);
+            this.panel2.TabIndex = 5;
             // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1116, 711);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.txtidusuario);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.lblusuario);
-            this.Controls.Add(this.contenedor);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.menu);
-            this.Controls.Add(this.menutitulo);
+            this.ClientSize = new System.Drawing.Size(1125, 725);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menu;
             this.Name = "Inicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Inicio_Load);
+            //this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Inicio_MouseDown);
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
             this.contenedor.ResumeLayout(false);
@@ -437,15 +480,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.MenuStrip menu;
-        private System.Windows.Forms.MenuStrip menutitulo;
         private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconMenuItem menuusuarios;
         private FontAwesome.Sharp.IconMenuItem menumantenedor;
@@ -472,5 +519,9 @@
         private System.Windows.Forms.Panel panelvista;
         private System.Windows.Forms.PictureBox pictureBox4;
         private FontAwesome.Sharp.IconMenuItem menuacercade;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox5;
     }
 }
