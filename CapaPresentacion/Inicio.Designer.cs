@@ -92,7 +92,7 @@
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
             this.menu.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menu.Size = new System.Drawing.Size(94, 651);
+            this.menu.Size = new System.Drawing.Size(94, 634);
             this.menu.TabIndex = 0;
             this.menu.Text = "menuStrip1";
             // 
@@ -308,7 +308,7 @@
             this.contenedor.Dock = System.Windows.Forms.DockStyle.Right;
             this.contenedor.Location = new System.Drawing.Point(97, 0);
             this.contenedor.Name = "contenedor";
-            this.contenedor.Size = new System.Drawing.Size(1028, 651);
+            this.contenedor.Size = new System.Drawing.Size(1028, 634);
             this.contenedor.TabIndex = 3;
             // 
             // panelvista
@@ -318,7 +318,7 @@
             this.panelvista.Controls.Add(this.pictureBox2);
             this.panelvista.Controls.Add(this.lblfecha);
             this.panelvista.Controls.Add(this.lblusuarioinicio);
-            this.panelvista.Location = new System.Drawing.Point(128, 111);
+            this.panelvista.Location = new System.Drawing.Point(128, 103);
             this.panelvista.Name = "panelvista";
             this.panelvista.Size = new System.Drawing.Size(773, 477);
             this.panelvista.TabIndex = 4;
@@ -456,14 +456,14 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 74);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1125, 651);
+            this.panel2.Size = new System.Drawing.Size(1125, 634);
             this.panel2.TabIndex = 5;
             // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1125, 725);
+            this.ClientSize = new System.Drawing.Size(1125, 708);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
