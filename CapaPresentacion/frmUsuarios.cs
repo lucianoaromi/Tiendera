@@ -30,8 +30,8 @@ namespace CapaPresentacion
 
         private void frmUsuarios_Load(object sender, EventArgs e)
         {
-            cboestado.Items.Add(new OpcionCombo() { Valor = 1, Texto = "ACTIVO" });
-            cboestado.Items.Add(new OpcionCombo() { Valor = 0, Texto = "NO ACTIVO" });
+            cboestado.Items.Add(new OpcionCombo() { Valor = 1, Texto = "Activo" });
+            cboestado.Items.Add(new OpcionCombo() { Valor = 0, Texto = "No Activo" });
             //Especifica que solo se debe mostrar el dato de nombre "Texto"
             cboestado.DisplayMember = "Texto";
             //Maneja como informacion interna el dato de nombre "Valor"
@@ -464,5 +464,42 @@ namespace CapaPresentacion
                 }
             }
         }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            string columnaFiltro = ((OpcionCombo)cbobusqueda.SelectedItem).Valor.ToString();
+            string busquedaNormalizada = NormalizarTexto(txtbusqueda.Text.Trim().ToUpper());
+
+            if (dgvdata.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dgvdata.Rows)
+                {
+                    if (row.Cells[columnaFiltro].Value != null)
+                    {
+                        string cellValue = row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper();
+                        string cellValueNormalizada = NormalizarTexto(cellValue);
+
+                        if (cellValueNormalizada.Contains(busquedaNormalizada))
+                        {
+                            row.Visible = true;
+                        }
+                        else
+                        {
+                            row.Visible = false;
+                        }
+                    }
+                }
+            }
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            txtbusqueda.Text = "";
+            foreach (DataGridViewRow row in dgvdata.Rows)
+            {
+                row.Visible = true;
+            }
+        }
+
     }
 }
