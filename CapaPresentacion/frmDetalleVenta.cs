@@ -217,9 +217,68 @@ namespace CapaPresentacion
             }
         }
 
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            Venta oVenta = new CN_Venta().ObtenerVenta(txtbusqueda.Text);
 
+            if (oVenta.IdVenta != 0)
+            {
+                txtnumerodocumento.Text = oVenta.NumeroDocumento;
 
+                // Información del Vendedor
+                txtfecha.Text = oVenta.FechaRegistro;
+                txttipodocumento.Text = oVenta.TipoDocumento;
+                txtusuarioapellido.Text = oVenta.oUsuario.Apellido;
+                txtusuarionombre.Text = oVenta.oUsuario2.Nombre;
 
+                // Información del Cliente
+                txtdoccliente.Text = oVenta.DocumentoCliente;
+                txtapellidocliente.Text = oVenta.ApellidoCliente;
+                txtnombrecliente.Text = oVenta.NombreCliente;
 
+                // Lista de productos vendidos
+                dgvdata.Rows.Clear();
+                foreach (Detalle_Venta dv in oVenta.oDetalle_Venta)
+                {
+                    dgvdata.Rows.Add(new object[] { dv.oProducto.Nombre, dv.Precio, dv.Cantidad, dv.SubTotal });
+                }
+
+                // Restablecer colores de todas las filas
+                foreach (DataGridViewRow row in dgvdata.Rows)
+                {
+                    row.DefaultCellStyle.BackColor = dgvdata.DefaultCellStyle.BackColor;
+                    row.DefaultCellStyle.ForeColor = dgvdata.DefaultCellStyle.ForeColor;
+                }
+
+                // Deseleccionar la primera fila
+                if (dgvdata.Rows.Count > 0)
+                {
+                    dgvdata.ClearSelection();
+                }
+
+                // Información de los distintos montos
+                txtmontototal.Text = oVenta.MontoTotal.ToString("0.00");
+                txtmontopago.Text = oVenta.MontoPago.ToString("0.00");
+                txtmontocambio.Text = oVenta.MontoCambio.ToString("0.00");
+                txtmetodopago.Text = oVenta.DesMetPago;
+            }
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            txtbusqueda.Text = "";
+            txtnumerodocumento.Text = "";
+            txtfecha.Text = "";
+            txttipodocumento.Text = "";
+            txtusuarioapellido.Text = "";
+
+            txtdoccliente.Text = "";
+            txtapellidocliente.Text = "";
+            dgvdata.Rows.Clear();
+            txtmontototal.Text = "0.00";
+            txtmontopago.Text = "0.00";
+            txtmontocambio.Text = "0.00";
+            txtmetodopago.Text = "";
+        }
     }
 }

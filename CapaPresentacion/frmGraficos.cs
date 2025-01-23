@@ -23,7 +23,7 @@ namespace CapaPresentacion
             //Default - Last 7 days
             dtpStartDate.Value = DateTime.Today.AddDays(-7);
             dtpEndDate.Value = DateTime.Now;
-            btnLast7Days.Select();
+            //btnLast7Days.Select();
             dgvUnderstock.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             model = new Dashboard();
             LoadData();
@@ -111,6 +111,38 @@ namespace CapaPresentacion
         }
 
         private void btnThisMonth_Click(object sender, EventArgs e)
+        {
+            dtpStartDate.Value = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
+            dtpEndDate.Value = DateTime.Now;
+            LoadData();
+            DisableCustomDates();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            dtpStartDate.Value = DateTime.Today;
+            dtpEndDate.Value = DateTime.Now;
+            LoadData();
+            DisableCustomDates();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            dtpStartDate.Value = DateTime.Today.AddDays(-7);
+            dtpEndDate.Value = DateTime.Now;
+            LoadData();
+            DisableCustomDates();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            dtpStartDate.Value = DateTime.Today.AddDays(-30);
+            dtpEndDate.Value = DateTime.Now;
+            LoadData();
+            DisableCustomDates();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
             dtpStartDate.Value = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
             dtpEndDate.Value = DateTime.Now;
