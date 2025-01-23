@@ -92,7 +92,7 @@
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
             this.menu.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menu.Size = new System.Drawing.Size(94, 634);
+            this.menu.Size = new System.Drawing.Size(94, 640);
             this.menu.TabIndex = 0;
             this.menu.Text = "menuStrip1";
             // 
@@ -279,11 +279,11 @@
             this.label1.BackColor = System.Drawing.Color.Black;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(91, 22);
+            this.label1.Location = new System.Drawing.Point(80, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 31);
+            this.label1.Size = new System.Drawing.Size(164, 31);
             this.label1.TabIndex = 2;
-            this.label1.Text = "ARDUINO";
+            this.label1.Text = "ARDUINO  -";
             // 
             // lblusuario
             // 
@@ -293,7 +293,7 @@
             this.lblusuario.BackColor = System.Drawing.Color.Black;
             this.lblusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblusuario.ForeColor = System.Drawing.Color.White;
-            this.lblusuario.Location = new System.Drawing.Point(891, 50);
+            this.lblusuario.Location = new System.Drawing.Point(279, 31);
             this.lblusuario.Name = "lblusuario";
             this.lblusuario.Size = new System.Drawing.Size(117, 17);
             this.lblusuario.TabIndex = 5;
@@ -308,7 +308,7 @@
             this.contenedor.Dock = System.Windows.Forms.DockStyle.Right;
             this.contenedor.Location = new System.Drawing.Point(97, 0);
             this.contenedor.Name = "contenedor";
-            this.contenedor.Size = new System.Drawing.Size(1028, 634);
+            this.contenedor.Size = new System.Drawing.Size(1028, 640);
             this.contenedor.TabIndex = 3;
             // 
             // panelvista
@@ -318,7 +318,7 @@
             this.panelvista.Controls.Add(this.pictureBox2);
             this.panelvista.Controls.Add(this.lblfecha);
             this.panelvista.Controls.Add(this.lblusuarioinicio);
-            this.panelvista.Location = new System.Drawing.Point(128, 103);
+            this.panelvista.Location = new System.Drawing.Point(128, 106);
             this.panelvista.Name = "panelvista";
             this.panelvista.Size = new System.Drawing.Size(773, 477);
             this.panelvista.TabIndex = 4;
@@ -375,9 +375,9 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Black;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 8);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 6);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(86, 57);
+            this.pictureBox1.Size = new System.Drawing.Size(80, 57);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
@@ -402,7 +402,7 @@
             this.pictureBox4.BackColor = System.Drawing.Color.Black;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.InitialImage = null;
-            this.pictureBox4.Location = new System.Drawing.Point(860, 42);
+            this.pictureBox4.Location = new System.Drawing.Point(248, 23);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(25, 25);
             this.pictureBox4.TabIndex = 4;
@@ -422,7 +422,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1125, 74);
+            this.panel1.Size = new System.Drawing.Size(1125, 68);
             this.panel1.TabIndex = 4;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
@@ -454,9 +454,9 @@
             this.panel2.Controls.Add(this.menu);
             this.panel2.Controls.Add(this.contenedor);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 74);
+            this.panel2.Location = new System.Drawing.Point(0, 68);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1125, 634);
+            this.panel2.Size = new System.Drawing.Size(1125, 640);
             this.panel2.TabIndex = 5;
             // 
             // Inicio

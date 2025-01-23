@@ -361,5 +361,108 @@ namespace CapaPresentacion
             }
         }
 
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            String hashedPassword = BCrypt.Net.BCrypt.EnhancedHashPassword(txtclave.Text);
+            string mensaje = string.Empty;
+            Usuario objusuario = new Usuario()
+            {
+                IdUsuario = Convert.ToInt32(txtid.Text),
+                Documento = txtdocumento.Text,
+                Apellido = txtapellido.Text,
+                Nombre = txtnombre.Text,
+                Direccion = txtdireccion.Text,
+                Correo = txtcorreo.Text,
+                Clave = hashedPassword,
+                oRol = new Rol() { IdRol = Convert.ToInt32(((OpcionCombo)cborol.SelectedItem).Valor) },
+                Estado = Convert.ToInt32(((OpcionCombo)cboestado.SelectedItem).Valor) == 1 ? true : false
+            };
+
+
+            if (objusuario.IdUsuario == 0)
+            {
+                //Ejecuta el metodo Registrar de la Clase Usuario en la Cap de Neg con sus respectivos parametros, retornando el idusuario
+                int idusuariogenerado = new CN_Usuario().Registrar(objusuario, out mensaje);
+
+                if (idusuariogenerado != 0)
+                {
+                    dgvdata.Rows.Add(new object[] {"",idusuariogenerado,txtdocumento.Text,txtapellido.Text,txtnombre.Text,txtdireccion.Text,txtcorreo.Text,txtclave.Text,
+                  ((OpcionCombo)cborol.SelectedItem).Valor.ToString(),
+                  ((OpcionCombo)cborol.SelectedItem).Texto.ToString(),
+                  ((OpcionCombo)cboestado.SelectedItem).Valor.ToString(),
+                  ((OpcionCombo)cboestado.SelectedItem).Texto.ToString()
+                });
+
+                    Limpiar();
+                }
+                else
+                {
+                    MessageBox.Show(mensaje);
+                }
+
+            }
+            //Si el objeto idusuario no es igual a 0 se accede a editar el usario seleccionado del datagrid
+            else
+            {
+                bool resultado = new CN_Usuario().Editar(objusuario, out mensaje);
+
+                if (resultado)
+                {
+                    //Se obtiene la fila seleccionada en el datagrid
+                    DataGridViewRow row = dgvdata.Rows[Convert.ToInt32(txtindice.Text)];
+                    //Se realiza el llamado a las filas del datagrid
+                    row.Cells["Id"].Value = txtid.Text;
+                    row.Cells["Documento"].Value = txtdocumento.Text;
+                    row.Cells["Apellido"].Value = txtapellido.Text;
+                    row.Cells["Nombre"].Value = txtnombre.Text;
+                    row.Cells["Direccion"].Value = txtdireccion.Text;
+                    row.Cells["Correo"].Value = txtcorreo.Text;
+                    row.Cells["Clave"].Value = txtclave.Text;
+                    row.Cells["IdRol"].Value = ((OpcionCombo)cborol.SelectedItem).Valor.ToString();
+                    row.Cells["Rol"].Value = ((OpcionCombo)cborol.SelectedItem).Texto.ToString();
+                    row.Cells["EstadoValor"].Value = ((OpcionCombo)cboestado.SelectedItem).Valor.ToString();
+                    row.Cells["Estado"].Value = ((OpcionCombo)cboestado.SelectedItem).Texto.ToString();
+
+                    Limpiar();
+
+                }
+                else
+                {
+                    MessageBox.Show(mensaje);
+                }
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(txtid.Text) != 0)
+            {
+                if (MessageBox.Show("¿Desea eliminar el usuario?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    string mensaje = string.Empty;
+                    Usuario objusuario = new Usuario()
+                    {
+                        IdUsuario = Convert.ToInt32(txtid.Text)
+                    };
+
+
+                    bool respuesta = new CN_Usuario().Eliminar(objusuario, out mensaje);
+
+                    if (respuesta)
+                    {
+                        dgvdata.Rows.RemoveAt(Convert.ToInt32(txtindice.Text));
+                    }
+                    else
+                    {
+                        MessageBox.Show(mensaje, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
+            }
+        }
     }
 }
