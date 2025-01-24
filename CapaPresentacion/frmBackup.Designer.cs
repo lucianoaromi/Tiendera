@@ -229,7 +229,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.MediumTurquoise;
             this.panel2.Controls.Add(this.panel1);
-            this.panel2.Location = new System.Drawing.Point(89, 63);
+            this.panel2.Location = new System.Drawing.Point(61, 62);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(903, 489);
             this.panel2.TabIndex = 100;
@@ -239,7 +239,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1087, 607);
+            this.ClientSize = new System.Drawing.Size(1040, 607);
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

@@ -247,6 +247,10 @@ namespace CapaPresentacion
             }
 
             CargarColoresFilas();
+
+            SumarColumnaFilasVisibles(dgvdata, "MontoTotal", txtTotal);
+            ContarFilasVisibles(dgvdata, txtResultado);
+
         }
 
         private void btnbuscarpor_Click(object sender, EventArgs e)
@@ -314,6 +318,7 @@ namespace CapaPresentacion
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            
             string columnaFiltro = ((OpcionCombo)cbobusqueda.SelectedItem).Valor.ToString();
             string busquedaNormalizada = NormalizarTexto(txtbusqueda.Text.Trim().ToUpper());
 
@@ -337,6 +342,10 @@ namespace CapaPresentacion
                     }
                 }
             }
+
+            SumarColumnaFilasVisibles(dgvdata, "MontoTotal", txtTotal);
+            ContarFilasVisibles(dgvdata, txtResultado);
+
         }
 
 
@@ -408,6 +417,57 @@ namespace CapaPresentacion
             }
 
         }
+
+
+        private void SumarColumnaFilasVisibles(DataGridView dgvdata, string MontoTotal, TextBox txtResultado)
+        {
+            try
+            {
+                // Inicializar la suma en 0
+                decimal suma = 0;
+
+                // Iterar por todas las filas visibles del DataGridView
+                foreach (DataGridViewRow row in dgvdata.Rows)
+                {
+                    if (row.Visible && row.Cells[MontoTotal].Value != null) // Verificar si la fila es visible
+                    {
+                        // Intentar convertir el valor a decimal y sumarlo
+                        if (decimal.TryParse(row.Cells[MontoTotal].Value.ToString(), out decimal valor))
+                        {
+                            suma += valor;
+                        }
+                    }
+                }
+
+                // Mostrar el resultado en el TextBox
+                txtResultado.Text = suma.ToString("N2"); // Formato numérico con dos decimales
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al sumar la columna: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        private void ContarFilasVisibles(DataGridView dgvdata, TextBox txtResultado)
+        {
+            try
+            {
+                // Contar las filas visibles
+                int contador = dgvdata.Rows.Cast<DataGridViewRow>().Count(row => row.Visible);
+
+                // Mostrar el resultado en el TextBox
+                txtResultado.Text = contador.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al contar las filas visibles: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+
+
     }
 }
 
