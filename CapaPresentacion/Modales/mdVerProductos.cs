@@ -53,7 +53,7 @@ namespace CapaPresentacion.Modales
                     item.oCategoria.IdCategoria,
                     item.oCategoria.Descripcion,
                     item.Stock,
-                    item.Precio,
+                    string.Format("{0:N2}", item.Precio), // Formato 1.000,00
                     item.Estado ==  true ? 1 : 0,
                     item.Estado == true ? "Activo" : "No Activo",
                  });

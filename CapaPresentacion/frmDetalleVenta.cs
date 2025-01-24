@@ -212,8 +212,6 @@ namespace CapaPresentacion
                     stream.Close();
                 }
 
-                // Cierra el formulario después de guardar el archivo
-                this.Close();
             }
         }
 

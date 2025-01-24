@@ -2,16 +2,19 @@
 using CapaNegocio;
 using CapaPresentacion.Modales;
 using CapaPresentacion.Utilidades;
+using DocumentFormat.OpenXml.Wordprocessing;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Org.BouncyCastle.Math.Primes;
 
 namespace CapaPresentacion
 {
@@ -161,6 +164,13 @@ namespace CapaPresentacion
                     total += Convert.ToDecimal(row.Cells["SubTotal"].Value.ToString());
             }
             txttotalpagar.Text = total.ToString("0.00");
+
+            // Intenta convertir el valor del primer TextBox a decimal
+            if (decimal.TryParse(txttotalpagar.Text, out decimal valor))
+            {
+                // Formatea el valor con separadores de miles y coma como separador decimal
+                txtOutput.Text = valor.ToString("#,##0.00", new System.Globalization.CultureInfo("es-ES"));
+            }
         }
 
         private void limpiarproducto()
@@ -485,16 +495,18 @@ namespace CapaPresentacion
                     txtcodigoproducto.Text = modal._Producto.Codigo.ToString();
                     txtnombreproducto.Text = modal._Producto.Nombre;
                     txtstock.Text = modal._Producto.Stock.ToString();
-                    txtpreciounidad.Text = modal._Producto.Precio.ToString();
+
+                    // Formateo del precio con separador de miles y decimales
+                    txtpreciounidad.Text = modal._Producto.Precio.ToString("#,0.00");
+
                     txtcantidad.Select();
                 }
                 else
                 {
                     txtcodigoproducto.Select();
                 }
-
-
             }
+
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -506,6 +518,7 @@ namespace CapaPresentacion
         {
             decimal precio = 0;
             bool producto_existe = false;
+            decimal total = 0;  // Variable para almacenar el total de la suma de los precios
 
             // Verifica que se seleccione un producto
             if (int.Parse(txtidproducto.Text) == 0)
@@ -551,16 +564,33 @@ namespace CapaPresentacion
                     // Agrega la condición para verificar si el stock es mayor a 0 antes de agregar al DataGridView
                     if (Convert.ToInt32(txtstock.Text) > 0)
                     {
+                        decimal totalProducto = txtcantidad.Value * precio;
+
+                        // Se añade el producto al DataGridView
                         dgvdata.Rows.Add(new object[]
                         {
-                          txtidproducto.Text,
-                          txtnombreproducto.Text,
-                          precio.ToString("0.00"),
-                          txtcantidad.Value.ToString(),
-                          (txtcantidad.Value * precio).ToString("0.00")
+                            txtidproducto.Text,
+                            txtnombreproducto.Text,
+                            precio.ToString("N2"), // Formato de moneda con separadores de miles y decimales
+                            txtcantidad.Value.ToString(),
+                            totalProducto.ToString("N2") // Formato de moneda para el total del producto
                         });
 
-                        calcularTotal();
+                        // Ahora sumamos los precios de todos los productos en el DataGridView
+                        total = 0;  // Reseteamos el total antes de recalcularlo
+                        foreach (DataGridViewRow row in dgvdata.Rows)
+                        {
+                            if (row.Cells[4].Value != null)
+                            {
+                                // Sumamos el total como decimal, sin formato de cadena
+                                total += Convert.ToDecimal(row.Cells[4].Value.ToString().Replace(".", "").Replace(",", "."));
+                            }
+                        }
+
+                        // Mostramos el total en el TextBox con formato adecuado
+                        txttotalpagar.Text = total.ToString("#,0.00").Replace(",", "#").Replace(".", ",").Replace("#", ".");
+
+                        calcularTotal();  // Llamada a tu método para recalcular si es necesario
                         limpiarproducto();
                         txtcodigoproducto.Select();
                     }
@@ -570,6 +600,16 @@ namespace CapaPresentacion
                     }
                 }
             }
+
+            //---------------------------
+
+            // Intenta convertir el valor del primer TextBox a decimal
+            if (decimal.TryParse(txttotalpagar.Text, out decimal valor))
+            {
+                // Formatea el valor con separadores de miles y coma como separador decimal
+                txtOutput.Text = valor.ToString("#,##0.00", new System.Globalization.CultureInfo("es-ES"));
+            }
+
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)

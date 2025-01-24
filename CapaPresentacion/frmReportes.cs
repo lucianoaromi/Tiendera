@@ -229,18 +229,18 @@ namespace CapaPresentacion
             {
                 if (lblidrol.Text == "2" || lblapeusuario.Text == rv.UsuarioRegistro)
                 {
-                    dgvdata.Rows.Add(new object[]
+                    _=dgvdata.Rows.Add(new object[]
                     {
                         null, // Placeholder
                         rv.FechaRegistro,
                         rv.TipoDocumento,
                         rv.NumeroDocumento,
-                        rv.MontoTotal,
+                        string.Format("{0:N2}", rv.MontoTotal), // Formatear como pesos
                         rv.UsuarioRegistro,
                         rv.ApellidoCliente,
                         rv.DesMetPago,
                         rv.EstadoPago,
-                        rv.EstadoEntrega,                       
+                        rv.EstadoEntrega,
                         rv.IdVenta,
                     });
                 }
@@ -440,7 +440,7 @@ namespace CapaPresentacion
                 }
 
                 // Mostrar el resultado en el TextBox
-                txtResultado.Text = suma.ToString("N2"); // Formato numérico con dos decimales
+                txtResultado.Text = suma.ToString("#,##0.00"); // Formato numérico con separador de miles y decimales
             }
             catch (Exception ex)
             {
@@ -464,8 +464,6 @@ namespace CapaPresentacion
                 MessageBox.Show($"Error al contar las filas visibles: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
 
 
     }

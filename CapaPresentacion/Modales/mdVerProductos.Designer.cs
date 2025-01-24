@@ -250,6 +250,7 @@
             this.Stock.HeaderText = "Stock";
             this.Stock.Name = "Stock";
             this.Stock.ReadOnly = true;
+            this.Stock.Width = 70;
             // 
             // Precio
             // 
@@ -270,7 +271,7 @@
             this.Estado.MinimumWidth = 6;
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;
-            this.Estado.Width = 90;
+            this.Estado.Width = 70;
             // 
             // mdVerProductos
             // 

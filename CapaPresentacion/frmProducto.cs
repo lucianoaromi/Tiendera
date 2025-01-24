@@ -414,9 +414,9 @@ namespace CapaPresentacion
                         txtnombre.Text,
                         txtdescripcion.Text,
                         ((OpcionCombo)cbocategoria.SelectedItem).Valor.ToString(),
-                        ((OpcionCombo)cbocategoria.SelectedItem).Texto.ToString(),
-                        txtprecio.Text,
+                        ((OpcionCombo)cbocategoria.SelectedItem).Texto.ToString(),                        
                         txtstock.Text,
+                        string.Format("{0:N2}", obj.Precio), // Formatear el precio como pesos
                         //"0",
                         //"0.00",
                         //"0.00",
@@ -450,7 +450,7 @@ namespace CapaPresentacion
                     row.Cells["Categoria"].Value = ((OpcionCombo)cbocategoria.SelectedItem).Texto.ToString();
 
                     row.Cells["Stock"].Value = txtstock.Text;
-                    row.Cells["Precio"].Value = txtprecio.Text;
+                    row.Cells["Precio"].Value = string.Format("{0:N2}", obj.Precio); // Formatear el precio como pesos
 
                     row.Cells["EstadoValor"].Value = ((OpcionCombo)cboestado.SelectedItem).Valor.ToString();
                     row.Cells["Estado"].Value = ((OpcionCombo)cboestado.SelectedItem).Texto.ToString();
