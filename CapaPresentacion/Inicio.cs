@@ -259,16 +259,6 @@ namespace CapaPresentacion
         {
             this.WindowState = FormWindowState.Minimized;
         }
-        /*
-        private void Inicio_MouseDown(object sender, MouseEventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }*/
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {

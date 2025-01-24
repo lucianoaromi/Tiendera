@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -294,40 +295,50 @@ namespace CapaPresentacion
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        // Método para normalizar y eliminar los acentos
+        private string NormalizarTexto(string texto)
         {
+            string normalizedString = texto.Normalize(NormalizationForm.FormD);
+            StringBuilder stringBuilder = new StringBuilder();
 
-        }
+            foreach (char c in normalizedString)
+            {
+                if (CharUnicodeInfo.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark)
+                {
+                    stringBuilder.Append(c);
+                }
+            }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
+            return stringBuilder.ToString().Normalize(NormalizationForm.FormC);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             string columnaFiltro = ((OpcionCombo)cbobusqueda.SelectedItem).Valor.ToString();
+            string busquedaNormalizada = NormalizarTexto(txtbusqueda.Text.Trim().ToUpper());
 
             if (dgvdata.Rows.Count > 0)
             {
                 foreach (DataGridViewRow row in dgvdata.Rows)
                 {
-                    if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtbusqueda.Text.Trim().ToUpper()))
+                    if (row.Cells[columnaFiltro].Value != null)
                     {
-                        row.Visible = true;
-                    }
-                    else
-                    {
-                        row.Visible = false;
+                        string cellValue = row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper();
+                        string cellValueNormalizada = NormalizarTexto(cellValue);
+
+                        if (cellValueNormalizada.Contains(busquedaNormalizada))
+                        {
+                            row.Visible = true;
+                        }
+                        else
+                        {
+                            row.Visible = false;
+                        }
                     }
                 }
             }
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
@@ -337,6 +348,65 @@ namespace CapaPresentacion
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             CargarDatosVentas();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            CargarDatosVentas();
+        }
+
+        // Generar EXCEL
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (dgvdata.Rows.Count < 1)
+            {
+                MessageBox.Show("No hay registros para exportar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            DataTable dt = new DataTable();
+
+            // Excluir la primera y las dos últimas columnas
+            for (int i = 1; i < dgvdata.Columns.Count - 3; i++)
+            {
+                dt.Columns.Add(dgvdata.Columns[i].HeaderText, typeof(string));
+            }
+
+            foreach (DataGridViewRow row in dgvdata.Rows)
+            {
+                if (row.Visible)
+                {
+                    List<object> valores = new List<object>();
+
+                    // Excluir valores de la primera y las dos últimas columnas
+                    for (int i = 1; i < dgvdata.Columns.Count - 3; i++)
+                    {
+                        valores.Add(row.Cells[i].Value?.ToString() ?? "");
+                    }
+
+                    dt.Rows.Add(valores.ToArray());
+                }
+            }
+
+            SaveFileDialog savefile = new SaveFileDialog();
+            savefile.FileName = string.Format("ReporteVentas_{0}.xlsx", DateTime.Now.ToString("ddMMyyyyHHmmss"));
+            savefile.Filter = "Excel Files | *.xlsx";
+
+            if (savefile.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    XLWorkbook wb = new XLWorkbook();
+                    var hoja = wb.Worksheets.Add(dt, "Informe");
+                    wb.SaveAs(savefile.FileName);
+                    MessageBox.Show("Reporte Generado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch
+                {
+                    MessageBox.Show("Error al generar reporte", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+
         }
     }
 }
