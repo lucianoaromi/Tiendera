@@ -373,5 +373,106 @@ namespace CapaPresentacion
                 row.Visible = true;
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click_1(object sender, EventArgs e)
+        {
+            string mensaje = string.Empty;
+            Producto obj = new Producto()
+            {
+                IdProducto = Convert.ToInt32(txtid.Text),
+                Codigo = txtcodigo.Text,
+                Nombre = txtnombre.Text,
+                Descripcion = txtdescripcion.Text,
+                Stock = Convert.ToInt32(txtstock.Text),
+                Precio = Convert.ToDecimal(txtprecio.Text),
+                oCategoria = new Categoria() { IdCategoria = Convert.ToInt32(((OpcionCombo)cbocategoria.SelectedItem).Valor) },
+                Estado = Convert.ToInt32(((OpcionCombo)cboestado.SelectedItem).Valor) == 1 ? true : false
+            };
+
+
+            if (obj.IdProducto == 0)
+            {
+                //Ejecuta el metodo Registrar de la Clase Usuario en la Cap de Neg con sus respectivos parametros, retornando el idusuario
+                int idgenerado = new CN_Producto().Registrar(obj, out mensaje);
+
+                if (idgenerado != 0)
+                {
+                    dgvdata.Rows.Add(new object[] {
+                        "",
+                        idgenerado,
+                        txtcodigo.Text,
+                        txtnombre.Text,
+                        txtdescripcion.Text,
+                        ((OpcionCombo)cbocategoria.SelectedItem).Valor.ToString(),
+                        ((OpcionCombo)cbocategoria.SelectedItem).Texto.ToString(),
+                        txtprecio.Text,
+                        txtstock.Text,
+                        //"0",
+                        //"0.00",
+                        //"0.00",
+                        ((OpcionCombo)cboestado.SelectedItem).Valor.ToString(),
+                        ((OpcionCombo)cboestado.SelectedItem).Texto.ToString()
+                });
+
+                    Limpiar();
+                }
+                else
+                {
+                    MessageBox.Show(mensaje);
+                }
+
+            }
+            //Si el objeto idusuario no es igual a 0 se accede a editar el usario seleccionado del datagrid
+            else
+            {
+                bool resultado = new CN_Producto().Editar(obj, out mensaje);
+
+                if (resultado)
+                {
+                    //Se obtiene la fila seleccionada en el datagrid
+                    DataGridViewRow row = dgvdata.Rows[Convert.ToInt32(txtindice.Text)];
+                    //Se realiza el llamado a las filas del datagrid
+                    row.Cells["Id"].Value = txtid.Text;
+                    row.Cells["Codigo"].Value = txtcodigo.Text;
+                    row.Cells["Nombre"].Value = txtnombre.Text;
+                    row.Cells["Descripcion"].Value = txtdescripcion.Text;
+                    row.Cells["IdCategoria"].Value = ((OpcionCombo)cbocategoria.SelectedItem).Valor.ToString();
+                    row.Cells["Categoria"].Value = ((OpcionCombo)cbocategoria.SelectedItem).Texto.ToString();
+
+                    row.Cells["Stock"].Value = txtstock.Text;
+                    row.Cells["Precio"].Value = txtprecio.Text;
+
+                    row.Cells["EstadoValor"].Value = ((OpcionCombo)cboestado.SelectedItem).Valor.ToString();
+                    row.Cells["Estado"].Value = ((OpcionCombo)cboestado.SelectedItem).Texto.ToString();
+
+                    Limpiar();
+
+                }
+                else
+                {
+                    MessageBox.Show(mensaje);
+                }
+            }
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            buscar();
+        }
     }
 }

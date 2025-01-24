@@ -240,9 +240,6 @@ C:\Users\lucha\OneDrive\Escritorio\Taller2 - copia\CapaPresentacion\obj\Debug\Ca
 C:\Users\lucha\OneDrive\Escritorio\Taller2 - copia\CapaPresentacion\obj\Debug\CapaPres.61CA7C38.Up2Date
 C:\Users\lucha\OneDrive\Escritorio\Taller2 - copia\CapaPresentacion\obj\Debug\CapaPresentacion.exe
 C:\Users\lucha\OneDrive\Escritorio\Taller2 - copia\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
-C:\GitHub\Restaurant\CapaPresentacion\bin\Debug\CapaPresentacion.exe.config
-C:\GitHub\Restaurant\CapaPresentacion\bin\Debug\CapaPresentacion.exe
-C:\GitHub\Restaurant\CapaPresentacion\bin\Debug\CapaPresentacion.pdb
 C:\GitHub\Restaurant\CapaPresentacion\bin\Debug\Azure.Core.dll
 C:\GitHub\Restaurant\CapaPresentacion\bin\Debug\Azure.Identity.dll
 C:\GitHub\Restaurant\CapaPresentacion\bin\Debug\BCrypt.Net-Next.dll
@@ -359,7 +356,10 @@ C:\GitHub\Restaurant\CapaPresentacion\obj\Debug\CapaPresentacion.Properties.Reso
 C:\GitHub\Restaurant\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.GenerateResource.cache
 C:\GitHub\Restaurant\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.CoreCompileInputs.cache
 C:\GitHub\Restaurant\CapaPresentacion\obj\Debug\CapaPres.61CA7C38.Up2Date
-C:\GitHub\Restaurant\CapaPresentacion\obj\Debug\CapaPresentacion.exe
-C:\GitHub\Restaurant\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
 C:\GitHub\Restaurant\CapaPresentacion\obj\Debug\CapaPresentacion.FrmActivacion.resources
 C:\GitHub\Restaurant\CapaPresentacion\obj\Debug\CapaPresentacion.frmAdmLicencia.resources
+C:\GitHub\Restaurant\CapaPresentacion\bin\Debug\ArduinoPrograma.exe.config
+C:\GitHub\Restaurant\CapaPresentacion\bin\Debug\ArduinoPrograma.exe
+C:\GitHub\Restaurant\CapaPresentacion\bin\Debug\ArduinoPrograma.pdb
+C:\GitHub\Restaurant\CapaPresentacion\obj\Debug\ArduinoPrograma.exe
+C:\GitHub\Restaurant\CapaPresentacion\obj\Debug\ArduinoPrograma.pdb

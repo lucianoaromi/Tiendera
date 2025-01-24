@@ -15,7 +15,9 @@ namespace CapaPresentacion
 {
     public partial class frmBackup : Form
     {
-        SqlConnection con=new SqlConnection("server= .\\luciano320; database = RESTAURANT_DB; integrated security = true");
+        //SqlConnection con=new SqlConnection("server=.(local); database = RESTAURANT_DB; integrated security = true");
+        SqlConnection oconexion = new SqlConnection(Conexion.cadena);
+
 
         public frmBackup()
         {
@@ -47,7 +49,7 @@ namespace CapaPresentacion
 
         private void btn_backup_Click(object sender, EventArgs e)
         {
-            string database = con.Database.ToString();
+            string database = oconexion.Database.ToString();
             if (txt_backup.Text == string.Empty)
             {
                 MessageBox.Show("Por favor ingrese la ubicación del archivo de respaldo");
@@ -55,11 +57,11 @@ namespace CapaPresentacion
             else
             {
                 string cmd = "BACKUP DATABASE ["+ database + "] TO DISK= '"+ txt_backup.Text + "\\" + "database" + "-" + DateTime.Now.ToString("yyyy-MM-dd--HH-mm-ss") + ".bak'";
-                con.Open();
-                SqlCommand command = new SqlCommand(cmd, con);
+                oconexion.Open();
+                SqlCommand command = new SqlCommand(cmd, oconexion);
                 command.ExecuteNonQuery();
                 MessageBox.Show("Copia de seguridad de la base de datos realizada con éxito");
-                con.Close();
+                oconexion.Close();
                 btn_backup.Enabled = false;
             }
         }
@@ -81,24 +83,24 @@ namespace CapaPresentacion
 
         private void btn_restore_Click(object sender, EventArgs e)
         {
-            string database = con.Database.ToString();
-            con.Open();
+            string database = oconexion.Database.ToString();
+            oconexion.Open();
             try
             {
                 string str1 = string.Format("ALTER DATABASE ["+ database +"] SET SINGLE_USER WITH ROLLBACK IMMEDIATE");
-                SqlCommand cmd1 = new SqlCommand(str1, con);
+                SqlCommand cmd1 = new SqlCommand(str1, oconexion);
                 cmd1.ExecuteNonQuery();
 
                 string str2 = "USE MASTER RESTORE DATABASE [" + database + "] FROM DISK='" + txt_restore.Text + "' WITH REPLACE;";
-                SqlCommand cmd2 = new SqlCommand(str2, con);
+                SqlCommand cmd2 = new SqlCommand(str2, oconexion);
                 cmd2.ExecuteNonQuery();
 
                 string str3 = string.Format("ALTER DATABASE [" + database + "]  SET MULTI_USER");
-                SqlCommand cmd3 = new SqlCommand(str3, con);
+                SqlCommand cmd3 = new SqlCommand(str3, oconexion);
                 cmd3.ExecuteNonQuery();
 
                 MessageBox.Show("Restauración de la base de datos realizada con éxito");
-                con.Close();
+                oconexion.Close();
             }
             catch
             {

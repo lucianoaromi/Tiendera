@@ -26,7 +26,7 @@ namespace CapaPresentacion
             InitializeComponent();
             dgvdata.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             //dgvdata.DefaultCellStyle.BackColor = System.Drawing.Color.Black;
-            dgvdata.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.Gray; // Cambia el color de fondo de las filas alternas
+            //dgvdata.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.Gray; // Cambia el color de fondo de las filas alternas
             txtidproducto.Text = "0";
             txtcantidad.Value = 1;
 

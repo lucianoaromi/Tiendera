@@ -352,5 +352,98 @@ namespace CapaPresentacion
                 row.Visible = true;
             }
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            string mensaje = string.Empty;
+            Categoria objcategoria = new Categoria()
+            {
+                IdCategoria = Convert.ToInt32(txtid.Text),
+                Descripcion = txtdescripcion.Text,
+
+
+                Estado = Convert.ToInt32(((OpcionCombo)cboestado.SelectedItem).Valor) == 1 ? true : false
+            };
+
+
+            if (objcategoria.IdCategoria == 0)
+            {
+                //Ejecuta el metodo Registrar de la Clase Usuario en la Cap de Neg con sus respectivos parametros, retornando el idusuario
+                int idcategoriagenerado = new CN_Categoria().Registrar(objcategoria, out mensaje);
+
+                if (idcategoriagenerado != 0)
+                {
+                    dgvdata.Rows.Add(new object[] {"",idcategoriagenerado,txtdescripcion.Text,
+
+                      ((OpcionCombo)cboestado.SelectedItem).Valor.ToString(),
+                      ((OpcionCombo)cboestado.SelectedItem).Texto.ToString()
+
+                     });
+
+                    Limpiar();
+                }
+                else
+                {
+                    MessageBox.Show(mensaje);
+                }
+
+            }
+            //Si el objeto idusuario no es igual a 0 se accede a editar el usario seleccionado del datagrid
+            else
+            {
+                bool resultado = new CN_Categoria().Editar(objcategoria, out mensaje);
+
+                if (resultado)
+                {
+                    //Se obtiene la fila seleccionada en el datagrid
+                    DataGridViewRow row = dgvdata.Rows[Convert.ToInt32(txtindice.Text)];
+                    //Se realiza el llamado a las filas del datagrid
+                    row.Cells["Id"].Value = txtid.Text;
+                    row.Cells["Descripcion"].Value = txtdescripcion.Text;
+
+                    row.Cells["EstadoValor"].Value = ((OpcionCombo)cboestado.SelectedItem).Valor.ToString();
+                    row.Cells["Estado"].Value = ((OpcionCombo)cboestado.SelectedItem).Texto.ToString();
+
+                    Limpiar();
+
+                }
+                else
+                {
+                    MessageBox.Show(mensaje);
+                }
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(txtid.Text) != 0)
+            {
+                if (MessageBox.Show("¿Desea eliminar la Categoria?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    string mensaje = string.Empty;
+                    Categoria objcategoria = new Categoria()
+                    {
+                        IdCategoria = Convert.ToInt32(txtid.Text)
+                    };
+
+
+                    bool respuesta = new CN_Categoria().Eliminar(objcategoria, out mensaje);
+
+                    if (respuesta)
+                    {
+                        dgvdata.Rows.RemoveAt(Convert.ToInt32(txtindice.Text));
+                    }
+                    else
+                    {
+                        MessageBox.Show(mensaje, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
+            }
+        }
     }
 }
