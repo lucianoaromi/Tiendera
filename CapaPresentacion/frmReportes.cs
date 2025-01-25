@@ -439,14 +439,15 @@ namespace CapaPresentacion
                     }
                 }
 
-                // Mostrar el resultado en el TextBox
-                txtResultado.Text = suma.ToString("#,##0.00"); // Formato numérico con separador de miles y decimales
+                // Mostrar el resultado en el TextBox con formato adecuado para cultura "es-ES"
+                txtResultado.Text = suma.ToString("#,##0.00", new System.Globalization.CultureInfo("es-ES"));
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error al sumar la columna: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
 
         private void ContarFilasVisibles(DataGridView dgvdata, TextBox txtResultado)

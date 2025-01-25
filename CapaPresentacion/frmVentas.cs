@@ -603,12 +603,29 @@ namespace CapaPresentacion
 
             //---------------------------
 
-            // Intenta convertir el valor del primer TextBox a decimal
-            if (decimal.TryParse(txttotalpagar.Text, out decimal valor))
+            try
             {
-                // Formatea el valor con separadores de miles y coma como separador decimal
-                txtOutput.Text = valor.ToString("#,##0.00", new System.Globalization.CultureInfo("es-ES"));
+                // Limpia los puntos de separadores de miles y convierte la coma en punto
+                string input = txttotalpagar.Text;
+
+                // Intenta convertir el valor limpio a decimal
+                if (decimal.TryParse(input, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out decimal valor))
+                {
+                    // Formatea el valor con separadores de miles y coma como separador decimal
+                    txtOutput.Text = valor.ToString("#,##0.00", new System.Globalization.CultureInfo("es-ES"));
+                }
+                else
+                {
+                    // Maneja el caso de error
+                    txtOutput.Text = "Formato incorrecto";
+                }
             }
+            catch (Exception ex)
+            {
+                // Muestra un mensaje en caso de error inesperado
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
 
         }
 
