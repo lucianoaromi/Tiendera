@@ -436,7 +436,7 @@ namespace CapaPresentacion
             // txtnombrecliente
             // 
             this.txtnombrecliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnombrecliente.Location = new System.Drawing.Point(268, 45);
+            this.txtnombrecliente.Location = new System.Drawing.Point(268, 46);
             this.txtnombrecliente.Name = "txtnombrecliente";
             this.txtnombrecliente.ReadOnly = true;
             this.txtnombrecliente.Size = new System.Drawing.Size(125, 21);
@@ -466,7 +466,7 @@ namespace CapaPresentacion
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(266, 28);
+            this.label12.Location = new System.Drawing.Point(266, 29);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(55, 15);
             this.label12.TabIndex = 12;
@@ -475,7 +475,7 @@ namespace CapaPresentacion
             // txtapellidocliente
             // 
             this.txtapellidocliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtapellidocliente.Location = new System.Drawing.Point(129, 45);
+            this.txtapellidocliente.Location = new System.Drawing.Point(129, 46);
             this.txtapellidocliente.Name = "txtapellidocliente";
             this.txtapellidocliente.ReadOnly = true;
             this.txtapellidocliente.Size = new System.Drawing.Size(125, 21);
@@ -484,7 +484,7 @@ namespace CapaPresentacion
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(126, 27);
+            this.label3.Location = new System.Drawing.Point(126, 28);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 15);
             this.label3.TabIndex = 3;
@@ -559,7 +559,7 @@ namespace CapaPresentacion
             // txtcantidad
             // 
             this.txtcantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcantidad.Location = new System.Drawing.Point(564, 54);
+            this.txtcantidad.Location = new System.Drawing.Point(564, 55);
             this.txtcantidad.Name = "txtcantidad";
             this.txtcantidad.Size = new System.Drawing.Size(108, 21);
             this.txtcantidad.TabIndex = 32;
@@ -567,7 +567,7 @@ namespace CapaPresentacion
             // txtpreciounidad
             // 
             this.txtpreciounidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpreciounidad.Location = new System.Drawing.Point(306, 54);
+            this.txtpreciounidad.Location = new System.Drawing.Point(306, 55);
             this.txtpreciounidad.Name = "txtpreciounidad";
             this.txtpreciounidad.ReadOnly = true;
             this.txtpreciounidad.Size = new System.Drawing.Size(113, 21);
@@ -576,7 +576,7 @@ namespace CapaPresentacion
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(303, 38);
+            this.label15.Location = new System.Drawing.Point(303, 39);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(99, 15);
             this.label15.TabIndex = 9;
@@ -585,7 +585,7 @@ namespace CapaPresentacion
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(561, 36);
+            this.label13.Location = new System.Drawing.Point(561, 37);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(59, 15);
             this.label13.TabIndex = 7;
@@ -594,7 +594,7 @@ namespace CapaPresentacion
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(438, 37);
+            this.label14.Location = new System.Drawing.Point(438, 38);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(94, 15);
             this.label14.TabIndex = 6;
@@ -603,7 +603,7 @@ namespace CapaPresentacion
             // txtstock
             // 
             this.txtstock.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtstock.Location = new System.Drawing.Point(441, 54);
+            this.txtstock.Location = new System.Drawing.Point(441, 55);
             this.txtstock.Name = "txtstock";
             this.txtstock.ReadOnly = true;
             this.txtstock.Size = new System.Drawing.Size(100, 21);
@@ -612,7 +612,7 @@ namespace CapaPresentacion
             // txtnombreproducto
             // 
             this.txtnombreproducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnombreproducto.Location = new System.Drawing.Point(138, 54);
+            this.txtnombreproducto.Location = new System.Drawing.Point(138, 55);
             this.txtnombreproducto.Name = "txtnombreproducto";
             this.txtnombreproducto.ReadOnly = true;
             this.txtnombreproducto.Size = new System.Drawing.Size(148, 21);
@@ -621,7 +621,7 @@ namespace CapaPresentacion
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(135, 38);
+            this.label2.Location = new System.Drawing.Point(135, 39);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 15);
             this.label2.TabIndex = 3;
@@ -630,7 +630,7 @@ namespace CapaPresentacion
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 38);
+            this.label1.Location = new System.Drawing.Point(14, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 15);
             this.label1.TabIndex = 2;
@@ -639,7 +639,7 @@ namespace CapaPresentacion
             // txtcodigoproducto
             // 
             this.txtcodigoproducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcodigoproducto.Location = new System.Drawing.Point(17, 54);
+            this.txtcodigoproducto.Location = new System.Drawing.Point(17, 55);
             this.txtcodigoproducto.Name = "txtcodigoproducto";
             this.txtcodigoproducto.ReadOnly = true;
             this.txtcodigoproducto.Size = new System.Drawing.Size(100, 21);

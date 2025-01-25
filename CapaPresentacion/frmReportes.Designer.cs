@@ -371,7 +371,7 @@ namespace CapaPresentacion
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(4, 27);
+            this.label6.Location = new System.Drawing.Point(14, 26);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(62, 15);
             this.label6.TabIndex = 2;
@@ -391,7 +391,7 @@ namespace CapaPresentacion
             // cbobusqueda
             // 
             this.cbobusqueda.FormattingEnabled = true;
-            this.cbobusqueda.Location = new System.Drawing.Point(14, 44);
+            this.cbobusqueda.Location = new System.Drawing.Point(17, 44);
             this.cbobusqueda.Name = "cbobusqueda";
             this.cbobusqueda.Size = new System.Drawing.Size(119, 23);
             this.cbobusqueda.TabIndex = 15;
@@ -409,7 +409,7 @@ namespace CapaPresentacion
             // 
             // txtbusqueda
             // 
-            this.txtbusqueda.Location = new System.Drawing.Point(145, 45);
+            this.txtbusqueda.Location = new System.Drawing.Point(148, 45);
             this.txtbusqueda.Name = "txtbusqueda";
             this.txtbusqueda.Size = new System.Drawing.Size(121, 21);
             this.txtbusqueda.TabIndex = 6;
@@ -469,7 +469,7 @@ namespace CapaPresentacion
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 24);
+            this.label1.Location = new System.Drawing.Point(8, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 15);
             this.label1.TabIndex = 2;
