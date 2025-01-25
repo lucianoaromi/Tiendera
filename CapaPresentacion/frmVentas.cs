@@ -295,7 +295,7 @@ namespace CapaPresentacion
         {
             decimal precio = 0;
             bool producto_existe = false;
-            decimal total = 0;  // Variable para almacenar el total de la suma de los precios
+            //decimal total = 0;  // Variable para almacenar el total de la suma de los precios
 
             // Verifica que se seleccione un producto
             if (int.Parse(txtidproducto.Text) == 0)

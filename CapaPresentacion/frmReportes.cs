@@ -316,7 +316,7 @@ namespace CapaPresentacion
             return stringBuilder.ToString().Normalize(NormalizationForm.FormC);
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void picFiltrar_Click(object sender, EventArgs e)
         {
             
             string columnaFiltro = ((OpcionCombo)cbobusqueda.SelectedItem).Valor.ToString();
@@ -349,12 +349,12 @@ namespace CapaPresentacion
         }
 
 
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private void picBuscarFecha_Click(object sender, EventArgs e)
         {
             CargarDatosVentas();
         }
 
-        private void pictureBox4_Click(object sender, EventArgs e)
+        private void picOrdenarColor_Click(object sender, EventArgs e)
         {
             CargarDatosVentas();
         }
@@ -465,7 +465,6 @@ namespace CapaPresentacion
                 MessageBox.Show($"Error al contar las filas visibles: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
 
     }
 }

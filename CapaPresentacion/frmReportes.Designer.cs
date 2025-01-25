@@ -50,7 +50,7 @@ namespace CapaPresentacion
             this.label4 = new System.Windows.Forms.Label();
             this.txtResultado = new System.Windows.Forms.TextBox();
             this.txtTotal = new System.Windows.Forms.TextBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.picOrdenarColor = new System.Windows.Forms.PictureBox();
             this.lblapeusuario = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lblidusuario = new System.Windows.Forms.TextBox();
@@ -60,11 +60,11 @@ namespace CapaPresentacion
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.cbobusqueda = new System.Windows.Forms.ComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picFiltrar = new System.Windows.Forms.PictureBox();
             this.txtbusqueda = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtfechafin = new System.Windows.Forms.DateTimePicker();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.picBuscarFecha = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtfechainicio = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
@@ -75,12 +75,12 @@ namespace CapaPresentacion
             ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).BeginInit();
             this.panel4.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picOrdenarColor)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFiltrar)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBuscarFecha)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -212,7 +212,7 @@ namespace CapaPresentacion
             // 
             this.panel4.BackColor = System.Drawing.Color.DarkCyan;
             this.panel4.Controls.Add(this.groupBox3);
-            this.panel4.Controls.Add(this.pictureBox4);
+            this.panel4.Controls.Add(this.picOrdenarColor);
             this.panel4.Controls.Add(this.lblapeusuario);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.lblidusuario);
@@ -279,16 +279,16 @@ namespace CapaPresentacion
             this.txtTotal.Size = new System.Drawing.Size(121, 25);
             this.txtTotal.TabIndex = 54;
             // 
-            // pictureBox4
+            // picOrdenarColor
             // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(780, 36);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(80, 80);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 53;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            this.picOrdenarColor.Image = ((System.Drawing.Image)(resources.GetObject("picOrdenarColor.Image")));
+            this.picOrdenarColor.Location = new System.Drawing.Point(780, 36);
+            this.picOrdenarColor.Name = "picOrdenarColor";
+            this.picOrdenarColor.Size = new System.Drawing.Size(80, 80);
+            this.picOrdenarColor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picOrdenarColor.TabIndex = 53;
+            this.picOrdenarColor.TabStop = false;
+            this.picOrdenarColor.Click += new System.EventHandler(this.picOrdenarColor_Click);
             // 
             // lblapeusuario
             // 
@@ -357,7 +357,7 @@ namespace CapaPresentacion
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.pictureBox2);
             this.groupBox2.Controls.Add(this.cbobusqueda);
-            this.groupBox2.Controls.Add(this.pictureBox1);
+            this.groupBox2.Controls.Add(this.picFiltrar);
             this.groupBox2.Controls.Add(this.txtbusqueda);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
@@ -396,16 +396,16 @@ namespace CapaPresentacion
             this.cbobusqueda.Size = new System.Drawing.Size(119, 23);
             this.cbobusqueda.TabIndex = 15;
             // 
-            // pictureBox1
+            // picFiltrar
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(281, 15);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(55, 55);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 51;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.picFiltrar.Image = ((System.Drawing.Image)(resources.GetObject("picFiltrar.Image")));
+            this.picFiltrar.Location = new System.Drawing.Point(281, 15);
+            this.picFiltrar.Name = "picFiltrar";
+            this.picFiltrar.Size = new System.Drawing.Size(55, 55);
+            this.picFiltrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picFiltrar.TabIndex = 51;
+            this.picFiltrar.TabStop = false;
+            this.picFiltrar.Click += new System.EventHandler(this.picFiltrar_Click);
             // 
             // txtbusqueda
             // 
@@ -417,7 +417,7 @@ namespace CapaPresentacion
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtfechafin);
-            this.groupBox1.Controls.Add(this.pictureBox3);
+            this.groupBox1.Controls.Add(this.picBuscarFecha);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtfechainicio);
             this.groupBox1.Controls.Add(this.label1);
@@ -438,16 +438,16 @@ namespace CapaPresentacion
             this.txtfechafin.Size = new System.Drawing.Size(111, 21);
             this.txtfechafin.TabIndex = 14;
             // 
-            // pictureBox3
+            // picBuscarFecha
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(259, 15);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(55, 55);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 52;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            this.picBuscarFecha.Image = ((System.Drawing.Image)(resources.GetObject("picBuscarFecha.Image")));
+            this.picBuscarFecha.Location = new System.Drawing.Point(259, 15);
+            this.picBuscarFecha.Name = "picBuscarFecha";
+            this.picBuscarFecha.Size = new System.Drawing.Size(55, 55);
+            this.picBuscarFecha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBuscarFecha.TabIndex = 52;
+            this.picBuscarFecha.TabStop = false;
+            this.picBuscarFecha.Click += new System.EventHandler(this.picBuscarFecha_Click);
             // 
             // label2
             // 
@@ -523,14 +523,14 @@ namespace CapaPresentacion
             this.panel4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picOrdenarColor)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFiltrar)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBuscarFecha)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -571,9 +571,9 @@ namespace CapaPresentacion
         private DataGridViewButtonColumn EstadoEntrega;
         private DataGridViewTextBoxColumn IdVenta;
         private PictureBox pictureBox2;
-        private PictureBox pictureBox1;
-        private PictureBox pictureBox3;
-        private PictureBox pictureBox4;
+        private PictureBox picFiltrar;
+        private PictureBox picBuscarFecha;
+        private PictureBox picOrdenarColor;
         private TextBox txtTotal;
         private TextBox txtResultado;
         private GroupBox groupBox3;
