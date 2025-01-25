@@ -35,143 +35,7 @@ namespace CapaPresentacion
 
         }
 
-        private void btnbuscarcliente_Click_1(object sender, EventArgs e)
-        {
-            using (var modal = new mdClientes())
-            {
-                var result = modal.ShowDialog();
-
-                if (result == DialogResult.OK)
-                {
-                    txtidcliente.Text = modal._Cliente.IdCliente.ToString();
-                    //txtdocumentocliente.Text = modal._Cliente.Documento.ToString();
-                    txtnombrecliente.Text = modal._Cliente.Nombre.ToString();
-                    txtapellidocliente.Text = modal._Cliente.Apellido;
-
-                }
-                else
-                {
-                    txtcodigoproducto.Select();
-                }
-
-
-            }
-        }
-
-        private void btnbuscarproducto_Click_1(object sender, EventArgs e)
-        {
-            using (var modal = new mdProducto())
-            {
-                var result = modal.ShowDialog();
-
-                if (result == DialogResult.OK)
-                {
-                    txtidproducto.Text = modal._Producto.IdProducto.ToString();
-                    txtcodigoproducto.Text = modal._Producto.Codigo.ToString();
-                    txtnombreproducto.Text = modal._Producto.Nombre;
-                    txtstock.Text = modal._Producto.Stock.ToString();
-                    txtpreciounidad.Text = modal._Producto.Precio.ToString();
-                    txtcantidad.Select();
-                }
-                else
-                {
-                    txtcodigoproducto.Select();
-                }
-
-
-            }
-        }
-
-        private void button7_Click_1(object sender, EventArgs e)
-        {
-            decimal precio = 0;
-            bool producto_existe = false;
-
-            // Verifica que se seleccione un producto
-            if (int.Parse(txtidproducto.Text) == 0)
-            {
-                MessageBox.Show("Debe seleccionar un producto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-
-            // Para el formado de moneda sea correcto
-            if (!decimal.TryParse(txtpreciounidad.Text, out precio))
-            {
-                MessageBox.Show("Precio - Formato de número incorrecto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtpreciounidad.Select();
-                return;
-            }
-
-            // Verifica si la cantidad es mayor al stock disponible o si es 0
-            if (Convert.ToInt32(txtcantidad.Value) > Convert.ToInt32(txtstock.Text) || Convert.ToInt32(txtcantidad.Value) == 0)
-            {
-                MessageBox.Show("La cantidad no es válida", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-
-            // Analiza si el producto existe
-            foreach (DataGridViewRow fila in dgvdata.Rows)
-            {
-                if (fila.Cells["IdProducto"].Value.ToString() == txtidproducto.Text)
-                {
-                    producto_existe = true;
-                    break;
-                }
-            }
-
-            if (!producto_existe)
-            {
-                bool respuesta = new CN_Venta().RestarStock(
-                    Convert.ToInt32(txtidproducto.Text),
-                    Convert.ToInt32(txtcantidad.Value.ToString())
-                );
-
-                if (respuesta)
-                {
-                    // Agrega la condición para verificar si el stock es mayor a 0 antes de agregar al DataGridView
-                    if (Convert.ToInt32(txtstock.Text) > 0)
-                    {
-                        dgvdata.Rows.Add(new object[]
-                        {
-                          txtidproducto.Text,
-                          txtnombreproducto.Text,
-                          precio.ToString("0.00"),
-                          txtcantidad.Value.ToString(),
-                          (txtcantidad.Value * precio).ToString("0.00")
-                        });
-
-                        calcularTotal();
-                        limpiarproducto();
-                        txtcodigoproducto.Select();
-                    }
-                    else
-                    {
-                        MessageBox.Show("No se puede agregar un producto con stock 0", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    }
-                }
-            }
-        }
-
-
-
-
-        private void calcularTotal()
-        {
-            decimal total = 0;
-            if (dgvdata.Rows.Count > 0)
-            {
-                foreach (DataGridViewRow row in dgvdata.Rows)
-                    total += Convert.ToDecimal(row.Cells["SubTotal"].Value.ToString());
-            }
-            txttotalpagar.Text = total.ToString("0.00");
-
-            // Intenta convertir el valor del primer TextBox a decimal
-            if (decimal.TryParse(txttotalpagar.Text, out decimal valor))
-            {
-                // Formatea el valor con separadores de miles y coma como separador decimal
-                txtOutput.Text = valor.ToString("#,##0.00", new System.Globalization.CultureInfo("es-ES"));
-            }
-        }
+        //-----------------------------------------------------------
 
         private void limpiarproducto()
         {
@@ -183,103 +47,7 @@ namespace CapaPresentacion
             txtcantidad.Value = 1;
         }
 
-
-
-        private void btnventa_Click_1(object sender, EventArgs e)
-        {
-
-            if (txtapellidocliente.Text == "")
-            {
-                MessageBox.Show("Debe ingresar Apellido del cliente.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-
-            if (txtnombrecliente.Text == "")
-            {
-                MessageBox.Show("Debe ingresar Nombre del cliente.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-
-
-            if (dgvdata.Rows.Count < 1)
-            {
-                MessageBox.Show("La lista de compra está vacía.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            DataTable detalle_venta = new DataTable();
-
-            detalle_venta.Columns.Add("IdProducto", typeof(int));
-            detalle_venta.Columns.Add("Precio", typeof(decimal));
-            detalle_venta.Columns.Add("Cantidad", typeof(int));
-            detalle_venta.Columns.Add("SubTotal", typeof(decimal));
-
-            foreach (DataGridViewRow row in dgvdata.Rows)
-            {
-                detalle_venta.Rows.Add(new object[]
-                {
-                    row.Cells["IdProducto"].Value.ToString(),
-                    row.Cells["Precio"].Value.ToString(),
-                    row.Cells["Cantidad"].Value.ToString(),
-                    row.Cells["SubTotal"].Value.ToString()
-                });
-            }
-
-            int idcorrelativo = new CN_Venta().ObtenerCorrelativo();
-            string numeroDocumento = string.Format("{0:00000}", idcorrelativo);
-            calcularcambio();
-
-            Venta oVenta = new Venta()
-            {
-                oUsuario = new Usuario() { IdUsuario = _Usuario.IdUsuario },
-                TipoDocumento = ((OpcionCombo)cbotipodocumento.SelectedItem).Texto,
-                NumeroDocumento = numeroDocumento,
-                DocumentoCliente = txtidcliente.Text,
-                ApellidoCliente = txtapellidocliente.Text,
-                NombreCliente = txtnombrecliente.Text,
-                MontoPago = Convert.ToDecimal(txtpagacon.Text),
-                MontoCambio = Convert.ToDecimal(txtcambio.Text),
-                MontoTotal = Convert.ToDecimal(txttotalpagar.Text),
-                DesMetPago = ((OpcionCombo)cbometodopago.SelectedItem).Texto,
-            };
-
-            string mensaje = string.Empty;
-            bool respuesta = new CN_Venta().Registrar(oVenta, detalle_venta, out mensaje);
-
-            if (respuesta)
-            {
-                var result = MessageBox.Show(
-                    "Número de venta generado: \n" + numeroDocumento + "\n\n¿Desea imprimir el PDF?",
-                    "Mensaje",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Information
-                );
-
-                if (result == DialogResult.Yes)
-                {
-                    // Llama al código para generar e imprimir el PDF
-                    frmDetalleVenta form2 = new frmDetalleVenta();
-                    form2.txtbusqueda.Text = numeroDocumento; // Pasa el número de venta al segundo formulario
-                    form2.Show();
-                }
-
-
-                //txtdocumentocliente.Text = "";
-                txtapellidocliente.Text = "";
-                txtnombrecliente.Text = "";
-                dgvdata.Rows.Clear();
-                calcularTotal();
-                txtpagacon.Text = "";
-                txtcambio.Text = "";
-                txtnumventa.Text = numeroDocumento.ToString();
-
-            }
-            else
-            {
-                MessageBox.Show(mensaje,"Mensaje",MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-
-        }
+        //-----------------------------------------------------------
 
         private void frmVentas_Load(object sender, EventArgs e)
         {
@@ -305,6 +73,7 @@ namespace CapaPresentacion
             cbometodopago.SelectedIndex = 0;
         }
 
+        //-----------------------------------------------------------
 
         private void LimpiarCliente()
         {
@@ -313,6 +82,8 @@ namespace CapaPresentacion
             txtapellidocliente.Clear();
             txtidcliente.Clear();
         }
+
+        //-----------------------------------------------------------
 
         private void dgvdata_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
@@ -337,6 +108,8 @@ namespace CapaPresentacion
             }
         }
 
+        //-----------------------------------------------------------
+
         private void dgvdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvdata.Columns[e.ColumnIndex].Name== "btneliminar")
@@ -358,6 +131,8 @@ namespace CapaPresentacion
                 }
             }
         }
+
+        //-----------------------------------------------------------
 
         private void txtpagacon_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -385,9 +160,88 @@ namespace CapaPresentacion
             }
         }
 
-        private void calcularcambio() 
+        //-----------------------------------------------------------
+
+        private void txtpagacon_KeyDown(object sender, KeyEventArgs e)
         {
-            if (txttotalpagar.Text.Trim() =="") 
+            if (e.KeyData == Keys.Enter)
+            {
+                calcularcambio();
+            }
+        }
+
+        //-----------------------------------------------------------
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            using (var modal = new mdClientes())
+            {
+                var result = modal.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    txtidcliente.Text = modal._Cliente.IdCliente.ToString();
+                    //txtdocumentocliente.Text = modal._Cliente.Documento.ToString();
+                    txtnombrecliente.Text = modal._Cliente.Nombre.ToString();
+                    txtapellidocliente.Text = modal._Cliente.Apellido;
+
+                }
+                else
+                {
+                    txtcodigoproducto.Select();
+                }
+
+
+            }
+        }
+
+        //-----------------------------------------------------------
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            LimpiarCliente();
+        }
+
+        //-----------------------------------------------------------
+
+        private void picBuscarProducto_Click(object sender, EventArgs e)
+        {
+            using (var modal = new mdProducto())
+            {
+                var result = modal.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    txtidproducto.Text = modal._Producto.IdProducto.ToString();
+                    txtcodigoproducto.Text = modal._Producto.Codigo.ToString();
+                    txtnombreproducto.Text = modal._Producto.Nombre;
+                    txtstock.Text = modal._Producto.Stock.ToString();
+
+                    // Formateo del precio con separador de miles y decimales
+                    txtpreciounidad.Text = modal._Producto.Precio.ToString("#,0.00");
+
+                    txtcantidad.Select();
+                }
+                else
+                {
+                    txtcodigoproducto.Select();
+                }
+            }
+
+        }
+
+        //-----------------------------------------------------------
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            limpiarproducto();
+        }
+
+        //-----------------------------------------------------------
+
+        private void calcularcambio()
+        {
+            if (txttotalpagar.Text.Trim() =="")
             {
                 MessageBox.Show("No existen productos en la venta", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
@@ -415,106 +269,30 @@ namespace CapaPresentacion
             }
         }
 
-        private void txtpagacon_KeyDown(object sender, KeyEventArgs e)
+        //-----------------------------------------------------------
+
+        private void calcularTotal()
         {
-            if (e.KeyData == Keys.Enter)
+            decimal total = 0;
+            if (dgvdata.Rows.Count > 0)
             {
-                calcularcambio();
+                foreach (DataGridViewRow row in dgvdata.Rows)
+                    total += Convert.ToDecimal(row.Cells["SubTotal"].Value.ToString());
             }
-        }
+            txttotalpagar.Text = total.ToString("#,0.00");
 
-        private void button6_Click_1(object sender, EventArgs e)
-        {
-            limpiarproducto();
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            LimpiarCliente();
-        }
-
-        private void btnpdf_Click(object sender, EventArgs e)
-        {
-
-            // Verifica si el TextBox está vacío
-            if (string.IsNullOrEmpty(txtnumventa.Text))
+            // Intenta convertir el valor del primer TextBox a decimal
+            /*
+            if (decimal.TryParse(txttotalpagar.Text, out decimal valor))
             {
-                MessageBox.Show("No se ha registrado ninguna venta para imprimir", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-
-                // Crea una instancia del segundo formulario
-                frmDetalleVenta form2 = new frmDetalleVenta();
-
-                // Pasa el contenido del TextBox de Form1 al TextBox de Form2
-                form2.txtbusqueda.Text = txtnumventa.Text;
-
-                // Muestra el segundo formulario
-                form2.Show();
-            }
+                // Formatea el valor con separadores de miles y coma como separador decimal
+                txtOutput.Text = valor.ToString("#,##0.00", new System.Globalization.CultureInfo("es-ES"));
+            }*/
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            using (var modal = new mdClientes())
-            {
-                var result = modal.ShowDialog();
+        //-----------------------------------------------------------
 
-                if (result == DialogResult.OK)
-                {
-                    txtidcliente.Text = modal._Cliente.IdCliente.ToString();
-                    //txtdocumentocliente.Text = modal._Cliente.Documento.ToString();
-                    txtnombrecliente.Text = modal._Cliente.Nombre.ToString();
-                    txtapellidocliente.Text = modal._Cliente.Apellido;
-
-                }
-                else
-                {
-                    txtcodigoproducto.Select();
-                }
-
-
-            }
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            LimpiarCliente();
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-            using (var modal = new mdProducto())
-            {
-                var result = modal.ShowDialog();
-
-                if (result == DialogResult.OK)
-                {
-                    txtidproducto.Text = modal._Producto.IdProducto.ToString();
-                    txtcodigoproducto.Text = modal._Producto.Codigo.ToString();
-                    txtnombreproducto.Text = modal._Producto.Nombre;
-                    txtstock.Text = modal._Producto.Stock.ToString();
-
-                    // Formateo del precio con separador de miles y decimales
-                    txtpreciounidad.Text = modal._Producto.Precio.ToString("#,0.00");
-
-                    txtcantidad.Select();
-                }
-                else
-                {
-                    txtcodigoproducto.Select();
-                }
-            }
-
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-            limpiarproducto();
-        }
-
-        private void pictureBox5_Click(object sender, EventArgs e)
+        private void picAgregarProducto_Click(object sender, EventArgs e)
         {
             decimal precio = 0;
             bool producto_existe = false;
@@ -571,9 +349,9 @@ namespace CapaPresentacion
                         {
                             txtidproducto.Text,
                             txtnombreproducto.Text,
-                            precio.ToString("N2"), // Formato de moneda con separadores de miles y decimales
+                            precio.ToString("0.00"), // Formato de moneda con separadores de miles y decimales
                             txtcantidad.Value.ToString(),
-                            totalProducto.ToString("N2") // Formato de moneda para el total del producto
+                            totalProducto.ToString("0.00") // Formato de moneda para el total del producto
                         });
 
                         // Ahora sumamos los precios de todos los productos en el DataGridView
@@ -588,7 +366,8 @@ namespace CapaPresentacion
                         }
 
                         // Mostramos el total en el TextBox con formato adecuado
-                        txttotalpagar.Text = total.ToString("#,0.00").Replace(",", "#").Replace(".", ",").Replace("#", ".");
+                        //txttotalpagar.Text = total.ToString("#,0.00").Replace(",", "#").Replace(".", ",").Replace("#", ".");
+                        //txttotalpagar2.Text = total.ToString();
 
                         calcularTotal();  // Llamada a tu método para recalcular si es necesario
                         limpiarproducto();
@@ -601,14 +380,13 @@ namespace CapaPresentacion
                 }
             }
 
-            //---------------------------
-
             try
             {
                 // Limpia los puntos de separadores de miles y convierte la coma en punto
                 string input = txttotalpagar.Text;
 
                 // Intenta convertir el valor limpio a decimal
+                /*
                 if (decimal.TryParse(input, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out decimal valor))
                 {
                     // Formatea el valor con separadores de miles y coma como separador decimal
@@ -618,7 +396,7 @@ namespace CapaPresentacion
                 {
                     // Maneja el caso de error
                     txtOutput.Text = "Formato incorrecto";
-                }
+                }*/
             }
             catch (Exception ex)
             {
@@ -626,10 +404,11 @@ namespace CapaPresentacion
                 MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-
         }
 
-        private void pictureBox6_Click(object sender, EventArgs e)
+        //-----------------------------------------------------------
+
+        private void picComprar_Click(object sender, EventArgs e)
         {
 
             if (txtapellidocliente.Text == "")
@@ -724,6 +503,8 @@ namespace CapaPresentacion
             }
         }
 
+        //-----------------------------------------------------------
+
         private void pictureBox7_Click(object sender, EventArgs e)
         {
             // Verifica si el TextBox está vacío
@@ -744,5 +525,8 @@ namespace CapaPresentacion
                 form2.Show();
             }
         }
+
+        //-----------------------------------------------------------
+
     }
 }

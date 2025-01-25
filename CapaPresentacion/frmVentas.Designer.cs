@@ -33,11 +33,13 @@ namespace CapaPresentacion
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVentas));
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txttotalpagar2 = new System.Windows.Forms.TextBox();
             this.txtOutput = new System.Windows.Forms.TextBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.picComprar = new System.Windows.Forms.PictureBox();
             this.txtpagacon = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
+            this.txttotalpagar = new System.Windows.Forms.TextBox();
             this.txtcambio = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.dgvdata = new System.Windows.Forms.DataGridView();
@@ -50,7 +52,6 @@ namespace CapaPresentacion
             this.label6 = new System.Windows.Forms.Label();
             this.cbometodopago = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txttotalpagar = new System.Windows.Forms.TextBox();
             this.txtnumventa = new System.Windows.Forms.TextBox();
             this.txtidproducto = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -69,9 +70,9 @@ namespace CapaPresentacion
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.picAgregarProducto = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.picBuscarProducto = new System.Windows.Forms.PictureBox();
             this.txtcantidad = new System.Windows.Forms.NumericUpDown();
             this.txtpreciounidad = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -92,16 +93,16 @@ namespace CapaPresentacion
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picComprar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAgregarProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBuscarProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtcantidad)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -120,11 +121,13 @@ namespace CapaPresentacion
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.DarkCyan;
+            this.groupBox3.Controls.Add(this.txttotalpagar2);
             this.groupBox3.Controls.Add(this.txtOutput);
             this.groupBox3.Controls.Add(this.pictureBox7);
-            this.groupBox3.Controls.Add(this.pictureBox6);
+            this.groupBox3.Controls.Add(this.picComprar);
             this.groupBox3.Controls.Add(this.txtpagacon);
             this.groupBox3.Controls.Add(this.label16);
+            this.groupBox3.Controls.Add(this.txttotalpagar);
             this.groupBox3.Controls.Add(this.txtcambio);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.dgvdata);
@@ -139,6 +142,13 @@ namespace CapaPresentacion
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Lista de Productos";
+            // 
+            // txttotalpagar2
+            // 
+            this.txttotalpagar2.Location = new System.Drawing.Point(659, 264);
+            this.txttotalpagar2.Name = "txttotalpagar2";
+            this.txttotalpagar2.Size = new System.Drawing.Size(100, 21);
+            this.txttotalpagar2.TabIndex = 54;
             // 
             // txtOutput
             // 
@@ -160,16 +170,16 @@ namespace CapaPresentacion
             this.pictureBox7.TabStop = false;
             this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
             // 
-            // pictureBox6
+            // picComprar
             // 
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(791, 41);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(110, 110);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 52;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            this.picComprar.Image = ((System.Drawing.Image)(resources.GetObject("picComprar.Image")));
+            this.picComprar.Location = new System.Drawing.Point(791, 41);
+            this.picComprar.Name = "picComprar";
+            this.picComprar.Size = new System.Drawing.Size(110, 110);
+            this.picComprar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picComprar.TabIndex = 52;
+            this.picComprar.TabStop = false;
+            this.picComprar.Click += new System.EventHandler(this.picComprar_Click);
             // 
             // txtpagacon
             // 
@@ -188,6 +198,16 @@ namespace CapaPresentacion
             this.label16.Size = new System.Drawing.Size(62, 15);
             this.label16.TabIndex = 35;
             this.label16.Text = "Paga con:";
+            // 
+            // txttotalpagar
+            // 
+            this.txttotalpagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txttotalpagar.Location = new System.Drawing.Point(659, 187);
+            this.txttotalpagar.Multiline = true;
+            this.txttotalpagar.Name = "txttotalpagar";
+            this.txttotalpagar.ReadOnly = true;
+            this.txttotalpagar.Size = new System.Drawing.Size(114, 21);
+            this.txttotalpagar.TabIndex = 10;
             // 
             // txtcambio
             // 
@@ -306,17 +326,6 @@ namespace CapaPresentacion
             this.label10.Size = new System.Drawing.Size(106, 20);
             this.label10.TabIndex = 11;
             this.label10.Text = "Total a pagar:";
-            // 
-            // txttotalpagar
-            // 
-            this.txttotalpagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttotalpagar.Location = new System.Drawing.Point(755, 8);
-            this.txttotalpagar.Multiline = true;
-            this.txttotalpagar.Name = "txttotalpagar";
-            this.txttotalpagar.ReadOnly = true;
-            this.txttotalpagar.Size = new System.Drawing.Size(26, 21);
-            this.txttotalpagar.TabIndex = 10;
-            this.txttotalpagar.Visible = false;
             // 
             // txtnumventa
             // 
@@ -494,9 +503,9 @@ namespace CapaPresentacion
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.pictureBox5);
+            this.groupBox1.Controls.Add(this.picAgregarProducto);
             this.groupBox1.Controls.Add(this.pictureBox3);
-            this.groupBox1.Controls.Add(this.pictureBox4);
+            this.groupBox1.Controls.Add(this.picBuscarProducto);
             this.groupBox1.Controls.Add(this.txtcantidad);
             this.groupBox1.Controls.Add(this.txtpreciounidad);
             this.groupBox1.Controls.Add(this.label15);
@@ -516,16 +525,16 @@ namespace CapaPresentacion
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Seleccionar producto";
             // 
-            // pictureBox5
+            // picAgregarProducto
             // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(808, 10);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(80, 80);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 51;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
+            this.picAgregarProducto.Image = ((System.Drawing.Image)(resources.GetObject("picAgregarProducto.Image")));
+            this.picAgregarProducto.Location = new System.Drawing.Point(808, 10);
+            this.picAgregarProducto.Name = "picAgregarProducto";
+            this.picAgregarProducto.Size = new System.Drawing.Size(80, 80);
+            this.picAgregarProducto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picAgregarProducto.TabIndex = 51;
+            this.picAgregarProducto.TabStop = false;
+            this.picAgregarProducto.Click += new System.EventHandler(this.picAgregarProducto_Click);
             // 
             // pictureBox3
             // 
@@ -538,16 +547,16 @@ namespace CapaPresentacion
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
-            // pictureBox4
+            // picBuscarProducto
             // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(686, 31);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 51;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            this.picBuscarProducto.Image = ((System.Drawing.Image)(resources.GetObject("picBuscarProducto.Image")));
+            this.picBuscarProducto.Location = new System.Drawing.Point(686, 31);
+            this.picBuscarProducto.Name = "picBuscarProducto";
+            this.picBuscarProducto.Size = new System.Drawing.Size(50, 50);
+            this.picBuscarProducto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBuscarProducto.TabIndex = 51;
+            this.picBuscarProducto.TabStop = false;
+            this.picBuscarProducto.Click += new System.EventHandler(this.picBuscarProducto_Click);
             // 
             // txtcantidad
             // 
@@ -642,7 +651,6 @@ namespace CapaPresentacion
             this.panel2.Controls.Add(this.groupBox1);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.groupBox2);
-            this.panel2.Controls.Add(this.txttotalpagar);
             this.panel2.Location = new System.Drawing.Point(34, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(950, 240);
@@ -728,7 +736,7 @@ namespace CapaPresentacion
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picComprar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
@@ -738,9 +746,9 @@ namespace CapaPresentacion
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAgregarProducto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBuscarProducto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtcantidad)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -801,9 +809,9 @@ namespace CapaPresentacion
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
-        private PictureBox pictureBox4;
-        private PictureBox pictureBox5;
-        private PictureBox pictureBox6;
+        private PictureBox picBuscarProducto;
+        private PictureBox picAgregarProducto;
+        private PictureBox picComprar;
         private PictureBox pictureBox7;
         private DataGridViewTextBoxColumn IdProducto;
         private DataGridViewTextBoxColumn Producto;
@@ -812,5 +820,6 @@ namespace CapaPresentacion
         private DataGridViewTextBoxColumn SubTotal;
         private DataGridViewButtonColumn btneliminar;
         private TextBox txtOutput;
+        private TextBox txttotalpagar2;
     }
 }
