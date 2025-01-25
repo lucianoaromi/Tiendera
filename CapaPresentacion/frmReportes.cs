@@ -419,7 +419,7 @@ namespace CapaPresentacion
                 }
 
                 // Mostrar el resultado en el TextBox con formato de moneda
-                txtResultado.Text = suma.ToString("#,##0.00", System.Globalization.CultureInfo.GetCultureInfo("es-ES"));
+                txtResultado.Text = "$ " + suma.ToString("#,##0.00", System.Globalization.CultureInfo.GetCultureInfo("es-ES"));
             }
             catch (Exception ex)
             {

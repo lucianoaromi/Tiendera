@@ -33,6 +33,8 @@ namespace CapaPresentacion
             chartGrossRevenue.ChartAreas[0].AxisY.LabelStyle.ForeColor = System.Drawing.Color.Turquoise;
         }
 
+        //-------------------------------------------------------------------------
+
         //Private methods
         private void LoadData()
         {
@@ -40,17 +42,22 @@ namespace CapaPresentacion
             if (refreshData == true)
             {
                 lblNumOrders.Text = model.NumOrders.ToString();
-                lblTotalRevenue.Text = "$" + model.TotalRevenue.ToString();
-                lblTotalProfit.Text = "$" + model.TotalProfit.ToString();
+                lblTotalRevenue.Text = "$" + model.TotalRevenue.ToString("#,##0.00", new System.Globalization.CultureInfo("es-ES"));
+                lblTotalProfit.Text = "$" + model.TotalProfit.ToString("#,##0.00", new System.Globalization.CultureInfo("es-ES"));
 
                 lblNumCustomers.Text = model.NumCustomers.ToString();
                 //lblNumSuppliers.Text = model.NumSuppliers.ToString();
                 lblNumProducts.Text = model.NumProducts.ToString();
 
+                // Asignar los datos al gráfico como lo estás haciendo
                 chartGrossRevenue.DataSource = model.GrossRevenueList;
                 chartGrossRevenue.Series[0].XValueMember = "Date";
                 chartGrossRevenue.Series[0].YValueMembers = "TotalAmount";
                 chartGrossRevenue.DataBind();
+
+                // Formatear los valores del eje Y con el formato deseado
+                chartGrossRevenue.ChartAreas[0].AxisY.LabelStyle.Format = "#,##0.00"; // Formato con separadores de miles y decimales
+                chartGrossRevenue.ChartAreas[0].AxisY.LabelStyle.Format = "#,##0.00"; // Esto usará los separadores correctos según la cultura regional (es-ES)
 
                 chartTopProducts.DataSource = model.TopProductsList;
                 chartTopProducts.Series[0].XValueMember = "Key";
@@ -66,6 +73,9 @@ namespace CapaPresentacion
             }
             else Console.WriteLine("View not loaded, same query");
         }
+
+        //-------------------------------------------------------------------------
+
         private void DisableCustomDates()
         {
             dtpStartDate.Enabled = false;
@@ -73,11 +83,14 @@ namespace CapaPresentacion
             btnOkCustomDate.Visible = false;
         }
 
+        //-------------------------------------------------------------------------
 
         private void btnOkCustomDate_Click_1(object sender, EventArgs e)
         {
             LoadData();
         }
+
+        //-------------------------------------------------------------------------
 
         private void btnCustomDate_Click_1(object sender, EventArgs e)
         {
@@ -85,6 +98,8 @@ namespace CapaPresentacion
             dtpEndDate.Enabled = true;
             btnOkCustomDate.Visible = true;
         }
+
+        //-------------------------------------------------------------------------
 
         private void btnToday_Click_1(object sender, EventArgs e)
         {
@@ -94,6 +109,8 @@ namespace CapaPresentacion
             DisableCustomDates();
         }
 
+        //-------------------------------------------------------------------------
+
         private void btnLast7Days_Click_1(object sender, EventArgs e)
         {
             dtpStartDate.Value = DateTime.Today.AddDays(-7);
@@ -101,6 +118,8 @@ namespace CapaPresentacion
             LoadData();
             DisableCustomDates();
         }
+
+        //-------------------------------------------------------------------------
 
         private void btnLast30Days_Click_1(object sender, EventArgs e)
         {
@@ -110,6 +129,8 @@ namespace CapaPresentacion
             DisableCustomDates();
         }
 
+        //-------------------------------------------------------------------------
+
         private void btnThisMonth_Click(object sender, EventArgs e)
         {
             dtpStartDate.Value = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
@@ -117,6 +138,8 @@ namespace CapaPresentacion
             LoadData();
             DisableCustomDates();
         }
+
+        //-------------------------------------------------------------------------
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
@@ -126,6 +149,8 @@ namespace CapaPresentacion
             DisableCustomDates();
         }
 
+        //-------------------------------------------------------------------------
+
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             dtpStartDate.Value = DateTime.Today.AddDays(-7);
@@ -134,6 +159,8 @@ namespace CapaPresentacion
             DisableCustomDates();
         }
 
+        //-------------------------------------------------------------------------
+
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             dtpStartDate.Value = DateTime.Today.AddDays(-30);
@@ -141,6 +168,8 @@ namespace CapaPresentacion
             LoadData();
             DisableCustomDates();
         }
+
+        //-------------------------------------------------------------------------
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {

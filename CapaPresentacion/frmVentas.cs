@@ -285,7 +285,7 @@ namespace CapaPresentacion
             if (decimal.TryParse(txttotalpagar.Text, out decimal valor))
             {
                 // Formatea el valor con separadores de miles y coma como separador decimal
-                txtOutput.Text = valor.ToString("#,##0.00", new System.Globalization.CultureInfo("es-ES"));
+                txtOutput.Text = "$ " + valor.ToString("#,##0.00", new System.Globalization.CultureInfo("es-ES"));
             }
         }
 

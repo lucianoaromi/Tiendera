@@ -38,7 +38,6 @@ namespace CapaPresentacion
             this.picComprar = new System.Windows.Forms.PictureBox();
             this.txtpagacon = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.txttotalpagar = new System.Windows.Forms.TextBox();
             this.txtcambio = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.dgvdata = new System.Windows.Forms.DataGridView();
@@ -51,6 +50,7 @@ namespace CapaPresentacion
             this.label6 = new System.Windows.Forms.Label();
             this.cbometodopago = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.txttotalpagar = new System.Windows.Forms.TextBox();
             this.txtnumventa = new System.Windows.Forms.TextBox();
             this.txtidproducto = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -142,7 +142,7 @@ namespace CapaPresentacion
             // 
             // txtOutput
             // 
-            this.txtOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOutput.Location = new System.Drawing.Point(659, 323);
             this.txtOutput.Multiline = true;
             this.txtOutput.Name = "txtOutput";
@@ -189,16 +189,6 @@ namespace CapaPresentacion
             this.label16.Size = new System.Drawing.Size(62, 15);
             this.label16.TabIndex = 35;
             this.label16.Text = "Paga con:";
-            // 
-            // txttotalpagar
-            // 
-            this.txttotalpagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttotalpagar.Location = new System.Drawing.Point(895, 9);
-            this.txttotalpagar.Name = "txttotalpagar";
-            this.txttotalpagar.ReadOnly = true;
-            this.txttotalpagar.Size = new System.Drawing.Size(35, 20);
-            this.txttotalpagar.TabIndex = 10;
-            this.txttotalpagar.Visible = false;
             // 
             // txtcambio
             // 
@@ -319,6 +309,16 @@ namespace CapaPresentacion
             this.label10.Size = new System.Drawing.Size(106, 20);
             this.label10.TabIndex = 11;
             this.label10.Text = "Total a pagar:";
+            // 
+            // txttotalpagar
+            // 
+            this.txttotalpagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txttotalpagar.Location = new System.Drawing.Point(895, 9);
+            this.txttotalpagar.Name = "txttotalpagar";
+            this.txttotalpagar.ReadOnly = true;
+            this.txttotalpagar.Size = new System.Drawing.Size(35, 20);
+            this.txttotalpagar.TabIndex = 10;
+            this.txttotalpagar.Visible = false;
             // 
             // txtnumventa
             // 
