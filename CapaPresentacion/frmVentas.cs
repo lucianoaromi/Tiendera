@@ -172,7 +172,7 @@ namespace CapaPresentacion
 
         //-----------------------------------------------------------
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void picBuscarCliente_Click(object sender, EventArgs e)
         {
             using (var modal = new mdClientes())
             {
@@ -190,8 +190,6 @@ namespace CapaPresentacion
                 {
                     txtcodigoproducto.Select();
                 }
-
-
             }
         }
 
@@ -281,13 +279,14 @@ namespace CapaPresentacion
             }
             txttotalpagar.Text = total.ToString("#,0.00");
 
+
             // Intenta convertir el valor del primer TextBox a decimal
-            /*
+            
             if (decimal.TryParse(txttotalpagar.Text, out decimal valor))
             {
                 // Formatea el valor con separadores de miles y coma como separador decimal
                 txtOutput.Text = valor.ToString("#,##0.00", new System.Globalization.CultureInfo("es-ES"));
-            }*/
+            }
         }
 
         //-----------------------------------------------------------
@@ -349,25 +348,10 @@ namespace CapaPresentacion
                         {
                             txtidproducto.Text,
                             txtnombreproducto.Text,
-                            precio.ToString("0.00"), // Formato de moneda con separadores de miles y decimales
+                            precio.ToString("#,0.00"), // Formato de moneda con separadores de miles y decimales
                             txtcantidad.Value.ToString(),
-                            totalProducto.ToString("0.00") // Formato de moneda para el total del producto
+                            totalProducto.ToString("#,0.00") // Formato de moneda para el total del producto
                         });
-
-                        // Ahora sumamos los precios de todos los productos en el DataGridView
-                        total = 0;  // Reseteamos el total antes de recalcularlo
-                        foreach (DataGridViewRow row in dgvdata.Rows)
-                        {
-                            if (row.Cells[4].Value != null)
-                            {
-                                // Sumamos el total como decimal, sin formato de cadena
-                                total += Convert.ToDecimal(row.Cells[4].Value.ToString().Replace(".", "").Replace(",", "."));
-                            }
-                        }
-
-                        // Mostramos el total en el TextBox con formato adecuado
-                        //txttotalpagar.Text = total.ToString("#,0.00").Replace(",", "#").Replace(".", ",").Replace("#", ".");
-                        //txttotalpagar2.Text = total.ToString();
 
                         calcularTotal();  // Llamada a tu método para recalcular si es necesario
                         limpiarproducto();
@@ -378,30 +362,6 @@ namespace CapaPresentacion
                         MessageBox.Show("No se puede agregar un producto con stock 0", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
-            }
-
-            try
-            {
-                // Limpia los puntos de separadores de miles y convierte la coma en punto
-                string input = txttotalpagar.Text;
-
-                // Intenta convertir el valor limpio a decimal
-                /*
-                if (decimal.TryParse(input, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out decimal valor))
-                {
-                    // Formatea el valor con separadores de miles y coma como separador decimal
-                    txtOutput.Text = valor.ToString("#,##0.00", new System.Globalization.CultureInfo("es-ES"));
-                }
-                else
-                {
-                    // Maneja el caso de error
-                    txtOutput.Text = "Formato incorrecto";
-                }*/
-            }
-            catch (Exception ex)
-            {
-                // Muestra un mensaje en caso de error inesperado
-                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -505,7 +465,7 @@ namespace CapaPresentacion
 
         //-----------------------------------------------------------
 
-        private void pictureBox7_Click(object sender, EventArgs e)
+        private void picPDF_Click(object sender, EventArgs e)
         {
             // Verifica si el TextBox está vacío
             if (string.IsNullOrEmpty(txtnumventa.Text))

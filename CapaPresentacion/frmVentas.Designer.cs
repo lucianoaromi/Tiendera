@@ -33,9 +33,8 @@ namespace CapaPresentacion
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVentas));
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.txttotalpagar2 = new System.Windows.Forms.TextBox();
             this.txtOutput = new System.Windows.Forms.TextBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.picPDF = new System.Windows.Forms.PictureBox();
             this.picComprar = new System.Windows.Forms.PictureBox();
             this.txtpagacon = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -63,7 +62,7 @@ namespace CapaPresentacion
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txtnombrecliente = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picBuscarCliente = new System.Windows.Forms.PictureBox();
             this.txtidcliente = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtapellidocliente = new System.Windows.Forms.TextBox();
@@ -92,13 +91,13 @@ namespace CapaPresentacion
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPDF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picComprar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBuscarCliente)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAgregarProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -121,13 +120,11 @@ namespace CapaPresentacion
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.DarkCyan;
-            this.groupBox3.Controls.Add(this.txttotalpagar2);
             this.groupBox3.Controls.Add(this.txtOutput);
-            this.groupBox3.Controls.Add(this.pictureBox7);
+            this.groupBox3.Controls.Add(this.picPDF);
             this.groupBox3.Controls.Add(this.picComprar);
             this.groupBox3.Controls.Add(this.txtpagacon);
             this.groupBox3.Controls.Add(this.label16);
-            this.groupBox3.Controls.Add(this.txttotalpagar);
             this.groupBox3.Controls.Add(this.txtcambio);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.dgvdata);
@@ -143,32 +140,25 @@ namespace CapaPresentacion
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Lista de Productos";
             // 
-            // txttotalpagar2
-            // 
-            this.txttotalpagar2.Location = new System.Drawing.Point(659, 264);
-            this.txttotalpagar2.Name = "txttotalpagar2";
-            this.txttotalpagar2.Size = new System.Drawing.Size(100, 21);
-            this.txttotalpagar2.TabIndex = 54;
-            // 
             // txtOutput
             // 
-            this.txtOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOutput.Location = new System.Drawing.Point(659, 323);
             this.txtOutput.Multiline = true;
             this.txtOutput.Name = "txtOutput";
             this.txtOutput.Size = new System.Drawing.Size(136, 30);
             this.txtOutput.TabIndex = 53;
             // 
-            // pictureBox7
+            // picPDF
             // 
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(855, 300);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(60, 60);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox7.TabIndex = 52;
-            this.pictureBox7.TabStop = false;
-            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
+            this.picPDF.Image = ((System.Drawing.Image)(resources.GetObject("picPDF.Image")));
+            this.picPDF.Location = new System.Drawing.Point(855, 300);
+            this.picPDF.Name = "picPDF";
+            this.picPDF.Size = new System.Drawing.Size(60, 60);
+            this.picPDF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picPDF.TabIndex = 52;
+            this.picPDF.TabStop = false;
+            this.picPDF.Click += new System.EventHandler(this.picPDF_Click);
             // 
             // picComprar
             // 
@@ -183,6 +173,7 @@ namespace CapaPresentacion
             // 
             // txtpagacon
             // 
+            this.txtpagacon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpagacon.Location = new System.Drawing.Point(659, 98);
             this.txtpagacon.Name = "txtpagacon";
             this.txtpagacon.Size = new System.Drawing.Size(117, 21);
@@ -201,16 +192,17 @@ namespace CapaPresentacion
             // 
             // txttotalpagar
             // 
-            this.txttotalpagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttotalpagar.Location = new System.Drawing.Point(659, 187);
-            this.txttotalpagar.Multiline = true;
+            this.txttotalpagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txttotalpagar.Location = new System.Drawing.Point(895, 9);
             this.txttotalpagar.Name = "txttotalpagar";
             this.txttotalpagar.ReadOnly = true;
-            this.txttotalpagar.Size = new System.Drawing.Size(114, 21);
+            this.txttotalpagar.Size = new System.Drawing.Size(35, 20);
             this.txttotalpagar.TabIndex = 10;
+            this.txttotalpagar.Visible = false;
             // 
             // txtcambio
             // 
+            this.txtcambio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcambio.Location = new System.Drawing.Point(659, 150);
             this.txtcambio.Name = "txtcambio";
             this.txtcambio.ReadOnly = true;
@@ -310,6 +302,7 @@ namespace CapaPresentacion
             // 
             // cbometodopago
             // 
+            this.cbometodopago.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbometodopago.FormattingEnabled = true;
             this.cbometodopago.Location = new System.Drawing.Point(659, 45);
             this.cbometodopago.Name = "cbometodopago";
@@ -376,7 +369,7 @@ namespace CapaPresentacion
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(133, 30);
+            this.label7.Location = new System.Drawing.Point(133, 28);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(118, 15);
             this.label7.TabIndex = 22;
@@ -385,6 +378,7 @@ namespace CapaPresentacion
             // 
             // txtfecha
             // 
+            this.txtfecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtfecha.Location = new System.Drawing.Point(18, 46);
             this.txtfecha.Name = "txtfecha";
             this.txtfecha.ReadOnly = true;
@@ -393,8 +387,9 @@ namespace CapaPresentacion
             // 
             // cbotipodocumento
             // 
+            this.cbotipodocumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbotipodocumento.FormattingEnabled = true;
-            this.cbotipodocumento.Location = new System.Drawing.Point(135, 46);
+            this.cbotipodocumento.Location = new System.Drawing.Point(135, 44);
             this.cbotipodocumento.Name = "cbotipodocumento";
             this.cbotipodocumento.Size = new System.Drawing.Size(158, 23);
             this.cbotipodocumento.TabIndex = 23;
@@ -412,7 +407,7 @@ namespace CapaPresentacion
             // 
             this.groupBox2.Controls.Add(this.pictureBox2);
             this.groupBox2.Controls.Add(this.txtnombrecliente);
-            this.groupBox2.Controls.Add(this.pictureBox1);
+            this.groupBox2.Controls.Add(this.picBuscarCliente);
             this.groupBox2.Controls.Add(this.txtidcliente);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.txtapellidocliente);
@@ -440,26 +435,28 @@ namespace CapaPresentacion
             // 
             // txtnombrecliente
             // 
-            this.txtnombrecliente.Location = new System.Drawing.Point(268, 46);
+            this.txtnombrecliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtnombrecliente.Location = new System.Drawing.Point(268, 45);
             this.txtnombrecliente.Name = "txtnombrecliente";
             this.txtnombrecliente.ReadOnly = true;
             this.txtnombrecliente.Size = new System.Drawing.Size(125, 21);
             this.txtnombrecliente.TabIndex = 13;
             // 
-            // pictureBox1
+            // picBuscarCliente
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(417, 15);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(55, 55);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 31;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.picBuscarCliente.Image = ((System.Drawing.Image)(resources.GetObject("picBuscarCliente.Image")));
+            this.picBuscarCliente.Location = new System.Drawing.Point(417, 15);
+            this.picBuscarCliente.Name = "picBuscarCliente";
+            this.picBuscarCliente.Size = new System.Drawing.Size(55, 55);
+            this.picBuscarCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBuscarCliente.TabIndex = 31;
+            this.picBuscarCliente.TabStop = false;
+            this.picBuscarCliente.Click += new System.EventHandler(this.picBuscarCliente_Click);
             // 
             // txtidcliente
             // 
             this.txtidcliente.BackColor = System.Drawing.Color.White;
+            this.txtidcliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtidcliente.Location = new System.Drawing.Point(22, 46);
             this.txtidcliente.Name = "txtidcliente";
             this.txtidcliente.ReadOnly = true;
@@ -469,7 +466,7 @@ namespace CapaPresentacion
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(266, 29);
+            this.label12.Location = new System.Drawing.Point(266, 28);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(55, 15);
             this.label12.TabIndex = 12;
@@ -477,7 +474,8 @@ namespace CapaPresentacion
             // 
             // txtapellidocliente
             // 
-            this.txtapellidocliente.Location = new System.Drawing.Point(129, 46);
+            this.txtapellidocliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtapellidocliente.Location = new System.Drawing.Point(129, 45);
             this.txtapellidocliente.Name = "txtapellidocliente";
             this.txtapellidocliente.ReadOnly = true;
             this.txtapellidocliente.Size = new System.Drawing.Size(125, 21);
@@ -486,7 +484,7 @@ namespace CapaPresentacion
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(126, 28);
+            this.label3.Location = new System.Drawing.Point(126, 27);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 15);
             this.label3.TabIndex = 3;
@@ -560,6 +558,7 @@ namespace CapaPresentacion
             // 
             // txtcantidad
             // 
+            this.txtcantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcantidad.Location = new System.Drawing.Point(564, 54);
             this.txtcantidad.Name = "txtcantidad";
             this.txtcantidad.Size = new System.Drawing.Size(108, 21);
@@ -567,6 +566,7 @@ namespace CapaPresentacion
             // 
             // txtpreciounidad
             // 
+            this.txtpreciounidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpreciounidad.Location = new System.Drawing.Point(306, 54);
             this.txtpreciounidad.Name = "txtpreciounidad";
             this.txtpreciounidad.ReadOnly = true;
@@ -602,6 +602,7 @@ namespace CapaPresentacion
             // 
             // txtstock
             // 
+            this.txtstock.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtstock.Location = new System.Drawing.Point(441, 54);
             this.txtstock.Name = "txtstock";
             this.txtstock.ReadOnly = true;
@@ -610,6 +611,7 @@ namespace CapaPresentacion
             // 
             // txtnombreproducto
             // 
+            this.txtnombreproducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtnombreproducto.Location = new System.Drawing.Point(138, 54);
             this.txtnombreproducto.Name = "txtnombreproducto";
             this.txtnombreproducto.ReadOnly = true;
@@ -636,6 +638,7 @@ namespace CapaPresentacion
             // 
             // txtcodigoproducto
             // 
+            this.txtcodigoproducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcodigoproducto.Location = new System.Drawing.Point(17, 54);
             this.txtcodigoproducto.Name = "txtcodigoproducto";
             this.txtcodigoproducto.ReadOnly = true;
@@ -651,6 +654,7 @@ namespace CapaPresentacion
             this.panel2.Controls.Add(this.groupBox1);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.groupBox2);
+            this.panel2.Controls.Add(this.txttotalpagar);
             this.panel2.Location = new System.Drawing.Point(34, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(950, 240);
@@ -735,7 +739,7 @@ namespace CapaPresentacion
             this.panel1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPDF)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picComprar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).EndInit();
             this.groupBox4.ResumeLayout(false);
@@ -743,7 +747,7 @@ namespace CapaPresentacion
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBuscarCliente)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAgregarProducto)).EndInit();
@@ -806,13 +810,13 @@ namespace CapaPresentacion
         private Panel panel5;
         private TextBox textBox1;
         private TextBox textBox2;
-        private PictureBox pictureBox1;
+        private PictureBox picBuscarCliente;
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
         private PictureBox picBuscarProducto;
         private PictureBox picAgregarProducto;
         private PictureBox picComprar;
-        private PictureBox pictureBox7;
+        private PictureBox picPDF;
         private DataGridViewTextBoxColumn IdProducto;
         private DataGridViewTextBoxColumn Producto;
         private DataGridViewTextBoxColumn Precio;
@@ -820,6 +824,5 @@ namespace CapaPresentacion
         private DataGridViewTextBoxColumn SubTotal;
         private DataGridViewButtonColumn btneliminar;
         private TextBox txtOutput;
-        private TextBox txttotalpagar2;
     }
 }
