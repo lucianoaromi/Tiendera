@@ -58,11 +58,6 @@ namespace CapaPresentacion
             lblapeusuario.Text = $"{Convert.ToString(_Usuario.Apellido)}, {Convert.ToString(_Usuario.Nombre)}";
         }
 
-        private void btnbuscarreporte_Click(object sender, EventArgs e)
-        {
-            CargarDatosVentas();
-        }
-
         private void CargarColoresFilas()
         {
             foreach (DataGridViewRow row in dgvdata.Rows)
@@ -235,7 +230,7 @@ namespace CapaPresentacion
                         rv.FechaRegistro,
                         rv.TipoDocumento,
                         rv.NumeroDocumento,
-                        string.Format("{0:N2}", rv.MontoTotal), // Formatear como pesos
+                        Convert.ToDecimal(rv.MontoTotal).ToString("N2", System.Globalization.CultureInfo.GetCultureInfo("es-ES")), // Formato correcto
                         rv.UsuarioRegistro,
                         rv.ApellidoCliente,
                         rv.DesMetPago,
@@ -253,25 +248,6 @@ namespace CapaPresentacion
 
         }
 
-        private void btnbuscarpor_Click(object sender, EventArgs e)
-        {
-            string columnaFiltro = ((OpcionCombo)cbobusqueda.SelectedItem).Valor.ToString();
-
-            if (dgvdata.Rows.Count > 0)
-            {
-                foreach (DataGridViewRow row in dgvdata.Rows)
-                {
-                    if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtbusqueda.Text.Trim().ToUpper()))
-                    {
-                        row.Visible = true;
-                    }
-                    else
-                    {
-                        row.Visible = false;
-                    }
-                }
-            }
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -429,18 +405,21 @@ namespace CapaPresentacion
                 // Iterar por todas las filas visibles del DataGridView
                 foreach (DataGridViewRow row in dgvdata.Rows)
                 {
-                    if (row.Visible && row.Cells[MontoTotal].Value != null) // Verificar si la fila es visible
+                    // Verificar si la fila es visible y si la celda tiene un valor válido
+                    if (row.Visible && row.Cells[MontoTotal].Value != null)
                     {
-                        // Intentar convertir el valor a decimal y sumarlo
-                        if (decimal.TryParse(row.Cells[MontoTotal].Value.ToString(), out decimal valor))
+                        string valorCelda = row.Cells[MontoTotal].Value.ToString().Replace(".", "").Replace(",", ".");
+
+                        // Intentar convertir el valor de la celda a decimal
+                        if (decimal.TryParse(valorCelda, out decimal valor))
                         {
                             suma += valor;
                         }
                     }
                 }
 
-                // Mostrar el resultado en el TextBox con formato adecuado para cultura "es-ES"
-                txtResultado.Text = suma.ToString("#,##0.00", new System.Globalization.CultureInfo("es-ES"));
+                // Mostrar el resultado en el TextBox con formato de moneda
+                txtResultado.Text = suma.ToString("#,##0.00", System.Globalization.CultureInfo.GetCultureInfo("es-ES"));
             }
             catch (Exception ex)
             {
