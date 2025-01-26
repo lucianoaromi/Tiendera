@@ -962,14 +962,14 @@ GO
 
 CREATE TABLE SoftwareState (
     ID INT PRIMARY KEY IDENTITY(1,1),  
-    FechaInicio DATE NOT NULL,              -- Registra la fecha de la primera ejecución.
-    DiasPermitidos INT NOT NULL DEFAULT 30,
-	Activado BIT NOT NULL DEFAULT 0,     	-- Indica si el software está activado (1) o no (0).
-    CodigoActivacion NVARCHAR(50),	        -- Almacena el código que permitirá desbloquear el software.	
-    FechaActivacion DATETIME NULL,			-- Fecha en la que se activó el software.
+    FechaInicio DATE NOT NULL,               -- Registra la fecha de la primera ejecución.
+    DiasPermitidos INT NOT NULL DEFAULT 15,  -- Días restantes para uso limitado.
+    Activado BIT NOT NULL DEFAULT 0,         -- Indica si el software está activado (1) o no (0).
+    CodigoActivacion NVARCHAR(50),           -- Código que permite desbloquear el software.	
+    FechaActivacion DATETIME NULL,           -- Fecha en la que se activó el software.
+    UltimaVerificacion DATE NULL             -- Fecha de la última verificación.
 );
-go
-
+GO
 ---------------- Se generan los metodos para manipular el formulario de LICENCIAS ----------------
 
 -- Declaración de Variables para manejo de los métodos
@@ -1075,11 +1075,15 @@ go
 
 -------------------------------------------------------------------------------------------------------------------
 
--- Inserta el primer registro con un código de activación "" de 15 dias de muestra.
-INSERT INTO SoftwareState (FechaInicio, Activado, CodigoActivacion, DiasPermitidos, FechaActivacion)
-VALUES 
-    (GETDATE(), 0, '11111111', 0, GETDATE());
-GO
+INSERT INTO SoftwareState (FechaInicio, DiasPermitidos, Activado, CodigoActivacion, FechaActivacion, UltimaVerificacion)
+VALUES (
+    GETDATE(),            -- Fecha actual como fecha de inicio
+    10,                   -- Días permitidos iniciales
+    0,                    -- Activado en falso (0) por defecto
+    '11111111',           -- Código de activación 
+    GETDATE(),            -- Fecha de activación no configurada
+    GETDATE()             -- Fecha de última verificación configurada como la fecha actual
+);
 
 select * from SoftwareState
 go

@@ -14,5 +14,6 @@ namespace CapaEntidad
         public bool Activado { get; set; }
         public string CodigoActivacion { get; set; }
         public DateTime? FechaActivacion { get; set; }
+        public DateTime? UltimaVerificacion { get; set; }
     }
 }

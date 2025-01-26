@@ -18,7 +18,7 @@ namespace CapaNegocio
             _softwareStateDAL = new CD_Licencia();
         }
 
-        // Método para verificar si el software puede usarse
+        // Método para verificar si el software puede usarse y actualizar los días permitidos
         public bool VerificarUsoPermitido(out int diasRestantes)
         {
             var estado = _softwareStateDAL.ObtenerEstado(); // Trae el estado actual del software
@@ -28,20 +28,30 @@ namespace CapaNegocio
                 throw new InvalidOperationException("El estado del software no está configurado.");
             }
 
+            // Si el software está activado permanentemente
             if (estado.Activado)
             {
                 diasRestantes = -1;  // -1 para indicar que el software está activado permanentemente
                 return true; // El software está activado permanentemente
             }
 
+            // Calcular los días restantes basados en la fecha de inicio y los días permitidos
             DateTime fechaFin = estado.FechaInicio.AddDays(estado.DiasPermitidos);
             diasRestantes = (fechaFin - DateTime.Now).Days;
 
-            return DateTime.Now <= fechaFin; // Verifica si la fecha actual está dentro del período de días permitidos
+            // Verificar si el software todavía puede usarse
+            if (DateTime.Now > fechaFin)
+            {
+                diasRestantes = 0; // Si ya no puede usarse, los días restantes son 0
+                return false; // El software ya no puede usarse
+            }
+
+            // Si aún puede usarse, actualizar los días permitidos en la base de datos
+            // Este paso ya es realizado en el método ObtenerEstado dentro de la capa de datos
+            return true; // El software todavía puede usarse
         }
 
-        // Método para activar el software con un código
-        // Método para activar el software con un código
+
         // Método para activar el software con un código
         public bool ActivarSoftware(string codigo)
         {
@@ -78,8 +88,6 @@ namespace CapaNegocio
 
             return false; // Código incorrecto
         }
-
-
 
     }
 }

@@ -66,13 +66,6 @@ namespace CapaPresentacion
                 Application.Exit();
             }
         }
-
-        /*
-        private static void SaveActivationDate()
-        {
-            string activationFile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "activation-Licencia.txt");
-            File.WriteAllText(activationFile, DateTime.Now.ToString());
-        }*/
     }
 }
 
