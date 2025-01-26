@@ -146,6 +146,8 @@ namespace CapaPresentacion.Models
                             );
                         TotalRevenue += (decimal)reader[1];
                     }
+
+                    //------------------------------
                     TotalProfit = TotalRevenue * 0.2m;//20%
                     reader.Close();
 

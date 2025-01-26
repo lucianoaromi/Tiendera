@@ -38,10 +38,12 @@ namespace CapaPresentacion
         //Private methods
         private void LoadData()
         {
+            
             var refreshData = model.LoadData(dtpStartDate.Value, dtpEndDate.Value);
             if (refreshData == true)
             {
                 lblNumOrders.Text = model.NumOrders.ToString();
+                lblTotalRevenue2.Text = model.TotalRevenue.ToString();
                 lblTotalRevenue.Text = "$" + model.TotalRevenue.ToString("#,##0.00", new System.Globalization.CultureInfo("es-ES"));
                 lblTotalProfit.Text = "$" + model.TotalProfit.ToString("#,##0.00", new System.Globalization.CultureInfo("es-ES"));
 
@@ -70,6 +72,8 @@ namespace CapaPresentacion
                 dgvUnderstock.Columns[0].Width = 180;
                 dgvUnderstock.Columns[1].Width = 60;
                 Console.WriteLine("Loaded view :)");
+                calcularPorcentaje();
+
             }
             else Console.WriteLine("View not loaded, same query");
         }
@@ -88,6 +92,7 @@ namespace CapaPresentacion
         private void btnOkCustomDate_Click_1(object sender, EventArgs e)
         {
             LoadData();
+            calcularPorcentaje();
         }
 
         //-------------------------------------------------------------------------
@@ -97,46 +102,7 @@ namespace CapaPresentacion
             dtpStartDate.Enabled = true;
             dtpEndDate.Enabled = true;
             btnOkCustomDate.Visible = true;
-        }
-
-        //-------------------------------------------------------------------------
-
-        private void btnToday_Click_1(object sender, EventArgs e)
-        {
-            dtpStartDate.Value = DateTime.Today;
-            dtpEndDate.Value = DateTime.Now;
-            LoadData();
-            DisableCustomDates();
-        }
-
-        //-------------------------------------------------------------------------
-
-        private void btnLast7Days_Click_1(object sender, EventArgs e)
-        {
-            dtpStartDate.Value = DateTime.Today.AddDays(-7);
-            dtpEndDate.Value = DateTime.Now;
-            LoadData();
-            DisableCustomDates();
-        }
-
-        //-------------------------------------------------------------------------
-
-        private void btnLast30Days_Click_1(object sender, EventArgs e)
-        {
-            dtpStartDate.Value = DateTime.Today.AddDays(-30);
-            dtpEndDate.Value = DateTime.Now;
-            LoadData();
-            DisableCustomDates();
-        }
-
-        //-------------------------------------------------------------------------
-
-        private void btnThisMonth_Click(object sender, EventArgs e)
-        {
-            dtpStartDate.Value = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
-            dtpEndDate.Value = DateTime.Now;
-            LoadData();
-            DisableCustomDates();
+            calcularPorcentaje();
         }
 
         //-------------------------------------------------------------------------
@@ -147,6 +113,7 @@ namespace CapaPresentacion
             dtpEndDate.Value = DateTime.Now;
             LoadData();
             DisableCustomDates();
+            calcularPorcentaje();
         }
 
         //-------------------------------------------------------------------------
@@ -157,6 +124,7 @@ namespace CapaPresentacion
             dtpEndDate.Value = DateTime.Now;
             LoadData();
             DisableCustomDates();
+            calcularPorcentaje();
         }
 
         //-------------------------------------------------------------------------
@@ -167,6 +135,7 @@ namespace CapaPresentacion
             dtpEndDate.Value = DateTime.Now;
             LoadData();
             DisableCustomDates();
+            calcularPorcentaje();
         }
 
         //-------------------------------------------------------------------------
@@ -177,6 +146,55 @@ namespace CapaPresentacion
             dtpEndDate.Value = DateTime.Now;
             LoadData();
             DisableCustomDates();
+            calcularPorcentaje();
+        }
+
+        private void calcularPorcentaje()
+        {
+            // Si necesitas mostrar el valor como un número decimal con formato específico
+            decimal valor;
+            if (decimal.TryParse(lblTotalRevenue2.Text, out valor))
+            {
+                txtValor1.Text = valor.ToString("N2"); // Muestra el valor con dos decimales
+            }
+            else
+            {
+                MessageBox.Show("El valor en el Label no es un número válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+            // Obtener el valor del primer TextBox (como decimal)
+            decimal valor1;
+            if (decimal.TryParse(txtValor1.Text, out valor1))
+            {
+                // Verificar si el segundo TextBox está vacío o no tiene un valor válido
+                int porcentaje = 0; // Asumir 0 como valor por defecto
+                if (!string.IsNullOrWhiteSpace(txtPorcentaje.Text) && int.TryParse(txtPorcentaje.Text, out int parsedPorcentaje))
+                {
+                    porcentaje = parsedPorcentaje;
+                }
+
+                // Realizar la operación: valor1 * (porcentaje / 100)
+                decimal resultado = valor1 * (porcentaje / 100m);
+
+                // Mostrar el resultado en el Label
+                label1.Text = "$" + resultado.ToString("#,##0.00", new System.Globalization.CultureInfo("es-ES"));
+            }
+            else
+            {
+                MessageBox.Show("El valor en el primer TextBox no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void txtPorcentaje_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verificar si la tecla presionada no es un dígito, no es backspace y no es coma o punto decimal
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                // Cancelar el evento para evitar que se registre la tecla
+                e.Handled = true;
+            }
         }
     }
 }
