@@ -288,13 +288,13 @@ namespace CapaPresentacion
             // Verificar si el campo txtstock y txtprecio esten vacíos
             if (string.IsNullOrEmpty(txtstock.Text))
             {
-                MessageBox.Show("El campo 'Stock' no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Es necesario el 'Stock' del producto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return; // Detener la ejecución si el campo está vacío
             }
 
             if (string.IsNullOrEmpty(txtprecio.Text))
             {
-                MessageBox.Show("El campo 'Precio' no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Es necesario el 'Precio' del producto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return; // Detener la ejecución si el campo 'Precio' está vacío
             }
             //-----------------------------------------------
@@ -340,7 +340,7 @@ namespace CapaPresentacion
                 }
                 else
                 {
-                    MessageBox.Show(mensaje);
+                    MessageBox.Show(mensaje, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             //Si el objeto idusuario no es igual a 0 se accede a editar el usario seleccionado del datagrid
@@ -370,7 +370,7 @@ namespace CapaPresentacion
                 }
                 else
                 {
-                    MessageBox.Show(mensaje);
+                    MessageBox.Show(mensaje, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }

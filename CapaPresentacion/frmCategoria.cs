@@ -392,7 +392,7 @@ namespace CapaPresentacion
                 }
                 else
                 {
-                    MessageBox.Show(mensaje);
+                    MessageBox.Show(mensaje, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
             }
@@ -417,7 +417,7 @@ namespace CapaPresentacion
                 }
                 else
                 {
-                    MessageBox.Show(mensaje);
+                    MessageBox.Show(mensaje, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
@@ -448,8 +448,8 @@ namespace CapaPresentacion
                     }
                     else
                     {
-                        MessageBox.Show("No se puede eliminar la Categoría porque está asociada a un Producto. " +
-                                        "Primero debes eliminar todos los Productos asociados a esta Categoría",
+                        MessageBox.Show("No es posible eliminar la categoría porque está asociada a uno o más productos. " +
+                                        "Elimina todos los productos asociados a esta categoría antes de intentar eliminarla.",
                                         "Alerta",
                                         MessageBoxButtons.OK,
                                         MessageBoxIcon.Warning);

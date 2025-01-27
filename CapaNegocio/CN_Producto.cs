@@ -30,12 +30,12 @@ namespace CapaNegocio
 
             if (obj.Codigo == "")
             {
-                Mensaje += "Es necesario el Codigo\n";
+                Mensaje += "Es necesario el 'Codigo' del producto\n";
             }
 
             if (string.IsNullOrEmpty(obj.Nombre))
             {
-                Mensaje += "Es necesario el Nombre del producto\n";
+                Mensaje += "Es necesario el 'Nombre' del producto\n";
             }
             else if (obj.Nombre.Length > 50)
             {
@@ -44,7 +44,7 @@ namespace CapaNegocio
 
             if (string.IsNullOrWhiteSpace(obj.Descripcion))
             {
-                Mensaje += "Es necesario la descripción del producto.\n";
+                Mensaje += "Es necesario la 'Descripción' del producto.\n";
             }
             else if (obj.Descripcion.Length > 200)
             {
@@ -76,12 +76,12 @@ namespace CapaNegocio
 
             if (obj.Codigo == "")
             {
-                Mensaje += "Es necesario el Codigo\n";
+                Mensaje += "Es necesario el 'Codigo' del producto\n";
             }
 
             if (obj.Nombre == "")
             {
-                Mensaje += "Es necesario el Nombre del producto\n";
+                Mensaje += "Es necesario el 'Nombre' del producto\n";
             }
             else if (obj.Nombre.Length > 50)
             {
@@ -90,7 +90,7 @@ namespace CapaNegocio
 
             if (obj.Descripcion == "")
             {
-                Mensaje += "Es necesario la descripcion del producto\n";
+                Mensaje += "Es necesario la 'Descripcion' del producto\n";
             }
             else if (obj.Descripcion.Length > 200)
             {
@@ -99,7 +99,7 @@ namespace CapaNegocio
 
             if (obj.Stock < 0)
             {
-                Mensaje += "Es necesario el Stock del producto\n";
+                Mensaje += "Es necesario el 'Stock' del producto\n";
             }
 
             if (Mensaje != string.Empty)

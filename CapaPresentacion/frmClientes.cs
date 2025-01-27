@@ -416,7 +416,8 @@ namespace CapaPresentacion
                 }
                 else
                 {
-                    MessageBox.Show(mensaje);
+                    MessageBox.Show(mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
                 }
 
             }
@@ -446,7 +447,8 @@ namespace CapaPresentacion
                 }
                 else
                 {
-                    MessageBox.Show(mensaje);
+                    MessageBox.Show(mensaje, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
                 }
             }
         }

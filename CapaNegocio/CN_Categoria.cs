@@ -30,7 +30,7 @@ namespace CapaNegocio
 
             if (string.IsNullOrEmpty(obj.Descripcion))
             {
-                Mensaje += "Es necesario el Apellido del usuario\n";
+                Mensaje += "Es necesario la 'Descripcion' de la categoria\n";
             }
 
 
@@ -54,7 +54,7 @@ namespace CapaNegocio
 
             if (obj.Descripcion == "")
             {
-                Mensaje += "Es necesario el documento\n";
+                Mensaje += "Es necesario la 'Descripcion' de la categoria\n";
             }
 
             if (Mensaje != string.Empty)

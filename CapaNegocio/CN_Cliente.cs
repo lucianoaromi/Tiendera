@@ -11,11 +11,11 @@ namespace CapaNegocio
 {
     public class CN_Cliente
     {
-        // "objcd_usuario" es una instancia de la clase CD_Usuario llamada objcd_usuario
+        // "objcd_Cliente" es una instancia de la clase CD_Cliente llamada objcd_Cliente
         private CD_Cliente objcd_cliente = new CD_Cliente();
 
-        //Mismo metodo "Listar" que se halla en la clase CD_Usuario de la capa de datos
-        //Retorna la lista que posee la clase "CD_Usuario" que se encuentra en la capa de datos
+        //Mismo metodo "Listar" que se halla en la clase CD_Cliente de la capa de datos
+        //Retorna la lista que posee la clase "CD_Cliente" que se encuentra en la capa de datos
         public List<Cliente> Listar()
         {
             return objcd_cliente.Listar();
@@ -29,19 +29,13 @@ namespace CapaNegocio
 
             if (string.IsNullOrEmpty(obj.Apellido))
             {
-                Mensaje += "Es necesario el Apellido del usuario\n";
+                Mensaje += "Es necesario el Apellido del Cliente\n";
             }
 
             if (string.IsNullOrEmpty(obj.Nombre))
             {
-                Mensaje += "Es necesario el Nombre del usuario\n";
+                Mensaje += "Es necesario el Nombre del Cliente\n";
             }
-
-            if (string.IsNullOrEmpty(obj.Direccion))
-            {
-                Mensaje += "Es necesario la Direccion del usuario\n";
-            }
-
 
             if (Mensaje != string.Empty)
             {
@@ -73,20 +67,13 @@ namespace CapaNegocio
 
             if (obj.Apellido == "")
             {
-                Mensaje += "Es necesario el Apellido del usuario\n";
+                Mensaje += "Es necesario el Apellido del Cliente\n";
             }
 
             if (obj.Nombre == "")
             {
-                Mensaje += "Es necesario el Nombre del usuario\n";
+                Mensaje += "Es necesario el Nombre del Cliente\n";
             }
-
-            if (obj.Direccion == "")
-            {
-                Mensaje += "Es necesario la Direccion del usuario\n";
-            }
-
-
 
             if (Mensaje != string.Empty)
             {
