@@ -23,21 +23,21 @@ namespace CapaNegocio
         public List<Usuario> Listar()
         {
             return objcd_usuario.Listar();
-
         }
 
-        //Puente de comunicacion con la "Capa de Presentacion"
+        //--------------------------------------------------------------------------------------------------------
+
         public int Registrar(Usuario obj, out string Mensaje)
         {
             Mensaje = string.Empty;
 
             if (string.IsNullOrEmpty(obj.Documento))
             {
-                Mensaje += "Es necesario el documento\n";
+                Mensaje += "Es necesario el Documento del usuario\n";
             }
             else if (obj.Documento.Length != 8 || !EsNumero(obj.Documento)) // 8 digitos de longitud y que sea numero
             {
-                Mensaje += "El número de documento debe tener exactamente 8 dígitos numéricos\n";
+                Mensaje += "El número de Documento debe tener exactamente 8 dígitos numéricos\n";
             }
 
             if (string.IsNullOrEmpty(obj.Apellido))
@@ -57,7 +57,7 @@ namespace CapaNegocio
 
             if (string.IsNullOrEmpty(obj.Clave))
             {
-                Mensaje += "Es necesario la clave del usuario\n";
+                Mensaje += "Es necesario la Contraseña del usuario\n";
             }
 
             if (Mensaje != string.Empty)
@@ -73,6 +73,8 @@ namespace CapaNegocio
             }
         }
 
+        //--------------------------------------------------------------------------------------------------------
+
         private bool EsNumero(string valor)
         {
             foreach (char c in valor)
@@ -85,15 +87,19 @@ namespace CapaNegocio
             return true;
         }
 
+        //--------------------------------------------------------------------------------------------------------
 
-        //Puente de comunicacion con la "Capa de Presentacion"
         public bool Editar(Usuario obj, out string Mensaje)
         {
             Mensaje = string.Empty;
 
             if (obj.Documento == "")
             {
-                Mensaje += "Es necesario el documento\n";
+                Mensaje += "Es necesario el Documento del usuario\n";
+            }
+            else if (obj.Documento.Length != 8 || !EsNumero(obj.Documento)) // 8 digitos de longitud y que sea numero
+            {
+                Mensaje += "El número de Documento debe tener exactamente 8 dígitos numéricos\n";
             }
 
             if (obj.Apellido == "")
@@ -113,7 +119,7 @@ namespace CapaNegocio
 
             if (obj.Clave == "")
             {
-                Mensaje += "Es necesario la clave del usuario\n";
+                Mensaje += "Es necesario la Contraseña del usuario\n";
             }
 
 
@@ -128,12 +134,11 @@ namespace CapaNegocio
 
         }
 
+        //--------------------------------------------------------------------------------------------------------
 
-        //Puente de comunicacion con la "Capa de Presentacion"
         public bool Eliminar(Usuario obj, out string Mensaje)
         {
             return objcd_usuario.Eliminar(obj, out Mensaje);
-
         }
     }
 }

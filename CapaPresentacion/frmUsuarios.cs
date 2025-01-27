@@ -49,8 +49,6 @@ namespace CapaPresentacion
             cborol.ValueMember = "Valor";
             cborol.SelectedIndex = 0;
 
-
-
             foreach (DataGridViewColumn columna in dgvdata.Columns)
             {
                 if (columna.Visible == true && columna.Name != "btnseleccionar")
@@ -77,9 +75,9 @@ namespace CapaPresentacion
                    item.Estado == true ? "Activo" : "No Activo",
                });
             }
-
         }
 
+        //------------------------------------------------------------------------------------------------------------------------------------------
 
         private void btnguardar_Click_1(object sender, EventArgs e)
         {
@@ -151,10 +149,9 @@ namespace CapaPresentacion
                     MessageBox.Show(mensaje);
                 }
             }
-
-
         }
 
+        //------------------------------------------------------------------------------------------------------------------------------------------
 
         private void Limpiar()
         {
@@ -180,6 +177,8 @@ namespace CapaPresentacion
             txtdocumento.Select();
         }
 
+        //------------------------------------------------------------------------------------------------------------------------------------------
+
         //Muestra la imagen de tilde en el DataGrid
         private void dgvdata_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
@@ -201,6 +200,8 @@ namespace CapaPresentacion
                 e.Handled = true;
             }
         }
+
+        //------------------------------------------------------------------------------------------------------------------------------------------
 
         //Boton de DataGrid que trae los datos hacia los TextBox
         private void dgvdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -254,6 +255,8 @@ namespace CapaPresentacion
             }
         }
 
+        //------------------------------------------------------------------------------------------------------------------------------------------
+
         private void btneliminar_Click_1(object sender, EventArgs e)
         {
             if (Convert.ToInt32(txtid.Text) != 0)
@@ -281,11 +284,14 @@ namespace CapaPresentacion
             }
         }
 
+        //------------------------------------------------------------------------------------------------------------------------------------------
+
         private void btnlimpiar_Click_1(object sender, EventArgs e)
         {
             Limpiar();
         }
 
+        //------------------------------------------------------------------------------------------------------------------------------------------
 
         private void txtdocumento_KeyPress_1(object sender, KeyPressEventArgs e)
         {
@@ -298,6 +304,8 @@ namespace CapaPresentacion
             }
         }
 
+        //------------------------------------------------------------------------------------------------------------------------------------------
+
         private void txtnombrecompleto_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Verifica si la tecla presionada es una letra y no una tecla de control (por ejemplo, Backspace).
@@ -307,6 +315,8 @@ namespace CapaPresentacion
                 e.Handled = true;
             }
         }
+
+        //------------------------------------------------------------------------------------------------------------------------------------------
 
         private void txtnombre_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -347,6 +357,8 @@ namespace CapaPresentacion
             }
         }
 
+        //------------------------------------------------------------------------------------------------------------------------------------------
+
         // Método para normalizar y eliminar los acentos
         private string NormalizarTexto(string texto)
         {
@@ -375,8 +387,25 @@ namespace CapaPresentacion
             }
         }
 
+        //------------------------------------------------------------------------------------------------------------------------------------------
+
         private void pictureBox2_Click(object sender, EventArgs e)
         {
+            //-----------------------------------------------
+            // Verificar si el campo txtstock y txtprecio esten vacíos
+            if (string.IsNullOrEmpty(txtclave.Text))
+            {
+                MessageBox.Show("Es necesario la 'Contraseña' del usuario.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Detener la ejecución si el campo está vacío
+            }
+            /*
+            if (string.IsNullOrEmpty(txtprecio.Text))
+            {
+                MessageBox.Show("Es necesario el 'Precio' del producto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Detener la ejecución si el campo 'Precio' está vacío
+            }*/
+            //-----------------------------------------------
+
             String hashedPassword = BCrypt.Net.BCrypt.EnhancedHashPassword(txtclave.Text);
             string mensaje = string.Empty;
             Usuario objusuario = new Usuario()
@@ -411,7 +440,7 @@ namespace CapaPresentacion
                 }
                 else
                 {
-                    MessageBox.Show(mensaje);
+                    MessageBox.Show(mensaje, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
             }
@@ -442,15 +471,19 @@ namespace CapaPresentacion
                 }
                 else
                 {
-                    MessageBox.Show(mensaje);
+                    MessageBox.Show(mensaje, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
+
+        //------------------------------------------------------------------------------------------------------------------------------------------
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             Limpiar();
         }
+
+        //------------------------------------------------------------------------------------------------------------------------------------------
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
@@ -479,6 +512,8 @@ namespace CapaPresentacion
             }
         }
 
+        //------------------------------------------------------------------------------------------------------------------------------------------
+
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             string columnaFiltro = ((OpcionCombo)cbobusqueda.SelectedItem).Valor.ToString();
@@ -506,6 +541,8 @@ namespace CapaPresentacion
             }
         }
 
+        //------------------------------------------------------------------------------------------------------------------------------------------
+
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             txtbusqueda.Text = "";
@@ -515,5 +552,6 @@ namespace CapaPresentacion
             }
         }
 
+        //------------------------------------------------------------------------------------------------------------------------------------------
     }
 }

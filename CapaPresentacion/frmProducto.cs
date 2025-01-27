@@ -83,6 +83,7 @@ namespace CapaPresentacion
             }
         }
 
+        //---------------------------------------------------------------------------------------------------------------
 
         private void Limpiar()
         {
@@ -106,7 +107,7 @@ namespace CapaPresentacion
             txtcodigo.Select();
         }
 
-        //------------------------------------------------------------------------------------------------------------------------------------------
+        //---------------------------------------------------------------------------------------------------------------
 
         // Método para normalizar y eliminar los acentos
         private string NormalizarTexto(string texto)
@@ -125,6 +126,7 @@ namespace CapaPresentacion
             return stringBuilder.ToString().Normalize(NormalizationForm.FormC);
         }
 
+        //---------------------------------------------------------------------------------------------------------------
 
         private void buscar()
         {
@@ -153,8 +155,7 @@ namespace CapaPresentacion
             }
         }
 
-
-        //------------------------------------------------------------------------------------------------------------------------------------------
+        //---------------------------------------------------------------------------------------------------------------
 
         private void dgvdata_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
@@ -176,6 +177,8 @@ namespace CapaPresentacion
                 e.Handled = true;
             }
         }
+
+        //---------------------------------------------------------------------------------------------------------------
 
         private void dgvdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -238,6 +241,8 @@ namespace CapaPresentacion
             }
         }
 
+        //---------------------------------------------------------------------------------------------------------------
+
         private void txtprecio_KeyPress(object sender, KeyPressEventArgs e)
         {
             TextBox textBox = sender as TextBox;
@@ -281,6 +286,8 @@ namespace CapaPresentacion
                 row.Visible = true;
             }
         }
+
+        //---------------------------------------------------------------------------------------------------------------
 
         private void pictureBox2_Click_1(object sender, EventArgs e)
         {
@@ -329,9 +336,7 @@ namespace CapaPresentacion
                         ((OpcionCombo)cbocategoria.SelectedItem).Texto.ToString(),
                         txtstock.Text,
                         string.Format("{0:N2}", obj.Precio), // Formatear el precio como pesos
-                        //"0",
-                        //"0.00",
-                        //"0.00",
+
                         ((OpcionCombo)cboestado.SelectedItem).Valor.ToString(),
                         ((OpcionCombo)cboestado.SelectedItem).Texto.ToString()
                     });
@@ -375,11 +380,14 @@ namespace CapaPresentacion
             }
         }
 
+        //---------------------------------------------------------------------------------------------------------------
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
             Limpiar();
         }
+
+        //---------------------------------------------------------------------------------------------------------------
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
@@ -407,5 +415,7 @@ namespace CapaPresentacion
                 }
             }
         }
+
+        //---------------------------------------------------------------------------------------------------------------
     }
 }
