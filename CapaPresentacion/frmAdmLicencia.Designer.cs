@@ -31,8 +31,8 @@ namespace CapaPresentacion
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdmLicencia));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.txtcodactivacion = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -64,6 +64,7 @@ namespace CapaPresentacion
             this.EstadoValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaActivacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CodigoActivacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UltimaVerificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -291,7 +292,7 @@ namespace CapaPresentacion
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(183, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(585, 60);
+            this.panel2.Size = new System.Drawing.Size(701, 60);
             this.panel2.TabIndex = 27;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -306,7 +307,7 @@ namespace CapaPresentacion
             this.btncancelar.IconColor = System.Drawing.Color.White;
             this.btncancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btncancelar.IconSize = 20;
-            this.btncancelar.Location = new System.Drawing.Point(535, 18);
+            this.btncancelar.Location = new System.Drawing.Point(647, 18);
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Size = new System.Drawing.Size(30, 28);
             this.btncancelar.TabIndex = 30;
@@ -321,9 +322,9 @@ namespace CapaPresentacion
             this.label10.ForeColor = System.Drawing.Color.Black;
             this.label10.Location = new System.Drawing.Point(17, 14);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(130, 32);
+            this.label10.Size = new System.Drawing.Size(118, 32);
             this.label10.TabIndex = 29;
-            this.label10.Text = "Licencias";
+            this.label10.Text = "Licencia";
             // 
             // panel3
             // 
@@ -331,21 +332,21 @@ namespace CapaPresentacion
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(183, 60);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(585, 298);
+            this.panel3.Size = new System.Drawing.Size(701, 298);
             this.panel3.TabIndex = 28;
             // 
             // dgvdata
             // 
             this.dgvdata.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvdata.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.btnseleccionar,
@@ -355,18 +356,19 @@ namespace CapaPresentacion
             this.Activado,
             this.EstadoValor,
             this.FechaActivacion,
-            this.CodigoActivacion});
+            this.CodigoActivacion,
+            this.UltimaVerificacion});
             this.dgvdata.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvdata.Location = new System.Drawing.Point(0, 0);
             this.dgvdata.MultiSelect = false;
             this.dgvdata.Name = "dgvdata";
             this.dgvdata.ReadOnly = true;
             this.dgvdata.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvdata.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvdata.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvdata.RowTemplate.Height = 28;
-            this.dgvdata.Size = new System.Drawing.Size(585, 298);
+            this.dgvdata.Size = new System.Drawing.Size(701, 298);
             this.dgvdata.TabIndex = 22;
             this.dgvdata.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdata_CellContentClick_1);
             // 
@@ -427,12 +429,19 @@ namespace CapaPresentacion
             this.CodigoActivacion.Name = "CodigoActivacion";
             this.CodigoActivacion.ReadOnly = true;
             // 
+            // UltimaVerificacion
+            // 
+            this.UltimaVerificacion.HeaderText = "UltimaVerificacion";
+            this.UltimaVerificacion.Name = "UltimaVerificacion";
+            this.UltimaVerificacion.ReadOnly = true;
+            this.UltimaVerificacion.Width = 115;
+            // 
             // frmAdmLicencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(768, 358);
+            this.ClientSize = new System.Drawing.Size(884, 358);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -483,5 +492,6 @@ namespace CapaPresentacion
         private DataGridViewTextBoxColumn EstadoValor;
         private DataGridViewTextBoxColumn FechaActivacion;
         private DataGridViewTextBoxColumn CodigoActivacion;
+        private DataGridViewTextBoxColumn UltimaVerificacion;
     }
 }

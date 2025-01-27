@@ -34,8 +34,10 @@ namespace CapaDatos
                         "c.CodigoActivacion, " +
                         "c.Activado, " +
                         "c.FechaInicio, " +
-                        "c.FechaActivacion, " +
-                        "c.DiasPermitidos " +
+                        "c.FechaActivacion, " +                        
+                        "c.DiasPermitidos, " +
+                        "c.UltimaVerificacion " +
+
                         "from softwareState c");
 
                     SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
@@ -58,6 +60,10 @@ namespace CapaDatos
                                 FechaInicio = Convert.ToDateTime(dr["FechaInicio"]), // Asigna la fecha de registro
                                 FechaActivacion = Convert.ToDateTime(dr["FechaActivacion"]), // Asigna la hora de registro
                                 DiasPermitidos = Convert.ToInt32(dr["DiasPermitidos"]),
+                                UltimaVerificacion = dr["UltimaVerificacion"] == DBNull.Value
+                                                         ? (DateTime?)null
+                                                         : Convert.ToDateTime(dr["UltimaVerificacion"]),
+
                             });
                         }
                     }

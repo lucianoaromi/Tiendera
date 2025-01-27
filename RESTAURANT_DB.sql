@@ -967,7 +967,7 @@ CREATE TABLE SoftwareState (
     Activado BIT NOT NULL DEFAULT 0,         -- Indica si el software está activado (1) o no (0).
     CodigoActivacion NVARCHAR(50),           -- Código que permite desbloquear el software.	
     FechaActivacion DATETIME NULL,           -- Fecha en la que se activó el software.
-    UltimaVerificacion DATE NULL             -- Fecha de la última verificación.
+    UltimaVerificacion DATETIME NULL             -- Fecha de la última verificación.
 );
 GO
 ---------------- Se generan los metodos para manipular el formulario de LICENCIAS ----------------

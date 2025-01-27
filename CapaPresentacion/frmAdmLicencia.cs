@@ -63,13 +63,15 @@ namespace CapaPresentacion
                     item.Activado ==  true ? 1 : 0,                   
                     item.FechaActivacion, // Formatear la hora en formato HH:mm
                     item.CodigoActivacion,
- 
+                    item.UltimaVerificacion,
+
                 });
             }
 
             // Configurar el formato de la columna "FechaInicio" para mostrar solo la fecha
             dgvdata.Columns["FechaInicio"].DefaultCellStyle.Format = "dd/MM/yyyy";
             dgvdata.Columns["FechaActivacion"].DefaultCellStyle.Format = "dd/MM/yyyy";
+            dgvdata.Columns["UltimaVerificacion"].DefaultCellStyle.Format = "dd/MM/yyyy";
         }
 
 
