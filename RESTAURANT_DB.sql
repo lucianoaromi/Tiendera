@@ -27,7 +27,7 @@ create table CLIENTE(
 IdCliente int primary key identity,
 Apellido varchar(50),
 Nombre varchar(50),
-Direccion varchar(100),
+Direccion varchar(150),
 Telefono varchar(50),
 Estado bit,
 FechaRegistro datetime default getdate()

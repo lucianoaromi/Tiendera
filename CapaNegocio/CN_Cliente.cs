@@ -37,6 +37,11 @@ namespace CapaNegocio
                 Mensaje += "Es necesario el Nombre del Cliente\n";
             }
 
+            if (obj.Direccion.Length > 150)
+            {
+                Mensaje += "La descripción no puede exceder los 150 caracteres.\n";
+            }
+
             if (Mensaje != string.Empty)
             {
                 return 0;
@@ -73,6 +78,11 @@ namespace CapaNegocio
             if (obj.Nombre == "")
             {
                 Mensaje += "Es necesario el Nombre del Cliente\n";
+            }
+
+            if (obj.Direccion.Length > 150)
+            {
+                Mensaje += "La descripción no puede exceder los 150 caracteres.\n";
             }
 
             if (Mensaje != string.Empty)
