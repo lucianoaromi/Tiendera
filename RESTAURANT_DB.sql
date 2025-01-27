@@ -18,7 +18,7 @@ go
 create table PERMISO(
 IdPermiso int primary key identity,
 IdRol int references ROL(IdRol),
-NombreMenu varchar(100),
+NombreMenu varchar(50),
 FechaRegistro datetime default getdate()
 )
 go
@@ -107,15 +107,15 @@ go
 -- Se inserta los tipos de Roles
 
 insert into rol (Descripcion)
-values('EMPLEADO')
+values('Empleado')
 go
 
 insert into rol (Descripcion)
-values('ADMINISTRADOR')
+values('Administrador')
 go
 
 insert into rol (Descripcion)
-values('SUPERADMINISTRADOR')
+values('SuperAdministrador')
 go
 
 
@@ -556,15 +556,15 @@ go
 
 insert into USUARIO(Documento, Apellido, Nombre,Direccion, Correo, Clave, IdRol, Estado)
 values
-('11111111', 'ApeUsuario1','NomUsuario1','Casita 1', '@GMAIL.COM', '$2a$11$11YH.2nEoLsOjMogIXeY9eSeQ1n3FwGgc2/K0cJejVIHGc0k3ld2G' ,1,1),
-('22222222', 'ApeUsuario2','NomUsuario2','Casita 2', '@GMAIL.COM', '$2a$11$vfJOhNuMlA0wV6iCbWOmHO8FsYhYtpkmZyyWaIdP.3T77GHdCGB9W' ,1,1),
-('33333333', 'ApeUsuario3','NomUsuario3','Casita 3', '@GMAIL.COM', '$2a$11$kcGAIS1MGXAcK2ZUOltByem6TRVBaZsJjGEPtSqjscM3CFI4QLDrC' ,2,1),
-('44444444', 'ApeUsuario4','NomUsuario4','Casita 4', '@GMAIL.COM', '$2a$11$QktLppcleoNEj9yAjwDibubUlGmIx9uIpxNhfvpUgsK.MHshqe2C2' ,3,1),
+('11111111', 'ApeUsuario1','NomUsuario1','Casita 1', '@gmail.com', '$2a$11$11YH.2nEoLsOjMogIXeY9eSeQ1n3FwGgc2/K0cJejVIHGc0k3ld2G' ,1,1),
+('22222222', 'ApeUsuario2','NomUsuario2','Casita 2', '@gmail.com', '$2a$11$vfJOhNuMlA0wV6iCbWOmHO8FsYhYtpkmZyyWaIdP.3T77GHdCGB9W' ,1,1),
+('33333333', 'ApeUsuario3','NomUsuario3','Casita 3', '@gmail.com', '$2a$11$kcGAIS1MGXAcK2ZUOltByem6TRVBaZsJjGEPtSqjscM3CFI4QLDrC' ,2,1),
+('44444444', 'ApeUsuario4','NomUsuario4','Casita 4', '@gmail.com', '$2a$11$QktLppcleoNEj9yAjwDibubUlGmIx9uIpxNhfvpUgsK.MHshqe2C2' ,3,1),
 
-('1', 'ApeUsuario5','NomUsuario5','Casita 5', '@GMAIL.COM', '$2a$11$OqAsmqaReh5S9g4JEZZEzuvXRe08FfwOeGZyzkY4al6hdw1FPskt.' ,1,1),
-('2', 'ApeUsuario6','NomUsuario6','Casita 5', '@GMAIL.COM', '$2a$11$OqAsmqaReh5S9g4JEZZEzuvXRe08FfwOeGZyzkY4al6hdw1FPskt.' ,1,1),
-('3', 'ApeUsuario7','NomUsuario7','Casita 5', '@GMAIL.COM', '$2a$11$OqAsmqaReh5S9g4JEZZEzuvXRe08FfwOeGZyzkY4al6hdw1FPskt.' ,2,1),
-('4', 'ApeUsuario8','NomUsuario8','Casita 5', '@GMAIL.COM', '$2a$11$OqAsmqaReh5S9g4JEZZEzuvXRe08FfwOeGZyzkY4al6hdw1FPskt.' ,3,1);
+('1', 'ApeUsuario5','NomUsuario5','Casita 5', '@gmail.com', '$2a$11$OqAsmqaReh5S9g4JEZZEzuvXRe08FfwOeGZyzkY4al6hdw1FPskt.' ,1,1),
+('2', 'ApeUsuario6','NomUsuario6','Casita 5', '@gmail.com', '$2a$11$OqAsmqaReh5S9g4JEZZEzuvXRe08FfwOeGZyzkY4al6hdw1FPskt.' ,1,1),
+('3', 'ApeUsuario7','NomUsuario7','Casita 5', '@gmail.com', '$2a$11$OqAsmqaReh5S9g4JEZZEzuvXRe08FfwOeGZyzkY4al6hdw1FPskt.' ,2,1),
+('4', 'ApeUsuario8','NomUsuario8','Casita 5', '@gmail.com', '$2a$11$OqAsmqaReh5S9g4JEZZEzuvXRe08FfwOeGZyzkY4al6hdw1FPskt.' ,3,1);
 go
 
 

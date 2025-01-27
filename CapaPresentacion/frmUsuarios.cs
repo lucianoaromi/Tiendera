@@ -39,6 +39,8 @@ namespace CapaPresentacion
             //Se selecciona siempre el indice 0
             cboestado.SelectedIndex = 0;
 
+            txtcorreo.Text = "@gmail.com";
+
             List<Rol> listaRol = new CN_Rol().Listar();
 
             foreach (Rol item in listaRol)
@@ -398,12 +400,24 @@ namespace CapaPresentacion
                 MessageBox.Show("Es necesario la 'Contraseña' del usuario.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return; // Detener la ejecución si el campo está vacío
             }
-            /*
-            if (string.IsNullOrEmpty(txtprecio.Text))
+
+
+
+            // Obtener los valores de los TextBox
+            string contraseña = txtclave.Text;
+            string confirmarContraseña = txtconfirmarclave.Text;
+
+            // Verificar si coinciden
+            if (contraseña == confirmarContraseña)
             {
-                MessageBox.Show("Es necesario el 'Precio' del producto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return; // Detener la ejecución si el campo 'Precio' está vacío
-            }*/
+                //MessageBox.Show("Las contraseñas coinciden.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Las contraseñas no coinciden. Por favor, verifica.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Detener la ejecución si el campo está vacío
+            }
+
             //-----------------------------------------------
 
             String hashedPassword = BCrypt.Net.BCrypt.EnhancedHashPassword(txtclave.Text);
@@ -430,11 +444,11 @@ namespace CapaPresentacion
                 if (idusuariogenerado != 0)
                 {
                     dgvdata.Rows.Add(new object[] {"",idusuariogenerado,txtdocumento.Text,txtapellido.Text,txtnombre.Text,txtdireccion.Text,txtcorreo.Text,txtclave.Text,
-                  ((OpcionCombo)cborol.SelectedItem).Valor.ToString(),
-                  ((OpcionCombo)cborol.SelectedItem).Texto.ToString(),
-                  ((OpcionCombo)cboestado.SelectedItem).Valor.ToString(),
-                  ((OpcionCombo)cboestado.SelectedItem).Texto.ToString()
-                });
+                      ((OpcionCombo)cborol.SelectedItem).Valor.ToString(),
+                      ((OpcionCombo)cborol.SelectedItem).Texto.ToString(),
+                      ((OpcionCombo)cboestado.SelectedItem).Valor.ToString(),
+                      ((OpcionCombo)cboestado.SelectedItem).Texto.ToString()
+                    });
 
                     Limpiar();
                 }

@@ -50,11 +50,6 @@ namespace CapaNegocio
                 Mensaje += "Es necesario el Nombre del usuario\n";
             }
 
-            if (string.IsNullOrEmpty(obj.Direccion))
-            {
-                Mensaje += "Es necesario la Direccion del usuario\n";
-            }
-
             if (string.IsNullOrEmpty(obj.Clave))
             {
                 Mensaje += "Es necesario la Contraseña del usuario\n";
@@ -110,11 +105,6 @@ namespace CapaNegocio
             if (obj.Nombre == "")
             {
                 Mensaje += "Es necesario el Nombre del usuario\n";
-            }
-
-            if (obj.Direccion == "")
-            {
-                Mensaje += "Es necesario la Direccion del usuario\n";
             }
 
             if (obj.Clave == "")
