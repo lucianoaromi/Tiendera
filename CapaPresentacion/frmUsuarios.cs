@@ -158,6 +158,12 @@ namespace CapaPresentacion
 
         private void Limpiar()
         {
+            // Restablecer colores originales de todas las filas del DataGridView
+            foreach (DataGridViewRow row in dgvdata.Rows)
+            {
+                row.DefaultCellStyle.BackColor = dgvdata.DefaultCellStyle.BackColor;
+                row.DefaultCellStyle.ForeColor = dgvdata.DefaultCellStyle.ForeColor;
+            }
 
             txtindice.Text = "-1";
             txtid.Text = "0";
@@ -204,6 +210,14 @@ namespace CapaPresentacion
                 int indice = e.RowIndex;
 
                 if (indice >=0){
+
+                    // Establecer color blanco a todas las filas para restablecer
+                    foreach (DataGridViewRow row in dgvdata.Rows)
+                    {
+                        row.DefaultCellStyle.BackColor = dgvdata.DefaultCellStyle.BackColor;
+                    }
+
+                    dgvdata.Rows[indice].DefaultCellStyle.BackColor = System.Drawing.Color.LightCoral;
 
                     txtindice.Text = indice.ToString();
 

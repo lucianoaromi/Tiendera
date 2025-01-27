@@ -166,6 +166,12 @@ namespace CapaPresentacion
 
         private void Limpiar()
         {
+            // Restablecer colores originales de todas las filas del DataGridView
+            foreach (DataGridViewRow row in dgvdata.Rows)
+            {
+                row.DefaultCellStyle.BackColor = dgvdata.DefaultCellStyle.BackColor;
+                row.DefaultCellStyle.ForeColor = dgvdata.DefaultCellStyle.ForeColor;
+            }
 
             txtindice.Text = "-1";
             txtid.Text = "0";
@@ -270,6 +276,13 @@ namespace CapaPresentacion
 
                 if (indice >=0)
                 {
+                    // Establecer color blanco a todas las filas para restablecer
+                    foreach (DataGridViewRow row in dgvdata.Rows)
+                    {
+                        row.DefaultCellStyle.BackColor = dgvdata.DefaultCellStyle.BackColor;
+                    }
+
+                    dgvdata.Rows[indice].DefaultCellStyle.BackColor = System.Drawing.Color.LightCoral;
 
                     txtindice.Text = indice.ToString();
                     txtid.Text = dgvdata.Rows[indice].Cells["Id"].Value.ToString();
@@ -372,16 +385,6 @@ namespace CapaPresentacion
             {
                 row.Visible = true;
             }
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void pictureBox2_Click_1(object sender, EventArgs e)

@@ -83,7 +83,6 @@ namespace CapaPresentacion
                 //Correo = txtcorreo1.Text,
                 Telefono = txttelefono1.Text,
 
-
                 Estado = Convert.ToInt32(((OpcionCombo)cboestado1.SelectedItem).Valor) == 1 ? true : false
             };
 
@@ -288,7 +287,7 @@ namespace CapaPresentacion
                         row.DefaultCellStyle.BackColor = dgvdata.DefaultCellStyle.BackColor;
                     }
 
-                    // Marcar la fila seleccionada con color verde
+                    // Marcar la fila seleccionada con color rojo
                     dgvdata.Rows[indice].DefaultCellStyle.BackColor = System.Drawing.Color.LightCoral;
 
                     // Asignar valores a los controles de texto
@@ -409,9 +408,9 @@ namespace CapaPresentacion
                 {
                     dgvdata.Rows.Add(new object[] {"",idclientegenerado,txtapellido1.Text,txtnombre1.Text,txtdireccion1.Text,txttelefono1.Text,
 
-                   ((OpcionCombo)cboestado1.SelectedItem).Valor.ToString(),
-                   ((OpcionCombo)cboestado1.SelectedItem).Texto.ToString()
-                });
+                       ((OpcionCombo)cboestado1.SelectedItem).Valor.ToString(),
+                       ((OpcionCombo)cboestado1.SelectedItem).Texto.ToString()
+                    });
 
                     Limpiar();
                 }
@@ -438,7 +437,6 @@ namespace CapaPresentacion
                     row.Cells["Direccion"].Value = txtdireccion1.Text;
                     row.Cells["Telefono"].Value = txttelefono1.Text;
                     //row.Cells["Correo"].Value = txtcorreo1.Text;
-
 
                     row.Cells["EstadoValor"].Value = ((OpcionCombo)cboestado1.SelectedItem).Valor.ToString();
                     row.Cells["Estado"].Value = ((OpcionCombo)cboestado1.SelectedItem).Texto.ToString();
