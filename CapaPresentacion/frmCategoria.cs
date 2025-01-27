@@ -448,10 +448,18 @@ namespace CapaPresentacion
                     }
                     else
                     {
-                        MessageBox.Show(mensaje, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("No se puede eliminar la Categoría porque está asociada a un Producto. " +
+                                        "Primero debes eliminar todos los Productos asociados a esta Categoría",
+                                        "Alerta",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Warning);
                     }
+
                 }
             }
         }
+
+
+
     }
 }
