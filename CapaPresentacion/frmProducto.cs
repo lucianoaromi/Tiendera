@@ -35,6 +35,8 @@ namespace CapaPresentacion
             cboestado.ValueMember = "Valor";
             //Se selecciona siempre el indice 0
             cboestado.SelectedIndex = 0;
+            txtstock.Text = "0";
+            txtprecio.Text = "0";
 
             List<Categoria> listaCategoria = new CN_Categoria().Listar();
 
@@ -96,10 +98,10 @@ namespace CapaPresentacion
             txtcodigo.Text = "";
             txtnombre.Text = "";
             txtdescripcion.Text = "";
-            txtstock.Text ="";
-            txtprecio.Text ="";
             cbocategoria.SelectedIndex = 0;
             cboestado.SelectedIndex = 0;
+            txtstock.Text = "0";
+            txtprecio.Text = "0";
             //El foco se va a el textbox codigo
             txtcodigo.Select();
         }
@@ -282,6 +284,21 @@ namespace CapaPresentacion
 
         private void pictureBox2_Click_1(object sender, EventArgs e)
         {
+            //-----------------------------------------------
+            // Verificar si el campo txtstock y txtprecio esten vacíos
+            if (string.IsNullOrEmpty(txtstock.Text))
+            {
+                MessageBox.Show("El campo 'Stock' no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Detener la ejecución si el campo está vacío
+            }
+
+            if (string.IsNullOrEmpty(txtprecio.Text))
+            {
+                MessageBox.Show("El campo 'Precio' no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Detener la ejecución si el campo 'Precio' está vacío
+            }
+            //-----------------------------------------------
+
             string mensaje = string.Empty;
             Producto obj = new Producto()
             {
@@ -294,7 +311,6 @@ namespace CapaPresentacion
                 oCategoria = new Categoria() { IdCategoria = Convert.ToInt32(((OpcionCombo)cbocategoria.SelectedItem).Valor) },
                 Estado = Convert.ToInt32(((OpcionCombo)cboestado.SelectedItem).Valor) == 1 ? true : false
             };
-
 
             if (obj.IdProducto == 0)
             {
@@ -310,7 +326,7 @@ namespace CapaPresentacion
                         txtnombre.Text,
                         txtdescripcion.Text,
                         ((OpcionCombo)cbocategoria.SelectedItem).Valor.ToString(),
-                        ((OpcionCombo)cbocategoria.SelectedItem).Texto.ToString(),                        
+                        ((OpcionCombo)cbocategoria.SelectedItem).Texto.ToString(),
                         txtstock.Text,
                         string.Format("{0:N2}", obj.Precio), // Formatear el precio como pesos
                         //"0",
@@ -318,7 +334,7 @@ namespace CapaPresentacion
                         //"0.00",
                         ((OpcionCombo)cboestado.SelectedItem).Valor.ToString(),
                         ((OpcionCombo)cboestado.SelectedItem).Texto.ToString()
-                });
+                    });
 
                     Limpiar();
                 }
@@ -326,7 +342,6 @@ namespace CapaPresentacion
                 {
                     MessageBox.Show(mensaje);
                 }
-
             }
             //Si el objeto idusuario no es igual a 0 se accede a editar el usario seleccionado del datagrid
             else
@@ -352,7 +367,6 @@ namespace CapaPresentacion
                     row.Cells["Estado"].Value = ((OpcionCombo)cboestado.SelectedItem).Texto.ToString();
 
                     Limpiar();
-
                 }
                 else
                 {
@@ -360,6 +374,7 @@ namespace CapaPresentacion
                 }
             }
         }
+
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
@@ -370,7 +385,7 @@ namespace CapaPresentacion
         {
             if (Convert.ToInt32(txtid.Text) != 0)
             {
-                if (MessageBox.Show("¿Desea eliminar el usuario?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("¿Desea eliminar el Producto?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     string mensaje = string.Empty;
                     Producto objproducto = new Producto()

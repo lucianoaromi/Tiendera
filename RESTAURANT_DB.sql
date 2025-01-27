@@ -60,7 +60,7 @@ create table PRODUCTO(
 IdProducto int primary key identity,
 Codigo varchar(50),
 Nombre varchar(50),
-Descripcion varchar(50),
+Descripcion varchar(200),
 IdCategoria int references CATEGORIA(IdCategoria),
 Stock int not null default 0,
 Precio decimal(10,2) default 0,

@@ -68,20 +68,22 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(235, 46);
+            this.label3.Location = new System.Drawing.Point(235, 44);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 13);
+            this.label3.Size = new System.Drawing.Size(97, 15);
             this.label3.TabIndex = 5;
             this.label3.Text = "Nro Documento:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(235, 99);
+            this.label4.Location = new System.Drawing.Point(235, 97);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 13);
+            this.label4.Size = new System.Drawing.Size(73, 15);
             this.label4.TabIndex = 6;
             this.label4.Text = "Contraseña:";
             // 
@@ -89,6 +91,7 @@
             // 
             this.btningresar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btningresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btningresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btningresar.ForeColor = System.Drawing.Color.White;
             this.btningresar.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btningresar.IconColor = System.Drawing.Color.White;
@@ -106,6 +109,7 @@
             // 
             this.btncancelar.Cursor = System.Windows.Forms.Cursors.No;
             this.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncancelar.ForeColor = System.Drawing.Color.White;
             this.btncancelar.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btncancelar.IconColor = System.Drawing.Color.White;

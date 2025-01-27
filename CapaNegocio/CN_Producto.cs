@@ -37,10 +37,23 @@ namespace CapaNegocio
             {
                 Mensaje += "Es necesario el Nombre del producto\n";
             }
-
-            if (obj.Descripcion == "")
+            else if (obj.Nombre.Length > 50)
             {
-                Mensaje += "Es necesario el Nombre del usuario\n";
+                Mensaje += "El Nombre no puede exceder los 50 caracteres.\n";
+            }
+
+            if (string.IsNullOrWhiteSpace(obj.Descripcion))
+            {
+                Mensaje += "Es necesario la descripción del producto.\n";
+            }
+            else if (obj.Descripcion.Length > 200)
+            {
+                Mensaje += "La descripción no puede exceder los 200 caracteres.\n";
+            }
+
+            if (obj.Stock < 0)
+            {
+                Mensaje += "Es necesario el Stock del producto\n";
             }
 
 
@@ -63,19 +76,31 @@ namespace CapaNegocio
 
             if (obj.Codigo == "")
             {
-                Mensaje += "Es necesario el documento\n";
+                Mensaje += "Es necesario el Codigo\n";
             }
 
             if (obj.Nombre == "")
             {
-                Mensaje += "Es necesario el Apellido del usuario\n";
+                Mensaje += "Es necesario el Nombre del producto\n";
+            }
+            else if (obj.Nombre.Length > 50)
+            {
+                Mensaje += "El Nombre no puede exceder los 50 caracteres.\n";
             }
 
             if (obj.Descripcion == "")
             {
-                Mensaje += "Es necesario el Nombre del usuario\n";
+                Mensaje += "Es necesario la descripcion del producto\n";
+            }
+            else if (obj.Descripcion.Length > 200)
+            {
+                Mensaje += "La descripción no puede exceder los 200 caracteres.\n";
             }
 
+            if (obj.Stock < 0)
+            {
+                Mensaje += "Es necesario el Stock del producto\n";
+            }
 
             if (Mensaje != string.Empty)
             {
