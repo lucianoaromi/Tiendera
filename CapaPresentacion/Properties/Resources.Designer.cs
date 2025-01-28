@@ -83,6 +83,16 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap busqueda {
+            get {
+                object obj = ResourceManager.GetObject("busqueda", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap editaricon {
             get {
                 object obj = ResourceManager.GetObject("editaricon", resourceCulture);
@@ -145,9 +155,9 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap verdetalle {
+        internal static System.Drawing.Bitmap verlistaColor {
             get {
-                object obj = ResourceManager.GetObject("verdetalle", resourceCulture);
+                object obj = ResourceManager.GetObject("verlistaColor", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -155,9 +165,19 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap verdetallenegro {
+        internal static System.Drawing.Bitmap verlistaColor2 {
             get {
-                object obj = ResourceManager.GetObject("verdetallenegro", resourceCulture);
+                object obj = ResourceManager.GetObject("verlistaColor2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap verlistaColorGrande {
+            get {
+                object obj = ResourceManager.GetObject("verlistaColorGrande", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -84,7 +84,7 @@ namespace CapaPresentacion
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.DarkSlateGray;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(9, 50);
+            this.label3.Location = new System.Drawing.Point(6, 50);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 2;
@@ -92,9 +92,9 @@ namespace CapaPresentacion
             // 
             // txtapellido1
             // 
-            this.txtapellido1.Location = new System.Drawing.Point(11, 66);
+            this.txtapellido1.Location = new System.Drawing.Point(8, 66);
             this.txtapellido1.Name = "txtapellido1";
-            this.txtapellido1.Size = new System.Drawing.Size(159, 20);
+            this.txtapellido1.Size = new System.Drawing.Size(169, 20);
             this.txtapellido1.TabIndex = 6;
             // 
             // label8
@@ -102,7 +102,7 @@ namespace CapaPresentacion
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.DarkSlateGray;
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(7, 296);
+            this.label8.Location = new System.Drawing.Point(4, 296);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(43, 13);
             this.label8.TabIndex = 12;
@@ -112,9 +112,9 @@ namespace CapaPresentacion
             // 
             this.cboestado1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboestado1.FormattingEnabled = true;
-            this.cboestado1.Location = new System.Drawing.Point(9, 312);
+            this.cboestado1.Location = new System.Drawing.Point(6, 312);
             this.cboestado1.Name = "cboestado1";
-            this.cboestado1.Size = new System.Drawing.Size(159, 21);
+            this.cboestado1.Size = new System.Drawing.Size(169, 21);
             this.cboestado1.TabIndex = 15;
             // 
             // panel1
@@ -197,9 +197,9 @@ namespace CapaPresentacion
             // 
             // txttelefono1
             // 
-            this.txttelefono1.Location = new System.Drawing.Point(10, 258);
+            this.txttelefono1.Location = new System.Drawing.Point(7, 258);
             this.txttelefono1.Name = "txttelefono1";
-            this.txttelefono1.Size = new System.Drawing.Size(159, 21);
+            this.txttelefono1.Size = new System.Drawing.Size(169, 21);
             this.txttelefono1.TabIndex = 30;
             // 
             // label6
@@ -207,7 +207,7 @@ namespace CapaPresentacion
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.DarkSlateGray;
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(8, 242);
+            this.label6.Location = new System.Drawing.Point(5, 242);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 15);
             this.label6.TabIndex = 29;
@@ -215,10 +215,10 @@ namespace CapaPresentacion
             // 
             // txtdireccion1
             // 
-            this.txtdireccion1.Location = new System.Drawing.Point(10, 169);
+            this.txtdireccion1.Location = new System.Drawing.Point(7, 169);
             this.txtdireccion1.Multiline = true;
             this.txtdireccion1.Name = "txtdireccion1";
-            this.txtdireccion1.Size = new System.Drawing.Size(159, 60);
+            this.txtdireccion1.Size = new System.Drawing.Size(169, 60);
             this.txtdireccion1.TabIndex = 32;
             // 
             // label5
@@ -226,7 +226,7 @@ namespace CapaPresentacion
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.DarkSlateGray;
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(8, 153);
+            this.label5.Location = new System.Drawing.Point(5, 153);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(62, 15);
             this.label5.TabIndex = 31;
@@ -234,9 +234,9 @@ namespace CapaPresentacion
             // 
             // txtnombre1
             // 
-            this.txtnombre1.Location = new System.Drawing.Point(11, 118);
+            this.txtnombre1.Location = new System.Drawing.Point(8, 118);
             this.txtnombre1.Name = "txtnombre1";
-            this.txtnombre1.Size = new System.Drawing.Size(159, 21);
+            this.txtnombre1.Size = new System.Drawing.Size(169, 21);
             this.txtnombre1.TabIndex = 30;
             // 
             // label1
@@ -244,7 +244,7 @@ namespace CapaPresentacion
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.DarkSlateGray;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(9, 102);
+            this.label1.Location = new System.Drawing.Point(6, 102);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 15);
             this.label1.TabIndex = 29;
@@ -437,7 +437,7 @@ namespace CapaPresentacion
             this.Direccion.MinimumWidth = 6;
             this.Direccion.Name = "Direccion";
             this.Direccion.ReadOnly = true;
-            this.Direccion.Width = 170;
+            this.Direccion.Width = 200;
             // 
             // Telefono
             // 
@@ -519,6 +519,11 @@ namespace CapaPresentacion
         private System.Windows.Forms.DataGridView dgvdata;
         private System.Windows.Forms.TextBox txtindicecliente;
         private System.Windows.Forms.TextBox txtidcliente;
+        private PictureBox pictureBox3;
+        private PictureBox pictureBox4;
+        private PictureBox pictureBox5;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
         private DataGridViewButtonColumn btnseleccionar;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn Apellido;
@@ -527,10 +532,5 @@ namespace CapaPresentacion
         private DataGridViewTextBoxColumn Telefono;
         private DataGridViewTextBoxColumn EstadoValor;
         private DataGridViewTextBoxColumn Estado;
-        private PictureBox pictureBox3;
-        private PictureBox pictureBox4;
-        private PictureBox pictureBox5;
-        private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
     }
 }

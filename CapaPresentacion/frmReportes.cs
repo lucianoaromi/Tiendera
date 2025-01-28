@@ -16,6 +16,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using SpreadsheetColor = DocumentFormat.OpenXml.Spreadsheet.Color; //------
+
 namespace CapaPresentacion
 {
     public partial class frmReportes : Form
@@ -25,6 +27,7 @@ namespace CapaPresentacion
         private CN_Reporte ventaNegocio;
         private object cadena;
 
+
         public frmReportes(Usuario oUsuario = null)
         {
             _Usuario = oUsuario;
@@ -32,13 +35,20 @@ namespace CapaPresentacion
             dgvdata.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             dgvdata.RowTemplate.Height = 27;
 
+            groupBox1.Paint += groupBox1_Paint; // Sobrescribe el evento Paint del GroupBox //------
+            groupBox2.Paint += groupBox1_Paint;
+
             // Centramos las columnas
             dgvdata.Columns["verDetalle"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvdata.Columns["EstadoEntrega"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvdata.Columns["EstadoPago"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             ventaNegocio = new CN_Reporte(cadena);
+
+            dgvdata.CellFormatting += dgvdata_CellFormatting;
         }
+
+        //--------------------------------------------------------------------------------------------------------------------------------
 
         private void frmReportes_Load(object sender, EventArgs e)
         {
@@ -57,6 +67,8 @@ namespace CapaPresentacion
             lblidrol.Text = Convert.ToString(_Usuario.oRol.IdRol);
             lblapeusuario.Text = $"{Convert.ToString(_Usuario.Apellido)}, {Convert.ToString(_Usuario.Nombre)}";
         }
+
+        //--------------------------------------------------------------------------------------------------------------------------------
 
         private void CargarColoresFilas()
         {
@@ -95,6 +107,7 @@ namespace CapaPresentacion
             dgvdata.AlternatingRowsDefaultCellStyle.SelectionForeColor = dgvdata.AlternatingRowsDefaultCellStyle.ForeColor;
         }
 
+        //--------------------------------------------------------------------------------------------------------------------------------
 
         private void dgvdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -199,6 +212,8 @@ namespace CapaPresentacion
             //CargarDatosVentas();
         }
 
+        //--------------------------------------------------------------------------------------------------------------------------------
+
         private void CargarDatosVentas()
         {
             List<ReporteVenta> lista = new List<ReporteVenta>();
@@ -248,11 +263,14 @@ namespace CapaPresentacion
 
         }
 
+        //--------------------------------------------------------------------------------------------------------------------------------
 
         private void button2_Click(object sender, EventArgs e)
         {
             CargarDatosVentas();
         }
+
+        //--------------------------------------------------------------------------------------------------------------------------------
 
         private void dgvdata_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
@@ -265,15 +283,17 @@ namespace CapaPresentacion
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
-                var w = Properties.Resources.editaricon.Width;
-                var h = Properties.Resources.editaricon.Height;
+                var w = Properties.Resources.verlistaColor2.Width;
+                var h = Properties.Resources.verlistaColor2.Height;
                 var x = e.CellBounds.Left + (e.CellBounds.Width - w)/2;
                 var y = e.CellBounds.Top + (e.CellBounds.Height - h)/2;
 
-                e.Graphics.DrawImage(Properties.Resources.editaricon, new Rectangle(x, y, w, h));
+                e.Graphics.DrawImage(Properties.Resources.verlistaColor2, new Rectangle(x, y, w, h));
                 e.Handled = true;
             }
         }
+
+        //--------------------------------------------------------------------------------------------------------------------------------
 
         // Método para normalizar y eliminar los acentos
         private string NormalizarTexto(string texto)
@@ -291,6 +311,8 @@ namespace CapaPresentacion
 
             return stringBuilder.ToString().Normalize(NormalizationForm.FormC);
         }
+
+        //--------------------------------------------------------------------------------------------------------------------------------
 
         private void picFiltrar_Click(object sender, EventArgs e)
         {
@@ -324,6 +346,7 @@ namespace CapaPresentacion
 
         }
 
+        //--------------------------------------------------------------------------------------------------------------------------------
 
         private void picBuscarFecha_Click(object sender, EventArgs e)
         {
@@ -339,6 +362,8 @@ namespace CapaPresentacion
         {
             CargarDatosVentas();
         }
+
+        //--------------------------------------------------------------------------------------------------------------------------------
 
         // Generar EXCEL
         private void button3_Click(object sender, EventArgs e)
@@ -394,6 +419,7 @@ namespace CapaPresentacion
 
         }
 
+        //--------------------------------------------------------------------------------------------------------------------------------
 
         private void SumarColumnaFilasVisibles(DataGridView dgvdata, string MontoTotal, TextBox txtResultado)
         {
@@ -427,7 +453,7 @@ namespace CapaPresentacion
             }
         }
 
-
+        //--------------------------------------------------------------------------------------------------------------------------------
 
         private void ContarFilasVisibles(DataGridView dgvdata, TextBox txtResultado)
         {
@@ -445,6 +471,52 @@ namespace CapaPresentacion
             }
         }
 
+        //--------------------------------------------------------------------------------------------------------------------------------
+
+        private void dgvdata_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgvdata.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
+            {
+                e.CellStyle.BackColor = System.Drawing.Color.White; // No pintar la columna de botones
+            }
+            else
+            {
+                //e.CellStyle.BackColor = System.Drawing.Color.LightGray; // Pintar el resto
+            }
+        }
+
+        //--------------------------------------------------------------------------------------------------------------------------------
+
+        private void groupBox1_Paint(object sender, PaintEventArgs e)  //------
+        {
+            GroupBox box = sender as GroupBox;
+            if (box != null)
+            {
+                int borderWidth = 3;
+                System.Drawing.Color borderColor = System.Drawing.Color.Black; // Personalizar color del borde
+
+                // Dibujar el fondo
+                e.Graphics.Clear(this.BackColor);
+
+                // Dibujar el borde
+                using (Pen pen = new Pen(borderColor, borderWidth))
+                {
+                    e.Graphics.DrawRectangle(pen, box.ClientRectangle.X, box.ClientRectangle.Y + 6,
+                                              box.ClientRectangle.Width -1, box.ClientRectangle.Height - 8);
+                }
+
+                // Dibujar el texto
+                TextRenderer.DrawText(
+                    e.Graphics,
+                    box.Text,
+                    box.Font,
+                    new Point(box.ClientRectangle.X + 10, box.ClientRectangle.Y),
+                    box.ForeColor,
+                    TextFormatFlags.Default);
+            }
+        }
+
+        //--------------------------------------------------------------------------------------------------------------------------------
     }
 }
 

@@ -485,6 +485,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="chatgpt_logo_oro_QXZ_icon.ico" />
+    <None Include="Resources\verlistaColor2.png" />
+    <None Include="Resources\verlistaColorGrande.png" />
+    <None Include="Resources\verlistaColor.png" />
+    <None Include="Resources\verlistaColor %281%29.png" />
+    <None Include="Resources\ver-lista.png" />
+    <None Include="Resources\busqueda.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.5.2.0\build\net462\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.5.2.0\build\net462\Microsoft.Data.SqlClient.SNI.targets')" />

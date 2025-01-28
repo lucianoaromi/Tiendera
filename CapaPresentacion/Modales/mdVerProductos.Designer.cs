@@ -136,9 +136,9 @@
             this.label10.ForeColor = System.Drawing.Color.Gold;
             this.label10.Location = new System.Drawing.Point(19, 13);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(145, 32);
+            this.label10.Size = new System.Drawing.Size(157, 32);
             this.label10.TabIndex = 28;
-            this.label10.Text = "Productos";
+            this.label10.Text = "Productoss";
             // 
             // panel3
             // 
