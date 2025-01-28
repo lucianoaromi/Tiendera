@@ -68,80 +68,7 @@ namespace CapaPresentacion
 
         }
 
-
-        private void btnguardar_Click_1(object sender, EventArgs e)
-        {
-
-            string mensaje = string.Empty;
-            Cliente objcliente = new Cliente()
-            {
-                IdCliente = Convert.ToInt32(txtidcliente.Text),
-                //Documento = txtdocumento1.Text,
-                Apellido = txtapellido1.Text,
-                Nombre = txtnombre1.Text,
-                Direccion = txtdireccion1.Text,
-                //Correo = txtcorreo1.Text,
-                Telefono = txttelefono1.Text,
-
-                Estado = Convert.ToInt32(((OpcionCombo)cboestado1.SelectedItem).Valor) == 1 ? true : false
-            };
-
-
-            if (objcliente.IdCliente == 0)
-            {
-                //Ejecuta el metodo Registrar de la Clase Usuario en la Cap de Neg con sus respectivos parametros, retornando el idusuario
-                int idclientegenerado = new CN_Cliente().Registrar(objcliente, out mensaje);
-
-                if (idclientegenerado != 0)
-                {
-                  dgvdata.Rows.Add(new object[] {"",idclientegenerado,txtapellido1.Text,txtnombre1.Text,txtdireccion1.Text,txttelefono1.Text,
-
-                   ((OpcionCombo)cboestado1.SelectedItem).Valor.ToString(),
-                   ((OpcionCombo)cboestado1.SelectedItem).Texto.ToString()
-                });
-
-                    Limpiar();
-                }
-                else
-                {
-                    MessageBox.Show(mensaje);
-                }
-
-            }
-            //Si el objeto idusuario no es igual a 0 se accede a editar el usario seleccionado del datagrid
-            else
-            {
-                bool resultado = new CN_Cliente().Editar(objcliente, out mensaje);
-
-                if (resultado)
-                {
-                    //Se obtiene la fila seleccionada en el datagrid
-                    DataGridViewRow row = dgvdata.Rows[Convert.ToInt32(txtindicecliente.Text)];
-                    //Se realiza el llamado a las filas del datagrid
-                    row.Cells["Id"].Value = txtidcliente.Text;
-                    //row.Cells["Documento"].Value = txtdocumento1.Text;
-                    row.Cells["Apellido"].Value = txtapellido1.Text;
-                    row.Cells["Nombre"].Value = txtnombre1.Text;
-                    row.Cells["Direccion"].Value = txtdireccion1.Text;
-                    row.Cells["Telefono"].Value = txttelefono1.Text;
-                    //row.Cells["Correo"].Value = txtcorreo1.Text;
-
-
-                    row.Cells["EstadoValor"].Value = ((OpcionCombo)cboestado1.SelectedItem).Valor.ToString();
-                    row.Cells["Estado"].Value = ((OpcionCombo)cboestado1.SelectedItem).Texto.ToString();
-
-                    Limpiar();
-
-                }
-                else
-                {
-                    MessageBox.Show(mensaje);
-                }
-            }
-
-
-        }
-
+        //------------------------------------------------------------------------------------------------------------------------------------------
 
         private void Limpiar()
         {
@@ -167,6 +94,7 @@ namespace CapaPresentacion
             txtapellido1.Select();
         }
 
+        //------------------------------------------------------------------------------------------------------------------------------------------
 
         //Muestra la imagen de tilde en el DataGrid
         private void dgvdata_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -190,69 +118,7 @@ namespace CapaPresentacion
             }
         }
 
-        //Boton de DataGrid que trae los datos hacia los TextBox
-
-
-        private void btneliminar_Click_1(object sender, EventArgs e)
-        {
-            if (Convert.ToInt32(txtidcliente.Text) != 0)
-            {
-                if (MessageBox.Show("¿Desea eliminar el usuario?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    string mensaje = string.Empty;
-                    Cliente objcliente = new Cliente()
-                    {
-                        IdCliente = Convert.ToInt32(txtidcliente.Text)
-                    };
-
-
-                    bool respuesta = new CN_Cliente().Eliminar(objcliente, out mensaje);
-
-                    if (respuesta)
-                    {
-                        dgvdata.Rows.RemoveAt(Convert.ToInt32(txtindicecliente.Text));
-                    }
-                    else
-                    {
-                        MessageBox.Show(mensaje, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    }
-                }
-            }
-        }
-
-        private void btnlimpiar_Click(object sender, EventArgs e)
-        {
-            Limpiar();
-        }
-
         //------------------------------------------------------------------------------------------------------------------------------------------
-
-        private void btnbuscar_Click_1(object sender, EventArgs e)
-        {
-            string columnaFiltro = ((OpcionCombo)cbobusqueda.SelectedItem).Valor.ToString();
-            string busquedaNormalizada = NormalizarTexto(txtbusqueda.Text.Trim().ToUpper());
-
-            if (dgvdata.Rows.Count > 0)
-            {
-                foreach (DataGridViewRow row in dgvdata.Rows)
-                {
-                    if (row.Cells[columnaFiltro].Value != null)
-                    {
-                        string cellValue = row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper();
-                        string cellValueNormalizada = NormalizarTexto(cellValue);
-
-                        if (cellValueNormalizada.Contains(busquedaNormalizada))
-                        {
-                            row.Visible = true;
-                        }
-                        else
-                        {
-                            row.Visible = false;
-                        }
-                    }
-                }
-            }
-        }
 
         // Método para normalizar y eliminar los acentos
         private string NormalizarTexto(string texto)
@@ -314,15 +180,7 @@ namespace CapaPresentacion
             }
         }
 
-
-        private void btnlimpiarbusqueda_Click_1(object sender, EventArgs e)
-        {
-            txtbusqueda.Text = "";
-            foreach (DataGridViewRow row in dgvdata.Rows)
-            {
-                row.Visible = true;
-            }
-        }
+        //------------------------------------------------------------------------------------------------------------------------------------------
 
         private void dgvdata_CellPainting_1(object sender, DataGridViewCellPaintingEventArgs e)
         {
@@ -344,6 +202,8 @@ namespace CapaPresentacion
                 e.Handled = true;
             }
         }
+
+        //------------------------------------------------------------------------------------------------------------------------------------------
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
@@ -372,6 +232,8 @@ namespace CapaPresentacion
             }
         }
 
+        //------------------------------------------------------------------------------------------------------------------------------------------
+
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             txtbusqueda.Text = "";
@@ -380,6 +242,8 @@ namespace CapaPresentacion
                 row.Visible = true;
             }
         }
+
+        //------------------------------------------------------------------------------------------------------------------------------------------
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
@@ -397,7 +261,6 @@ namespace CapaPresentacion
 
                 Estado = Convert.ToInt32(((OpcionCombo)cboestado1.SelectedItem).Valor) == 1 ? true : false
             };
-
 
             if (objcliente.IdCliente == 0)
             {
@@ -453,10 +316,14 @@ namespace CapaPresentacion
             }
         }
 
+        //------------------------------------------------------------------------------------------------------------------------------------------
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             Limpiar();
         }
+
+        //------------------------------------------------------------------------------------------------------------------------------------------
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
@@ -484,5 +351,7 @@ namespace CapaPresentacion
                 }
             }
         }
+
+        //------------------------------------------------------------------------------------------------------------------------------------------
     }
 }

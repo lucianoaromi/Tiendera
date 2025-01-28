@@ -189,13 +189,14 @@
             this.dgvdata.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvdata.Size = new System.Drawing.Size(1041, 556);
             this.dgvdata.TabIndex = 22;
+            this.dgvdata.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdata_CellContentClick);
+            this.dgvdata.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvdata_CellPainting);
             // 
             // btnseleccionar
             // 
             this.btnseleccionar.HeaderText = "";
             this.btnseleccionar.Name = "btnseleccionar";
             this.btnseleccionar.ReadOnly = true;
-            this.btnseleccionar.Visible = false;
             this.btnseleccionar.Width = 30;
             // 
             // Id

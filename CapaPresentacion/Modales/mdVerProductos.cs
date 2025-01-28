@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaPresentacion.Modales;
 
 namespace CapaPresentacion.Modales
 {
@@ -139,6 +140,51 @@ namespace CapaPresentacion.Modales
             foreach (DataGridViewRow row in dgvdata.Rows)
             {
                 row.Visible = true;
+            }
+        }
+
+        private void dgvdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Verifica si el índice de la columna corresponde al botón
+            if (e.RowIndex >= 0 && dgvdata.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
+            {
+                // Obtiene la fila seleccionada
+                DataGridViewRow fila = dgvdata.Rows[e.RowIndex];
+
+                // Crea una instancia del nuevo formulario
+                ProductoDetalles detalles = new ProductoDetalles();
+
+                // Pasa los valores de la fila a los TextBox del nuevo formulario
+                detalles.txtId.Text = fila.Cells["Codigo"].Value.ToString();
+                detalles.txtNombre.Text = fila.Cells["Nombre"].Value.ToString();
+                detalles.txtDescripcion.Text = fila.Cells["Descripcion"].Value.ToString();
+                detalles.txtCategoria.Text = fila.Cells["Categoria"].Value.ToString();
+                detalles.txtStock.Text = fila.Cells["Stock"].Value.ToString();
+                detalles.txtPrecio.Text = "$ " + fila.Cells["Precio"].Value.ToString();
+
+                // Muestra el formulario de detalles
+                detalles.ShowDialog();
+            }
+        }
+
+        private void dgvdata_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+
+            if (e.ColumnIndex == 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                var w = Properties.Resources.editaricon.Width;
+                var h = Properties.Resources.editaricon.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w)/2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h)/2;
+
+                e.Graphics.DrawImage(Properties.Resources.editaricon, new Rectangle(x, y, w, h));
+                e.Handled = true;
             }
         }
     }
