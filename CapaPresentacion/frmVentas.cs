@@ -457,6 +457,7 @@ namespace CapaPresentacion
                 //txtdocumentocliente.Text = "";
                 txtapellidocliente.Text = "";
                 txtnombrecliente.Text = "";
+                txtidcliente.Text = "";
                 dgvdata.Rows.Clear();
                 calcularTotal();
                 txtpagacon.Text = "";

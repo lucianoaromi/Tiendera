@@ -400,7 +400,7 @@ namespace CapaPresentacion
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label6.Location = new System.Drawing.Point(21, 21);
+            this.label6.Location = new System.Drawing.Point(15, 21);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(62, 15);
             this.label6.TabIndex = 2;
@@ -420,9 +420,9 @@ namespace CapaPresentacion
             // cbobusqueda
             // 
             this.cbobusqueda.FormattingEnabled = true;
-            this.cbobusqueda.Location = new System.Drawing.Point(24, 39);
+            this.cbobusqueda.Location = new System.Drawing.Point(16, 39);
             this.cbobusqueda.Name = "cbobusqueda";
-            this.cbobusqueda.Size = new System.Drawing.Size(119, 23);
+            this.cbobusqueda.Size = new System.Drawing.Size(127, 23);
             this.cbobusqueda.TabIndex = 15;
             // 
             // picFiltrar

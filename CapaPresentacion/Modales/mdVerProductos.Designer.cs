@@ -66,7 +66,7 @@
             this.label7.BackColor = System.Drawing.Color.DarkCyan;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(508, 22);
+            this.label7.Location = new System.Drawing.Point(508, 24);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(81, 17);
             this.label7.TabIndex = 23;
@@ -137,11 +137,11 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Leelawadee", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Gold;
-            this.label10.Location = new System.Drawing.Point(19, 13);
+            this.label10.Location = new System.Drawing.Point(19, 14);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(157, 32);
+            this.label10.Size = new System.Drawing.Size(145, 32);
             this.label10.TabIndex = 28;
-            this.label10.Text = "Productoss";
+            this.label10.Text = "Productos";
             // 
             // panel3
             // 
