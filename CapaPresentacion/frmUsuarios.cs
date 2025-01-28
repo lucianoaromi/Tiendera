@@ -170,7 +170,7 @@ namespace CapaPresentacion
             txtapellido.Text = "";
             txtnombre.Text = "";
             txtdireccion.Text = "";
-            txtcorreo.Text = "";
+            txtcorreo.Text = "@gmail.com";
             txtclave.Text = "";
             txtconfirmarclave.Text = "";
             cborol.SelectedIndex = 0;   

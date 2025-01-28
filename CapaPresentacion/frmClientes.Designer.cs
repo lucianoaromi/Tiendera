@@ -102,7 +102,7 @@ namespace CapaPresentacion
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.DarkSlateGray;
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(7, 288);
+            this.label8.Location = new System.Drawing.Point(7, 296);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(43, 13);
             this.label8.TabIndex = 12;
@@ -112,7 +112,7 @@ namespace CapaPresentacion
             // 
             this.cboestado1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboestado1.FormattingEnabled = true;
-            this.cboestado1.Location = new System.Drawing.Point(9, 304);
+            this.cboestado1.Location = new System.Drawing.Point(9, 312);
             this.cboestado1.Name = "cboestado1";
             this.cboestado1.Size = new System.Drawing.Size(159, 21);
             this.cboestado1.TabIndex = 15;
@@ -143,7 +143,7 @@ namespace CapaPresentacion
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(123, 354);
+            this.pictureBox5.Location = new System.Drawing.Point(123, 362);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(50, 50);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -154,7 +154,7 @@ namespace CapaPresentacion
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(67, 354);
+            this.pictureBox1.Location = new System.Drawing.Point(67, 362);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -165,7 +165,7 @@ namespace CapaPresentacion
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(10, 354);
+            this.pictureBox2.Location = new System.Drawing.Point(10, 362);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(50, 50);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -197,7 +197,7 @@ namespace CapaPresentacion
             // 
             // txttelefono1
             // 
-            this.txttelefono1.Location = new System.Drawing.Point(10, 250);
+            this.txttelefono1.Location = new System.Drawing.Point(10, 258);
             this.txttelefono1.Name = "txttelefono1";
             this.txttelefono1.Size = new System.Drawing.Size(159, 21);
             this.txttelefono1.TabIndex = 30;
@@ -207,7 +207,7 @@ namespace CapaPresentacion
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.DarkSlateGray;
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(8, 234);
+            this.label6.Location = new System.Drawing.Point(8, 242);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 15);
             this.label6.TabIndex = 29;
@@ -218,7 +218,7 @@ namespace CapaPresentacion
             this.txtdireccion1.Location = new System.Drawing.Point(10, 169);
             this.txtdireccion1.Multiline = true;
             this.txtdireccion1.Name = "txtdireccion1";
-            this.txtdireccion1.Size = new System.Drawing.Size(159, 51);
+            this.txtdireccion1.Size = new System.Drawing.Size(159, 60);
             this.txtdireccion1.TabIndex = 32;
             // 
             // label5

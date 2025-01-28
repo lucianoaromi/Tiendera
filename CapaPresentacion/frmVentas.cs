@@ -28,7 +28,6 @@ namespace CapaPresentacion
             _Usuario = oUsuario;
             InitializeComponent();
             dgvdata.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
-            //dgvdata.DefaultCellStyle.BackColor = System.Drawing.Color.Black;
             //dgvdata.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.Gray; // Cambia el color de fondo de las filas alternas
             txtidproducto.Text = "0";
             txtcantidad.Value = 1;
@@ -71,6 +70,7 @@ namespace CapaPresentacion
             cbometodopago.ValueMember = "Valor";
             //Se selecciona siempre el indice 0
             cbometodopago.SelectedIndex = 0;
+            txtidcliente.Focus();
         }
 
         //-----------------------------------------------------------
@@ -81,6 +81,7 @@ namespace CapaPresentacion
             txtnombrecliente.Clear();
             txtapellidocliente.Clear();
             txtidcliente.Clear();
+            txtidcliente.Focus();
         }
 
         //-----------------------------------------------------------
@@ -455,6 +456,7 @@ namespace CapaPresentacion
                 txtpagacon.Text = "";
                 txtcambio.Text = "";
                 txtnumventa.Text = numeroDocumento.ToString();
+                txtidcliente.Focus();
 
             }
             else

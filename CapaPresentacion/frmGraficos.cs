@@ -31,6 +31,7 @@ namespace CapaPresentacion
             // Cambia el color de las etiquetas de los ejes
             chartGrossRevenue.ChartAreas[0].AxisX.LabelStyle.ForeColor = System.Drawing.Color.Turquoise;
             chartGrossRevenue.ChartAreas[0].AxisY.LabelStyle.ForeColor = System.Drawing.Color.Turquoise;
+            txtPorcentaje.Focus();
         }
 
         //-------------------------------------------------------------------------
@@ -67,15 +68,16 @@ namespace CapaPresentacion
                 chartTopProducts.DataBind();
 
                 dgvUnderstock.DataSource = model.UnderstockList;
-                dgvUnderstock.Columns[0].HeaderText = "Descripcion";
+                dgvUnderstock.Columns[0].HeaderText = "Producto";
                 dgvUnderstock.Columns[1].HeaderText = "Unidades";
-                dgvUnderstock.Columns[0].Width = 180;
+                dgvUnderstock.Columns[0].Width = 250;
                 dgvUnderstock.Columns[1].Width = 60;
                 Console.WriteLine("Loaded view :)");
                 calcularPorcentaje();
+                txtPorcentaje.Focus();
 
             }
-            else Console.WriteLine("View not loaded, same query");
+            else Console.WriteLine("Vista no cargada, misma consulta");
         }
 
         //-------------------------------------------------------------------------
@@ -184,6 +186,8 @@ namespace CapaPresentacion
             {
                 MessageBox.Show("El valor en el primer TextBox no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            txtPorcentaje.Focus();
 
         }
 
