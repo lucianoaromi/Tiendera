@@ -85,10 +85,11 @@
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrecio.Location = new System.Drawing.Point(12, 402);
+            this.txtPrecio.Multiline = true;
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(227, 20);
+            this.txtPrecio.Size = new System.Drawing.Size(227, 22);
             this.txtPrecio.TabIndex = 4;
             // 
             // txtCategoria
@@ -102,9 +103,9 @@
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel2.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.panel2.BackColor = System.Drawing.Color.Black;
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Location = new System.Drawing.Point(7, 7);
+            this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(304, 532);
             this.panel2.TabIndex = 7;
@@ -191,7 +192,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(9, 278);
+            this.label7.Location = new System.Drawing.Point(11, 278);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(63, 15);
             this.label7.TabIndex = 19;
@@ -225,7 +226,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(319, 547);
+            this.ClientSize = new System.Drawing.Size(310, 539);
             this.Controls.Add(this.panel2);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;

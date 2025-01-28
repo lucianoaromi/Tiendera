@@ -37,6 +37,7 @@ namespace CapaPresentacion
 
             groupBox1.Paint += groupBox1_Paint; // Sobrescribe el evento Paint del GroupBox //------
             groupBox2.Paint += groupBox1_Paint;
+            groupBox3.Paint += groupBox1_Paint;
 
             // Centramos las columnas
             dgvdata.Columns["verDetalle"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -493,7 +494,7 @@ namespace CapaPresentacion
             if (box != null)
             {
                 int borderWidth = 3;
-                System.Drawing.Color borderColor = System.Drawing.Color.Black; // Personalizar color del borde
+                System.Drawing.Color borderColor = System.Drawing.Color.DarkSlateGray; // Personalizar color del borde
 
                 // Dibujar el fondo
                 e.Graphics.Clear(this.BackColor);

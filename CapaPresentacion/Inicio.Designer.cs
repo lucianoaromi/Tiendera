@@ -277,13 +277,13 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Black;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Bahnschrift", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(80, 20);
+            this.label1.Location = new System.Drawing.Point(79, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(164, 31);
+            this.label1.Size = new System.Drawing.Size(159, 35);
             this.label1.TabIndex = 2;
-            this.label1.Text = "ARDUINO  -";
+            this.label1.Text = "ARDUINO -";
             // 
             // lblusuario
             // 
@@ -293,7 +293,7 @@
             this.lblusuario.BackColor = System.Drawing.Color.Black;
             this.lblusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblusuario.ForeColor = System.Drawing.Color.White;
-            this.lblusuario.Location = new System.Drawing.Point(279, 31);
+            this.lblusuario.Location = new System.Drawing.Point(273, 31);
             this.lblusuario.Name = "lblusuario";
             this.lblusuario.Size = new System.Drawing.Size(117, 17);
             this.lblusuario.TabIndex = 5;
@@ -402,7 +402,7 @@
             this.pictureBox4.BackColor = System.Drawing.Color.Black;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.InitialImage = null;
-            this.pictureBox4.Location = new System.Drawing.Point(248, 23);
+            this.pictureBox4.Location = new System.Drawing.Point(242, 23);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(25, 25);
             this.pictureBox4.TabIndex = 4;

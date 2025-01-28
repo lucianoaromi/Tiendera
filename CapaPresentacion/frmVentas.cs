@@ -15,6 +15,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Org.BouncyCastle.Math.Primes;
+using SpreadsheetColor = DocumentFormat.OpenXml.Spreadsheet.Color; //------
 
 namespace CapaPresentacion
 {
@@ -31,6 +32,11 @@ namespace CapaPresentacion
             //dgvdata.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.Gray; // Cambia el color de fondo de las filas alternas
             txtidproducto.Text = "0";
             txtcantidad.Value = 1;
+
+            groupBox1.Paint += groupBox1_Paint; // Sobrescribe el evento Paint del GroupBox //------
+            groupBox2.Paint += groupBox1_Paint;
+            groupBox3.Paint += groupBox1_Paint;
+            groupBox4.Paint += groupBox1_Paint;
 
         }
 
@@ -488,7 +494,38 @@ namespace CapaPresentacion
             }
         }
 
-        //-----------------------------------------------------------
+        //--------------------------------------------------------------------------------------------------------------------------------
+
+        private void groupBox1_Paint(object sender, PaintEventArgs e)  //------
+        {
+            GroupBox box = sender as GroupBox;
+            if (box != null)
+            {
+                int borderWidth = 3;
+                System.Drawing.Color borderColor = System.Drawing.Color.DarkSlateGray; // Personalizar color del borde
+
+                // Dibujar el fondo
+                e.Graphics.Clear(this.BackColor);
+
+                // Dibujar el borde
+                using (Pen pen = new Pen(borderColor, borderWidth))
+                {
+                    e.Graphics.DrawRectangle(pen, box.ClientRectangle.X, box.ClientRectangle.Y + 6,
+                                              box.ClientRectangle.Width -1, box.ClientRectangle.Height - 8);
+                }
+
+                // Dibujar el texto
+                TextRenderer.DrawText(
+                    e.Graphics,
+                    box.Text,
+                    box.Font,
+                    new Point(box.ClientRectangle.X + 10, box.ClientRectangle.Y),
+                    box.ForeColor,
+                    TextFormatFlags.Default);
+            }
+        }
+
+        //--------------------------------------------------------------------------------------------------------------------------------
 
     }
 }
