@@ -493,7 +493,7 @@ namespace CapaPresentacion
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BackColor = System.Drawing.Color.Black;
             this.panel2.Controls.Add(this.panel1);
-            this.panel2.Location = new System.Drawing.Point(7, 7);
+            this.panel2.Location = new System.Drawing.Point(-2, -1);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(771, 583);
             this.panel2.TabIndex = 1;
@@ -503,7 +503,7 @@ namespace CapaPresentacion
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(786, 598);
+            this.ClientSize = new System.Drawing.Size(769, 582);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmDetalleVenta";
