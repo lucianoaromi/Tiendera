@@ -78,9 +78,11 @@ namespace CapaPresentacion
                     iconmenu.Visible = false;
                 }
 
+                //---------------------------------------------------------------------
                 //Caragar imagenes a iconos de Iicio latelar
-                menuverproductos.Image = Properties.Resources.ardunegro;
-               
+                menuventas.Image = Properties.Resources.compras50;
+                menuverproductos.Image = Properties.Resources.tecnologiaBorde50;
+
 
             }
 
