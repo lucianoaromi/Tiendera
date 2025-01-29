@@ -522,9 +522,26 @@ namespace CapaPresentacion
             }
         }
 
+        //--------------------------------------------------------------------------------------------------------------------------------
+
         private void btnpdf_Click(object sender, EventArgs e)
         {
             calcularcambio();
+        }
+
+        private void txtpagacon_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            // Permitir solo números, el punto decimal y la tecla de retroceso
+            if (!Char.IsControl(e.KeyChar) && !Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Si se presiona un carácter no permitido, lo ignora
+            }
+
+            // Evitar que se ingrese más de un punto decimal
+            if (e.KeyChar == '.' && (sender as TextBox).Text.Contains("."))
+            {
+                e.Handled = true; // Si ya hay un punto, no permite otro
+            }
         }
 
         //--------------------------------------------------------------------------------------------------------------------------------
