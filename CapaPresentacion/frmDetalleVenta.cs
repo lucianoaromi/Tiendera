@@ -15,6 +15,8 @@ using iTextSharp.text.pdf;
 using iTextSharp.tool.xml;
 using System.IO;
 
+using SpreadsheetColor = DocumentFormat.OpenXml.Spreadsheet.Color; //------
+
 namespace CapaPresentacion
 {
     public partial class frmDetalleVenta : Form
@@ -30,6 +32,10 @@ namespace CapaPresentacion
         public frmDetalleVenta()
         {
             InitializeComponent();
+
+            groupBox1.Paint += groupBox1_Paint; // Sobrescribe el evento Paint del GroupBox //------
+            groupBox2.Paint += groupBox1_Paint;
+            groupBox4.Paint += groupBox1_Paint;
         }
 
 
@@ -278,5 +284,38 @@ namespace CapaPresentacion
             txtmontocambio.Text = "0.00";
             txtmetodopago.Text = "";
         }
+
+        //--------------------------------------------------------------------------------------------------------------------------------
+
+        private void groupBox1_Paint(object sender, PaintEventArgs e)  //------
+        {
+            GroupBox box = sender as GroupBox;
+            if (box != null)
+            {
+                int borderWidth = 3;
+                System.Drawing.Color borderColor = System.Drawing.Color.DarkSlateGray; // Personalizar color del borde
+
+                // Dibujar el fondo
+                e.Graphics.Clear(this.BackColor);
+
+                // Dibujar el borde
+                using (Pen pen = new Pen(borderColor, borderWidth))
+                {
+                    e.Graphics.DrawRectangle(pen, box.ClientRectangle.X, box.ClientRectangle.Y + 6,
+                                              box.ClientRectangle.Width -1, box.ClientRectangle.Height - 8);
+                }
+
+                // Dibujar el texto
+                TextRenderer.DrawText(
+                    e.Graphics,
+                    box.Text,
+                    box.Font,
+                    new Point(box.ClientRectangle.X + 10, box.ClientRectangle.Y),
+                    box.ForeColor,
+                    TextFormatFlags.Default);
+            }
+        }
+
+        //--------------------------------------------------------------------------------------------------------------------------------
     }
 }
