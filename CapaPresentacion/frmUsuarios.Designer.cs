@@ -131,7 +131,7 @@ namespace CapaPresentacion
             this.txtdocumento.Location = new System.Drawing.Point(10, 50);
             this.txtdocumento.Name = "txtdocumento";
             this.txtdocumento.Size = new System.Drawing.Size(162, 20);
-            this.txtdocumento.TabIndex = 4;
+            this.txtdocumento.TabIndex = 0;
             this.txtdocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtdocumento_KeyPress_1);
             // 
             // txtcorreo
@@ -140,14 +140,14 @@ namespace CapaPresentacion
             this.txtcorreo.Multiline = true;
             this.txtcorreo.Name = "txtcorreo";
             this.txtcorreo.Size = new System.Drawing.Size(163, 31);
-            this.txtcorreo.TabIndex = 5;
+            this.txtcorreo.TabIndex = 4;
             // 
             // txtapellido
             // 
             this.txtapellido.Location = new System.Drawing.Point(10, 98);
             this.txtapellido.Name = "txtapellido";
             this.txtapellido.Size = new System.Drawing.Size(162, 20);
-            this.txtapellido.TabIndex = 6;
+            this.txtapellido.TabIndex = 1;
             this.txtapellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnombrecompleto_KeyPress);
             // 
             // txtdireccion
@@ -156,7 +156,7 @@ namespace CapaPresentacion
             this.txtdireccion.Multiline = true;
             this.txtdireccion.Name = "txtdireccion";
             this.txtdireccion.Size = new System.Drawing.Size(163, 60);
-            this.txtdireccion.TabIndex = 8;
+            this.txtdireccion.TabIndex = 3;
             // 
             // label5
             // 
@@ -176,7 +176,7 @@ namespace CapaPresentacion
             this.txtconfirmarclave.Name = "txtconfirmarclave";
             this.txtconfirmarclave.PasswordChar = '*';
             this.txtconfirmarclave.Size = new System.Drawing.Size(162, 20);
-            this.txtconfirmarclave.TabIndex = 11;
+            this.txtconfirmarclave.TabIndex = 6;
             // 
             // label6
             // 
@@ -221,7 +221,7 @@ namespace CapaPresentacion
             this.cborol.Location = new System.Drawing.Point(10, 433);
             this.cborol.Name = "cborol";
             this.cborol.Size = new System.Drawing.Size(162, 21);
-            this.cborol.TabIndex = 14;
+            this.cborol.TabIndex = 7;
             // 
             // cboestado
             // 
@@ -230,7 +230,7 @@ namespace CapaPresentacion
             this.cboestado.Location = new System.Drawing.Point(10, 479);
             this.cboestado.Name = "cboestado";
             this.cboestado.Size = new System.Drawing.Size(162, 21);
-            this.cboestado.TabIndex = 15;
+            this.cboestado.TabIndex = 8;
             // 
             // panel1
             // 
@@ -282,7 +282,7 @@ namespace CapaPresentacion
             this.txtclave.Name = "txtclave";
             this.txtclave.PasswordChar = '*';
             this.txtclave.Size = new System.Drawing.Size(163, 20);
-            this.txtclave.TabIndex = 32;
+            this.txtclave.TabIndex = 5;
             // 
             // pictureBox2
             // 
@@ -312,7 +312,7 @@ namespace CapaPresentacion
             this.txtnombre.Location = new System.Drawing.Point(9, 146);
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(162, 20);
-            this.txtnombre.TabIndex = 30;
+            this.txtnombre.TabIndex = 2;
             this.txtnombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnombre_KeyPress);
             // 
             // label1

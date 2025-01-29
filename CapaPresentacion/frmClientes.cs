@@ -64,7 +64,13 @@ namespace CapaPresentacion
                    item.Estado == true ? "Activo" : "No Activo",
                });
             }
-
+            
+            txtapellido1.Focus();
+            txtapellido1.TabIndex = 0;
+            txtnombre1.TabIndex = 1;
+            txtdireccion1.TabIndex = 2;
+            txttelefono1.TabIndex = 3;
+            cboestado1.TabIndex = 4;
 
         }
 

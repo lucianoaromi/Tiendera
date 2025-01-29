@@ -26,6 +26,7 @@ namespace CapaPresentacion
         public frmUsuarios()
         {
             InitializeComponent();
+
         }
 
         private void frmUsuarios_Load(object sender, EventArgs e)
@@ -77,6 +78,17 @@ namespace CapaPresentacion
                    item.Estado == true ? "Activo" : "No Activo",
                });
             }
+
+            txtdocumento.Focus();
+            txtdocumento.TabIndex = 0;
+            txtapellido.TabIndex = 1;
+            txtnombre.TabIndex = 2;
+            txtdireccion.TabIndex = 3;
+            txtcorreo.TabIndex = 4;
+            txtclave.TabIndex = 5;
+            txtconfirmarclave.TabIndex = 6;
+            cborol.TabIndex = 7;
+            cboestado.TabIndex = 8;
         }
 
         //------------------------------------------------------------------------------------------------------------------------------------------
