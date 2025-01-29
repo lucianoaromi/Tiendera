@@ -143,28 +143,7 @@ namespace CapaPresentacion
 
         private void txtpagacon_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsDigit(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                if (txtpagacon.Text.Trim().Length == 0 && e.KeyChar.ToString() == ",")
-                {
-                    e.Handled= true;
-                }
-                else
-                {
-                    if (Char.IsControl(e.KeyChar) || e.KeyChar.ToString() == ",")
-                    {
-                        e.Handled = false;
-                    }
-                    else
-                    {
-                        e.Handled = true;
-                    }
-                }
-            }
+
         }
 
         //-----------------------------------------------------------
@@ -246,14 +225,23 @@ namespace CapaPresentacion
 
         private void calcularcambio()
         {
-            if (txttotalpagar.Text.Trim() =="")
+            // Mostrar los valores para depurar
+            //MessageBox.Show("Total: " + txttotalpagar.Text + " Pago: " + txtpagacon.Text);
+
+            if (txttotalpagar.Text.Trim() == "")
             {
                 MessageBox.Show("No existen productos en la venta", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
             decimal pagacon;
-            decimal total = Convert.ToDecimal(txttotalpagar.Text);
+            decimal total;
+
+            if (!decimal.TryParse(txttotalpagar.Text.Trim(), out total))
+            {
+                MessageBox.Show("El total a pagar no es un valor válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             if (txtpagacon.Text.Trim() == "")
             {
@@ -269,10 +257,18 @@ namespace CapaPresentacion
                 else
                 {
                     decimal cambio = pagacon - total;
-                    txtcambio.Text = cambio.ToString(".00");
+                    txtcambio.Text = cambio.ToString("#,##0.00");
                 }
             }
+            else
+            {
+                MessageBox.Show("El pago ingresado no es un valor válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+
+
+
 
         //-----------------------------------------------------------
 
@@ -524,6 +520,11 @@ namespace CapaPresentacion
                     box.ForeColor,
                     TextFormatFlags.Default);
             }
+        }
+
+        private void btnpdf_Click(object sender, EventArgs e)
+        {
+            calcularcambio();
         }
 
         //--------------------------------------------------------------------------------------------------------------------------------

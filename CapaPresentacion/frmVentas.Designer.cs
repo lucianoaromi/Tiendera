@@ -33,6 +33,7 @@ namespace CapaPresentacion
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVentas));
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnpdf = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
             this.txtOutput = new System.Windows.Forms.TextBox();
             this.picPDF = new System.Windows.Forms.PictureBox();
@@ -40,6 +41,7 @@ namespace CapaPresentacion
             this.txtpagacon = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.txtcambio = new System.Windows.Forms.TextBox();
+            this.txttotalpagar = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.dgvdata = new System.Windows.Forms.DataGridView();
             this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,7 +53,6 @@ namespace CapaPresentacion
             this.label6 = new System.Windows.Forms.Label();
             this.cbometodopago = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txttotalpagar = new System.Windows.Forms.TextBox();
             this.txtnumventa = new System.Windows.Forms.TextBox();
             this.txtidproducto = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -124,6 +125,7 @@ namespace CapaPresentacion
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.DarkCyan;
+            this.groupBox3.Controls.Add(this.btnpdf);
             this.groupBox3.Controls.Add(this.label19);
             this.groupBox3.Controls.Add(this.txtOutput);
             this.groupBox3.Controls.Add(this.picPDF);
@@ -143,6 +145,23 @@ namespace CapaPresentacion
             this.groupBox3.Size = new System.Drawing.Size(921, 370);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
+            // 
+            // btnpdf
+            // 
+            this.btnpdf.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnpdf.BackColor = System.Drawing.Color.Black;
+            this.btnpdf.FlatAppearance.BorderColor = System.Drawing.Color.Turquoise;
+            this.btnpdf.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGreen;
+            this.btnpdf.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnpdf.ForeColor = System.Drawing.Color.White;
+            this.btnpdf.Location = new System.Drawing.Point(660, 184);
+            this.btnpdf.Name = "btnpdf";
+            this.btnpdf.Size = new System.Drawing.Size(117, 28);
+            this.btnpdf.TabIndex = 37;
+            this.btnpdf.Text = "CALCULAR";
+            this.btnpdf.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnpdf.UseVisualStyleBackColor = false;
+            this.btnpdf.Click += new System.EventHandler(this.btnpdf_Click);
             // 
             // label19
             // 
@@ -188,13 +207,12 @@ namespace CapaPresentacion
             // 
             // txtpagacon
             // 
-            this.txtpagacon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtpagacon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpagacon.Location = new System.Drawing.Point(659, 98);
+            this.txtpagacon.Multiline = true;
             this.txtpagacon.Name = "txtpagacon";
-            this.txtpagacon.Size = new System.Drawing.Size(117, 21);
+            this.txtpagacon.Size = new System.Drawing.Size(117, 22);
             this.txtpagacon.TabIndex = 36;
-            this.txtpagacon.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtpagacon_KeyDown);
-            this.txtpagacon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtpagacon_KeyPress);
             // 
             // label16
             // 
@@ -207,17 +225,29 @@ namespace CapaPresentacion
             // 
             // txtcambio
             // 
-            this.txtcambio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcambio.Location = new System.Drawing.Point(659, 150);
+            this.txtcambio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcambio.Location = new System.Drawing.Point(659, 148);
+            this.txtcambio.Multiline = true;
             this.txtcambio.Name = "txtcambio";
             this.txtcambio.ReadOnly = true;
-            this.txtcambio.Size = new System.Drawing.Size(117, 21);
+            this.txtcambio.Size = new System.Drawing.Size(117, 22);
             this.txtcambio.TabIndex = 34;
+            // 
+            // txttotalpagar
+            // 
+            this.txttotalpagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txttotalpagar.Location = new System.Drawing.Point(895, 9);
+            this.txttotalpagar.Multiline = true;
+            this.txttotalpagar.Name = "txttotalpagar";
+            this.txttotalpagar.ReadOnly = true;
+            this.txttotalpagar.Size = new System.Drawing.Size(39, 20);
+            this.txttotalpagar.TabIndex = 10;
+            this.txttotalpagar.Visible = false;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(657, 132);
+            this.label9.Location = new System.Drawing.Point(658, 130);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(53, 15);
             this.label9.TabIndex = 33;
@@ -324,16 +354,6 @@ namespace CapaPresentacion
             this.label10.Size = new System.Drawing.Size(106, 20);
             this.label10.TabIndex = 11;
             this.label10.Text = "Total a pagar:";
-            // 
-            // txttotalpagar
-            // 
-            this.txttotalpagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttotalpagar.Location = new System.Drawing.Point(895, 9);
-            this.txttotalpagar.Name = "txttotalpagar";
-            this.txttotalpagar.ReadOnly = true;
-            this.txttotalpagar.Size = new System.Drawing.Size(35, 20);
-            this.txttotalpagar.TabIndex = 10;
-            this.txttotalpagar.Visible = false;
             // 
             // txtnumventa
             // 
@@ -877,5 +897,6 @@ namespace CapaPresentacion
         private Label label18;
         private Label label17;
         private Label label19;
+        private Button btnpdf;
     }
 }

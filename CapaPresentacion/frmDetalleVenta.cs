@@ -15,7 +15,8 @@ using iTextSharp.text.pdf;
 using iTextSharp.tool.xml;
 using System.IO;
 
-using SpreadsheetColor = DocumentFormat.OpenXml.Spreadsheet.Color; //------
+using SpreadsheetColor = DocumentFormat.OpenXml.Spreadsheet.Color;
+using System.Globalization; //------
 
 namespace CapaPresentacion
 {
@@ -38,6 +39,7 @@ namespace CapaPresentacion
             groupBox4.Paint += groupBox1_Paint;
         }
 
+        //--------------------------------------------------------------------------------------------------------------------------------
 
         private void frmDetalleVenta_Load(object sender, EventArgs e)
         {
@@ -55,7 +57,6 @@ namespace CapaPresentacion
 
             txtbusqueda.Select();
 
-            //___________________________________________________________
             Venta oVenta = new CN_Venta().ObtenerVenta(txtbusqueda.Text);
 
             if (oVenta.IdVenta != 0)
@@ -77,13 +78,18 @@ namespace CapaPresentacion
                 dgvdata.Rows.Clear();
                 foreach (Detalle_Venta dv in oVenta.oDetalle_Venta)
                 {
-                    dgvdata.Rows.Add(new object[] { dv.oProducto.Nombre, dv.Precio, dv.Cantidad, dv.SubTotal });
+                    dgvdata.Rows.Add(new object[] {
+                        dv.oProducto.Nombre,
+                        dv.Precio.ToString("N2"),
+                        dv.Cantidad,
+                        dv.SubTotal.ToString("N2")
+                    });
                 }
 
                 // Informacion de los distintos montos
-                txtmontototal.Text = oVenta.MontoTotal.ToString("0.00");
-                txtmontopago.Text = oVenta.MontoPago.ToString("0.00");
-                txtmontocambio.Text = oVenta.MontoCambio.ToString("0.00");
+                txtmontototal.Text = oVenta.MontoTotal.ToString("#,0.00"); // Formato con separador de miles
+                txtmontopago.Text = oVenta.MontoPago.ToString("#,0.00"); // Formato con separador de miles
+                txtmontocambio.Text = oVenta.MontoCambio.ToString("#,0.00"); // Formato con separador de miles
                 txtmetodopago.Text = oVenta.DesMetPago;
 
                 // Desmarca cualquier fila seleccionada
@@ -91,72 +97,7 @@ namespace CapaPresentacion
             }
         }
 
-
-        // Boton que busca la venta segun el numero ingresado
-        private void btnbuscar_Click_1(object sender, EventArgs e)
-        {
-            Venta oVenta = new CN_Venta().ObtenerVenta(txtbusqueda.Text);
-
-            if (oVenta.IdVenta != 0)
-            {
-                txtnumerodocumento.Text = oVenta.NumeroDocumento;
-
-                // Información del Vendedor
-                txtfecha.Text = oVenta.FechaRegistro;
-                txttipodocumento.Text = oVenta.TipoDocumento;
-                txtusuarioapellido.Text = oVenta.oUsuario.Apellido;
-                txtusuarionombre.Text = oVenta.oUsuario2.Nombre;
-
-                // Información del Cliente
-                txtdoccliente.Text = oVenta.DocumentoCliente;
-                txtapellidocliente.Text = oVenta.ApellidoCliente;
-                txtnombrecliente.Text = oVenta.NombreCliente;
-
-                // Lista de productos vendidos
-                dgvdata.Rows.Clear();
-                foreach (Detalle_Venta dv in oVenta.oDetalle_Venta)
-                {
-                    dgvdata.Rows.Add(new object[] { dv.oProducto.Nombre, dv.Precio, dv.Cantidad, dv.SubTotal });
-                }
-
-                // Restablecer colores de todas las filas
-                foreach (DataGridViewRow row in dgvdata.Rows)
-                {
-                    row.DefaultCellStyle.BackColor = dgvdata.DefaultCellStyle.BackColor;
-                    row.DefaultCellStyle.ForeColor = dgvdata.DefaultCellStyle.ForeColor;
-                }
-
-                // Deseleccionar la primera fila
-                if (dgvdata.Rows.Count > 0)
-                {
-                    dgvdata.ClearSelection();
-                }
-
-                // Información de los distintos montos
-                txtmontototal.Text = oVenta.MontoTotal.ToString("0.00");
-                txtmontopago.Text = oVenta.MontoPago.ToString("0.00");
-                txtmontocambio.Text = oVenta.MontoCambio.ToString("0.00");
-                txtmetodopago.Text = oVenta.DesMetPago;
-            }
-        }
-
-
-        private void btnlimpiar_Click_1(object sender, EventArgs e)
-        {
-            txtbusqueda.Text = "";
-            txtnumerodocumento.Text = "";
-            txtfecha.Text = "";
-            txttipodocumento.Text = "";
-            txtusuarioapellido.Text = "";
-
-            txtdoccliente.Text = "";
-            txtapellidocliente.Text = "";
-            dgvdata.Rows.Clear();
-            txtmontototal.Text = "0.00";
-            txtmontopago.Text = "0.00";
-            txtmontocambio.Text = "0.00";
-            txtmetodopago.Text = "";
-        }
+        //--------------------------------------------------------------------------------------------------------------------------------
 
         private void btnpdf_Click_1(object sender, EventArgs e)
         {
@@ -179,14 +120,35 @@ namespace CapaPresentacion
             {
                 filas += "<tr>";
                 filas += "<td>" + row.Cells["Producto"].Value.ToString() + "</td>";
-                filas += "<td>" + row.Cells["Precio"].Value.ToString() + "</td>";
+
+                // Formateo de Precio y Subtotal
+                string precioFormatted = Convert.ToDecimal(row.Cells["Precio"].Value).ToString("#,0.00").Replace(",", ".");
+                filas += "<td>" + precioFormatted + "</td>";
+
                 filas += "<td>" + row.Cells["Cantidad"].Value.ToString() + "</td>";
-                filas += "<td>" + row.Cells["SubTotal"].Value.ToString() + "</td>";
+
+                // Formateo de SubTotal
+                string subTotalFormatted = Convert.ToDecimal(row.Cells["SubTotal"].Value).ToString("#,0.00").Replace(",", ".");
+                filas += "<td>" + subTotalFormatted + "</td>";
+
                 filas += "</tr>";
-                total += decimal.Parse(row.Cells["SubTotal"].Value.ToString());
+                total += Convert.ToDecimal(row.Cells["SubTotal"].Value);
             }
+
+
+            // Formato de miles y decimales para el total
+            string totalFormatted = total.ToString("#,0.00", CultureInfo.InvariantCulture);  // 1,000.50
+
+            // Reemplazar la coma por el punto decimal (en caso de querer usar coma como separador de decimales)
+            totalFormatted = totalFormatted.Replace(",", ".");
+            //totalFormatted = totalFormatted.Replace(".", ","); // Esto cambiará el punto por la coma en el formato
+
+            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@TOTAL", totalFormatted);
+
+
+
             PaginaHTML_Texto = PaginaHTML_Texto.Replace("@FILAS", filas);
-            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@TOTAL", total.ToString());
+            //PaginaHTML_Texto = PaginaHTML_Texto.Replace("@TOTAL", total.ToString());
 
             if (savefile.ShowDialog() == DialogResult.OK)
             {
@@ -220,6 +182,8 @@ namespace CapaPresentacion
 
             }
         }
+
+        //--------------------------------------------------------------------------------------------------------------------------------
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
@@ -261,12 +225,14 @@ namespace CapaPresentacion
                 }
 
                 // Información de los distintos montos
-                txtmontototal.Text = oVenta.MontoTotal.ToString("0.00");
-                txtmontopago.Text = oVenta.MontoPago.ToString("0.00");
-                txtmontocambio.Text = oVenta.MontoCambio.ToString("0.00");
+                txtmontototal.Text = oVenta.MontoTotal.ToString("#,0.00");
+                txtmontopago.Text = oVenta.MontoPago.ToString("#,0.00");
+                txtmontocambio.Text = oVenta.MontoCambio.ToString("#,0.00");
                 txtmetodopago.Text = oVenta.DesMetPago;
             }
         }
+
+        //--------------------------------------------------------------------------------------------------------------------------------
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
