@@ -485,6 +485,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="chatgpt_logo_oro_QXZ_icon.ico" />
+    <None Include="Resources\vendedorBorde.png" />
+    <None Include="Resources\guardar-datos.png" />
+    <None Include="Resources\actualizarBorde40.png" />
+    <None Include="Resources\actualizar40.png" />
+    <None Include="Resources\vendedor40.png" />
+    <None Include="Resources\herramientas40.png" />
+    <None Include="Resources\estadistica40.png" />
     <None Include="Resources\compras40.png" />
     <None Include="Resources\tecnologiaBorde40.png" />
     <None Include="Resources\clasificacion40.png" />

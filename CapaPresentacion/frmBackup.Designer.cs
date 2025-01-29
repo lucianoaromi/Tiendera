@@ -65,7 +65,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(31, 48);
+            this.label3.Location = new System.Drawing.Point(31, 57);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 21);
@@ -77,7 +77,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(24, 47);
+            this.label5.Location = new System.Drawing.Point(28, 58);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(81, 21);
@@ -88,20 +88,22 @@
             // 
             this.txt_backup.Enabled = false;
             this.txt_backup.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_backup.Location = new System.Drawing.Point(119, 47);
+            this.txt_backup.Location = new System.Drawing.Point(119, 55);
+            this.txt_backup.Multiline = true;
             this.txt_backup.Name = "txt_backup";
-            this.txt_backup.Size = new System.Drawing.Size(475, 27);
-            this.txt_backup.TabIndex = 7;
+            this.txt_backup.Size = new System.Drawing.Size(475, 30);
+            this.txt_backup.TabIndex = 1;
             this.txt_backup.Text = " Seleccione un destino...";
             // 
             // txt_restore
             // 
             this.txt_restore.Enabled = false;
             this.txt_restore.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_restore.Location = new System.Drawing.Point(116, 47);
+            this.txt_restore.Location = new System.Drawing.Point(116, 56);
+            this.txt_restore.Multiline = true;
             this.txt_restore.Name = "txt_restore";
-            this.txt_restore.Size = new System.Drawing.Size(475, 27);
-            this.txt_restore.TabIndex = 8;
+            this.txt_restore.Size = new System.Drawing.Size(475, 30);
+            this.txt_restore.TabIndex = 4;
             this.txt_restore.Text = " Seleccione el archivo .bak";
             // 
             // btn_examinar_backup
@@ -119,7 +121,7 @@
             this.btn_examinar_backup.Name = "btn_examinar_backup";
             this.btn_examinar_backup.Padding = new System.Windows.Forms.Padding(0, 0, 15, 0);
             this.btn_examinar_backup.Size = new System.Drawing.Size(150, 36);
-            this.btn_examinar_backup.TabIndex = 47;
+            this.btn_examinar_backup.TabIndex = 2;
             this.btn_examinar_backup.Text = "Examinar...";
             this.btn_examinar_backup.UseVisualStyleBackColor = false;
             this.btn_examinar_backup.Click += new System.EventHandler(this.btn_examinar_backup_Click);
@@ -140,7 +142,7 @@
             this.btn_backup.Name = "btn_backup";
             this.btn_backup.Padding = new System.Windows.Forms.Padding(0, 0, 15, 0);
             this.btn_backup.Size = new System.Drawing.Size(150, 36);
-            this.btn_backup.TabIndex = 48;
+            this.btn_backup.TabIndex = 3;
             this.btn_backup.Text = "Backup";
             this.btn_backup.UseVisualStyleBackColor = false;
             this.btn_backup.Click += new System.EventHandler(this.btn_backup_Click);
@@ -160,7 +162,7 @@
             this.btn_examinar_restore.Name = "btn_examinar_restore";
             this.btn_examinar_restore.Padding = new System.Windows.Forms.Padding(0, 0, 15, 0);
             this.btn_examinar_restore.Size = new System.Drawing.Size(150, 36);
-            this.btn_examinar_restore.TabIndex = 49;
+            this.btn_examinar_restore.TabIndex = 5;
             this.btn_examinar_restore.Text = "Examinar...";
             this.btn_examinar_restore.UseVisualStyleBackColor = false;
             this.btn_examinar_restore.Click += new System.EventHandler(this.btn_examinar_restore_Click);
@@ -181,7 +183,7 @@
             this.btn_restore.Name = "btn_restore";
             this.btn_restore.Padding = new System.Windows.Forms.Padding(0, 0, 15, 0);
             this.btn_restore.Size = new System.Drawing.Size(150, 36);
-            this.btn_restore.TabIndex = 50;
+            this.btn_restore.TabIndex = 6;
             this.btn_restore.Text = "Restaurar";
             this.btn_restore.UseVisualStyleBackColor = false;
             this.btn_restore.Click += new System.EventHandler(this.btn_restore_Click);
@@ -209,7 +211,7 @@
             this.groupBox2.Size = new System.Drawing.Size(800, 140);
             this.groupBox2.TabIndex = 52;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Realizar backup";
+            this.groupBox2.Text = "Realizar Backup";
             // 
             // groupBox1
             // 
@@ -223,7 +225,7 @@
             this.groupBox1.Size = new System.Drawing.Size(800, 140);
             this.groupBox1.TabIndex = 51;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Restaurar base de datos";
+            this.groupBox1.Text = "Restaurar Base de Datos";
             // 
             // panel2
             // 

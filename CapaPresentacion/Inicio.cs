@@ -31,9 +31,6 @@ namespace CapaPresentacion
         private const int HTCAPTION = 0x2;
 
 
-
-
-
         //Se crea una variable de tipo Usuario, global para todos los metodos de esta clase
         private static Usuario usuarioActual;
         //Almacena el menu activo
@@ -53,7 +50,7 @@ namespace CapaPresentacion
             InitializeComponent();
         }
         
-
+        //--------------------------------------------------------------------------------------------------------------
 
         private void Inicio_Load(object sender, EventArgs e)
         {
@@ -78,11 +75,16 @@ namespace CapaPresentacion
                     iconmenu.Visible = false;
                 }
 
-                //---------------------------------------------------------------------
+                //--------------------------------------------------------------------- 
                 //Caragar imagenes a iconos de Iicio latelar
                 menuventas.Image = Properties.Resources.compras40;
+                menudetalleventa.Image = Properties.Resources.compras40;
                 menuverproductos.Image = Properties.Resources.tecnologiaBorde40;
                 menuclientes.Image = Properties.Resources.clasificacion40;
+                menuestadisticas.Image = Properties.Resources.estadistica40;
+                menumantenedor.Image = Properties.Resources.herramientas40;
+                menuusuarios.Image = Properties.Resources.vendedorBorde;
+                menubackup.Image = Properties.Resources.guardar_datos;
 
 
             }
@@ -98,6 +100,7 @@ namespace CapaPresentacion
 
         }
 
+        //--------------------------------------------------------------------------------------------------------------
 
         //Metodo para mostrar la hora
         private void timerReloj_Tick_1(object sender, EventArgs e)
@@ -105,6 +108,8 @@ namespace CapaPresentacion
             lblreloj.Text = DateTime.Now.ToString("hh:mm tt");
             lblfecha.Text = DateTime.Now.ToLongDateString();
         }
+
+        //--------------------------------------------------------------------------------------------------------------
 
         //Recibe el boton del menu seleccionado y el formulario a mostrar
         private void AbrirFormulario(IconMenuItem menu, Form formulario)
@@ -146,7 +151,8 @@ namespace CapaPresentacion
 
         }
 
-        
+        //--------------------------------------------------------------------------------------------------------------
+
         private void menuusuarios_Click(object sender, EventArgs e)
         {
             //Envia el menu seleccionado y el formulario a mostrar como parametros. "Es necesario castearlo previamente"
@@ -155,6 +161,7 @@ namespace CapaPresentacion
 
         }
 
+        //--------------------------------------------------------------------------------------------------------------
 
         private void submenucategoria_Click(object sender, EventArgs e)
         {
@@ -241,16 +248,6 @@ namespace CapaPresentacion
         private void panelclousing()
         {
             panelvista.Visible = false;
-        }
-
-        private void lblusuario_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
