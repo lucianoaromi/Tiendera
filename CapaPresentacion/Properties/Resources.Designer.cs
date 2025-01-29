@@ -93,6 +93,46 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap clasificacion {
+            get {
+                object obj = ResourceManager.GetObject("clasificacion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap clasificacion40 {
+            get {
+                object obj = ResourceManager.GetObject("clasificacion40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap clasificacion45 {
+            get {
+                object obj = ResourceManager.GetObject("clasificacion45", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap compras40 {
+            get {
+                object obj = ResourceManager.GetObject("compras40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap compras50 {
             get {
                 object obj = ResourceManager.GetObject("compras50", resourceCulture);
@@ -155,6 +195,16 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap tecnologiaBorde40 {
+            get {
+                object obj = ResourceManager.GetObject("tecnologiaBorde40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap tecnologiaBorde50 {
             get {
                 object obj = ResourceManager.GetObject("tecnologiaBorde50", resourceCulture);
@@ -198,6 +248,16 @@ namespace CapaPresentacion.Properties {
         internal static System.Drawing.Bitmap verlistaColorGrande {
             get {
                 object obj = ResourceManager.GetObject("verlistaColorGrande", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap verlistaColornotexto {
+            get {
+                object obj = ResourceManager.GetObject("verlistaColornotexto", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

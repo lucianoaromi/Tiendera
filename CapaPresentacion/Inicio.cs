@@ -80,8 +80,9 @@ namespace CapaPresentacion
 
                 //---------------------------------------------------------------------
                 //Caragar imagenes a iconos de Iicio latelar
-                menuventas.Image = Properties.Resources.compras50;
-                menuverproductos.Image = Properties.Resources.tecnologiaBorde50;
+                menuventas.Image = Properties.Resources.compras40;
+                menuverproductos.Image = Properties.Resources.tecnologiaBorde40;
+                menuclientes.Image = Properties.Resources.clasificacion40;
 
 
             }
