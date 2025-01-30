@@ -496,7 +496,7 @@ namespace CapaPresentacion
             GroupBox box = sender as GroupBox;
             if (box != null)
             {
-                int borderWidth = 3;
+                int borderWidth = 1;
                 System.Drawing.Color borderColor = System.Drawing.Color.White; // Personalizar color del borde
 
                 // Dibujar el fondo

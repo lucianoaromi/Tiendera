@@ -45,13 +45,13 @@ namespace CapaPresentacion
             this.EstadoEntrega = new System.Windows.Forms.DataGridViewButtonColumn();
             this.IdVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.picOrdenarColor = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtResultado = new System.Windows.Forms.TextBox();
             this.txtTotal = new System.Windows.Forms.TextBox();
-            this.picOrdenarColor = new System.Windows.Forms.PictureBox();
             this.lblapeusuario = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lblidusuario = new System.Windows.Forms.TextBox();
@@ -72,31 +72,31 @@ namespace CapaPresentacion
             this.txtfechainicio = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtindice = new System.Windows.Forms.TextBox();
-            this.txtid = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtindice = new System.Windows.Forms.TextBox();
+            this.txtid = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).BeginInit();
             this.panel4.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picOrdenarColor)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFiltrar)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBuscarFecha)).BeginInit();
             this.panel2.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -126,7 +126,7 @@ namespace CapaPresentacion
             this.EstadoPago,
             this.EstadoEntrega,
             this.IdVenta});
-            this.dgvdata.Location = new System.Drawing.Point(18, 162);
+            this.dgvdata.Location = new System.Drawing.Point(18, 163);
             this.dgvdata.Name = "dgvdata";
             this.dgvdata.ReadOnly = true;
             this.dgvdata.RowHeadersWidth = 51;
@@ -240,6 +240,17 @@ namespace CapaPresentacion
             this.panel4.Size = new System.Drawing.Size(955, 155);
             this.panel4.TabIndex = 28;
             // 
+            // picOrdenarColor
+            // 
+            this.picOrdenarColor.Image = ((System.Drawing.Image)(resources.GetObject("picOrdenarColor.Image")));
+            this.picOrdenarColor.Location = new System.Drawing.Point(848, 75);
+            this.picOrdenarColor.Name = "picOrdenarColor";
+            this.picOrdenarColor.Size = new System.Drawing.Size(75, 70);
+            this.picOrdenarColor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picOrdenarColor.TabIndex = 53;
+            this.picOrdenarColor.TabStop = false;
+            this.picOrdenarColor.Click += new System.EventHandler(this.picOrdenarColor_Click);
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.label9);
@@ -249,7 +260,7 @@ namespace CapaPresentacion
             this.groupBox3.Controls.Add(this.txtTotal);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(383, 8);
+            this.groupBox3.Location = new System.Drawing.Point(383, 9);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(443, 56);
             this.groupBox3.TabIndex = 56;
@@ -306,17 +317,6 @@ namespace CapaPresentacion
             this.txtTotal.Size = new System.Drawing.Size(135, 22);
             this.txtTotal.TabIndex = 54;
             // 
-            // picOrdenarColor
-            // 
-            this.picOrdenarColor.Image = ((System.Drawing.Image)(resources.GetObject("picOrdenarColor.Image")));
-            this.picOrdenarColor.Location = new System.Drawing.Point(848, 74);
-            this.picOrdenarColor.Name = "picOrdenarColor";
-            this.picOrdenarColor.Size = new System.Drawing.Size(75, 70);
-            this.picOrdenarColor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picOrdenarColor.TabIndex = 53;
-            this.picOrdenarColor.TabStop = false;
-            this.picOrdenarColor.Click += new System.EventHandler(this.picOrdenarColor_Click);
-            // 
             // lblapeusuario
             // 
             this.lblapeusuario.BackColor = System.Drawing.Color.White;
@@ -332,7 +332,7 @@ namespace CapaPresentacion
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Leelawadee", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Gold;
-            this.label3.Location = new System.Drawing.Point(41, 18);
+            this.label3.Location = new System.Drawing.Point(41, 20);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(263, 32);
             this.label3.TabIndex = 31;
@@ -358,7 +358,7 @@ namespace CapaPresentacion
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(843, 11);
+            this.button3.Location = new System.Drawing.Point(843, 12);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(85, 56);
             this.button3.TabIndex = 16;
@@ -389,7 +389,7 @@ namespace CapaPresentacion
             this.groupBox2.Controls.Add(this.txtbusqueda);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.Transparent;
-            this.groupBox2.Location = new System.Drawing.Point(383, 70);
+            this.groupBox2.Location = new System.Drawing.Point(383, 71);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(443, 75);
             this.groupBox2.TabIndex = 15;
@@ -464,7 +464,7 @@ namespace CapaPresentacion
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Location = new System.Drawing.Point(22, 69);
+            this.groupBox1.Location = new System.Drawing.Point(21, 70);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(349, 75);
             this.groupBox1.TabIndex = 0;
@@ -541,6 +541,37 @@ namespace CapaPresentacion
             this.panel2.Size = new System.Drawing.Size(36, 633);
             this.panel2.TabIndex = 34;
             // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.panel5.Controls.Add(this.textBox3);
+            this.panel5.Controls.Add(this.textBox4);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(20, 633);
+            this.panel5.TabIndex = 65;
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.DimGray;
+            this.textBox3.Location = new System.Drawing.Point(162, 14);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(1, 20);
+            this.textBox3.TabIndex = 1;
+            this.textBox3.Text = "-1";
+            this.textBox3.Visible = false;
+            // 
+            // textBox4
+            // 
+            this.textBox4.BackColor = System.Drawing.Color.DimGray;
+            this.textBox4.Location = new System.Drawing.Point(191, 14);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(1, 20);
+            this.textBox4.TabIndex = 0;
+            this.textBox4.Text = "0";
+            this.textBox4.Visible = false;
+            // 
             // txtindice
             // 
             this.txtindice.BackColor = System.Drawing.Color.DimGray;
@@ -573,29 +604,9 @@ namespace CapaPresentacion
             this.panel3.Size = new System.Drawing.Size(39, 633);
             this.panel3.TabIndex = 35;
             // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.DimGray;
-            this.textBox1.Location = new System.Drawing.Point(162, 14);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(1, 20);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "-1";
-            this.textBox1.Visible = false;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.DimGray;
-            this.textBox2.Location = new System.Drawing.Point(191, 14);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(1, 20);
-            this.textBox2.TabIndex = 0;
-            this.textBox2.Text = "0";
-            this.textBox2.Visible = false;
-            // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.DarkCyan;
+            this.panel6.BackColor = System.Drawing.Color.MediumTurquoise;
             this.panel6.Controls.Add(this.textBox5);
             this.panel6.Controls.Add(this.textBox6);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
@@ -624,36 +635,25 @@ namespace CapaPresentacion
             this.textBox6.Text = "0";
             this.textBox6.Visible = false;
             // 
-            // panel5
+            // textBox1
             // 
-            this.panel5.BackColor = System.Drawing.Color.DarkCyan;
-            this.panel5.Controls.Add(this.textBox3);
-            this.panel5.Controls.Add(this.textBox4);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(20, 633);
-            this.panel5.TabIndex = 65;
+            this.textBox1.BackColor = System.Drawing.Color.DimGray;
+            this.textBox1.Location = new System.Drawing.Point(162, 14);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(1, 20);
+            this.textBox1.TabIndex = 1;
+            this.textBox1.Text = "-1";
+            this.textBox1.Visible = false;
             // 
-            // textBox3
+            // textBox2
             // 
-            this.textBox3.BackColor = System.Drawing.Color.DimGray;
-            this.textBox3.Location = new System.Drawing.Point(162, 14);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(1, 20);
-            this.textBox3.TabIndex = 1;
-            this.textBox3.Text = "-1";
-            this.textBox3.Visible = false;
-            // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.Color.DimGray;
-            this.textBox4.Location = new System.Drawing.Point(191, 14);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(1, 20);
-            this.textBox4.TabIndex = 0;
-            this.textBox4.Text = "0";
-            this.textBox4.Visible = false;
+            this.textBox2.BackColor = System.Drawing.Color.DimGray;
+            this.textBox2.Location = new System.Drawing.Point(191, 14);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(1, 20);
+            this.textBox2.TabIndex = 0;
+            this.textBox2.Text = "0";
+            this.textBox2.Visible = false;
             // 
             // frmReportes
             // 
@@ -671,9 +671,9 @@ namespace CapaPresentacion
             ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picOrdenarColor)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picOrdenarColor)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -683,12 +683,12 @@ namespace CapaPresentacion
             ((System.ComponentModel.ISupportInitialize)(this.picBuscarFecha)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }

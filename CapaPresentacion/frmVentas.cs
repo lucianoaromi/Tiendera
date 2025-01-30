@@ -79,7 +79,7 @@ namespace CapaPresentacion
             cbometodopago.SelectedIndex = 0;
             txtidcliente.Focus();
 
-            this.BackColor = DrawingColor.DarkSlateGray;
+            this.BackColor = DrawingColor.DarkSlateGray; //----------
         }
 
         //-----------------------------------------------------------
@@ -501,7 +501,7 @@ namespace CapaPresentacion
             GroupBox box = sender as GroupBox;
             if (box != null)
             {
-                int borderWidth = 3;
+                int borderWidth = 1;
                 System.Drawing.Color borderColor = System.Drawing.Color.Silver; // Personalizar color del borde
                 //System.Drawing.Color borderColor = System.Drawing.Color.FromArgb(64, 64, 64);
 
