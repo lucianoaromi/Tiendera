@@ -48,6 +48,7 @@ namespace CapaPresentacion
             this.label9 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtnombrecliente = new System.Windows.Forms.TextBox();
             this.txtnumerodocumento = new System.Windows.Forms.TextBox();
@@ -56,6 +57,7 @@ namespace CapaPresentacion
             this.label5 = new System.Windows.Forms.Label();
             this.txtapellidocliente = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.txtusuarionombre = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -66,14 +68,12 @@ namespace CapaPresentacion
             this.txttipodocumento = new System.Windows.Forms.TextBox();
             this.txtmontototal = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.txtbusqueda = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).BeginInit();
@@ -281,6 +281,17 @@ namespace CapaPresentacion
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label15.Location = new System.Drawing.Point(8, -2);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(113, 15);
+            this.label15.TabIndex = 61;
+            this.label15.Text = "Informacion Cliente";
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -364,6 +375,17 @@ namespace CapaPresentacion
             this.groupBox2.Size = new System.Drawing.Size(724, 79);
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label14.Location = new System.Drawing.Point(6, -2);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(106, 15);
+            this.label14.TabIndex = 60;
+            this.label14.Text = "Informacion Venta";
             // 
             // label11
             // 
@@ -463,6 +485,17 @@ namespace CapaPresentacion
             this.groupBox4.TabIndex = 17;
             this.groupBox4.TabStop = false;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label13.Location = new System.Drawing.Point(6, -2);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(91, 15);
+            this.label13.TabIndex = 59;
+            this.label13.Text = "Por documento";
+            // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
@@ -513,39 +546,6 @@ namespace CapaPresentacion
             this.panel2.Size = new System.Drawing.Size(771, 583);
             this.panel2.TabIndex = 1;
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label13.Location = new System.Drawing.Point(6, -2);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(91, 15);
-            this.label13.TabIndex = 59;
-            this.label13.Text = "Por documento";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label14.Location = new System.Drawing.Point(6, -2);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(106, 15);
-            this.label14.TabIndex = 60;
-            this.label14.Text = "Informacion Venta";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label15.Location = new System.Drawing.Point(8, -2);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(113, 15);
-            this.label15.TabIndex = 61;
-            this.label15.Text = "Informacion Cliente";
-            // 
             // frmDetalleVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -556,7 +556,6 @@ namespace CapaPresentacion
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmDetalleVenta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmDetalleVenta";
             this.Load += new System.EventHandler(this.frmDetalleVenta_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

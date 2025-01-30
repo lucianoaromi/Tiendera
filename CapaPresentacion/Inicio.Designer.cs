@@ -50,6 +50,11 @@
             this.lblusuario = new System.Windows.Forms.Label();
             this.contenedor = new System.Windows.Forms.Panel();
             this.panelvista = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lblfecha = new System.Windows.Forms.Label();
+            this.lblusuarioinicio = new System.Windows.Forms.Label();
+            this.lblreloj = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtidusuario = new System.Windows.Forms.TextBox();
             this.timerReloj = new System.Windows.Forms.Timer(this.components);
@@ -58,22 +63,17 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblfecha = new System.Windows.Forms.Label();
-            this.lblreloj = new System.Windows.Forms.Label();
-            this.lblusuarioinicio = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.menu.SuspendLayout();
             this.contenedor.SuspendLayout();
             this.panelvista.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // menu
@@ -322,6 +322,67 @@
             this.panelvista.Size = new System.Drawing.Size(983, 599);
             this.panelvista.TabIndex = 4;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel3.Controls.Add(this.pictureBox2);
+            this.panel3.Controls.Add(this.lblfecha);
+            this.panel3.Controls.Add(this.lblusuarioinicio);
+            this.panel3.Controls.Add(this.lblreloj);
+            this.panel3.Location = new System.Drawing.Point(9, 7);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(966, 583);
+            this.panel3.TabIndex = 4;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.InitialImage = null;
+            this.pictureBox2.Location = new System.Drawing.Point(380, 73);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(209, 209);
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
+            // 
+            // lblfecha
+            // 
+            this.lblfecha.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblfecha.AutoSize = true;
+            this.lblfecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfecha.ForeColor = System.Drawing.Color.White;
+            this.lblfecha.Location = new System.Drawing.Point(258, 462);
+            this.lblfecha.Name = "lblfecha";
+            this.lblfecha.Size = new System.Drawing.Size(308, 37);
+            this.lblfecha.TabIndex = 1;
+            this.lblfecha.Text = "dia, 00 de mes 0000";
+            // 
+            // lblusuarioinicio
+            // 
+            this.lblusuarioinicio.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblusuarioinicio.AutoSize = true;
+            this.lblusuarioinicio.BackColor = System.Drawing.Color.Transparent;
+            this.lblusuarioinicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblusuarioinicio.ForeColor = System.Drawing.Color.White;
+            this.lblusuarioinicio.Location = new System.Drawing.Point(344, 299);
+            this.lblusuarioinicio.Name = "lblusuarioinicio";
+            this.lblusuarioinicio.Size = new System.Drawing.Size(100, 25);
+            this.lblusuarioinicio.TabIndex = 2;
+            this.lblusuarioinicio.Text = "(Usuario)";
+            // 
+            // lblreloj
+            // 
+            this.lblreloj.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblreloj.AutoSize = true;
+            this.lblreloj.Font = new System.Drawing.Font("Poplar Std", 65.24999F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblreloj.ForeColor = System.Drawing.Color.White;
+            this.lblreloj.Location = new System.Drawing.Point(325, 338);
+            this.lblreloj.Name = "lblreloj";
+            this.lblreloj.Size = new System.Drawing.Size(288, 104);
+            this.lblreloj.TabIndex = 0;
+            this.lblreloj.Text = "00:00 hs";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Black;
@@ -410,67 +471,6 @@
             this.panel2.Size = new System.Drawing.Size(1125, 638);
             this.panel2.TabIndex = 5;
             // 
-            // lblfecha
-            // 
-            this.lblfecha.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblfecha.AutoSize = true;
-            this.lblfecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblfecha.ForeColor = System.Drawing.Color.White;
-            this.lblfecha.Location = new System.Drawing.Point(252, 458);
-            this.lblfecha.Name = "lblfecha";
-            this.lblfecha.Size = new System.Drawing.Size(308, 37);
-            this.lblfecha.TabIndex = 1;
-            this.lblfecha.Text = "dia, 00 de mes 0000";
-            // 
-            // lblreloj
-            // 
-            this.lblreloj.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblreloj.AutoSize = true;
-            this.lblreloj.Font = new System.Drawing.Font("Poplar Std", 65.24999F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblreloj.ForeColor = System.Drawing.Color.White;
-            this.lblreloj.Location = new System.Drawing.Point(319, 334);
-            this.lblreloj.Name = "lblreloj";
-            this.lblreloj.Size = new System.Drawing.Size(288, 104);
-            this.lblreloj.TabIndex = 0;
-            this.lblreloj.Text = "00:00 hs";
-            // 
-            // lblusuarioinicio
-            // 
-            this.lblusuarioinicio.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblusuarioinicio.AutoSize = true;
-            this.lblusuarioinicio.BackColor = System.Drawing.Color.Transparent;
-            this.lblusuarioinicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblusuarioinicio.ForeColor = System.Drawing.Color.White;
-            this.lblusuarioinicio.Location = new System.Drawing.Point(338, 295);
-            this.lblusuarioinicio.Name = "lblusuarioinicio";
-            this.lblusuarioinicio.Size = new System.Drawing.Size(100, 25);
-            this.lblusuarioinicio.TabIndex = 2;
-            this.lblusuarioinicio.Text = "(Usuario)";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.InitialImage = null;
-            this.pictureBox2.Location = new System.Drawing.Point(374, 69);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(209, 209);
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.panel3.Controls.Add(this.pictureBox2);
-            this.panel3.Controls.Add(this.lblfecha);
-            this.panel3.Controls.Add(this.lblusuarioinicio);
-            this.panel3.Controls.Add(this.lblreloj);
-            this.panel3.Location = new System.Drawing.Point(15, 12);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(954, 574);
-            this.panel3.TabIndex = 4;
-            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -488,6 +488,9 @@
             this.menu.PerformLayout();
             this.contenedor.ResumeLayout(false);
             this.panelvista.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -496,9 +499,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }

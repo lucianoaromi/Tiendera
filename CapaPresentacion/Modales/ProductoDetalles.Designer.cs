@@ -232,7 +232,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "ProductoDetalles";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormDetalles";
             this.Load += new System.EventHandler(this.FormDetalles_Load);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
