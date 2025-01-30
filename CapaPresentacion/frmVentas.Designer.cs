@@ -739,7 +739,7 @@ namespace CapaPresentacion
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel4.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panel4.Controls.Add(this.panel3);
             this.panel4.Controls.Add(this.txtindice);
             this.panel4.Controls.Add(this.txtid);
@@ -751,7 +751,7 @@ namespace CapaPresentacion
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel3.Controls.Add(this.textBox3);
             this.panel3.Controls.Add(this.textBox4);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
@@ -802,7 +802,7 @@ namespace CapaPresentacion
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel5.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panel5.Controls.Add(this.panel6);
             this.panel5.Controls.Add(this.textBox1);
             this.panel5.Controls.Add(this.textBox2);
@@ -814,7 +814,7 @@ namespace CapaPresentacion
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel6.Controls.Add(this.textBox5);
             this.panel6.Controls.Add(this.textBox6);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
