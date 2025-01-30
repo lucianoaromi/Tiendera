@@ -80,7 +80,8 @@ namespace CapaPresentacion
             }
 
             txtdocumento.Focus();
-            txtdocumento.TabIndex = 0;
+            /*
+            //txtdocumento.TabIndex = 0;
             txtapellido.TabIndex = 1;
             txtnombre.TabIndex = 2;
             txtdireccion.TabIndex = 3;
@@ -89,6 +90,7 @@ namespace CapaPresentacion
             txtconfirmarclave.TabIndex = 6;
             cborol.TabIndex = 7;
             cboestado.TabIndex = 8;
+            */
         }
 
         //------------------------------------------------------------------------------------------------------------------------------------------
