@@ -35,7 +35,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>chatgpt_logo_oro_QXZ_icon.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Azure.Core, Version=1.38.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
@@ -484,7 +485,6 @@
     <None Include="Resources\verdetallenegro.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="chatgpt_logo_oro_QXZ_icon.ico" />
     <None Include="Resources\vendedorBorde.png" />
     <None Include="Resources\guardar-datos.png" />
     <None Include="Resources\actualizarBorde40.png" />
