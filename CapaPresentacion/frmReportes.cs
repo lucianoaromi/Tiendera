@@ -15,8 +15,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DrawingColor = System.Drawing.Color;
 
-using SpreadsheetColor = DocumentFormat.OpenXml.Spreadsheet.Color; //------
+using SpreadsheetColor = DocumentFormat.OpenXml.Spreadsheet.Color; //------  
 
 namespace CapaPresentacion
 {
@@ -67,6 +68,8 @@ namespace CapaPresentacion
             lblidusuario.Text = Convert.ToString(_Usuario.IdUsuario);
             lblidrol.Text = Convert.ToString(_Usuario.oRol.IdRol);
             lblapeusuario.Text = $"{Convert.ToString(_Usuario.Apellido)}, {Convert.ToString(_Usuario.Nombre)}";
+
+            this.BackColor = DrawingColor.DarkSlateGray;
         }
 
         //--------------------------------------------------------------------------------------------------------------------------------
@@ -494,7 +497,7 @@ namespace CapaPresentacion
             if (box != null)
             {
                 int borderWidth = 3;
-                System.Drawing.Color borderColor = System.Drawing.Color.DarkSlateGray; // Personalizar color del borde
+                System.Drawing.Color borderColor = System.Drawing.Color.White; // Personalizar color del borde
 
                 // Dibujar el fondo
                 e.Graphics.Clear(this.BackColor);

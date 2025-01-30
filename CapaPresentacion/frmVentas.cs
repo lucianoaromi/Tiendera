@@ -16,6 +16,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Org.BouncyCastle.Math.Primes;
 using SpreadsheetColor = DocumentFormat.OpenXml.Spreadsheet.Color; //------
+using DrawingColor = System.Drawing.Color;
 
 namespace CapaPresentacion
 {
@@ -77,6 +78,8 @@ namespace CapaPresentacion
             //Se selecciona siempre el indice 0
             cbometodopago.SelectedIndex = 0;
             txtidcliente.Focus();
+
+            this.BackColor = DrawingColor.DarkSlateGray;
         }
 
         //-----------------------------------------------------------
@@ -499,7 +502,9 @@ namespace CapaPresentacion
             if (box != null)
             {
                 int borderWidth = 3;
-                System.Drawing.Color borderColor = System.Drawing.Color.DarkSlateGray; // Personalizar color del borde
+                System.Drawing.Color borderColor = System.Drawing.Color.Silver; // Personalizar color del borde
+                //System.Drawing.Color borderColor = System.Drawing.Color.FromArgb(64, 64, 64);
+
 
                 // Dibujar el fondo
                 e.Graphics.Clear(this.BackColor);

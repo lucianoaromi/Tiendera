@@ -94,6 +94,12 @@ namespace CapaPresentacion
             this.panel5 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPDF)).BeginInit();
@@ -111,11 +117,13 @@ namespace CapaPresentacion
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DarkCyan;
+            this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panel1.Controls.Add(this.groupBox3);
             this.panel1.Location = new System.Drawing.Point(34, 246);
             this.panel1.Name = "panel1";
@@ -124,7 +132,7 @@ namespace CapaPresentacion
             // 
             // groupBox3
             // 
-            this.groupBox3.BackColor = System.Drawing.Color.DarkCyan;
+            this.groupBox3.BackColor = System.Drawing.Color.DarkSlateGray;
             this.groupBox3.Controls.Add(this.btnpdf);
             this.groupBox3.Controls.Add(this.label19);
             this.groupBox3.Controls.Add(this.txtOutput);
@@ -704,7 +712,7 @@ namespace CapaPresentacion
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.DarkCyan;
+            this.panel2.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panel2.Controls.Add(this.label17);
             this.panel2.Controls.Add(this.txtnumventa);
             this.panel2.Controls.Add(this.groupBox4);
@@ -731,13 +739,14 @@ namespace CapaPresentacion
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel4.Controls.Add(this.panel3);
             this.panel4.Controls.Add(this.txtindice);
             this.panel4.Controls.Add(this.txtid);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(38, 624);
+            this.panel4.Size = new System.Drawing.Size(34, 624);
             this.panel4.TabIndex = 35;
             // 
             // txtindice
@@ -762,13 +771,14 @@ namespace CapaPresentacion
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel5.Controls.Add(this.panel6);
             this.panel5.Controls.Add(this.textBox1);
             this.panel5.Controls.Add(this.textBox2);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(974, 0);
+            this.panel5.Location = new System.Drawing.Point(983, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(45, 624);
+            this.panel5.Size = new System.Drawing.Size(36, 624);
             this.panel5.TabIndex = 36;
             // 
             // textBox1
@@ -791,11 +801,73 @@ namespace CapaPresentacion
             this.textBox2.Text = "0";
             this.textBox2.Visible = false;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.DarkCyan;
+            this.panel3.Controls.Add(this.textBox3);
+            this.panel3.Controls.Add(this.textBox4);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(17, 624);
+            this.panel3.TabIndex = 63;
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.DimGray;
+            this.textBox3.Location = new System.Drawing.Point(162, 14);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(1, 20);
+            this.textBox3.TabIndex = 1;
+            this.textBox3.Text = "-1";
+            this.textBox3.Visible = false;
+            // 
+            // textBox4
+            // 
+            this.textBox4.BackColor = System.Drawing.Color.DimGray;
+            this.textBox4.Location = new System.Drawing.Point(191, 14);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(1, 20);
+            this.textBox4.TabIndex = 0;
+            this.textBox4.Text = "0";
+            this.textBox4.Visible = false;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.DarkCyan;
+            this.panel6.Controls.Add(this.textBox5);
+            this.panel6.Controls.Add(this.textBox6);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel6.Location = new System.Drawing.Point(19, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(17, 624);
+            this.panel6.TabIndex = 64;
+            // 
+            // textBox5
+            // 
+            this.textBox5.BackColor = System.Drawing.Color.DimGray;
+            this.textBox5.Location = new System.Drawing.Point(162, 14);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(1, 20);
+            this.textBox5.TabIndex = 1;
+            this.textBox5.Text = "-1";
+            this.textBox5.Visible = false;
+            // 
+            // textBox6
+            // 
+            this.textBox6.BackColor = System.Drawing.Color.DimGray;
+            this.textBox6.Location = new System.Drawing.Point(191, 14);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(1, 20);
+            this.textBox6.TabIndex = 0;
+            this.textBox6.Text = "0";
+            this.textBox6.Visible = false;
+            // 
             // frmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkCyan;
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(1019, 624);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -829,6 +901,10 @@ namespace CapaPresentacion
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -898,5 +974,11 @@ namespace CapaPresentacion
         private Label label17;
         private Label label19;
         private Button btnpdf;
+        private Panel panel3;
+        private TextBox textBox3;
+        private TextBox textBox4;
+        private Panel panel6;
+        private TextBox textBox5;
+        private TextBox textBox6;
     }
 }
