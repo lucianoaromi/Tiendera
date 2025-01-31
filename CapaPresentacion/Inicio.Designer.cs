@@ -60,10 +60,10 @@
             this.timerReloj = new System.Windows.Forms.Timer(this.components);
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.menu.SuspendLayout();
             this.contenedor.SuspendLayout();
             this.panelvista.SuspendLayout();
@@ -95,7 +95,7 @@
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
             this.menu.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menu.Size = new System.Drawing.Size(94, 638);
+            this.menu.Size = new System.Drawing.Size(124, 638);
             this.menu.TabIndex = 0;
             this.menu.Text = "menuStrip1";
             // 
@@ -122,7 +122,7 @@
             this.submenuregistrarventa.IconColor = System.Drawing.Color.Black;
             this.submenuregistrarventa.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.submenuregistrarventa.Name = "submenuregistrarventa";
-            this.submenuregistrarventa.Size = new System.Drawing.Size(133, 26);
+            this.submenuregistrarventa.Size = new System.Drawing.Size(184, 26);
             this.submenuregistrarventa.Text = "Registrar";
             this.submenuregistrarventa.Click += new System.EventHandler(this.submenuregistrarventa_Click);
             // 
@@ -132,14 +132,14 @@
             this.submenuverdetalleventa.IconColor = System.Drawing.Color.Black;
             this.submenuverdetalleventa.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.submenuverdetalleventa.Name = "submenuverdetalleventa";
-            this.submenuverdetalleventa.Size = new System.Drawing.Size(133, 26);
+            this.submenuverdetalleventa.Size = new System.Drawing.Size(184, 26);
             this.submenuverdetalleventa.Text = "Ver Detalle";
             this.submenuverdetalleventa.Click += new System.EventHandler(this.submenuverdetalleventa_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(133, 26);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(184, 26);
             this.toolStripMenuItem1.Text = "Reportes";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
@@ -308,6 +308,7 @@
             this.contenedor.BackColor = System.Drawing.Color.DarkSlateGray;
             this.contenedor.Controls.Add(this.panelvista);
             this.contenedor.Dock = System.Windows.Forms.DockStyle.Right;
+            this.contenedor.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.contenedor.Location = new System.Drawing.Point(97, 0);
             this.contenedor.Name = "contenedor";
             this.contenedor.Size = new System.Drawing.Size(1028, 638);
@@ -440,6 +441,18 @@
             this.panel1.TabIndex = 4;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label2.Location = new System.Drawing.Point(1037, 54);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(76, 12);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "by Luciano Aromi";
+            // 
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
@@ -464,26 +477,14 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Black;
+            this.panel2.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panel2.Controls.Add(this.menu);
             this.panel2.Controls.Add(this.contenedor);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 70);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1125, 638);
             this.panel2.TabIndex = 5;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(1037, 54);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 12);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "by Luciano Aromi";
             // 
             // Inicio
             // 

@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaPresentacion.Modales;
 
+using DrawingColor = System.Drawing.Color; //---------- para cambiar color el fondo
+
 
 //Llamo a las Capas relacionadas
 using CapaEntidad;
@@ -98,6 +100,8 @@ namespace CapaPresentacion
             timerReloj.Interval = 1000;
             timerReloj.Start();
 
+            this.BackColor = DrawingColor.DarkSlateGray; //---------- para cambiar color el fondo
+
         }
 
         //--------------------------------------------------------------------------------------------------------------
@@ -140,8 +144,8 @@ namespace CapaPresentacion
             formulario.FormBorderStyle = FormBorderStyle.None;
             //DockStyle.Fill copa todo el espacio del contenedor disponible
             formulario.Dock = DockStyle.Fill;
-            //Muestra del color "Negro" como fondo del formulario
-            formulario.BackColor = Color.DarkCyan;
+            //Muestra del color "DarkSlateGray" como fondo del formulario ---------------------------------
+            formulario.BackColor = Color.DarkSlateGray;
 
             //Agrega el formulario seleccionado en el "contenedor" recibido como parametro
             contenedor.Controls.Add(formulario);
