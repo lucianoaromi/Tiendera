@@ -124,8 +124,9 @@ namespace CapaPresentacion
             {
                 MenuActivo.BackColor = Color.MediumTurquoise;
             }
+
             //Cambia de color el boton de menu seleccionado
-            menu.BackColor = Color.DarkCyan;
+            menu.BackColor = Color.DarkOrange;
             
             //Almacena el menu recibido como parametro en MenuActivo
             MenuActivo = menu;
@@ -168,13 +169,6 @@ namespace CapaPresentacion
 
         //--------------------------------------------------------------------------------------------------------------
 
-        private void submenucategoria_Click(object sender, EventArgs e)
-        {
-            //Envia el menu seleccionado y el formulario a mostrar como parametros
-            AbrirFormulario(menumantenedor, new frmCategoria());
-            panelclousing();
-        }
-
         private void submenuproducto_Click(object sender, EventArgs e)
         {
             //Envia el menu seleccionado y el formulario a mostrar como parametros
@@ -191,7 +185,7 @@ namespace CapaPresentacion
 
         private void submenuverdetalleventa_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(menuventas, new frmDetalleVenta());
+            AbrirFormulario(menuventas, new frmDetalleVenta()); 
             panelclousing();
         }
 
@@ -219,7 +213,7 @@ namespace CapaPresentacion
 
         private void menudetalleventa_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(menuventas, new frmReportes(usuarioActual));
+            AbrirFormulario(menudetalleventa, new frmReportes(usuarioActual)); 
             panelclousing();
         }
 
@@ -230,9 +224,10 @@ namespace CapaPresentacion
             panelclousing();
         }
 
-        private void submenucategoria_Click_1(object sender, EventArgs e)
+        
+        private void submenucategoria_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(menuventas, new frmCategoria());
+            AbrirFormulario(menumantenedor, new frmCategoria()); 
             panelclousing();
         }
 
@@ -273,6 +268,7 @@ namespace CapaPresentacion
                 SendMessage(this.Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
             }
         }
+
 
     }
 }
