@@ -15,8 +15,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Org.BouncyCastle.Math.Primes;
-using SpreadsheetColor = DocumentFormat.OpenXml.Spreadsheet.Color; //------
-using DrawingColor = System.Drawing.Color;
+using SpreadsheetColor = DocumentFormat.OpenXml.Spreadsheet.Color; //------ para los cuadros 
+using DrawingColor = System.Drawing.Color; //---------- para cambiar color el fondo
 
 namespace CapaPresentacion
 {
@@ -79,7 +79,7 @@ namespace CapaPresentacion
             cbometodopago.SelectedIndex = 0;
             txtidcliente.Focus();
 
-            this.BackColor = DrawingColor.DarkSlateGray; //----------
+            this.BackColor = DrawingColor.DarkSlateGray; //---------- para cambiar color el fondo
         }
 
         //-----------------------------------------------------------

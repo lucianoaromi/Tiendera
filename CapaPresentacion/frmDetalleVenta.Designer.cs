@@ -88,7 +88,7 @@ namespace CapaPresentacion
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel1.BackColor = System.Drawing.Color.DarkCyan;
+            this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.btnpdf);
             this.panel1.Controls.Add(this.txtmetodopago);
@@ -110,7 +110,7 @@ namespace CapaPresentacion
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.DarkCyan;
+            this.panel3.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panel3.Controls.Add(this.label1);
             this.panel3.Location = new System.Drawing.Point(53, 22);
             this.panel3.Name = "panel3";
@@ -120,6 +120,7 @@ namespace CapaPresentacion
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.DarkSlateGray;
             this.label1.Font = new System.Drawing.Font("Leelawadee", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Gold;
             this.label1.Location = new System.Drawing.Point(9, 9);
@@ -274,7 +275,7 @@ namespace CapaPresentacion
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtapellidocliente);
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.groupBox1.Location = new System.Drawing.Point(15, 180);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(723, 79);
@@ -369,7 +370,7 @@ namespace CapaPresentacion
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.txttipodocumento);
-            this.groupBox2.ForeColor = System.Drawing.Color.DarkCyan;
+            this.groupBox2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.groupBox2.Location = new System.Drawing.Point(14, 92);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(724, 79);
@@ -478,7 +479,7 @@ namespace CapaPresentacion
             this.groupBox4.Controls.Add(this.label3);
             this.groupBox4.Controls.Add(this.pictureBox4);
             this.groupBox4.Controls.Add(this.txtbusqueda);
-            this.groupBox4.ForeColor = System.Drawing.Color.White;
+            this.groupBox4.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.groupBox4.Location = new System.Drawing.Point(413, 11);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(325, 79);
@@ -550,7 +551,7 @@ namespace CapaPresentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkCyan;
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(769, 582);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;

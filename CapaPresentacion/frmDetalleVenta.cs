@@ -15,8 +15,10 @@ using iTextSharp.text.pdf;
 using iTextSharp.tool.xml;
 using System.IO;
 
-using SpreadsheetColor = DocumentFormat.OpenXml.Spreadsheet.Color;
+using SpreadsheetColor = DocumentFormat.OpenXml.Spreadsheet.Color; //------ para los cuadros
 using System.Globalization; //------
+using DrawingColor = System.Drawing.Color; //---------- para cambiar color el fondo
+
 
 namespace CapaPresentacion
 {
@@ -94,6 +96,8 @@ namespace CapaPresentacion
 
                 // Desmarca cualquier fila seleccionada
                 dgvdata.ClearSelection();
+
+                this.BackColor = DrawingColor.DarkSlateGray; //---------- para cambiar color el fondo
             }
         }
 
@@ -258,8 +262,8 @@ namespace CapaPresentacion
             GroupBox box = sender as GroupBox;
             if (box != null)
             {
-                int borderWidth = 3;
-                System.Drawing.Color borderColor = System.Drawing.Color.DarkSlateGray; // Personalizar color del borde
+                int borderWidth = 1;
+                System.Drawing.Color borderColor = System.Drawing.Color.White; // Personalizar color del borde
 
                 // Dibujar el fondo
                 e.Graphics.Clear(this.BackColor);
