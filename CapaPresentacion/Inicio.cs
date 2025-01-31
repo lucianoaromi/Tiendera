@@ -111,6 +111,7 @@ namespace CapaPresentacion
         {
             lblreloj.Text = DateTime.Now.ToString("hh:mm tt");
             lblfecha.Text = DateTime.Now.ToLongDateString();
+            relojesquina.Text = DateTime.Now.ToString("hh:mm tt");
         }
 
         //--------------------------------------------------------------------------------------------------------------
