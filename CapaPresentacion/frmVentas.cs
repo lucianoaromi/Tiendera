@@ -551,6 +551,12 @@ namespace CapaPresentacion
             }
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            frmClientes nuevoFormulario = new frmClientes(); // Crea una instancia del otro formulario
+            nuevoFormulario.Show(); // Muestra el formulario en una nueva ventana
+        }
+
         //--------------------------------------------------------------------------------------------------------------------------------
 
     }
