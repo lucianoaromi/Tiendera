@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaPresentacion.Modales;
 using SpreadsheetColor = DocumentFormat.OpenXml.Spreadsheet.Color; //------
+using DrawingColor = System.Drawing.Color;//---------- para cambiar color el fondo
 
 namespace CapaPresentacion.Modales
 {
@@ -36,6 +37,8 @@ namespace CapaPresentacion.Modales
             txtStock.TabStop = false; // Evitar que sea accesible por tabulación
             txtPrecio.TabStop = false; // Evitar que sea accesible por tabulación
             this.ActiveControl = null; // Ningún control tiene el foco al inicio
+
+            this.BackColor = DrawingColor.DarkSlateGray; //---------- para cambiar color el fondo
         }
 
         //--------------------------------------------------------------------------------------------------------------------------------
@@ -45,8 +48,8 @@ namespace CapaPresentacion.Modales
             GroupBox box = sender as GroupBox;
             if (box != null)
             {
-                int borderWidth = 3;
-                System.Drawing.Color borderColor = System.Drawing.Color.DarkSlateGray; // Personalizar color del borde
+                int borderWidth = 1;
+                System.Drawing.Color borderColor = System.Drawing.Color.White; // Personalizar color del borde
 
                 // Dibujar el fondo
                 e.Graphics.Clear(this.BackColor);

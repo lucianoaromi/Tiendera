@@ -72,17 +72,17 @@ namespace CapaPresentacion
             this.txtfechainicio = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtindice = new System.Windows.Forms.TextBox();
-            this.txtid = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtindice = new System.Windows.Forms.TextBox();
+            this.txtid = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).BeginInit();
             this.panel4.SuspendLayout();
@@ -94,9 +94,9 @@ namespace CapaPresentacion
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBuscarFecha)).BeginInit();
             this.panel2.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -243,9 +243,9 @@ namespace CapaPresentacion
             // picOrdenarColor
             // 
             this.picOrdenarColor.Image = ((System.Drawing.Image)(resources.GetObject("picOrdenarColor.Image")));
-            this.picOrdenarColor.Location = new System.Drawing.Point(858, 76);
+            this.picOrdenarColor.Location = new System.Drawing.Point(858, 77);
             this.picOrdenarColor.Name = "picOrdenarColor";
-            this.picOrdenarColor.Size = new System.Drawing.Size(75, 70);
+            this.picOrdenarColor.Size = new System.Drawing.Size(75, 72);
             this.picOrdenarColor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picOrdenarColor.TabIndex = 53;
             this.picOrdenarColor.TabStop = false;
@@ -541,6 +541,37 @@ namespace CapaPresentacion
             this.panel2.Size = new System.Drawing.Size(30, 633);
             this.panel2.TabIndex = 34;
             // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel5.Controls.Add(this.textBox3);
+            this.panel5.Controls.Add(this.textBox4);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(17, 633);
+            this.panel5.TabIndex = 65;
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.DimGray;
+            this.textBox3.Location = new System.Drawing.Point(162, 14);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(1, 20);
+            this.textBox3.TabIndex = 1;
+            this.textBox3.Text = "-1";
+            this.textBox3.Visible = false;
+            // 
+            // textBox4
+            // 
+            this.textBox4.BackColor = System.Drawing.Color.DimGray;
+            this.textBox4.Location = new System.Drawing.Point(191, 14);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(1, 20);
+            this.textBox4.TabIndex = 0;
+            this.textBox4.Text = "0";
+            this.textBox4.Visible = false;
+            // 
             // txtindice
             // 
             this.txtindice.BackColor = System.Drawing.Color.DimGray;
@@ -573,26 +604,6 @@ namespace CapaPresentacion
             this.panel3.Size = new System.Drawing.Size(32, 633);
             this.panel3.TabIndex = 35;
             // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.DimGray;
-            this.textBox1.Location = new System.Drawing.Point(162, 14);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(1, 20);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "-1";
-            this.textBox1.Visible = false;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.DimGray;
-            this.textBox2.Location = new System.Drawing.Point(191, 14);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(1, 20);
-            this.textBox2.TabIndex = 0;
-            this.textBox2.Text = "0";
-            this.textBox2.Visible = false;
-            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -624,36 +635,25 @@ namespace CapaPresentacion
             this.textBox6.Text = "0";
             this.textBox6.Visible = false;
             // 
-            // panel5
+            // textBox1
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel5.Controls.Add(this.textBox3);
-            this.panel5.Controls.Add(this.textBox4);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(17, 633);
-            this.panel5.TabIndex = 65;
+            this.textBox1.BackColor = System.Drawing.Color.DimGray;
+            this.textBox1.Location = new System.Drawing.Point(162, 14);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(1, 20);
+            this.textBox1.TabIndex = 1;
+            this.textBox1.Text = "-1";
+            this.textBox1.Visible = false;
             // 
-            // textBox3
+            // textBox2
             // 
-            this.textBox3.BackColor = System.Drawing.Color.DimGray;
-            this.textBox3.Location = new System.Drawing.Point(162, 14);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(1, 20);
-            this.textBox3.TabIndex = 1;
-            this.textBox3.Text = "-1";
-            this.textBox3.Visible = false;
-            // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.Color.DimGray;
-            this.textBox4.Location = new System.Drawing.Point(191, 14);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(1, 20);
-            this.textBox4.TabIndex = 0;
-            this.textBox4.Text = "0";
-            this.textBox4.Visible = false;
+            this.textBox2.BackColor = System.Drawing.Color.DimGray;
+            this.textBox2.Location = new System.Drawing.Point(191, 14);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(1, 20);
+            this.textBox2.TabIndex = 0;
+            this.textBox2.Text = "0";
+            this.textBox2.Visible = false;
             // 
             // frmReportes
             // 
@@ -684,12 +684,12 @@ namespace CapaPresentacion
             ((System.ComponentModel.ISupportInitialize)(this.picBuscarFecha)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }

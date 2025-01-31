@@ -72,6 +72,8 @@ namespace CapaPresentacion
             txttelefono1.TabIndex = 3;
             cboestado1.TabIndex = 4;
 
+            dgvdata.ForeColor = System.Drawing.Color.Black;
+
         }
 
         //------------------------------------------------------------------------------------------------------------------------------------------

@@ -78,7 +78,7 @@ namespace CapaPresentacion
             this.label2.BackColor = System.Drawing.Color.DarkSlateGray;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(5, 73);
+            this.label2.Location = new System.Drawing.Point(6, 73);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 15);
             this.label2.TabIndex = 1;
@@ -86,7 +86,7 @@ namespace CapaPresentacion
             // 
             // txtdescripcion
             // 
-            this.txtdescripcion.Location = new System.Drawing.Point(6, 91);
+            this.txtdescripcion.Location = new System.Drawing.Point(7, 91);
             this.txtdescripcion.Name = "txtdescripcion";
             this.txtdescripcion.Size = new System.Drawing.Size(184, 20);
             this.txtdescripcion.TabIndex = 4;
@@ -97,7 +97,7 @@ namespace CapaPresentacion
             this.label8.BackColor = System.Drawing.Color.DarkSlateGray;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(4, 124);
+            this.label8.Location = new System.Drawing.Point(5, 124);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(48, 15);
             this.label8.TabIndex = 12;
@@ -107,7 +107,7 @@ namespace CapaPresentacion
             // 
             this.cboestado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboestado.FormattingEnabled = true;
-            this.cboestado.Location = new System.Drawing.Point(7, 142);
+            this.cboestado.Location = new System.Drawing.Point(8, 142);
             this.cboestado.Name = "cboestado";
             this.cboestado.Size = new System.Drawing.Size(184, 21);
             this.cboestado.TabIndex = 15;
@@ -128,13 +128,13 @@ namespace CapaPresentacion
             this.panel1.Controls.Add(this.label8);
             this.panel1.Location = new System.Drawing.Point(19, -1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(201, 639);
+            this.panel1.Size = new System.Drawing.Size(204, 639);
             this.panel1.TabIndex = 20;
             // 
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(130, 193);
+            this.pictureBox5.Location = new System.Drawing.Point(131, 193);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(50, 50);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -145,7 +145,7 @@ namespace CapaPresentacion
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(74, 193);
+            this.pictureBox1.Location = new System.Drawing.Point(75, 193);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -167,7 +167,7 @@ namespace CapaPresentacion
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(17, 193);
+            this.pictureBox2.Location = new System.Drawing.Point(18, 193);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(50, 50);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

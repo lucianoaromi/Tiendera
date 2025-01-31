@@ -64,7 +64,7 @@ namespace CapaPresentacion
                });
             }
 
-
+            dgvdata.ForeColor = System.Drawing.Color.Black;
         }
 
 

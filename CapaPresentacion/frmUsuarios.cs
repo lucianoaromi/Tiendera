@@ -80,6 +80,9 @@ namespace CapaPresentacion
             }
 
             txtdocumento.Focus();
+
+            dgvdata.ForeColor = System.Drawing.Color.Black;
+
             /*
             //txtdocumento.TabIndex = 0;
             txtapellido.TabIndex = 1;
@@ -91,6 +94,7 @@ namespace CapaPresentacion
             cborol.TabIndex = 7;
             cboestado.TabIndex = 8;
             */
+
         }
 
         //------------------------------------------------------------------------------------------------------------------------------------------

@@ -15,7 +15,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DrawingColor = System.Drawing.Color;
+using DrawingColor = System.Drawing.Color;//---------- para cambiar color el fondo
 
 using SpreadsheetColor = DocumentFormat.OpenXml.Spreadsheet.Color; //------  
 
@@ -70,6 +70,7 @@ namespace CapaPresentacion
             lblapeusuario.Text = $"{Convert.ToString(_Usuario.Apellido)}, {Convert.ToString(_Usuario.Nombre)}";
 
             this.BackColor = DrawingColor.DarkSlateGray;
+            dgvdata.ForeColor = System.Drawing.Color.Black;
         }
 
         //--------------------------------------------------------------------------------------------------------------------------------

@@ -80,6 +80,8 @@ namespace CapaPresentacion
             txtidcliente.Focus();
 
             this.BackColor = DrawingColor.DarkSlateGray; //---------- para cambiar color el fondo
+            dgvdata.ForeColor = System.Drawing.Color.Black;
+            dgvdata.DefaultCellStyle.BackColor = System.Drawing.Color.White;
         }
 
         //-----------------------------------------------------------

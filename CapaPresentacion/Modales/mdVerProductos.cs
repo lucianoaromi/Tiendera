@@ -59,6 +59,9 @@ namespace CapaPresentacion.Modales
                     item.Estado == true ? "Activo" : "No Activo",
                  });
             }
+
+            dgvdata.ForeColor = System.Drawing.Color.Black;
+            //dgvdata.BackgroundColor = System.Drawing.Color.FromArgb(240, 240, 240); // Gris claro
         }
 
         //------------------------------------------------------------------------------------------------------------------------------------------

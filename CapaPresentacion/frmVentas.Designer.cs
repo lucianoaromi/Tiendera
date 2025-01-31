@@ -125,7 +125,7 @@ namespace CapaPresentacion
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panel1.Controls.Add(this.groupBox3);
-            this.panel1.Location = new System.Drawing.Point(34, 246);
+            this.panel1.Location = new System.Drawing.Point(34, 249);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(985, 406);
             this.panel1.TabIndex = 0;
@@ -388,7 +388,7 @@ namespace CapaPresentacion
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Leelawadee", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Gold;
-            this.label11.Location = new System.Drawing.Point(12, 6);
+            this.label11.Location = new System.Drawing.Point(12, 7);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(215, 32);
             this.label11.TabIndex = 29;
@@ -402,7 +402,7 @@ namespace CapaPresentacion
             this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.Color.White;
-            this.groupBox4.Location = new System.Drawing.Point(15, 48);
+            this.groupBox4.Location = new System.Drawing.Point(15, 50);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(342, 79);
             this.groupBox4.TabIndex = 30;
@@ -571,7 +571,7 @@ namespace CapaPresentacion
             this.groupBox1.Controls.Add(this.txtcodigoproducto);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(15, 137);
+            this.groupBox1.Location = new System.Drawing.Point(15, 139);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(921, 95);
             this.groupBox1.TabIndex = 0;
@@ -746,7 +746,7 @@ namespace CapaPresentacion
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(34, 624);
+            this.panel4.Size = new System.Drawing.Size(34, 632);
             this.panel4.TabIndex = 35;
             // 
             // panel3
@@ -757,7 +757,7 @@ namespace CapaPresentacion
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(17, 624);
+            this.panel3.Size = new System.Drawing.Size(17, 632);
             this.panel3.TabIndex = 63;
             // 
             // textBox3
@@ -809,7 +809,7 @@ namespace CapaPresentacion
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel5.Location = new System.Drawing.Point(983, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(36, 624);
+            this.panel5.Size = new System.Drawing.Size(36, 632);
             this.panel5.TabIndex = 36;
             // 
             // panel6
@@ -820,7 +820,7 @@ namespace CapaPresentacion
             this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel6.Location = new System.Drawing.Point(19, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(17, 624);
+            this.panel6.Size = new System.Drawing.Size(17, 632);
             this.panel6.TabIndex = 64;
             // 
             // textBox5
@@ -868,7 +868,7 @@ namespace CapaPresentacion
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(1019, 624);
+            this.ClientSize = new System.Drawing.Size(1019, 632);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
