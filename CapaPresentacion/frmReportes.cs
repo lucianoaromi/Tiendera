@@ -71,6 +71,8 @@ namespace CapaPresentacion
 
             this.BackColor = DrawingColor.DarkSlateGray;
             dgvdata.ForeColor = System.Drawing.Color.Black;
+
+            CargarDatosVentas();
         }
 
         //--------------------------------------------------------------------------------------------------------------------------------
