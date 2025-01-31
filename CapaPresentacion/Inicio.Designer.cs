@@ -63,6 +63,7 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.menu.SuspendLayout();
             this.contenedor.SuspendLayout();
             this.panelvista.SuspendLayout();
@@ -121,7 +122,7 @@
             this.submenuregistrarventa.IconColor = System.Drawing.Color.Black;
             this.submenuregistrarventa.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.submenuregistrarventa.Name = "submenuregistrarventa";
-            this.submenuregistrarventa.Size = new System.Drawing.Size(129, 22);
+            this.submenuregistrarventa.Size = new System.Drawing.Size(133, 26);
             this.submenuregistrarventa.Text = "Registrar";
             this.submenuregistrarventa.Click += new System.EventHandler(this.submenuregistrarventa_Click);
             // 
@@ -131,14 +132,14 @@
             this.submenuverdetalleventa.IconColor = System.Drawing.Color.Black;
             this.submenuverdetalleventa.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.submenuverdetalleventa.Name = "submenuverdetalleventa";
-            this.submenuverdetalleventa.Size = new System.Drawing.Size(129, 22);
+            this.submenuverdetalleventa.Size = new System.Drawing.Size(133, 26);
             this.submenuverdetalleventa.Text = "Ver Detalle";
             this.submenuverdetalleventa.Click += new System.EventHandler(this.submenuverdetalleventa_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(129, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(133, 26);
             this.toolStripMenuItem1.Text = "Reportes";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
@@ -206,7 +207,7 @@
             this.submenucategoria.IconColor = System.Drawing.Color.Black;
             this.submenucategoria.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.submenucategoria.Name = "submenucategoria";
-            this.submenucategoria.Size = new System.Drawing.Size(125, 22);
+            this.submenucategoria.Size = new System.Drawing.Size(129, 26);
             this.submenucategoria.Text = "Categoria";
             this.submenucategoria.Click += new System.EventHandler(this.submenucategoria_Click_1);
             // 
@@ -216,7 +217,7 @@
             this.submenuproducto.IconColor = System.Drawing.Color.Black;
             this.submenuproducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.submenuproducto.Name = "submenuproducto";
-            this.submenuproducto.Size = new System.Drawing.Size(125, 22);
+            this.submenuproducto.Size = new System.Drawing.Size(129, 26);
             this.submenuproducto.Text = "Producto";
             this.submenuproducto.Click += new System.EventHandler(this.submenuproducto_Click);
             // 
@@ -424,6 +425,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.pictureBox5);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox4);
@@ -470,6 +472,18 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1125, 638);
             this.panel2.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label2.Location = new System.Drawing.Point(1037, 54);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(76, 12);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "by Luciano Aromi";
             // 
             // Inicio
             // 
@@ -537,5 +551,6 @@
         private System.Windows.Forms.Label lblusuarioinicio;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label2;
     }
 }
