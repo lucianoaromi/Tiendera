@@ -31,13 +31,15 @@ namespace CapaPresentacion
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdmLicencia));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.txtcodactivacion = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.cboestado1 = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtfechaverificacion = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
             this.txtfechainicio = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -65,10 +67,12 @@ namespace CapaPresentacion
             this.FechaActivacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CodigoActivacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UltimaVerificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -76,7 +80,7 @@ namespace CapaPresentacion
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(11, 214);
+            this.label2.Location = new System.Drawing.Point(10, 213);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 13);
             this.label2.TabIndex = 1;
@@ -84,9 +88,9 @@ namespace CapaPresentacion
             // 
             // txtcodactivacion
             // 
-            this.txtcodactivacion.Location = new System.Drawing.Point(13, 230);
+            this.txtcodactivacion.Location = new System.Drawing.Point(13, 229);
             this.txtcodactivacion.Name = "txtcodactivacion";
-            this.txtcodactivacion.Size = new System.Drawing.Size(148, 20);
+            this.txtcodactivacion.Size = new System.Drawing.Size(154, 20);
             this.txtcodactivacion.TabIndex = 4;
             // 
             // label8
@@ -106,12 +110,14 @@ namespace CapaPresentacion
             this.cboestado1.FormattingEnabled = true;
             this.cboestado1.Location = new System.Drawing.Point(12, 132);
             this.cboestado1.Name = "cboestado1";
-            this.cboestado1.Size = new System.Drawing.Size(148, 21);
+            this.cboestado1.Size = new System.Drawing.Size(155, 21);
             this.cboestado1.TabIndex = 15;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Controls.Add(this.txtfechaverificacion);
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.txtfechainicio);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txtcodactivacion);
@@ -132,15 +138,34 @@ namespace CapaPresentacion
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(183, 358);
+            this.panel1.Size = new System.Drawing.Size(183, 396);
             this.panel1.TabIndex = 20;
+            // 
+            // txtfechaverificacion
+            // 
+            this.txtfechaverificacion.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtfechaverificacion.Location = new System.Drawing.Point(12, 276);
+            this.txtfechaverificacion.Name = "txtfechaverificacion";
+            this.txtfechaverificacion.Size = new System.Drawing.Size(155, 20);
+            this.txtfechaverificacion.TabIndex = 50;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Black;
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(10, 260);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(97, 13);
+            this.label4.TabIndex = 49;
+            this.label4.Text = "Ultima Verificacion:";
             // 
             // txtfechainicio
             // 
             this.txtfechainicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.txtfechainicio.Location = new System.Drawing.Point(12, 181);
             this.txtfechainicio.Name = "txtfechainicio";
-            this.txtfechainicio.Size = new System.Drawing.Size(146, 20);
+            this.txtfechainicio.Size = new System.Drawing.Size(155, 20);
             this.txtfechainicio.TabIndex = 48;
             // 
             // label3
@@ -169,7 +194,7 @@ namespace CapaPresentacion
             // 
             this.txtDiasPermitido.Location = new System.Drawing.Point(12, 85);
             this.txtDiasPermitido.Name = "txtDiasPermitido";
-            this.txtDiasPermitido.Size = new System.Drawing.Size(146, 20);
+            this.txtDiasPermitido.Size = new System.Drawing.Size(155, 20);
             this.txtDiasPermitido.TabIndex = 45;
             // 
             // txtfecha
@@ -177,7 +202,7 @@ namespace CapaPresentacion
             this.txtfecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.txtfecha.Location = new System.Drawing.Point(12, 40);
             this.txtfecha.Name = "txtfecha";
-            this.txtfecha.Size = new System.Drawing.Size(146, 20);
+            this.txtfecha.Size = new System.Drawing.Size(155, 20);
             this.txtfecha.TabIndex = 42;
             // 
             // label9
@@ -185,7 +210,7 @@ namespace CapaPresentacion
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Black;
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(9, 24);
+            this.label9.Location = new System.Drawing.Point(11, 24);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(68, 13);
             this.label9.TabIndex = 40;
@@ -199,7 +224,7 @@ namespace CapaPresentacion
             this.btnguardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnguardar.ForeColor = System.Drawing.Color.White;
             this.btnguardar.Image = ((System.Drawing.Image)(resources.GetObject("btnguardar.Image")));
-            this.btnguardar.Location = new System.Drawing.Point(12, 273);
+            this.btnguardar.Location = new System.Drawing.Point(12, 315);
             this.btnguardar.Name = "btnguardar";
             this.btnguardar.Size = new System.Drawing.Size(48, 48);
             this.btnguardar.TabIndex = 39;
@@ -212,7 +237,7 @@ namespace CapaPresentacion
             // 
             this.txtindicecliente.BackColor = System.Drawing.Color.White;
             this.txtindicecliente.ForeColor = System.Drawing.Color.Black;
-            this.txtindicecliente.Location = new System.Drawing.Point(105, 334);
+            this.txtindicecliente.Location = new System.Drawing.Point(108, 6);
             this.txtindicecliente.Name = "txtindicecliente";
             this.txtindicecliente.Size = new System.Drawing.Size(30, 20);
             this.txtindicecliente.TabIndex = 34;
@@ -227,7 +252,7 @@ namespace CapaPresentacion
             this.btneliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btneliminar.ForeColor = System.Drawing.Color.White;
             this.btneliminar.Image = ((System.Drawing.Image)(resources.GetObject("btneliminar.Image")));
-            this.btneliminar.Location = new System.Drawing.Point(119, 273);
+            this.btneliminar.Location = new System.Drawing.Point(119, 315);
             this.btneliminar.Name = "btneliminar";
             this.btneliminar.Size = new System.Drawing.Size(48, 48);
             this.btneliminar.TabIndex = 38;
@@ -244,7 +269,7 @@ namespace CapaPresentacion
             this.btnlimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnlimpiar.ForeColor = System.Drawing.Color.White;
             this.btnlimpiar.Image = ((System.Drawing.Image)(resources.GetObject("btnlimpiar.Image")));
-            this.btnlimpiar.Location = new System.Drawing.Point(65, 273);
+            this.btnlimpiar.Location = new System.Drawing.Point(65, 315);
             this.btnlimpiar.Name = "btnlimpiar";
             this.btnlimpiar.Size = new System.Drawing.Size(48, 48);
             this.btnlimpiar.TabIndex = 37;
@@ -257,7 +282,7 @@ namespace CapaPresentacion
             // 
             this.txtidcliente.BackColor = System.Drawing.Color.White;
             this.txtidcliente.ForeColor = System.Drawing.Color.Black;
-            this.txtidcliente.Location = new System.Drawing.Point(143, 334);
+            this.txtidcliente.Location = new System.Drawing.Point(146, 6);
             this.txtidcliente.Name = "txtidcliente";
             this.txtidcliente.Size = new System.Drawing.Size(31, 20);
             this.txtidcliente.TabIndex = 33;
@@ -287,14 +312,14 @@ namespace CapaPresentacion
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.btncancelar);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(183, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(701, 60);
+            this.panel2.Size = new System.Drawing.Size(712, 60);
             this.panel2.TabIndex = 27;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // btncancelar
             // 
@@ -307,7 +332,7 @@ namespace CapaPresentacion
             this.btncancelar.IconColor = System.Drawing.Color.White;
             this.btncancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btncancelar.IconSize = 20;
-            this.btncancelar.Location = new System.Drawing.Point(647, 18);
+            this.btncancelar.Location = new System.Drawing.Point(664, 16);
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Size = new System.Drawing.Size(30, 28);
             this.btncancelar.TabIndex = 30;
@@ -332,21 +357,21 @@ namespace CapaPresentacion
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(183, 60);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(701, 298);
+            this.panel3.Size = new System.Drawing.Size(712, 336);
             this.panel3.TabIndex = 28;
             // 
             // dgvdata
             // 
             this.dgvdata.AllowUserToAddRows = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvdata.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.btnseleccionar,
@@ -364,11 +389,11 @@ namespace CapaPresentacion
             this.dgvdata.Name = "dgvdata";
             this.dgvdata.ReadOnly = true;
             this.dgvdata.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvdata.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvdata.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvdata.RowTemplate.Height = 28;
-            this.dgvdata.Size = new System.Drawing.Size(701, 298);
+            this.dgvdata.Size = new System.Drawing.Size(712, 336);
             this.dgvdata.TabIndex = 22;
             this.dgvdata.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdata_CellContentClick_1);
             // 
@@ -436,12 +461,23 @@ namespace CapaPresentacion
             this.UltimaVerificacion.ReadOnly = true;
             this.UltimaVerificacion.Width = 115;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(132, 11);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(42, 42);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 63;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // frmAdmLicencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(884, 358);
+            this.ClientSize = new System.Drawing.Size(895, 396);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -456,6 +492,7 @@ namespace CapaPresentacion
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -493,5 +530,8 @@ namespace CapaPresentacion
         private DataGridViewTextBoxColumn FechaActivacion;
         private DataGridViewTextBoxColumn CodigoActivacion;
         private DataGridViewTextBoxColumn UltimaVerificacion;
+        private DateTimePicker txtfechaverificacion;
+        private Label label4;
+        private PictureBox pictureBox1;
     }
 }

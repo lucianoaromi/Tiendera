@@ -36,42 +36,7 @@ namespace CapaPresentacion
 
         private void frmClientes_Load(object sender, EventArgs e)
         {
-            cboestado1.Items.Add(new OpcionCombo() { Valor = 1, Texto = "Activo" });
-            cboestado1.Items.Add(new OpcionCombo() { Valor = 0, Texto = "No Activo" });
-            //Especifica que solo se debe mostrar el dato de nombre "Texto"
-            cboestado1.DisplayMember = "Texto";
-            //Maneja como informacion interna el dato de nombre "Valor"
-            cboestado1.ValueMember = "Valor";
-            //Se selecciona siempre el indice 0
-            cboestado1.SelectedIndex = 0;
-
-
-            //MOSTRAR TODOS LOS CLIENTES
-            List<CE_Licencia> listaLicencia = new CN_AdmLicencia().Listar();
-
-            foreach (CE_Licencia item in listaLicencia)
-            {
-
-                
-
-                dgvdata.Rows.Add(new object[] {
-                    "",
-                    item.ID,
-                    item.FechaInicio, // Formatear la fecha
-                    item.DiasPermitidos,
-                    item.Activado == true ? "Activo" : "No Activo",
-                    item.Activado ==  true ? 1 : 0,                   
-                    item.FechaActivacion, // Formatear la hora en formato HH:mm
-                    item.CodigoActivacion,
-                    item.UltimaVerificacion,
-
-                });
-            }
-
-            // Configurar el formato de la columna "FechaInicio" para mostrar solo la fecha
-            dgvdata.Columns["FechaInicio"].DefaultCellStyle.Format = "dd/MM/yyyy";
-            dgvdata.Columns["FechaActivacion"].DefaultCellStyle.Format = "dd/MM/yyyy";
-            dgvdata.Columns["UltimaVerificacion"].DefaultCellStyle.Format = "dd/MM/yyyy";
+            REFRESCAR();
         }
 
 
@@ -134,10 +99,9 @@ namespace CapaPresentacion
                     row.Cells["DiasPermitidos"].Value = txtidcliente.Text;
                     row.Cells["Activado"].Value = ((OpcionCombo)cboestado1.SelectedItem).Texto.ToString();
                     row.Cells["EstadoValor"].Value = ((OpcionCombo)cboestado1.SelectedItem).Valor.ToString();                    
-                    row.Cells["FechaActivacion"].Value = txtfechainicio.Value.ToString("dd/MM/yyyy"); // Solo la hora
+                    row.Cells["FechaActivacion"].Value = txtfechainicio.Value.ToString("dd/MM/yyyy"); // Solo la hora 
                     row.Cells["CodigoActivacion"].Value = txtcodactivacion.Text;
-
-
+                    row.Cells["UltimaVerificacion"].Value = txtfechaverificacion.Text;
 
                     Limpiar();
                     // Refrescar el DataGridView (opcional)
@@ -239,19 +203,20 @@ namespace CapaPresentacion
                     // Marcar la fila seleccionada con color rojo
                     dgvdata.Rows[indice].DefaultCellStyle.BackColor = Color.LightCoral;
 
-                    // Asignar datos de la fila seleccionada a los controles del formulario
+                    // Asignar datos de la fila seleccionada a los controles del formulario  
                     txtindicecliente.Text = indice.ToString();
                     txtidcliente.Text = dgvdata.Rows[indice].Cells["ID"].Value.ToString();
                     // Asignar la fecha del DataGridView al DateTimePicker
                     DateTime fechaSeleccionada = Convert.ToDateTime(dgvdata.Rows[indice].Cells["FechaInicio"].Value);
                     txtfecha.Value = fechaSeleccionada;
+
                     txtDiasPermitido.Text = dgvdata.Rows[indice].Cells["DiasPermitidos"].Value.ToString();
-
-
-
 
                     DateTime horaSeleccionada = Convert.ToDateTime(dgvdata.Rows[indice].Cells["FechaActivacion"].Value);
                     txtfechainicio.Value = horaSeleccionada;
+
+                    DateTime ultimaveri = Convert.ToDateTime(dgvdata.Rows[indice].Cells["UltimaVerificacion"].Value);
+                    txtfechaverificacion.Value = ultimaveri;
 
                     txtcodactivacion.Text = dgvdata.Rows[indice].Cells["CodigoActivacion"].Value.ToString();
 
@@ -309,9 +274,43 @@ namespace CapaPresentacion
             Application.Exit();
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
+        private void REFRESCAR()
         {
+            dgvdata.Rows.Clear(); // Limpia el DataGridView antes de recargar los datos
 
+            cboestado1.Items.Clear();
+            cboestado1.Items.Add(new OpcionCombo() { Valor = 1, Texto = "Activo" });
+            cboestado1.Items.Add(new OpcionCombo() { Valor = 0, Texto = "No Activo" });
+            cboestado1.DisplayMember = "Texto";
+            cboestado1.ValueMember = "Valor";
+            cboestado1.SelectedIndex = 0;
+
+            List<CE_Licencia> listaLicencia = new CN_AdmLicencia().Listar();
+
+            foreach (CE_Licencia item in listaLicencia)
+            {
+                dgvdata.Rows.Add(new object[] {
+            "",
+            item.ID,
+            item.FechaInicio,
+            item.DiasPermitidos,
+            item.Activado == true ? "Activo" : "No Activo",
+            item.Activado ==  true ? 1 : 0,
+            item.FechaActivacion,
+            item.CodigoActivacion,
+            item.UltimaVerificacion,
+        });
+            }
+
+            dgvdata.Columns["FechaInicio"].DefaultCellStyle.Format = "dd/MM/yyyy";
+            dgvdata.Columns["FechaActivacion"].DefaultCellStyle.Format = "dd/MM/yyyy";
+            dgvdata.Columns["UltimaVerificacion"].DefaultCellStyle.Format = "dd/MM/yyyy";
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            REFRESCAR();
+            Limpiar();
         }
     }
 }
