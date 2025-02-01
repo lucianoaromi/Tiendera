@@ -440,7 +440,7 @@ namespace CapaPresentacion
             if (respuesta)
             {
                 var result = MessageBox.Show(
-                    "Número de venta generado: \n" + numeroDocumento + "\n\n¿Desea imprimir el PDF?",
+                    "Número de venta generado: \n" + numeroDocumento + "\n\n¿Desea generar el PDF?",
                     "Mensaje",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Information
@@ -482,7 +482,7 @@ namespace CapaPresentacion
             // Verifica si el TextBox está vacío
             if (string.IsNullOrEmpty(txtnumventa.Text))
             {
-                MessageBox.Show("No se ha registrado ninguna venta para imprimir", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("No se ha registrado ninguna venta para mostrar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {

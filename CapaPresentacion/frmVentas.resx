@@ -346,6 +346,24 @@
   <metadata name="btneliminar.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="IdProducto.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Producto.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Precio.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Cantidad.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="SubTotal.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="btneliminar.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAABGdBTUEAANjr9RwUqgAAACBjSFJNAACH
@@ -751,7 +769,7 @@
         KCW1OJmBgdEAyE4pLykAijNOAbJFkrLB7BUgdlFIkDOQvQfI5kuHsM+A2EkQ9h0QuwjoCSD7DUh9OpjN
         xAA2B8IWAbFLUitA9jI45xdUFmWmZ5QoGFpaWio4puQnpSoEVxaXpOYWK3jmJecXFeQXJZakpoAcBXYf
         xN2OBQU5qQrAEGOgLgCFP4T1ORAcroxiZxBiCJBcWlQGZTIyniXMR5hRuZeBwTGIgYFlJ0Is7AcDwxp9
-        BgZZZoSYmhIDg1A9A8PGAgDxwFA9yQ65GQAAAAlwSFlzAAAOwQAADsEBuJFr7QAAAAd0SU1FB+kBHxQP
+        BgZZZoSYmhIDg1A9A8PGAgDxwFA9yQ65GQAAAAlwSFlzAAAOwAAADsABataJCQAAAAd0SU1FB+kBHxQP
         OpI+QEIAAAmPSURBVFhHtZgJUFXXGcdNRsHHorLlCYyoIAi4IUZR1BAsYlXWIIp2EJdBA5GgCS6daeLU
         pmocnXGd4rhVO7VTG6katWpqrBsImkXjUoxR0VgZNAiKFUz03+9/uPd53+MBL2rvzG943HvOd37vnO8s
         77Zx9Dp16lRzdBLChZHCJCFbg5/jhDCBZezV1aK/hMtecKGzkCqsFk4IN4RaoV74UYOfea9COC6sElIE

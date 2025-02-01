@@ -1081,17 +1081,23 @@ go
 
 INSERT INTO SoftwareState (FechaInicio, DiasPermitidos, Activado, CodigoActivacion, FechaActivacion, UltimaVerificacion)
 VALUES (
-    GETDATE(),            -- Fecha actual como fecha de inicio
-    10,                   -- Días permitidos iniciales
-    0,                    -- Activado en falso (0) por defecto
-    '11111111',           -- Código de activación 
-    GETDATE(),            -- Fecha de activación no configurada
-    GETDATE()             -- Fecha de última verificación configurada como la fecha actual
+    GETDATE(),                        -- Fecha actual como fecha de inicio
+    20,                                -- Días permitidos iniciales
+    0,                                 -- Activado en falso (0) por defecto
+    CAST(CONVERT(INT, FORMAT(GETDATE(), 'yyyyMMdd')) * 27 AS VARCHAR),  -- Código de activación generado dinámicamente
+    GETDATE(),                        -- Fecha de activación no configurada
+    GETDATE()                         -- Fecha de última verificación configurada como la fecha actual
 );
-
-select * from SoftwareState
 go
+------------- Consultas para ver poceso de generacion de codigo -------------
+SELECT 
+    GETDATE() AS FechaActual, 
+    FORMAT(GETDATE(), 'yyyyMMdd') AS FechaEnEntero, 
+    CONVERT(INT, FORMAT(GETDATE(), 'yyyyMMdd')) AS FechaComoNumero,
+    CONVERT(INT, FORMAT(GETDATE(), 'yyyyMMdd')) * 27 AS CodigoActivacionCalculado;
 
+SELECT * FROM SoftwareState;
+GO
 ----------------------------------
 /*
 
