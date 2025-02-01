@@ -144,7 +144,7 @@ namespace CapaPresentacion
                         //dgvdata.Rows[e.RowIndex].DefaultCellStyle.BackColor = System.Drawing.Color.LightCoral;
                         dgvdata.Rows[e.RowIndex].DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
                     }
-                    MessageBox.Show("Estado de pago actualizado correctamente.");
+                    //MessageBox.Show("Estado de pago actualizado correctamente.");
                 }
                 else
                 {
@@ -175,7 +175,7 @@ namespace CapaPresentacion
                         //dgvdata.Rows[e.RowIndex].DefaultCellStyle.BackColor = System.Drawing.Color.LightCoral;
                         dgvdata.Rows[e.RowIndex].DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
                     }
-                    MessageBox.Show("Estado de entrega actualizado correctamente.");
+                    //MessageBox.Show("Estado de entrega actualizado correctamente.");
                 }
                 else
                 {
