@@ -451,7 +451,9 @@ namespace CapaPresentacion
                     // Llama al código para generar e imprimir el PDF
                     frmDetalleVenta form2 = new frmDetalleVenta();
                     form2.txtbusqueda.Text = numeroDocumento; // Pasa el número de venta al segundo formulario
+                    form2.TopMost = true; // Mantiene la ventana en primer plano
                     form2.Show();
+                    form2.Activate(); // Forzar el enfoque en la nueva ventana
                 }
 
 
