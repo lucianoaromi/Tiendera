@@ -79,7 +79,42 @@ namespace CapaPresentacion
 
                 // Cambia el color de fondo del área de plot
                 chartTopProducts.ChartAreas[0].BackColor = Color.FromArgb(42, 47, 58); // El índice [0] hace referencia al primer área de gráfico
+                // Cambia el color de fondo del área de plot
+                chartTopProducts.ChartAreas[0].BackColor = Color.FromArgb(42, 47, 58); // El índice [0] hace referencia al primer área de gráfico
 
+                //ººººººººººººººººººººººººººººººººººººººº
+                // Fondo general del Chart
+                chartTopProducts.BackColor = Color.FromArgb(42, 47, 58);
+
+                // Fondo del área de gráficos
+                chartTopProducts.ChartAreas[0].BackColor = Color.FromArgb(42, 47, 58);
+
+                // Cambiar el color del texto de los ejes
+                chartTopProducts.ChartAreas[0].AxisX.LabelStyle.ForeColor = Color.White;
+                chartTopProducts.ChartAreas[0].AxisY.LabelStyle.ForeColor = Color.White;
+
+                // Cambiar el color de los títulos de los ejes
+                chartTopProducts.ChartAreas[0].AxisX.TitleForeColor = Color.White;
+                chartTopProducts.ChartAreas[0].AxisY.TitleForeColor = Color.White;
+
+                // Cambiar el color del título general del gráfico
+                chartTopProducts.Titles[0].ForeColor = Color.White;
+
+                // Cambiar el color de la leyenda (si existe)
+                if (chartTopProducts.Legends.Count > 0)
+                {
+                    chartTopProducts.Legends[0].ForeColor = Color.White;
+                    chartTopProducts.Legends[0].BackColor = Color.FromArgb(42, 47, 58); // Fondo de la leyenda
+                }
+
+                // Cambiar el color de la leyenda (si existe)
+                if (chartTopProducts.Legends.Count > 0)
+                {
+                    //chartGrossRevenue.Legends[0].ForeColor = Color.White;
+                    chartGrossRevenue.Legends[0].BackColor = Color.FromArgb(42, 47, 58); // Fondo de la leyenda
+                }
+
+                //ººººººººººººººººººººººººººººººººººººººº
 
             }
             else Console.WriteLine("Vista no cargada, misma consulta");

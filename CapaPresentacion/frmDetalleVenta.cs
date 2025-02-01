@@ -97,7 +97,7 @@ namespace CapaPresentacion
                 // Desmarca cualquier fila seleccionada
                 dgvdata.ClearSelection();
 
-                this.BackColor = DrawingColor.DarkSlateGray; //---------- para cambiar color el fondo
+                this.BackColor = System.Drawing.Color.FromArgb(42, 47, 58); //---------- para cambiar color el fondo
             }
         }
 

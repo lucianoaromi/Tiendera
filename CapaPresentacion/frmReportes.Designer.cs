@@ -101,7 +101,7 @@ namespace CapaPresentacion
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(58)))));
             this.panel1.Controls.Add(this.dgvdata);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Location = new System.Drawing.Point(36, 0);
@@ -224,7 +224,7 @@ namespace CapaPresentacion
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(58)))));
             this.panel4.Controls.Add(this.picOrdenarColor);
             this.panel4.Controls.Add(this.groupBox3);
             this.panel4.Controls.Add(this.lblapeusuario);
@@ -531,7 +531,7 @@ namespace CapaPresentacion
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(58)))));
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.txtindice);
             this.panel2.Controls.Add(this.txtid);
@@ -594,7 +594,7 @@ namespace CapaPresentacion
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(58)))));
             this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.textBox1);
             this.panel3.Controls.Add(this.textBox2);
@@ -659,7 +659,7 @@ namespace CapaPresentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(58)))));
             this.ClientSize = new System.Drawing.Size(1029, 633);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
