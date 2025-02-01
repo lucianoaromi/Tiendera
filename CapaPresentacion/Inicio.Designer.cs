@@ -80,7 +80,7 @@
             // 
             // menu
             // 
-            this.menu.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(58)))));
             this.menu.Dock = System.Windows.Forms.DockStyle.Left;
             this.menu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -96,7 +96,7 @@
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
             this.menu.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menu.Size = new System.Drawing.Size(124, 638);
+            this.menu.Size = new System.Drawing.Size(94, 638);
             this.menu.TabIndex = 0;
             this.menu.Text = "menuStrip1";
             // 
@@ -116,7 +116,6 @@
             this.menuventas.Size = new System.Drawing.Size(90, 90);
             this.menuventas.Text = "Ventas";
             this.menuventas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            
             // 
             // submenuregistrarventa
             // 
@@ -124,7 +123,7 @@
             this.submenuregistrarventa.IconColor = System.Drawing.Color.Black;
             this.submenuregistrarventa.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.submenuregistrarventa.Name = "submenuregistrarventa";
-            this.submenuregistrarventa.Size = new System.Drawing.Size(129, 22);
+            this.submenuregistrarventa.Size = new System.Drawing.Size(184, 26);
             this.submenuregistrarventa.Text = "Registrar";
             this.submenuregistrarventa.Click += new System.EventHandler(this.submenuregistrarventa_Click);
             // 
@@ -134,14 +133,14 @@
             this.submenuverdetalleventa.IconColor = System.Drawing.Color.Black;
             this.submenuverdetalleventa.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.submenuverdetalleventa.Name = "submenuverdetalleventa";
-            this.submenuverdetalleventa.Size = new System.Drawing.Size(129, 22);
+            this.submenuverdetalleventa.Size = new System.Drawing.Size(184, 26);
             this.submenuverdetalleventa.Text = "Ver Detalle";
             this.submenuverdetalleventa.Click += new System.EventHandler(this.submenuverdetalleventa_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(129, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(184, 26);
             this.toolStripMenuItem1.Text = "Reportes";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
@@ -307,7 +306,7 @@
             // 
             // contenedor
             // 
-            this.contenedor.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.contenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(58)))));
             this.contenedor.Controls.Add(this.panelvista);
             this.contenedor.Dock = System.Windows.Forms.DockStyle.Right;
             this.contenedor.ForeColor = System.Drawing.Color.DarkSlateGray;

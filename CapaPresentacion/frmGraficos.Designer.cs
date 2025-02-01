@@ -126,7 +126,7 @@
             // 
             // chartGrossRevenue
             // 
-            this.chartGrossRevenue.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.chartGrossRevenue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(58)))));
             this.chartGrossRevenue.BackImageTransparentColor = System.Drawing.Color.White;
             this.chartGrossRevenue.BackSecondaryColor = System.Drawing.Color.White;
             chartArea1.BackColor = System.Drawing.Color.DarkSlateGray;
@@ -188,7 +188,7 @@
             // 
             // chartTopProducts
             // 
-            this.chartTopProducts.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.chartTopProducts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(58)))));
             this.chartTopProducts.BackImageTransparentColor = System.Drawing.Color.White;
             this.chartTopProducts.BackSecondaryColor = System.Drawing.Color.White;
             this.chartTopProducts.BorderlineColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -305,7 +305,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.label14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(58)))));
             this.label14.Font = new System.Drawing.Font("Leelawadee", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Gold;
             this.label14.Location = new System.Drawing.Point(83, 20);
@@ -328,7 +328,7 @@
             // panel6
             // 
             this.panel6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel6.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(58)))));
             this.panel6.Controls.Add(this.groupBox8);
             this.panel6.Controls.Add(this.groupBox2);
             this.panel6.Controls.Add(this.pictureBox2);

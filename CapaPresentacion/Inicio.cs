@@ -100,9 +100,17 @@ namespace CapaPresentacion
             timerReloj.Interval = 1000;
             timerReloj.Start();
 
-            this.BackColor = DrawingColor.DarkSlateGray; //---------- para cambiar color el fondo
+            this.BackColor = Color.FromArgb(42, 47, 58); //---------- para cambiar color el fondo
+
+            //ººººººººººººººººººººººººººººººººººººººººº
+            // Cambia el color de fondo del MenuStrip
+            menu.BackColor = Color.FromArgb(42, 47, 58);
+            menu.ForeColor = Color.White;
+
+            //ººººººººººººººººººººººººººººººººººººººººº
 
         }
+
 
         //--------------------------------------------------------------------------------------------------------------
 
@@ -120,14 +128,15 @@ namespace CapaPresentacion
         private void AbrirFormulario(IconMenuItem menu, Form formulario)
         {
             //Pone en color "" el boton anteriormente seleccionado
+            
             if (MenuActivo != null)
             {
-                MenuActivo.BackColor = Color.MediumTurquoise;
+                MenuActivo.BackColor = Color.FromArgb(42, 47, 58);
             }
 
             //Cambia de color el boton de menu seleccionado
-            menu.BackColor = Color.DarkOrange;
-            
+            menu.BackColor = Color.FromArgb(90, 100, 120); //ººººººººººººººººººººººººººººººººººººººººººº
+
             //Almacena el menu recibido como parametro en MenuActivo
             MenuActivo = menu;
 
@@ -147,7 +156,7 @@ namespace CapaPresentacion
             //DockStyle.Fill copa todo el espacio del contenedor disponible
             formulario.Dock = DockStyle.Fill;
             //Muestra del color "DarkSlateGray" como fondo del formulario ---------------------------------
-            formulario.BackColor = Color.DarkSlateGray;
+            formulario.BackColor = Color.FromArgb(42, 47, 58); //ººººººººººººººººººººººººººººººººººººººººººº
 
             //Agrega el formulario seleccionado en el "contenedor" recibido como parametro
             contenedor.Controls.Add(formulario);

@@ -76,6 +76,11 @@ namespace CapaPresentacion
                 calcularPorcentaje();
                 txtPorcentaje.Focus();
 
+
+                // Cambia el color de fondo del área de plot
+                chartTopProducts.ChartAreas[0].BackColor = Color.FromArgb(42, 47, 58); // El índice [0] hace referencia al primer área de gráfico
+
+
             }
             else Console.WriteLine("Vista no cargada, misma consulta");
         }
