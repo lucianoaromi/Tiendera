@@ -38,7 +38,7 @@ namespace CapaPresentacion.Modales
             txtPrecio.TabStop = false; // Evitar que sea accesible por tabulación
             this.ActiveControl = null; // Ningún control tiene el foco al inicio
 
-            this.BackColor = DrawingColor.DarkSlateGray; //---------- para cambiar color el fondo
+            this.BackColor = System.Drawing.Color.FromArgb(42, 47, 58); //---------- para cambiar color el fondo
         }
 
         //--------------------------------------------------------------------------------------------------------------------------------
