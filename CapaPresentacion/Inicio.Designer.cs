@@ -285,19 +285,18 @@
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(84, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(159, 35);
+            this.label1.Size = new System.Drawing.Size(170, 35);
             this.label1.TabIndex = 2;
-            this.label1.Text = "ARDUINO -";
+            this.label1.Text = "TIENDERA -";
             // 
             // lblusuario
             // 
-            this.lblusuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblusuario.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblusuario.AutoSize = true;
             this.lblusuario.BackColor = System.Drawing.Color.Black;
             this.lblusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblusuario.ForeColor = System.Drawing.Color.White;
-            this.lblusuario.Location = new System.Drawing.Point(278, 31);
+            this.lblusuario.Location = new System.Drawing.Point(285, 30);
             this.lblusuario.Name = "lblusuario";
             this.lblusuario.Size = new System.Drawing.Size(117, 17);
             this.lblusuario.TabIndex = 5;
@@ -317,7 +316,6 @@
             // 
             // panelvista
             // 
-            this.panelvista.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelvista.BackColor = System.Drawing.Color.Black;
             this.panelvista.Controls.Add(this.panel3);
             this.panelvista.Location = new System.Drawing.Point(21, 20);
@@ -415,11 +413,11 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictureBox4.BackColor = System.Drawing.Color.Black;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.InitialImage = null;
-            this.pictureBox4.Location = new System.Drawing.Point(247, 23);
+            this.pictureBox4.Location = new System.Drawing.Point(254, 22);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(25, 25);
             this.pictureBox4.TabIndex = 4;
@@ -428,6 +426,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.relojesquina);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.pictureBox5);
@@ -446,11 +445,11 @@
             // 
             // relojesquina
             // 
-            this.relojesquina.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.relojesquina.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.relojesquina.AutoSize = true;
             this.relojesquina.Font = new System.Drawing.Font("Adobe Gothic Std B", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.relojesquina.ForeColor = System.Drawing.Color.Gold;
-            this.relojesquina.Location = new System.Drawing.Point(1031, 47);
+            this.relojesquina.Location = new System.Drawing.Point(1030, 46);
             this.relojesquina.Name = "relojesquina";
             this.relojesquina.Size = new System.Drawing.Size(69, 20);
             this.relojesquina.TabIndex = 4;
@@ -458,11 +457,12 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(948, 54);
+            this.label2.Location = new System.Drawing.Point(947, 53);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 12);
             this.label2.TabIndex = 4;
@@ -470,8 +470,9 @@
             // 
             // pictureBox5
             // 
+            this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(1035, 6);
+            this.pictureBox5.Location = new System.Drawing.Point(1034, 5);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(35, 35);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -481,8 +482,9 @@
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(1076, 6);
+            this.pictureBox3.Location = new System.Drawing.Point(1075, 5);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(35, 35);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
