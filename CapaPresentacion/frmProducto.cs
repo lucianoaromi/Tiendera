@@ -1,6 +1,7 @@
 ﻿using CapaEntidad;
 using CapaNegocio;
 using CapaPresentacion.Utilidades;
+using Irony.Parsing;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,6 +13,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using CapaDatos;
 
 namespace CapaPresentacion
 {
@@ -27,62 +30,7 @@ namespace CapaPresentacion
 
         private void frmProducto_Load(object sender, EventArgs e)
         {
-            cboestado.Items.Add(new OpcionCombo() { Valor = 1, Texto = "Activo" });
-            cboestado.Items.Add(new OpcionCombo() { Valor = 0, Texto = "No Activo" });
-            //Especifica que solo se debe mostrar el dato de nombre "Texto"
-            cboestado.DisplayMember = "Texto";
-            //Maneja como informacion interna el dato de nombre "Valor"
-            cboestado.ValueMember = "Valor";
-            //Se selecciona siempre el indice 0
-            cboestado.SelectedIndex = 0;
-            txtstock.Text = "0";
-            txtprecio.Text = "0";
-
-            List<Categoria> listaCategoria = new CN_Categoria().Listar();
-
-            foreach (Categoria item in listaCategoria)
-            {
-                cbocategoria.Items.Add(new OpcionCombo() { Valor = item.IdCategoria, Texto = item.Descripcion });
-            }
-            cbocategoria.DisplayMember = "Texto";
-            cbocategoria.ValueMember = "Valor";
-            cbocategoria.SelectedIndex = 0;
-
-            foreach (DataGridViewColumn columna in dgvdata.Columns)
-            {
-                if (columna.Visible == true && columna.Name != "btnseleccionar")
-                {
-                    cbobusqueda.Items.Add(new OpcionCombo() { Valor = columna.Name, Texto = columna.HeaderText });
-                }
-            }
-
-            // Configurar las propiedades después del bucle
-            cbobusqueda.DisplayMember = "Texto";
-            cbobusqueda.ValueMember = "Valor";
-            cbobusqueda.SelectedIndex = 0;
-
-
-            //MOSTRAR TODOS LOS USARIOS
-            List<Producto> lista = new CN_Producto().Listar();
-
-            foreach (Producto item in lista)
-            {
-                dgvdata.Rows.Add(new object[] {
-                    "", 
-                    item.IdProducto,
-                    item.Codigo,
-                    item.Nombre,
-                    item.Descripcion,
-                    item.oCategoria.IdCategoria,
-                    item.oCategoria.Descripcion,
-                    item.Stock,
-                    item.Precio,
-                    item.Estado ==  true ? 1 : 0,
-                    item.Estado == true ? "Activo" : "No Activo",
-               });
-            }
-
-            dgvdata.ForeColor = System.Drawing.Color.Black;
+            CargarProductos();
         }
 
         //---------------------------------------------------------------------------------------------------------------
@@ -419,5 +367,124 @@ namespace CapaPresentacion
         }
 
         //---------------------------------------------------------------------------------------------------------------
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            // Validar que el TextBox tenga un valor numérico válido
+            if (!decimal.TryParse(txtPorcentaje.Text, out decimal porcentaje) || porcentaje <= 0)
+            {
+                MessageBox.Show("Ingrese un porcentaje válido mayor a 0.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Convertir el porcentaje a decimal (Ej: si el usuario ingresa 10, se convierte a 1.10)
+            decimal factor = 1 + (porcentaje / 100);
+
+            // Lista para almacenar los ID de los productos visibles en el DataGridView
+            List<int> productosFiltrados = new List<int>();
+
+            // Recorrer solo las filas visibles del DataGridView y obtener sus ID
+            foreach (DataGridViewRow row in dgvdata.Rows)
+            {
+                if (row.Visible) // Solo toma las filas que están visibles
+                {
+                    int idProducto = Convert.ToInt32(row.Cells["Id"].Value);
+                    productosFiltrados.Add(idProducto);
+                }
+            }
+
+            // Si hay productos filtrados, ejecutar la actualización
+            if (productosFiltrados.Count > 0)
+            {
+                using (SqlConnection conn = new SqlConnection(Conexion.cadena))
+                {
+                    conn.Open();
+
+                    // Construir la consulta dinámica para actualizar solo los productos visibles
+                    string query = $"UPDATE Producto SET Precio = Precio * @Factor WHERE IdProducto IN ({string.Join(",", productosFiltrados)})";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Factor", factor);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                // Recargar los productos actualizados en el DataGridView
+                CargarProductos();
+
+                // Mostrar mensaje de éxito
+                MessageBox.Show($"Los precios se han actualizado en un {porcentaje}% correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("No hay productos visibles para actualizar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+
+        //---------------------------------------------------------------------------------------------------------------
+
+        private void CargarProductos()
+        {
+            dgvdata.Rows.Clear(); // 🔹 Limpia los datos previos para evitar datos desactualizados
+
+            // Cargar estados en ComboBox
+            cboestado.Items.Clear();
+            cboestado.Items.Add(new OpcionCombo() { Valor = 1, Texto = "Activo" });
+            cboestado.Items.Add(new OpcionCombo() { Valor = 0, Texto = "No Activo" });
+            cboestado.DisplayMember = "Texto";
+            cboestado.ValueMember = "Valor";
+            cboestado.SelectedIndex = 0;
+
+            txtstock.Text = "0";
+            txtprecio.Text = "0";
+
+            // Cargar categorías
+            cbocategoria.Items.Clear();
+            List<Categoria> listaCategoria = new CN_Categoria().Listar();
+            foreach (Categoria item in listaCategoria)
+            {
+                cbocategoria.Items.Add(new OpcionCombo() { Valor = item.IdCategoria, Texto = item.Descripcion });
+            }
+            cbocategoria.DisplayMember = "Texto";
+            cbocategoria.ValueMember = "Valor";
+            cbocategoria.SelectedIndex = 0;
+
+            // Cargar opciones de búsqueda
+            cbobusqueda.Items.Clear();
+            foreach (DataGridViewColumn columna in dgvdata.Columns)
+            {
+                if (columna.Visible == true && columna.Name != "btnseleccionar")
+                {
+                    cbobusqueda.Items.Add(new OpcionCombo() { Valor = columna.Name, Texto = columna.HeaderText });
+                }
+            }
+            cbobusqueda.DisplayMember = "Texto";
+            cbobusqueda.ValueMember = "Valor";
+            cbobusqueda.SelectedIndex = 0;
+
+            // 🔹 Obtener productos actualizados
+            List<Producto> lista = new CN_Producto().Listar();
+            foreach (Producto item in lista)
+            {
+                dgvdata.Rows.Add(new object[] {
+                    "",
+                    item.IdProducto,
+                    item.Codigo,
+                    item.Nombre,
+                    item.Descripcion,
+                    item.oCategoria.IdCategoria,
+                    item.oCategoria.Descripcion,
+                    item.Stock,
+                    item.Precio, // 🔹 Aquí ya estará reflejado el nuevo precio
+                    item.Estado == true ? 1 : 0,
+                    item.Estado == true ? "Activo" : "No Activo",
+                });
+            }
+
+            dgvdata.ForeColor = System.Drawing.Color.Black;
+        }
+
     }
 }
