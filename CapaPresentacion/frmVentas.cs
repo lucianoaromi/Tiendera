@@ -16,7 +16,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Org.BouncyCastle.Math.Primes;
 using SpreadsheetColor = DocumentFormat.OpenXml.Spreadsheet.Color; //------ para los cuadros 
-using DrawingColor = System.Drawing.Color; //---------- para cambiar color el fondo
+using DrawingColor = System.Drawing.Color;
+using System.Data.SqlClient;
+using CapaDatos; //---------- para cambiar color el fondo
 
 namespace CapaPresentacion
 {
@@ -303,7 +305,7 @@ namespace CapaPresentacion
         {
             decimal precio = 0;
             bool producto_existe = false;
-            //decimal total = 0;  // Variable para almacenar el total de la suma de los precios
+            
 
             // Verifica que se seleccione un producto
             if (int.Parse(txtidproducto.Text) == 0)
@@ -374,11 +376,125 @@ namespace CapaPresentacion
 
         }
 
+
+
+        private void txtcodigoproducto_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Verifica si la tecla presionada es 'Enter'
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Llama a la función para obtener el producto con el código ingresado
+                string codigoProducto = txtcodigoproducto.Text.Trim();
+
+                // Verifica que el código no esté vacío
+                if (string.IsNullOrEmpty(codigoProducto))
+                {
+                    MessageBox.Show("Debe ingresar un código de producto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
+                // Busca el producto en la base de datos
+                Producto producto = ObtenerProductoPorCodigo(codigoProducto);
+                if (producto == null)
+                {
+                    MessageBox.Show("Producto no encontrado", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
+                // Agregar el producto encontrado al DataGridView
+                AgregarProductoAlDataGridView(producto);
+            }
+        }
+
+        private Producto ObtenerProductoPorCodigo(string codigo)
+        {
+            string query = "SELECT IdProducto, Codigo, Nombre, Precio, Stock FROM Producto WHERE Codigo = @Codigo";
+
+            using (SqlConnection conn = new SqlConnection(Conexion.cadena))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Codigo", codigo);
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return new Producto
+                            {
+                                IdProducto = Convert.ToInt32(reader["IdProducto"]),
+                                Codigo = reader["Codigo"].ToString(),
+                                Nombre = reader["Nombre"].ToString(),
+                                Precio = Convert.ToDecimal(reader["Precio"]),
+                                Stock = Convert.ToInt32(reader["Stock"])
+                            };
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                    }
+                }
+            }
+        }
+
+        private void AgregarProductoAlDataGridView(Producto producto)
+        {
+            bool producto_existe = false;
+            foreach (DataGridViewRow fila in dgvdata.Rows)
+            {
+                if (fila.Cells["IdProducto"].Value.ToString() == producto.IdProducto.ToString())
+                {
+                    producto_existe = true;
+                    break;
+                }
+            }
+
+            if (!producto_existe)
+            {
+                int cantidad = Convert.ToInt32(txtcantidad.Value);
+
+                if (cantidad > producto.Stock || cantidad == 0)
+                {
+                    MessageBox.Show("La cantidad no es válida o excede el stock disponible.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
+                decimal subtotal = cantidad * producto.Precio;
+
+                // Resta el stock del producto en la base de datos
+                bool respuesta = new CN_Venta().RestarStock(producto.IdProducto, cantidad);
+
+                if (respuesta)
+                {
+                    dgvdata.Rows.Add(new object[]
+                    {
+                producto.IdProducto,
+                producto.Nombre,
+                producto.Precio.ToString("#,0.00"),
+                cantidad.ToString(),
+                subtotal.ToString("#,0.00")
+                    });
+
+                    calcularTotal();
+                }
+                else
+                {
+                    MessageBox.Show("Error al actualizar el stock.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            limpiarproducto();
+        }
+
+
+
+
+
         //-----------------------------------------------------------
 
         private void picComprar_Click(object sender, EventArgs e)
         {
-
             if (txtapellidocliente.Text == "")
             {
                 MessageBox.Show("Debe ingresar Apellido del cliente.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -391,7 +507,6 @@ namespace CapaPresentacion
                 return;
             }
 
-
             if (dgvdata.Rows.Count < 1)
             {
                 MessageBox.Show("La lista de compra está vacía.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -399,7 +514,6 @@ namespace CapaPresentacion
             }
 
             DataTable detalle_venta = new DataTable();
-
             detalle_venta.Columns.Add("IdProducto", typeof(int));
             detalle_venta.Columns.Add("Precio", typeof(decimal));
             detalle_venta.Columns.Add("Cantidad", typeof(int));
@@ -409,10 +523,10 @@ namespace CapaPresentacion
             {
                 detalle_venta.Rows.Add(new object[]
                 {
-                    row.Cells["IdProducto"].Value.ToString(),
-                    row.Cells["Precio"].Value.ToString(),
-                    row.Cells["Cantidad"].Value.ToString(),
-                    row.Cells["SubTotal"].Value.ToString()
+            row.Cells["IdProducto"].Value.ToString(),
+            row.Cells["Precio"].Value.ToString(),
+            row.Cells["Cantidad"].Value.ToString(),
+            row.Cells["SubTotal"].Value.ToString()
                 });
             }
 
@@ -456,8 +570,7 @@ namespace CapaPresentacion
                     form2.Activate(); // Forzar el enfoque en la nueva ventana
                 }
 
-
-                //txtdocumentocliente.Text = "";
+                // Limpiar campos y restablecer la interfaz
                 txtapellidocliente.Text = "";
                 txtnombrecliente.Text = "";
                 txtidcliente.Text = "";
@@ -467,13 +580,14 @@ namespace CapaPresentacion
                 txtcambio.Text = "";
                 txtnumventa.Text = numeroDocumento.ToString();
                 txtidcliente.Focus();
-
             }
             else
             {
                 MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
+
+
 
         //-----------------------------------------------------------
 
