@@ -673,6 +673,30 @@ namespace CapaPresentacion
             nuevoFormulario.Show(); // Muestra el formulario en una nueva ventana
         }
 
+        private void btnlimpiarcompra_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvdata.Rows)
+            {
+                int idProducto = Convert.ToInt32(row.Cells["IdProducto"].Value.ToString());
+                int cantidad = Convert.ToInt32(row.Cells["Cantidad"].Value.ToString());
+
+                // Llama a la función para devolver el stock
+                new CN_Venta().SumarStock(idProducto, cantidad);
+            }
+
+            // Limpia el DataGridView después de reponer el stock
+            dgvdata.Rows.Clear();
+            // Limpiar campos y restablecer la interfaz
+            txtapellidocliente.Text = "";
+            txtnombrecliente.Text = "";
+            txtidcliente.Text = "";
+            dgvdata.Rows.Clear();
+            calcularTotal();
+            txtpagacon.Text = "";
+            txtcambio.Text = "";
+            txtidcliente.Focus();
+        }
+
         //--------------------------------------------------------------------------------------------------------------------------------
 
     }

@@ -271,7 +271,7 @@ namespace CapaPresentacion
 
             if (obj.IdProducto == 0)
             {
-                //Ejecuta el metodo Registrar de la Clase Usuario en la Cap de Neg con sus respectivos parametros, retornando el idusuario
+                //Ejecuta el metodo Registrar de la Clase Producto en la Cap de Neg con sus respectivos parametros, retornando el idproducto
                 int idgenerado = new CN_Producto().Registrar(obj, out mensaje);
 
                 if (idgenerado != 0)
@@ -298,7 +298,7 @@ namespace CapaPresentacion
                     MessageBox.Show(mensaje, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-            //Si el objeto idusuario no es igual a 0 se accede a editar el usario seleccionado del datagrid
+            //Si el objeto idproducto no es igual a 0 se accede a editar el producto seleccionado del datagrid
             else
             {
                 bool resultado = new CN_Producto().Editar(obj, out mensaje);

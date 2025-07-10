@@ -102,6 +102,7 @@ namespace CapaPresentacion
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.btnlimpiarcompra = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPDF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picComprar)).BeginInit();
@@ -382,7 +383,7 @@ namespace CapaPresentacion
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Gold;
-            this.label11.Location = new System.Drawing.Point(12, 7);
+            this.label11.Location = new System.Drawing.Point(12, 12);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(218, 31);
             this.label11.TabIndex = 29;
@@ -707,6 +708,7 @@ namespace CapaPresentacion
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(58)))));
+            this.panel2.Controls.Add(this.btnlimpiarcompra);
             this.panel2.Controls.Add(this.groupBox5);
             this.panel2.Controls.Add(this.label17);
             this.panel2.Controls.Add(this.txtnumventa);
@@ -892,6 +894,23 @@ namespace CapaPresentacion
             this.textBox2.Text = "0";
             this.textBox2.Visible = false;
             // 
+            // btnlimpiarcompra
+            // 
+            this.btnlimpiarcompra.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnlimpiarcompra.BackColor = System.Drawing.Color.Black;
+            this.btnlimpiarcompra.FlatAppearance.BorderColor = System.Drawing.Color.Turquoise;
+            this.btnlimpiarcompra.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGreen;
+            this.btnlimpiarcompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnlimpiarcompra.ForeColor = System.Drawing.Color.White;
+            this.btnlimpiarcompra.Location = new System.Drawing.Point(581, 8);
+            this.btnlimpiarcompra.Name = "btnlimpiarcompra";
+            this.btnlimpiarcompra.Size = new System.Drawing.Size(167, 54);
+            this.btnlimpiarcompra.TabIndex = 61;
+            this.btnlimpiarcompra.Text = "LIMPIAR COMPRA";
+            this.btnlimpiarcompra.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnlimpiarcompra.UseVisualStyleBackColor = false;
+            this.btnlimpiarcompra.Click += new System.EventHandler(this.btnlimpiarcompra_Click);
+            // 
             // frmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1012,5 +1031,6 @@ namespace CapaPresentacion
         private PictureBox pictureBox1;
         private GroupBox groupBox5;
         private Label label20;
+        private Button btnlimpiarcompra;
     }
 }
