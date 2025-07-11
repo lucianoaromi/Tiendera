@@ -364,3 +364,5 @@ C:\GitHub\Restaurant\CapaPresentacion\bin\Debug\ArduinoPrograma.pdb
 C:\GitHub\Restaurant\CapaPresentacion\obj\Debug\ArduinoPrograma.exe
 C:\GitHub\Restaurant\CapaPresentacion\obj\Debug\ArduinoPrograma.pdb
 C:\GitHub\Restaurant\CapaPresentacion\obj\Debug\CapaPresentacion.Modales.ProductoDetalles.resources
+C:\GitHub\Restaurant\CapaPresentacion\bin\Debug\Newtonsoft.Json.dll
+C:\GitHub\Restaurant\CapaPresentacion\bin\Debug\Newtonsoft.Json.xml

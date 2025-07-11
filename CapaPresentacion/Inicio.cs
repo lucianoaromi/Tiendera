@@ -10,6 +10,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaPresentacion.Modales;
 
+
+using System.Text.Json;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+
 using DrawingColor = System.Drawing.Color; //---------- para cambiar color el fondo
 
 
@@ -17,6 +22,8 @@ using DrawingColor = System.Drawing.Color; //---------- para cambiar color el fo
 using CapaEntidad;
 using CapaNegocio;
 using System.Runtime.InteropServices;
+using System.Net.Http;
+using System.Text.Json.Serialization;
 
 namespace CapaPresentacion
 {
@@ -108,6 +115,8 @@ namespace CapaPresentacion
             menu.ForeColor = Color.White;
 
             //ººººººººººººººººººººººººººººººººººººººººº
+
+            _ = ObtenerTemperatura();
 
         }
 
@@ -279,5 +288,64 @@ namespace CapaPresentacion
         }
 
 
+        private async Task ObtenerTemperatura()
+        {
+            string apiKey = "f366fc991c319b46e080bf1fe44b7761";
+            string ciudad = "Corrientes,AR";
+            string url = $"https://api.openweathermap.org/data/2.5/weather?q={ciudad}&units=metric&lang=es&appid={apiKey}";
+
+            using (HttpClient client = new HttpClient())
+            {
+                try
+                {
+                    var response = await client.GetAsync(url);
+                    response.EnsureSuccessStatusCode();
+                    var json = await response.Content.ReadAsStringAsync();
+                    var data = JsonConvert.DeserializeObject<JObject>(json);
+                    decimal temp = data["main"]["temp"].Value<decimal>();
+                    string iconCode = data["weather"][0]["icon"].ToString();
+                    string iconUrl = $"https://openweathermap.org/img/wn/{iconCode}@2x.png";
+
+                    // Mostrar temperatura en Label
+                    labelTemperatura.Text = $"{Math.Round(temp)}°C";
+
+                    // Cargar ícono en PictureBox
+                    pictureBoxClima.Load(iconUrl);
+                    labelActualizado.Text = $"Última actualización: {DateTime.Now.ToString("HH:mm")} hs";
+                }
+                catch (Exception ex)
+                {
+                    labelTemperatura.Text = "Error.";
+                    labelActualizado.Text = ""; // o mantené el último dato
+                    Console.WriteLine(ex.Message);
+                }
+            }
+        }
+
+        private async void button1_Click(object sender, EventArgs e)
+        {
+            // Bloquear botón inmediatamente  
+            button1.Enabled = false;
+            button1.Text = "Actualizando...";
+
+            try
+            {
+                // Llamar al método asincrónico para obtener la temperatura  
+                await ObtenerTemperatura();
+
+                // Esperar 10 segundos antes de reactivar  
+                await Task.Delay(6000);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+            finally
+            {
+                // Reactivar botón siempre  
+                button1.Enabled = true;
+                button1.Text = "Actualizar";
+            }
+        }
     }
 }

@@ -60,6 +60,10 @@
             this.timerReloj = new System.Windows.Forms.Timer(this.components);
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.labelActualizado = new System.Windows.Forms.Label();
+            this.labelTemperatura = new System.Windows.Forms.Label();
+            this.pictureBoxClima = new System.Windows.Forms.PictureBox();
             this.relojesquina = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -73,6 +77,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClima)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel2.SuspendLayout();
@@ -401,7 +406,7 @@
             // txtidusuario
             // 
             this.txtidusuario.BackColor = System.Drawing.Color.Black;
-            this.txtidusuario.Location = new System.Drawing.Point(993, 6);
+            this.txtidusuario.Location = new System.Drawing.Point(328, 3);
             this.txtidusuario.Name = "txtidusuario";
             this.txtidusuario.Size = new System.Drawing.Size(36, 20);
             this.txtidusuario.TabIndex = 7;
@@ -428,6 +433,10 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.labelActualizado);
+            this.panel1.Controls.Add(this.labelTemperatura);
+            this.panel1.Controls.Add(this.pictureBoxClima);
             this.panel1.Controls.Add(this.relojesquina);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.pictureBox5);
@@ -444,13 +453,54 @@
             this.panel1.TabIndex = 4;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(469, 36);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(82, 23);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Actualizar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // labelActualizado
+            // 
+            this.labelActualizado.AutoSize = true;
+            this.labelActualizado.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelActualizado.ForeColor = System.Drawing.Color.White;
+            this.labelActualizado.Location = new System.Drawing.Point(483, 24);
+            this.labelActualizado.Name = "labelActualizado";
+            this.labelActualizado.Size = new System.Drawing.Size(45, 9);
+            this.labelActualizado.TabIndex = 12;
+            this.labelActualizado.Text = ". . . . . . . . . . ";
+            // 
+            // labelTemperatura
+            // 
+            this.labelTemperatura.AutoSize = true;
+            this.labelTemperatura.Font = new System.Drawing.Font("Adobe Gothic Std B", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labelTemperatura.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.labelTemperatura.Location = new System.Drawing.Point(940, 46);
+            this.labelTemperatura.Name = "labelTemperatura";
+            this.labelTemperatura.Size = new System.Drawing.Size(27, 20);
+            this.labelTemperatura.TabIndex = 11;
+            this.labelTemperatura.Text = ". . .";
+            // 
+            // pictureBoxClima
+            // 
+            this.pictureBoxClima.Location = new System.Drawing.Point(986, 37);
+            this.pictureBoxClima.Name = "pictureBoxClima";
+            this.pictureBoxClima.Size = new System.Drawing.Size(35, 35);
+            this.pictureBoxClima.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxClima.TabIndex = 10;
+            this.pictureBoxClima.TabStop = false;
+            // 
             // relojesquina
             // 
             this.relojesquina.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.relojesquina.AutoSize = true;
             this.relojesquina.Font = new System.Drawing.Font("Adobe Gothic Std B", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.relojesquina.ForeColor = System.Drawing.Color.Gold;
-            this.relojesquina.Location = new System.Drawing.Point(1030, 46);
+            this.relojesquina.Location = new System.Drawing.Point(1029, 46);
             this.relojesquina.Name = "relojesquina";
             this.relojesquina.Size = new System.Drawing.Size(69, 20);
             this.relojesquina.TabIndex = 4;
@@ -463,7 +513,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(947, 53);
+            this.label2.Location = new System.Drawing.Point(856, 51);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 12);
             this.label2.TabIndex = 4;
@@ -528,6 +578,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClima)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -572,5 +623,9 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label relojesquina;
+        private System.Windows.Forms.PictureBox pictureBoxClima;
+        private System.Windows.Forms.Label labelActualizado;
+        private System.Windows.Forms.Label labelTemperatura;
+        private System.Windows.Forms.Button button1;
     }
 }
