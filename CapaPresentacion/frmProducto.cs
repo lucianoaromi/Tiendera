@@ -277,19 +277,19 @@ namespace CapaPresentacion
                 if (idgenerado != 0)
                 {
                     dgvdata.Rows.Add(new object[] {
-                        "",
-                        idgenerado,
-                        txtcodigo.Text,
-                        txtnombre.Text,
-                        txtdescripcion.Text,
-                        ((OpcionCombo)cbocategoria.SelectedItem).Valor.ToString(),
-                        ((OpcionCombo)cbocategoria.SelectedItem).Texto.ToString(),
-                        txtstock.Text,
-                        string.Format("{0:N2}", obj.Precio), // Formatear el precio como pesos
+                "",
+                idgenerado,
+                txtcodigo.Text,
+                txtnombre.Text,
+                txtdescripcion.Text,
+                ((OpcionCombo)cbocategoria.SelectedItem).Valor.ToString(),
+                ((OpcionCombo)cbocategoria.SelectedItem).Texto.ToString(),
+                txtstock.Text,
+                obj.Precio.ToString("F2"), // Formatear el precio sin separadores de miles
 
-                        ((OpcionCombo)cboestado.SelectedItem).Valor.ToString(),
-                        ((OpcionCombo)cboestado.SelectedItem).Texto.ToString()
-                    });
+                ((OpcionCombo)cboestado.SelectedItem).Valor.ToString(),
+                ((OpcionCombo)cboestado.SelectedItem).Texto.ToString()
+            });
 
                     Limpiar();
                 }
@@ -316,7 +316,7 @@ namespace CapaPresentacion
                     row.Cells["Categoria"].Value = ((OpcionCombo)cbocategoria.SelectedItem).Texto.ToString();
 
                     row.Cells["Stock"].Value = txtstock.Text;
-                    row.Cells["Precio"].Value = string.Format("{0:N2}", obj.Precio); // Formatear el precio como pesos
+                    row.Cells["Precio"].Value = obj.Precio.ToString("F2"); // Formatear el precio sin separadores de miles
 
                     row.Cells["EstadoValor"].Value = ((OpcionCombo)cboestado.SelectedItem).Valor.ToString();
                     row.Cells["Estado"].Value = ((OpcionCombo)cboestado.SelectedItem).Texto.ToString();
@@ -399,10 +399,8 @@ namespace CapaPresentacion
                 using (SqlConnection conn = new SqlConnection(Conexion.cadena))
                 {
                     conn.Open();
-
                     // Construir la consulta dinámica para actualizar solo los productos visibles
                     string query = $"UPDATE Producto SET Precio = Precio * @Factor WHERE IdProducto IN ({string.Join(",", productosFiltrados)})";
-
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@Factor", factor);
@@ -410,8 +408,8 @@ namespace CapaPresentacion
                     }
                 }
 
-                // Recargar los productos actualizados en el DataGridView
-                CargarProductos();
+                // Actualizar solo las filas visibles del DataGridView sin recargar
+                ActualizarPreciosEnDataGridView(factor);
 
                 // Mostrar mensaje de éxito
                 MessageBox.Show($"Los precios se han actualizado en un {porcentaje}% correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -420,6 +418,32 @@ namespace CapaPresentacion
             {
                 MessageBox.Show("No hay productos visibles para actualizar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        // Actualizar solo los precios en el DataGridView actual
+        private void ActualizarPreciosEnDataGridView(decimal factor)
+        {
+            foreach (DataGridViewRow row in dgvdata.Rows)
+            {
+                if (row.Visible && !row.IsNewRow) // Solo filas visibles y que no sean la fila nueva
+                {
+                    // Buscar la columna del precio (ajusta el nombre según tu DataGridView)
+                    if (row.Cells["Precio"] != null && row.Cells["Precio"].Value != null)
+                    {
+                        decimal precioActual = Convert.ToDecimal(row.Cells["Precio"].Value);
+                        decimal nuevoPrecio = Math.Round(precioActual * factor, 2); // ✅ CAMBIO: Redondear a 2 decimales
+
+                        // Actualizar el valor en el DataGridView
+                        row.Cells["Precio"].Value = nuevoPrecio;
+
+                        // Marcar la fila como modificada visualmente
+                        row.DefaultCellStyle.BackColor = Color.LightGreen;
+                    }
+                }
+            }
+
+            // Refrescar solo la visualización
+            dgvdata.Refresh();
         }
 
 
