@@ -46,7 +46,13 @@ namespace CapaPresentacion
         private static IconMenuItem MenuActivo = null;
         //Indica el formulario activo en el panel
         private static Form FormularioActivo = null;
-      
+
+
+        // Variables de clase que necesitas agregar
+        private System.Windows.Forms.Timer timerClima;
+        private DateTime ultimaActualizacionClima = DateTime.MinValue;
+
+
         //Constructor que recibe como parametro un objeto de tipo Usuario 
         public Inicio(Usuario objusuario = null)
         {
@@ -57,6 +63,7 @@ namespace CapaPresentacion
                 usuarioActual = objusuario;
 
             InitializeComponent();
+            InicializarTimerClima(); // ✅ Llamar aquí para inicializar el timer
         }
         
         //--------------------------------------------------------------------------------------------------------------
@@ -123,13 +130,85 @@ namespace CapaPresentacion
 
         //--------------------------------------------------------------------------------------------------------------
 
-        //Metodo para mostrar la hora
         private void timerReloj_Tick_1(object sender, EventArgs e)
         {
-            lblreloj.Text = DateTime.Now.ToString("hh:mm tt");
+            lblreloj.Text = DateTime.Now.ToString("hh:mm tt");
             lblfecha.Text = DateTime.Now.ToLongDateString();
-            relojesquina.Text = DateTime.Now.ToString("hh:mm tt");
+            relojesquina.Text = DateTime.Now.ToString("hh:mm tt");
         }
+
+        // Método para inicializar el timer del clima
+        private void InicializarTimerClima()
+        {
+            timerClima = new System.Windows.Forms.Timer();
+            timerClima.Interval = 900000; // 15 x 60 x 100 = 900000 para 15 min
+            timerClima.Tick += TimerClima_Tick; // ✅ CORRECCIÓN: Nombre coincide ahora
+            timerClima.Start();
+
+            // ✅ DEBUGGING: Verificar que el timer esté activo
+            Console.WriteLine($"Timer iniciado: {timerClima.Enabled}");
+
+            // Obtener clima inicial
+            _ = ObtenerTemperatura();
+        }
+
+        // Evento del timer (se ejecuta en el hilo principal)
+        private async void TimerClima_Tick(object sender, EventArgs e)
+        {
+            // ✅ DEBUGGING: Para verificar que el timer se ejecuta
+            Console.WriteLine($"Timer ejecutado: {DateTime.Now:HH:mm:ss}");
+
+            await ObtenerTemperatura();
+        }
+
+        // Método para mostrar la temperatura
+        private static bool climaEnProceso = false;
+        private async Task ObtenerTemperatura()
+        {
+            if (climaEnProceso) return;
+            climaEnProceso = true;
+
+            string apiKey = "f366fc991c319b46e080bf1fe44b7761";
+            string ciudad = "Corrientes,AR";
+            string url = $"https://api.openweathermap.org/data/2.5/weather?q={ciudad}&units=metric&lang=es&appid={apiKey}";
+
+            using (HttpClient client = new HttpClient())
+            {
+                try
+                {
+                    var response = await client.GetAsync(url);
+                    response.EnsureSuccessStatusCode();
+                    var json = await response.Content.ReadAsStringAsync();
+                    var data = JsonConvert.DeserializeObject<JObject>(json);
+
+                    decimal temp = data["main"]["temp"].Value<decimal>();
+                    string iconCode = data["weather"][0]["icon"].ToString();
+                    string iconUrl = $"https://openweathermap.org/img/wn/{iconCode}@2x.png";
+
+                    // Actualizar UI (ya estamos en el hilo principal)
+                    labelTemperatura.Text = $"{Math.Round(temp)}°C";
+                    pictureBoxClima.Load(iconUrl);
+                    labelActualizado.Text = $"Actualizado: {DateTime.Now.ToString("HH:mm")} hs";
+                    ultimaActualizacionClima = DateTime.Now;
+
+                    // ✅ DEBUGGING: Para confirmar que funciona
+                    Console.WriteLine($"Clima actualizado: {DateTime.Now:HH:mm:ss}");
+                }
+                catch (Exception ex)
+                {
+                    labelTemperatura.Text = "Error.";
+                    labelActualizado.Text = ultimaActualizacionClima != DateTime.MinValue
+                        ? $"Actualizado: {ultimaActualizacionClima.ToString("HH:mm")} hs"
+                        : "";
+                    Console.WriteLine($"Error clima: {ex.Message}");
+                }
+                finally
+                {
+                    climaEnProceso = false;
+                }
+            }
+        }
+
 
         //--------------------------------------------------------------------------------------------------------------
 
@@ -287,65 +366,5 @@ namespace CapaPresentacion
             }
         }
 
-
-        private async Task ObtenerTemperatura()
-        {
-            string apiKey = "f366fc991c319b46e080bf1fe44b7761";
-            string ciudad = "Corrientes,AR";
-            string url = $"https://api.openweathermap.org/data/2.5/weather?q={ciudad}&units=metric&lang=es&appid={apiKey}";
-
-            using (HttpClient client = new HttpClient())
-            {
-                try
-                {
-                    var response = await client.GetAsync(url);
-                    response.EnsureSuccessStatusCode();
-                    var json = await response.Content.ReadAsStringAsync();
-                    var data = JsonConvert.DeserializeObject<JObject>(json);
-                    decimal temp = data["main"]["temp"].Value<decimal>();
-                    string iconCode = data["weather"][0]["icon"].ToString();
-                    string iconUrl = $"https://openweathermap.org/img/wn/{iconCode}@2x.png";
-
-                    // Mostrar temperatura en Label
-                    labelTemperatura.Text = $"{Math.Round(temp)}°C";
-
-                    // Cargar ícono en PictureBox
-                    pictureBoxClima.Load(iconUrl);
-                    labelActualizado.Text = $"Última actualización: {DateTime.Now.ToString("HH:mm")} hs";
-                }
-                catch (Exception ex)
-                {
-                    labelTemperatura.Text = "Error.";
-                    labelActualizado.Text = ""; // o mantené el último dato
-                    Console.WriteLine(ex.Message);
-                }
-            }
-        }
-
-        private async void button1_Click(object sender, EventArgs e)
-        {
-            // Bloquear botón inmediatamente  
-            button1.Enabled = false;
-            button1.Text = "Actualizando...";
-
-            try
-            {
-                // Llamar al método asincrónico para obtener la temperatura  
-                await ObtenerTemperatura();
-
-                // Esperar 10 segundos antes de reactivar  
-                await Task.Delay(6000);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error: {ex.Message}");
-            }
-            finally
-            {
-                // Reactivar botón siempre  
-                button1.Enabled = true;
-                button1.Text = "Actualizar";
-            }
-        }
     }
 }
