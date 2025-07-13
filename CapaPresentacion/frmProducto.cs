@@ -234,6 +234,8 @@ namespace CapaPresentacion
             foreach (DataGridViewRow row in dgvdata.Rows)
             {
                 row.Visible = true;
+                row.DefaultCellStyle.BackColor = dgvdata.DefaultCellStyle.BackColor;
+                row.DefaultCellStyle.ForeColor = dgvdata.DefaultCellStyle.ForeColor;
             }
         }
 
