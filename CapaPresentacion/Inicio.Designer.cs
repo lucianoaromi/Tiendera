@@ -68,6 +68,9 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblDolarOficial = new System.Windows.Forms.Label();
+            this.lblDolarBlue = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.menu.SuspendLayout();
             this.contenedor.SuspendLayout();
             this.panelvista.SuspendLayout();
@@ -100,7 +103,7 @@
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
             this.menu.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menu.Size = new System.Drawing.Size(124, 638);
+            this.menu.Size = new System.Drawing.Size(94, 638);
             this.menu.TabIndex = 0;
             this.menu.Text = "menuStrip1";
             // 
@@ -359,7 +362,7 @@
             this.lblfecha.AutoSize = true;
             this.lblfecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblfecha.ForeColor = System.Drawing.Color.White;
-            this.lblfecha.Location = new System.Drawing.Point(258, 462);
+            this.lblfecha.Location = new System.Drawing.Point(269, 462);
             this.lblfecha.Name = "lblfecha";
             this.lblfecha.Size = new System.Drawing.Size(308, 37);
             this.lblfecha.TabIndex = 1;
@@ -432,6 +435,9 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.lblDolarBlue);
+            this.panel1.Controls.Add(this.lblDolarOficial);
             this.panel1.Controls.Add(this.labelActualizado);
             this.panel1.Controls.Add(this.labelTemperatura);
             this.panel1.Controls.Add(this.pictureBoxClima);
@@ -545,6 +551,39 @@
             this.panel2.Size = new System.Drawing.Size(1125, 638);
             this.panel2.TabIndex = 5;
             // 
+            // lblDolarOficial
+            // 
+            this.lblDolarOficial.AutoSize = true;
+            this.lblDolarOficial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDolarOficial.ForeColor = System.Drawing.Color.LightGreen;
+            this.lblDolarOficial.Location = new System.Drawing.Point(508, 47);
+            this.lblDolarOficial.Name = "lblDolarOficial";
+            this.lblDolarOficial.Size = new System.Drawing.Size(81, 13);
+            this.lblDolarOficial.TabIndex = 13;
+            this.lblDolarOficial.Text = "Cargando. . .";
+            // 
+            // lblDolarBlue
+            // 
+            this.lblDolarBlue.AutoSize = true;
+            this.lblDolarBlue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDolarBlue.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.lblDolarBlue.Location = new System.Drawing.Point(658, 47);
+            this.lblDolarBlue.Name = "lblDolarBlue";
+            this.lblDolarBlue.Size = new System.Drawing.Size(81, 13);
+            this.lblDolarBlue.TabIndex = 14;
+            this.lblDolarBlue.Text = "Cargando. . .";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(646, 45);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(11, 16);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "|";
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -617,5 +656,8 @@
         private System.Windows.Forms.PictureBox pictureBoxClima;
         private System.Windows.Forms.Label labelActualizado;
         private System.Windows.Forms.Label labelTemperatura;
+        private System.Windows.Forms.Label lblDolarBlue;
+        private System.Windows.Forms.Label lblDolarOficial;
+        private System.Windows.Forms.Label label3;
     }
 }

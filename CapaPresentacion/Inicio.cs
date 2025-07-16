@@ -63,7 +63,7 @@ namespace CapaPresentacion
                 usuarioActual = objusuario;
 
             InitializeComponent();
-            InicializarTimerClima(); // ✅ Llamar aquí para inicializar el timer
+            InicializarTimerClima(); // Llamar aquí para inicializar el timer
         }
         
         //--------------------------------------------------------------------------------------------------------------
@@ -124,6 +124,9 @@ namespace CapaPresentacion
             //ººººººººººººººººººººººººººººººººººººººººº
 
             _ = ObtenerTemperatura();
+
+            _ = ObtenerValorDolar();
+
 
         }
 
@@ -206,6 +209,36 @@ namespace CapaPresentacion
                 {
                     climaEnProceso = false;
                 }
+            }
+        }
+
+        //--------------------------------------------------------------------------------------------------------------
+
+        private async Task ObtenerValorDolar()
+        {
+            try
+            {
+                string url = "https://api.bluelytics.com.ar/v2/latest";
+
+                using (HttpClient client = new HttpClient())
+                {
+                    HttpResponseMessage response = await client.GetAsync(url);
+                    response.EnsureSuccessStatusCode();
+
+                    string json = await response.Content.ReadAsStringAsync();
+
+                    var dolarData = JsonConvert.DeserializeObject<DolarResponse>(json);
+
+                    // Mostrar en dos labels separados
+                    lblDolarOficial.Text = $"Dólar Oficial: ${dolarData.oficial.value_sell}";
+                    lblDolarBlue.Text = $"Dólar Blue: ${dolarData.blue.value_sell}";
+                }
+            }
+            catch (Exception ex)
+            {
+                lblDolarOficial.Text = "Error al cargar $ oficial";
+                lblDolarBlue.Text = "Error al cargar $ blue";
+                Console.WriteLine("Error dólar: " + ex.Message);
             }
         }
 
@@ -364,6 +397,22 @@ namespace CapaPresentacion
                 ReleaseCapture();
                 SendMessage(this.Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
             }
+        }
+
+        //--------------------------------------------------------------------------------------------------------------
+
+        public class DolarTipo
+        {
+            public decimal value_avg { get; set; }
+            public decimal value_sell { get; set; }
+            public decimal value_buy { get; set; }
+            public DateTime date { get; set; }
+        }
+
+        public class DolarResponse
+        {
+            public DolarTipo blue { get; set; }
+            public DolarTipo oficial { get; set; }
         }
 
     }
