@@ -60,6 +60,9 @@
             this.timerReloj = new System.Windows.Forms.Timer(this.components);
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblDolarBlue = new System.Windows.Forms.Label();
+            this.lblDolarOficial = new System.Windows.Forms.Label();
             this.labelActualizado = new System.Windows.Forms.Label();
             this.labelTemperatura = new System.Windows.Forms.Label();
             this.pictureBoxClima = new System.Windows.Forms.PictureBox();
@@ -68,9 +71,6 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblDolarOficial = new System.Windows.Forms.Label();
-            this.lblDolarBlue = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.menu.SuspendLayout();
             this.contenedor.SuspendLayout();
             this.panelvista.SuspendLayout();
@@ -457,6 +457,39 @@
             this.panel1.TabIndex = 4;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(646, 45);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(11, 16);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "|";
+            // 
+            // lblDolarBlue
+            // 
+            this.lblDolarBlue.AutoSize = true;
+            this.lblDolarBlue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDolarBlue.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.lblDolarBlue.Location = new System.Drawing.Point(658, 47);
+            this.lblDolarBlue.Name = "lblDolarBlue";
+            this.lblDolarBlue.Size = new System.Drawing.Size(81, 13);
+            this.lblDolarBlue.TabIndex = 14;
+            this.lblDolarBlue.Text = "Cargando. . .";
+            // 
+            // lblDolarOficial
+            // 
+            this.lblDolarOficial.AutoSize = true;
+            this.lblDolarOficial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDolarOficial.ForeColor = System.Drawing.Color.LightGreen;
+            this.lblDolarOficial.Location = new System.Drawing.Point(508, 47);
+            this.lblDolarOficial.Name = "lblDolarOficial";
+            this.lblDolarOficial.Size = new System.Drawing.Size(81, 13);
+            this.lblDolarOficial.TabIndex = 13;
+            this.lblDolarOficial.Text = "Cargando. . .";
+            // 
             // labelActualizado
             // 
             this.labelActualizado.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -550,39 +583,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1125, 638);
             this.panel2.TabIndex = 5;
-            // 
-            // lblDolarOficial
-            // 
-            this.lblDolarOficial.AutoSize = true;
-            this.lblDolarOficial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDolarOficial.ForeColor = System.Drawing.Color.LightGreen;
-            this.lblDolarOficial.Location = new System.Drawing.Point(508, 47);
-            this.lblDolarOficial.Name = "lblDolarOficial";
-            this.lblDolarOficial.Size = new System.Drawing.Size(81, 13);
-            this.lblDolarOficial.TabIndex = 13;
-            this.lblDolarOficial.Text = "Cargando. . .";
-            // 
-            // lblDolarBlue
-            // 
-            this.lblDolarBlue.AutoSize = true;
-            this.lblDolarBlue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDolarBlue.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblDolarBlue.Location = new System.Drawing.Point(658, 47);
-            this.lblDolarBlue.Name = "lblDolarBlue";
-            this.lblDolarBlue.Size = new System.Drawing.Size(81, 13);
-            this.lblDolarBlue.TabIndex = 14;
-            this.lblDolarBlue.Text = "Cargando. . .";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(646, 45);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(11, 16);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "|";
             // 
             // Inicio
             // 

@@ -20,3 +20,14 @@ C:\GitHub\Restaurant\CapaEntidad\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.
 C:\GitHub\Restaurant\CapaEntidad\obj\Debug\CapaEnti.526B9C87.Up2Date
 C:\GitHub\Restaurant\CapaEntidad\obj\Debug\CapaEntidad.dll
 C:\GitHub\Restaurant\CapaEntidad\obj\Debug\CapaEntidad.pdb
+C:\GitHub\Tiendera\CapaEntidad\bin\Debug\CapaEntidad.dll
+C:\GitHub\Tiendera\CapaEntidad\bin\Debug\CapaEntidad.pdb
+C:\GitHub\Tiendera\CapaEntidad\bin\Debug\BouncyCastle.Crypto.dll
+C:\GitHub\Tiendera\CapaEntidad\bin\Debug\itextsharp.dll
+C:\GitHub\Tiendera\CapaEntidad\bin\Debug\itextsharp.xmlworker.dll
+C:\GitHub\Tiendera\CapaEntidad\bin\Debug\itextsharp.xml
+C:\GitHub\Tiendera\CapaEntidad\obj\Debug\CapaEntidad.csproj.AssemblyReference.cache
+C:\GitHub\Tiendera\CapaEntidad\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.cache
+C:\GitHub\Tiendera\CapaEntidad\obj\Debug\CapaEnti.526B9C87.Up2Date
+C:\GitHub\Tiendera\CapaEntidad\obj\Debug\CapaEntidad.dll
+C:\GitHub\Tiendera\CapaEntidad\obj\Debug\CapaEntidad.pdb

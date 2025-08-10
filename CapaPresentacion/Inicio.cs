@@ -145,7 +145,7 @@ namespace CapaPresentacion
         {
             timerClima = new System.Windows.Forms.Timer();
             timerClima.Interval = 900000; // 15 x 60 x 100 = 900000 para 15 min
-            timerClima.Tick += TimerClima_Tick; // ✅ CORRECCIÓN: Nombre coincide ahora
+            timerClima.Tick += TimerClima_Tick; //
             timerClima.Start();
 
             // ✅ DEBUGGING: Verificar que el timer esté activo
@@ -171,7 +171,7 @@ namespace CapaPresentacion
             if (climaEnProceso) return;
             climaEnProceso = true;
 
-            string apiKey = "f366fc991c319b46e080bf1fe44b7761";
+            string apiKey = "dd905789136551a877ea30db70aa1f52";
             string ciudad = "Corrientes,AR";
             string url = $"https://api.openweathermap.org/data/2.5/weather?q={ciudad}&units=metric&lang=es&appid={apiKey}";
 
@@ -194,7 +194,7 @@ namespace CapaPresentacion
                     labelActualizado.Text = $"Actualizado: {DateTime.Now.ToString("HH:mm")} hs";
                     ultimaActualizacionClima = DateTime.Now;
 
-                    // ✅ DEBUGGING: Para confirmar que funciona
+                    // DEBUGGING: Para confirmar que funciona
                     Console.WriteLine($"Clima actualizado: {DateTime.Now:HH:mm:ss}");
                 }
                 catch (Exception ex)
