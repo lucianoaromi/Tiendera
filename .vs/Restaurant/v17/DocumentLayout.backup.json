@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\GitHub\\Tiendera\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BC2B10B0-4A98-49E7-8A29-58316990E9B7}|CapaDatos\\CapaDatos.csproj|C:\\GitHub\\Tiendera\\capadatos\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{BC2B10B0-4A98-49E7-8A29-58316990E9B7}|CapaDatos\\CapaDatos.csproj|solutionrelative:capadatos\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{30D572DF-93B5-4C8C-BD0E-2A67FC7EFA66}|CapaPresentacion\\CapaPresentacion.csproj|c:\\github\\tiendera\\capapresentacion\\inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{30D572DF-93B5-4C8C-BD0E-2A67FC7EFA66}|CapaPresentacion\\CapaPresentacion.csproj|solutionrelative:capapresentacion\\inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,20 +15,8 @@
       "RelativeMoniker": "D:0:0:{30D572DF-93B5-4C8C-BD0E-2A67FC7EFA66}|CapaPresentacion\\CapaPresentacion.csproj|solutionrelative:capapresentacion\\inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BC2B10B0-4A98-49E7-8A29-58316990E9B7}|CapaDatos\\CapaDatos.csproj|C:\\GitHub\\Tiendera\\capadatos\\cd_permiso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BC2B10B0-4A98-49E7-8A29-58316990E9B7}|CapaDatos\\CapaDatos.csproj|solutionrelative:capadatos\\cd_permiso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BC2B10B0-4A98-49E7-8A29-58316990E9B7}|CapaDatos\\CapaDatos.csproj|C:\\GitHub\\Tiendera\\capadatos\\cd_cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BC2B10B0-4A98-49E7-8A29-58316990E9B7}|CapaDatos\\CapaDatos.csproj|solutionrelative:capadatos\\cd_cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2F7FBF92-A4AA-4186-9334-AD344B8036C5}|CapaEntidad\\CapaEntidad.csproj|C:\\GitHub\\Tiendera\\capaentidad\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2F7FBF92-A4AA-4186-9334-AD344B8036C5}|CapaEntidad\\CapaEntidad.csproj|solutionrelative:capaentidad\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BC2B10B0-4A98-49E7-8A29-58316990E9B7}|CapaDatos\\CapaDatos.csproj|C:\\GitHub\\Tiendera\\capadatos\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{BC2B10B0-4A98-49E7-8A29-58316990E9B7}|CapaDatos\\CapaDatos.csproj|solutionrelative:capadatos\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2F7FBF92-A4AA-4186-9334-AD344B8036C5}|CapaEntidad\\CapaEntidad.csproj|C:\\GitHub\\Tiendera\\capaentidad\\permiso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -55,43 +47,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Inicio.cs",
-              "DocumentMoniker": "C:\\GitHub\\Tiendera\\CapaPresentacion\\Inicio.cs",
-              "RelativeDocumentMoniker": "CapaPresentacion\\Inicio.cs",
-              "ToolTip": "C:\\GitHub\\Tiendera\\CapaPresentacion\\Inicio.cs",
-              "RelativeToolTip": "CapaPresentacion\\Inicio.cs",
-              "ViewState": "AgIAAPkAAAAAAAAAAAAAAKABAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T22:38:39.765Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CD_Permiso.cs",
-              "DocumentMoniker": "C:\\GitHub\\Tiendera\\CapaDatos\\CD_Permiso.cs",
-              "RelativeDocumentMoniker": "CapaDatos\\CD_Permiso.cs",
-              "ToolTip": "C:\\GitHub\\Tiendera\\CapaDatos\\CD_Permiso.cs",
-              "RelativeToolTip": "CapaDatos\\CD_Permiso.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T22:37:07.124Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CD_Cliente.cs",
-              "DocumentMoniker": "C:\\GitHub\\Tiendera\\CapaDatos\\CD_Cliente.cs",
-              "RelativeDocumentMoniker": "CapaDatos\\CD_Cliente.cs",
-              "ToolTip": "C:\\GitHub\\Tiendera\\CapaDatos\\CD_Cliente.cs",
-              "RelativeToolTip": "CapaDatos\\CD_Cliente.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T22:24:17.827Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "app.config",
               "DocumentMoniker": "C:\\GitHub\\Tiendera\\CapaDatos\\app.config",
               "RelativeDocumentMoniker": "CapaDatos\\app.config",
@@ -99,11 +54,25 @@
               "RelativeToolTip": "CapaDatos\\app.config",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2025-07-22T22:30:06.407Z"
+              "WhenOpened": "2025-07-22T22:30:06.407Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
+              "Title": "Inicio.cs",
+              "DocumentMoniker": "C:\\GitHub\\Tiendera\\CapaPresentacion\\Inicio.cs",
+              "RelativeDocumentMoniker": "CapaPresentacion\\Inicio.cs",
+              "ToolTip": "C:\\GitHub\\Tiendera\\CapaPresentacion\\Inicio.cs",
+              "RelativeToolTip": "CapaPresentacion\\Inicio.cs",
+              "ViewState": "AgIAAI8BAAAAAAAAAAAAAKABAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-22T22:38:39.765Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Usuario.cs",
               "DocumentMoniker": "C:\\GitHub\\Tiendera\\CapaEntidad\\Usuario.cs",
               "RelativeDocumentMoniker": "CapaEntidad\\Usuario.cs",
@@ -115,7 +84,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "Permiso.cs",
               "DocumentMoniker": "C:\\GitHub\\Tiendera\\CapaEntidad\\Permiso.cs",
               "RelativeDocumentMoniker": "CapaEntidad\\Permiso.cs",
@@ -127,7 +96,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
               "Title": "Cliente.cs",
               "DocumentMoniker": "C:\\GitHub\\Tiendera\\CapaEntidad\\Cliente.cs",
               "RelativeDocumentMoniker": "CapaEntidad\\Cliente.cs",
@@ -139,7 +108,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 6,
               "Title": "Categoria.cs",
               "DocumentMoniker": "C:\\GitHub\\Tiendera\\CapaEntidad\\Categoria.cs",
               "RelativeDocumentMoniker": "CapaEntidad\\Categoria.cs",
@@ -151,7 +120,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 7,
               "Title": "frmCategoria.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\GitHub\\Tiendera\\CapaPresentacion\\frmCategoria.cs",
               "RelativeDocumentMoniker": "CapaPresentacion\\frmCategoria.cs",
@@ -162,14 +131,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Inicio.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\GitHub\\Tiendera\\CapaPresentacion\\Inicio.cs",
               "RelativeDocumentMoniker": "CapaPresentacion\\Inicio.cs",
-              "ToolTip": "C:\\GitHub\\Tiendera\\CapaPresentacion\\Inicio.cs [Dise\u00F1o]*",
-              "RelativeToolTip": "CapaPresentacion\\Inicio.cs [Dise\u00F1o]*",
+              "ToolTip": "C:\\GitHub\\Tiendera\\CapaPresentacion\\Inicio.cs [Dise\u00F1o]",
+              "RelativeToolTip": "CapaPresentacion\\Inicio.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T22:20:31.624Z"
+              "WhenOpened": "2025-07-22T22:20:31.624Z",
+              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }
