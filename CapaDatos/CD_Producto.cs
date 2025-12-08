@@ -13,10 +13,10 @@ namespace CapaDatos
 {
     public class CD_Producto
     {
-        // Metodo que permite listar todos los usuarios desde la base de datos
+        // Metodo que permite listar todos los productos desde la base de datos
         public List<Producto> Listar()
         {
-            //Genera la variable de tipo Lista que contiene Usuarios
+            //Genera la variable de tipo Lista que contiene Productos
             List<Producto> lista = new List<Producto>();
 
             //Conecta a la base por medio de la "cadena de conexion" -> (Conexiones.(clase en la capa de datos))
@@ -28,7 +28,7 @@ namespace CapaDatos
                 {
                     StringBuilder query = new StringBuilder();
 
-                    //Consulta a la BD la tabla Producto y Categoria
+                    //Traer la lista de productos con sus categorías (todos, sin filtro).
                     query.AppendLine("select IdProducto,Codigo,Nombre,p.Descripcion,c.IdCategoria,c.Descripcion[DescripcionCategoria],p.Stock,p.Precio,p.Estado from PRODUCTO p");
 
                     //Consulta a la BD la tabla Producto y Categoria, relacionando su IdCategoria
@@ -37,15 +37,16 @@ namespace CapaDatos
                     SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
                     cmd.CommandType = CommandType.Text;
 
+                    //abre la conexión con la base de datos.
                     oconexion.Open();
 
                     //Lee el resultado del comando anterior
                     //Crea un objeto SqlDataReader llamado "dr" que se utiliza para leer, procesar y guardar los resultados de la consulta.
                     using (SqlDataReader dr = cmd.ExecuteReader())
                     {
-                        while (dr.Read())
+                        while (dr.Read()) // lee una fila por vez. Mientras haya filas, entra al while.
                         {
-                            // crea un nuevo objeto de la clase Usuario, y agrega a la lista "lista".
+                            // crea un nuevo objeto de la clase Producto, y agrega a la lista "lista".
                             lista.Add(new Producto()
                             {
                                 IdProducto = Convert.ToInt32(dr["IdProducto"]),
@@ -63,7 +64,7 @@ namespace CapaDatos
                     }
 
                 }
-                //si se produce una excepción se crea una nueva lista de usuarios, se garantiza que lista esté en un estado válido y vacío
+                //si se produce una excepción se crea una nueva lista de productos, se garantiza que lista esté en un estado válido y vacío
                 catch (Exception ex)
                 {
 
