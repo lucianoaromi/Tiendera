@@ -12,7 +12,7 @@ namespace CapaPresentacion
 {
     public class RoundedButton : Button
     {
-        private Color originalBackColor;
+        private Color originalBackColor = Color.Empty; // Initialize with a default value
 
         private void OnMouseEnter(object sender, EventArgs e)
         {

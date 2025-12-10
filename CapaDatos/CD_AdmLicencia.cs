@@ -73,6 +73,8 @@ namespace CapaDatos
                 catch (Exception ex)
                 {
                     lista = new List<CE_Licencia>();
+                    // Log the exception message for debugging purposes
+                    Console.WriteLine($"Error: {ex.Message}");
                 }
 
             }

@@ -55,11 +55,12 @@ namespace CapaDatos
                     }
 
                 }
-                
+
                 catch (Exception ex)
                 {
-
                     lista = new List<ReporteVenta>();
+                    // Log the exception message for debugging purposes
+                    Console.WriteLine($"Error: {ex.Message}");
                 }
 
             }

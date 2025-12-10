@@ -32,6 +32,8 @@ namespace CapaDatos
                 catch (Exception ex)
                 {
                     idcorrelativo = 0;
+                    // Log the exception or handle it appropriately
+                    Console.WriteLine($"Error: {ex.Message}");
                 }
             }
 

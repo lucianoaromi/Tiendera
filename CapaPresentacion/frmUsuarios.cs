@@ -21,7 +21,6 @@ namespace CapaPresentacion
 {
     public partial class frmUsuarios : Form
     {
-        private Usuario objusuario;
 
         public frmUsuarios()
         {

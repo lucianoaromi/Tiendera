@@ -49,6 +49,8 @@ namespace CapaDatos
                 catch (Exception ex)
                 {
                     lista = new List<Rol>();
+                    // Log the exception message for debugging purposes
+                    Console.WriteLine($"Error: {ex.Message}");
                 }
             }
             return lista;

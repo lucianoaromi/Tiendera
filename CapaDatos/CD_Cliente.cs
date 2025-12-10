@@ -69,8 +69,9 @@ namespace CapaDatos
                 //si se produce una excepción se crea una nueva lista de usuarios, se garantiza que lista esté en un estado válido y vacío
                 catch (Exception ex)
                 {
-
                     lista = new List<Cliente>();
+                    // Log the exception message for debugging purposes
+                    Console.WriteLine($"Error: {ex.Message}");
                 }
 
             }
