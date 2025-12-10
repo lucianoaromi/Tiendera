@@ -21,8 +21,8 @@ namespace CapaPresentacion
 {
     public partial class frmClientes : Form
     {
-        private Cliente objcliente;
-        internal object _Cliente;
+        //private Cliente objcliente;
+        //internal object _Cliente;
 
         public frmClientes()
         {

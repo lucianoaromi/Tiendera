@@ -2,23 +2,14 @@
 using CapaNegocio;
 using CapaPresentacion.Modales;
 using CapaPresentacion.Utilidades;
-using DocumentFormat.OpenXml.Wordprocessing;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Globalization;
-using System.Linq;
-using System.Runtime.Remoting.Messaging;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static Org.BouncyCastle.Math.Primes;
-using SpreadsheetColor = DocumentFormat.OpenXml.Spreadsheet.Color; //------ para los cuadros 
-using DrawingColor = System.Drawing.Color;
 using System.Data.SqlClient;
-using CapaDatos; //---------- para cambiar color el fondo
+using CapaDatos;
 
 namespace CapaPresentacion
 {

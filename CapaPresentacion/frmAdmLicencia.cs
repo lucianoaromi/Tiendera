@@ -24,7 +24,7 @@ namespace CapaPresentacion
 {
     public partial class frmAdmLicencia : Form
     {
-        private CE_Licencia objcd_licencia;
+        //private CE_Licencia objcd_licencia;
 
 
         public frmAdmLicencia()

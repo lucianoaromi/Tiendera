@@ -21,7 +21,7 @@ namespace CapaPresentacion
 {
     public partial class frmCategoria : Form
     {
-        private Categoria objcategoria;
+        //private Categoria objcategoria;
 
         public frmCategoria()
         {

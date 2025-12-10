@@ -27,7 +27,7 @@ namespace CapaPresentacion
         private Usuario _Usuario;
         private int lastSelectedRow = -1;
         private CN_Reporte ventaNegocio;
-        private object cadena;
+        private object cadena = string.Empty; // Inicialización para evitar la advertencia
 
 
         public frmReportes(Usuario oUsuario = null)
