@@ -99,6 +99,7 @@ namespace CapaPresentacion
 
         //-----------------------------------------------------------
 
+        // diseño de icono para el boton de la celda eliminar
         private void dgvdata_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             {
@@ -155,6 +156,7 @@ namespace CapaPresentacion
 
         //-----------------------------------------------------------
 
+        // Si se presiona enter en "txtpagacon" calcula el cambio
         private void txtpagacon_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Enter)
@@ -376,7 +378,7 @@ namespace CapaPresentacion
 
         }
 
-
+        //-----------------------------------------------------------
 
         private void txtcodigoproducto_KeyDown(object sender, KeyEventArgs e)
         {
@@ -405,6 +407,8 @@ namespace CapaPresentacion
                 AgregarProductoAlDataGridView(producto);
             }
         }
+
+        //-----------------------------------------------------------
 
         private Producto ObtenerProductoPorCodigo(string codigo)
         {
@@ -437,6 +441,8 @@ namespace CapaPresentacion
                 }
             }
         }
+
+        //-----------------------------------------------------------
 
         private void AgregarProductoAlDataGridView(Producto producto)
         {
@@ -486,10 +492,6 @@ namespace CapaPresentacion
 
             limpiarproducto();
         }
-
-
-
-
 
         //-----------------------------------------------------------
 
@@ -587,8 +589,6 @@ namespace CapaPresentacion
             }
         }
 
-
-
         //-----------------------------------------------------------
 
         private void picPDF_Click(object sender, EventArgs e)
@@ -612,7 +612,7 @@ namespace CapaPresentacion
             }
         }
 
-        //--------------------------------------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------
 
         private void groupBox1_Paint(object sender, PaintEventArgs e)  //------
         {
@@ -645,7 +645,7 @@ namespace CapaPresentacion
             }
         }
 
-        //--------------------------------------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------
 
         private void btnpdf_Click(object sender, EventArgs e)
         {
@@ -697,7 +697,7 @@ namespace CapaPresentacion
             txtidcliente.Focus();
         }
 
-        //--------------------------------------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------
 
     }
 }
