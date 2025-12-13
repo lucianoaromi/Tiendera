@@ -201,9 +201,17 @@ namespace CapaPresentacion.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a quiero que cambies el diseño a algo mas moderno pero manteniendo la estructura de parametros e informacion que recibe la pagina, pero si es necesario cambiar la forma o disposicion hazlo:
-        ///
-        ///&lt;!DOCTYPE html&gt;
+        ///   Busca un recurso adaptado de tipo System.Byte[].
+        /// </summary>
+        internal static byte[] Manual_de_Usuario {
+            get {
+                object obj = ResourceManager.GetObject("Manual_de_Usuario", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;!DOCTYPE html&gt;
         ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
         ///&lt;head&gt;
         ///    &lt;title&gt;Title of the document&lt;/title&gt;
@@ -216,7 +224,17 @@ namespace CapaPresentacion.Properties {
         ///                padding: 5px;
         ///                border: 1px solid black;
         ///            }
-        /// [resto de la cadena truncado]&quot;;.
+        ///
+        ///            table.border td {
+        ///                padding: 5px;
+        ///                border: 1px solid black;
+        ///            }
+        ///
+        ///        .header {
+        ///            text-align: center;
+        ///        }
+        ///
+        ///    [resto de la cadena truncado]&quot;;.
         /// </summary>
         internal static string Plantilla {
             get {

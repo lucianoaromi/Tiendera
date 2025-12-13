@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaPresentacion.Modales;
-
+using System.IO;
 
 using System.Text.Json;
 using Newtonsoft.Json;
@@ -24,6 +24,7 @@ using CapaNegocio;
 using System.Runtime.InteropServices;
 using System.Net.Http;
 using System.Text.Json.Serialization;
+using System.Diagnostics;
 
 namespace CapaPresentacion
 {
@@ -415,5 +416,38 @@ namespace CapaPresentacion
             public DolarTipo oficial { get; set; }
         }
 
+        private void menuacercade_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // ESTE nombre sale de tu Resources: "ANEXO_B__Manual_de_Usuario_pdf"
+                byte[] pdfBytes = CapaPresentacion.Properties.Resources.Manual_de_Usuario;
+
+                if (pdfBytes == null || pdfBytes.Length == 0)
+                {
+                    MessageBox.Show("El recurso del PDF está vacío.", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Lo guardamos en una carpeta temporal
+                string tempPath = Path.Combine(Path.GetTempPath(), "ANEXO B - Manual de Usuario.pdf");
+
+                // (Opcional) si ya existe, lo reescribimos igual
+                File.WriteAllBytes(tempPath, pdfBytes);
+
+                // Abrir con el visor predeterminado
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = tempPath,
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"No se pudo abrir el PDF.\n\nDetalle: {ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

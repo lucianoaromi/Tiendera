@@ -457,6 +457,7 @@
     <None Include="Resources\delete.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Manual_de_Usuario.pdf" />
     <None Include="Resources\ok.png" />
   </ItemGroup>
   <ItemGroup>
