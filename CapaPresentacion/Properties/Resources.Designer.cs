@@ -201,7 +201,9 @@ namespace CapaPresentacion.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &lt;!DOCTYPE html&gt;
+        ///   Busca una cadena traducida similar a quiero que cambies el diseño a algo mas moderno pero manteniendo la estructura de parametros e informacion que recibe la pagina, pero si es necesario cambiar la forma o disposicion hazlo:
+        ///
+        ///&lt;!DOCTYPE html&gt;
         ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
         ///&lt;head&gt;
         ///    &lt;title&gt;Title of the document&lt;/title&gt;
@@ -214,17 +216,7 @@ namespace CapaPresentacion.Properties {
         ///                padding: 5px;
         ///                border: 1px solid black;
         ///            }
-        ///
-        ///            table.border td {
-        ///                padding: 5px;
-        ///                border: 1px solid black;
-        ///            }
-        ///
-        ///        .header {
-        ///            text-align: center;
-        ///        }
-        ///
-        ///    [resto de la cadena truncado]&quot;;.
+        /// [resto de la cadena truncado]&quot;;.
         /// </summary>
         internal static string Plantilla {
             get {
@@ -268,6 +260,16 @@ namespace CapaPresentacion.Properties {
         internal static System.Drawing.Bitmap tecnologiaBorde50 {
             get {
                 object obj = ResourceManager.GetObject("tecnologiaBorde50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tienda {
+            get {
+                object obj = ResourceManager.GetObject("tienda", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

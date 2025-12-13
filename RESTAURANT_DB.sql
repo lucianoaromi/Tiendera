@@ -140,13 +140,13 @@ go
 (2,'menumantenedor'),
 (2,'menuclientes'),
 (2,'menudetalleventa'),
-(2,'menuestadisticas'),
-(2,'menuusuarios'),
-(2,'menubackup'),
-(2,'menuacercade')
+(2,'menuestadisticas')
+--(2,'menuusuarios'),
+--(2,'menubackup'),
+--(2,'menuacercade')
 go
 
-/*
+
  -- Permisos del tipo "SUPERADMINISTRADOR"
  insert into PERMISO(IdRol,NombreMenu) 
  values
@@ -154,7 +154,7 @@ go
 (3,'menubackup'),
 (3,'menuacercade')
 go
-*/
+
 
 --Consulta la Tabla Permiso
 select * from PERMISO
