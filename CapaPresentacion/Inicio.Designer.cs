@@ -103,7 +103,7 @@
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
             this.menu.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menu.Size = new System.Drawing.Size(124, 638);
+            this.menu.Size = new System.Drawing.Size(94, 650);
             this.menu.TabIndex = 0;
             this.menu.Text = "menuStrip1";
             // 
@@ -215,7 +215,7 @@
             this.submenucategoria.IconColor = System.Drawing.Color.Black;
             this.submenucategoria.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.submenucategoria.Name = "submenucategoria";
-            this.submenucategoria.Size = new System.Drawing.Size(184, 26);
+            this.submenucategoria.Size = new System.Drawing.Size(125, 22);
             this.submenucategoria.Text = "Categoria";
             this.submenucategoria.Click += new System.EventHandler(this.submenucategoria_Click);
             // 
@@ -225,7 +225,7 @@
             this.submenuproducto.IconColor = System.Drawing.Color.Black;
             this.submenuproducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.submenuproducto.Name = "submenuproducto";
-            this.submenuproducto.Size = new System.Drawing.Size(184, 26);
+            this.submenuproducto.Size = new System.Drawing.Size(125, 22);
             this.submenuproducto.Text = "Producto";
             this.submenuproducto.Click += new System.EventHandler(this.submenuproducto_Click);
             // 
@@ -314,21 +314,22 @@
             // contenedor
             // 
             this.contenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(58)))));
+            this.contenedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.contenedor.Controls.Add(this.panelvista);
             this.contenedor.Dock = System.Windows.Forms.DockStyle.Right;
             this.contenedor.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.contenedor.Location = new System.Drawing.Point(97, 0);
+            this.contenedor.Location = new System.Drawing.Point(95, 0);
             this.contenedor.Name = "contenedor";
-            this.contenedor.Size = new System.Drawing.Size(1028, 638);
+            this.contenedor.Size = new System.Drawing.Size(1185, 650);
             this.contenedor.TabIndex = 3;
             // 
             // panelvista
             // 
             this.panelvista.BackColor = System.Drawing.Color.Black;
             this.panelvista.Controls.Add(this.panel3);
-            this.panelvista.Location = new System.Drawing.Point(21, 20);
+            this.panelvista.Location = new System.Drawing.Point(17, 21);
             this.panelvista.Name = "panelvista";
-            this.panelvista.Size = new System.Drawing.Size(983, 599);
+            this.panelvista.Size = new System.Drawing.Size(1150, 599);
             this.panelvista.TabIndex = 4;
             // 
             // panel3
@@ -339,9 +340,9 @@
             this.panel3.Controls.Add(this.lblusuarioinicio);
             this.panel3.Controls.Add(this.lblreloj);
             this.panel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(58)))));
-            this.panel3.Location = new System.Drawing.Point(9, 7);
+            this.panel3.Location = new System.Drawing.Point(10, 8);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(966, 583);
+            this.panel3.Size = new System.Drawing.Size(1130, 583);
             this.panel3.TabIndex = 4;
             // 
             // pictureBox2
@@ -350,7 +351,7 @@
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.InitialImage = null;
-            this.pictureBox2.Location = new System.Drawing.Point(380, 73);
+            this.pictureBox2.Location = new System.Drawing.Point(462, 73);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(209, 209);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -363,7 +364,7 @@
             this.lblfecha.AutoSize = true;
             this.lblfecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblfecha.ForeColor = System.Drawing.Color.White;
-            this.lblfecha.Location = new System.Drawing.Point(269, 462);
+            this.lblfecha.Location = new System.Drawing.Point(351, 462);
             this.lblfecha.Name = "lblfecha";
             this.lblfecha.Size = new System.Drawing.Size(308, 37);
             this.lblfecha.TabIndex = 1;
@@ -376,7 +377,7 @@
             this.lblusuarioinicio.BackColor = System.Drawing.Color.Transparent;
             this.lblusuarioinicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblusuarioinicio.ForeColor = System.Drawing.Color.White;
-            this.lblusuarioinicio.Location = new System.Drawing.Point(344, 299);
+            this.lblusuarioinicio.Location = new System.Drawing.Point(426, 299);
             this.lblusuarioinicio.Name = "lblusuarioinicio";
             this.lblusuarioinicio.Size = new System.Drawing.Size(100, 25);
             this.lblusuarioinicio.TabIndex = 2;
@@ -388,7 +389,7 @@
             this.lblreloj.AutoSize = true;
             this.lblreloj.Font = new System.Drawing.Font("Poplar Std", 65.24999F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblreloj.ForeColor = System.Drawing.Color.White;
-            this.lblreloj.Location = new System.Drawing.Point(325, 338);
+            this.lblreloj.Location = new System.Drawing.Point(407, 338);
             this.lblreloj.Name = "lblreloj";
             this.lblreloj.Size = new System.Drawing.Size(288, 104);
             this.lblreloj.TabIndex = 0;
@@ -454,7 +455,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1125, 70);
+            this.panel1.Size = new System.Drawing.Size(1280, 70);
             this.panel1.TabIndex = 4;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
@@ -463,7 +464,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(646, 45);
+            this.label3.Location = new System.Drawing.Point(796, 45);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(11, 16);
             this.label3.TabIndex = 15;
@@ -474,7 +475,7 @@
             this.lblDolarBlue.AutoSize = true;
             this.lblDolarBlue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDolarBlue.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblDolarBlue.Location = new System.Drawing.Point(658, 47);
+            this.lblDolarBlue.Location = new System.Drawing.Point(808, 47);
             this.lblDolarBlue.Name = "lblDolarBlue";
             this.lblDolarBlue.Size = new System.Drawing.Size(81, 13);
             this.lblDolarBlue.TabIndex = 14;
@@ -485,7 +486,7 @@
             this.lblDolarOficial.AutoSize = true;
             this.lblDolarOficial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDolarOficial.ForeColor = System.Drawing.Color.LightGreen;
-            this.lblDolarOficial.Location = new System.Drawing.Point(508, 47);
+            this.lblDolarOficial.Location = new System.Drawing.Point(658, 47);
             this.lblDolarOficial.Name = "lblDolarOficial";
             this.lblDolarOficial.Size = new System.Drawing.Size(81, 13);
             this.lblDolarOficial.TabIndex = 13;
@@ -497,7 +498,7 @@
             this.labelActualizado.AutoSize = true;
             this.labelActualizado.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelActualizado.ForeColor = System.Drawing.Color.White;
-            this.labelActualizado.Location = new System.Drawing.Point(821, 48);
+            this.labelActualizado.Location = new System.Drawing.Point(959, 48);
             this.labelActualizado.Name = "labelActualizado";
             this.labelActualizado.Size = new System.Drawing.Size(62, 12);
             this.labelActualizado.TabIndex = 12;
@@ -509,7 +510,7 @@
             this.labelTemperatura.AutoSize = true;
             this.labelTemperatura.Font = new System.Drawing.Font("Adobe Gothic Std B", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.labelTemperatura.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.labelTemperatura.Location = new System.Drawing.Point(916, 39);
+            this.labelTemperatura.Location = new System.Drawing.Point(1054, 39);
             this.labelTemperatura.Name = "labelTemperatura";
             this.labelTemperatura.Size = new System.Drawing.Size(33, 24);
             this.labelTemperatura.TabIndex = 11;
@@ -518,7 +519,7 @@
             // pictureBoxClima
             // 
             this.pictureBoxClima.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBoxClima.Location = new System.Drawing.Point(971, 30);
+            this.pictureBoxClima.Location = new System.Drawing.Point(1115, 30);
             this.pictureBoxClima.Name = "pictureBoxClima";
             this.pictureBoxClima.Size = new System.Drawing.Size(40, 40);
             this.pictureBoxClima.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -531,7 +532,7 @@
             this.relojesquina.AutoSize = true;
             this.relojesquina.Font = new System.Drawing.Font("Adobe Gothic Std B", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.relojesquina.ForeColor = System.Drawing.Color.Gold;
-            this.relojesquina.Location = new System.Drawing.Point(1013, 39);
+            this.relojesquina.Location = new System.Drawing.Point(1160, 39);
             this.relojesquina.Name = "relojesquina";
             this.relojesquina.Size = new System.Drawing.Size(83, 24);
             this.relojesquina.TabIndex = 4;
@@ -554,7 +555,7 @@
             // 
             this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(1034, 5);
+            this.pictureBox5.Location = new System.Drawing.Point(1194, 5);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(35, 35);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -566,7 +567,7 @@
             // 
             this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(1075, 5);
+            this.pictureBox3.Location = new System.Drawing.Point(1235, 5);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(35, 35);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -582,7 +583,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 70);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1125, 638);
+            this.panel2.Size = new System.Drawing.Size(1280, 650);
             this.panel2.TabIndex = 5;
             // 
             // Inicio
@@ -590,7 +591,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(1125, 708);
+            this.ClientSize = new System.Drawing.Size(1280, 720);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

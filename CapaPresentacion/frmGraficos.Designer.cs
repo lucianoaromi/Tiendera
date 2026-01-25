@@ -306,11 +306,11 @@
             // 
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(58)))));
-            this.label14.Font = new System.Drawing.Font("Leelawadee", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Gold;
             this.label14.Location = new System.Drawing.Point(83, 20);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(164, 32);
+            this.label14.Size = new System.Drawing.Size(173, 31);
             this.label14.TabIndex = 14;
             this.label14.Text = "Estadisticas";
             // 
@@ -347,7 +347,7 @@
             this.panel6.Controls.Add(this.groupBox3);
             this.panel6.Controls.Add(this.groupBox1);
             this.panel6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel6.Location = new System.Drawing.Point(13, 11);
+            this.panel6.Location = new System.Drawing.Point(90, 16);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1004, 618);
             this.panel6.TabIndex = 18;
@@ -606,14 +606,14 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1030, 640);
+            this.panel2.Size = new System.Drawing.Size(1185, 650);
             this.panel2.TabIndex = 19;
             // 
             // frmGraficos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1030, 640);
+            this.ClientSize = new System.Drawing.Size(1185, 650);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmGraficos";
