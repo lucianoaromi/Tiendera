@@ -128,7 +128,7 @@ namespace CapaPresentacion
             this.panel1.Controls.Add(this.label8);
             this.panel1.Location = new System.Drawing.Point(19, -1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(204, 648);
+            this.panel1.Size = new System.Drawing.Size(207, 651);
             this.panel1.TabIndex = 20;
             // 
             // pictureBox5
@@ -156,11 +156,11 @@ namespace CapaPresentacion
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Leelawadee", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Gold;
             this.label11.Location = new System.Drawing.Point(26, 13);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(141, 32);
+            this.label11.Size = new System.Drawing.Size(141, 31);
             this.label11.TabIndex = 30;
             this.label11.Text = "Categoria";
             // 
@@ -202,7 +202,7 @@ namespace CapaPresentacion
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(58)))));
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(281, 25);
+            this.label7.Location = new System.Drawing.Point(453, 25);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(81, 17);
             this.label7.TabIndex = 23;
@@ -214,7 +214,7 @@ namespace CapaPresentacion
             this.cbobusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbobusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbobusqueda.FormattingEnabled = true;
-            this.cbobusqueda.Location = new System.Drawing.Point(365, 22);
+            this.cbobusqueda.Location = new System.Drawing.Point(537, 22);
             this.cbobusqueda.Name = "cbobusqueda";
             this.cbobusqueda.Size = new System.Drawing.Size(148, 23);
             this.cbobusqueda.TabIndex = 24;
@@ -223,7 +223,7 @@ namespace CapaPresentacion
             // 
             this.txtbusqueda.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtbusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbusqueda.Location = new System.Drawing.Point(522, 22);
+            this.txtbusqueda.Location = new System.Drawing.Point(694, 22);
             this.txtbusqueda.Multiline = true;
             this.txtbusqueda.Name = "txtbusqueda";
             this.txtbusqueda.Size = new System.Drawing.Size(148, 23);
@@ -239,14 +239,14 @@ namespace CapaPresentacion
             this.panel2.Controls.Add(this.cbobusqueda);
             this.panel2.Location = new System.Drawing.Point(217, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(824, 62);
+            this.panel2.Size = new System.Drawing.Size(968, 62);
             this.panel2.TabIndex = 27;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(736, 6);
+            this.pictureBox3.Location = new System.Drawing.Point(908, 6);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(50, 50);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -258,7 +258,7 @@ namespace CapaPresentacion
             // 
             this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(679, 6);
+            this.pictureBox4.Location = new System.Drawing.Point(851, 6);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(50, 50);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -271,7 +271,7 @@ namespace CapaPresentacion
             this.panel3.Controls.Add(this.dgvdata);
             this.panel3.Location = new System.Drawing.Point(222, 62);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(821, 575);
+            this.panel3.Size = new System.Drawing.Size(963, 588);
             this.panel3.TabIndex = 28;
             // 
             // dgvdata
@@ -303,7 +303,7 @@ namespace CapaPresentacion
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvdata.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvdata.RowTemplate.Height = 28;
-            this.dgvdata.Size = new System.Drawing.Size(821, 575);
+            this.dgvdata.Size = new System.Drawing.Size(963, 588);
             this.dgvdata.TabIndex = 23;
             this.dgvdata.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdata_CellContentClick);
             this.dgvdata.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvdata_CellPainting_1);
@@ -358,7 +358,7 @@ namespace CapaPresentacion
             this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(20, 637);
+            this.panel5.Size = new System.Drawing.Size(20, 650);
             this.panel5.TabIndex = 67;
             // 
             // textBox3
@@ -386,7 +386,7 @@ namespace CapaPresentacion
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1041, 637);
+            this.ClientSize = new System.Drawing.Size(1185, 650);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
