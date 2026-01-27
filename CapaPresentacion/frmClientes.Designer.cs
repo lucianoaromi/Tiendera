@@ -87,7 +87,7 @@ namespace CapaPresentacion
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(58)))));
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(8, 70);
+            this.label3.Location = new System.Drawing.Point(10, 70);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 15);
             this.label3.TabIndex = 2;
@@ -95,7 +95,7 @@ namespace CapaPresentacion
             // 
             // txtapellido1
             // 
-            this.txtapellido1.Location = new System.Drawing.Point(8, 88);
+            this.txtapellido1.Location = new System.Drawing.Point(10, 88);
             this.txtapellido1.Name = "txtapellido1";
             this.txtapellido1.Size = new System.Drawing.Size(184, 21);
             this.txtapellido1.TabIndex = 6;
@@ -106,7 +106,7 @@ namespace CapaPresentacion
             this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(58)))));
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(6, 316);
+            this.label8.Location = new System.Drawing.Point(8, 316);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(48, 15);
             this.label8.TabIndex = 12;
@@ -117,7 +117,7 @@ namespace CapaPresentacion
             this.cboestado1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboestado1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboestado1.FormattingEnabled = true;
-            this.cboestado1.Location = new System.Drawing.Point(8, 333);
+            this.cboestado1.Location = new System.Drawing.Point(10, 333);
             this.cboestado1.Name = "cboestado1";
             this.cboestado1.Size = new System.Drawing.Size(184, 21);
             this.cboestado1.TabIndex = 15;
@@ -150,7 +150,7 @@ namespace CapaPresentacion
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(132, 384);
+            this.pictureBox5.Location = new System.Drawing.Point(134, 384);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(50, 50);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -161,7 +161,7 @@ namespace CapaPresentacion
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(76, 384);
+            this.pictureBox1.Location = new System.Drawing.Point(78, 384);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -183,7 +183,7 @@ namespace CapaPresentacion
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(19, 384);
+            this.pictureBox2.Location = new System.Drawing.Point(21, 384);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(50, 50);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -194,7 +194,7 @@ namespace CapaPresentacion
             // txttelefono1
             // 
             this.txttelefono1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttelefono1.Location = new System.Drawing.Point(8, 281);
+            this.txttelefono1.Location = new System.Drawing.Point(10, 281);
             this.txttelefono1.Name = "txttelefono1";
             this.txttelefono1.Size = new System.Drawing.Size(184, 20);
             this.txttelefono1.TabIndex = 30;
@@ -204,7 +204,7 @@ namespace CapaPresentacion
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(58)))));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(7, 263);
+            this.label6.Location = new System.Drawing.Point(9, 263);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 15);
             this.label6.TabIndex = 29;
@@ -213,7 +213,7 @@ namespace CapaPresentacion
             // txtdireccion1
             // 
             this.txtdireccion1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdireccion1.Location = new System.Drawing.Point(8, 192);
+            this.txtdireccion1.Location = new System.Drawing.Point(10, 192);
             this.txtdireccion1.Multiline = true;
             this.txtdireccion1.Name = "txtdireccion1";
             this.txtdireccion1.Size = new System.Drawing.Size(184, 60);
@@ -224,7 +224,7 @@ namespace CapaPresentacion
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(58)))));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(7, 174);
+            this.label5.Location = new System.Drawing.Point(9, 174);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(62, 15);
             this.label5.TabIndex = 31;
@@ -233,7 +233,7 @@ namespace CapaPresentacion
             // txtnombre1
             // 
             this.txtnombre1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnombre1.Location = new System.Drawing.Point(8, 141);
+            this.txtnombre1.Location = new System.Drawing.Point(10, 141);
             this.txtnombre1.Name = "txtnombre1";
             this.txtnombre1.Size = new System.Drawing.Size(184, 20);
             this.txtnombre1.TabIndex = 30;
@@ -243,7 +243,7 @@ namespace CapaPresentacion
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(58)))));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(8, 123);
+            this.label1.Location = new System.Drawing.Point(10, 123);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 15);
             this.label1.TabIndex = 29;

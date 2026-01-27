@@ -30,8 +30,8 @@ namespace CapaPresentacion
 
         private void frmCategoria_Load(object sender, EventArgs e)
         {
-            cboestado.Items.Add(new OpcionCombo() { Valor = 1, Texto = "ACTIVO" });
-            cboestado.Items.Add(new OpcionCombo() { Valor = 0, Texto = "NO ACTIVO" });
+            cboestado.Items.Add(new OpcionCombo() { Valor = 1, Texto = "Activo" });
+            cboestado.Items.Add(new OpcionCombo() { Valor = 0, Texto = "No Activo" });
             //Especifica que solo se debe mostrar el dato de nombre "Texto"
             cboestado.DisplayMember = "Texto";
             //Maneja como informacion interna el dato de nombre "Valor"
