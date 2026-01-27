@@ -332,7 +332,7 @@ namespace CapaPresentacion
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Gold;
-            this.label3.Location = new System.Drawing.Point(62, 20);
+            this.label3.Location = new System.Drawing.Point(83, 20);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(272, 31);
             this.label3.TabIndex = 31;
@@ -464,9 +464,9 @@ namespace CapaPresentacion
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Location = new System.Drawing.Point(43, 70);
+            this.groupBox1.Location = new System.Drawing.Point(56, 71);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(372, 75);
+            this.groupBox1.Size = new System.Drawing.Size(395, 75);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox1_Paint);
@@ -476,7 +476,7 @@ namespace CapaPresentacion
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label7.Location = new System.Drawing.Point(5, -2);
+            this.label7.Location = new System.Drawing.Point(18, -2);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(71, 15);
             this.label7.TabIndex = 53;
@@ -485,7 +485,7 @@ namespace CapaPresentacion
             // txtfechafin
             // 
             this.txtfechafin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txtfechafin.Location = new System.Drawing.Point(155, 41);
+            this.txtfechafin.Location = new System.Drawing.Point(168, 41);
             this.txtfechafin.Name = "txtfechafin";
             this.txtfechafin.Size = new System.Drawing.Size(111, 21);
             this.txtfechafin.TabIndex = 14;
@@ -493,7 +493,7 @@ namespace CapaPresentacion
             // picBuscarFecha
             // 
             this.picBuscarFecha.Image = ((System.Drawing.Image)(resources.GetObject("picBuscarFecha.Image")));
-            this.picBuscarFecha.Location = new System.Drawing.Point(289, 13);
+            this.picBuscarFecha.Location = new System.Drawing.Point(302, 13);
             this.picBuscarFecha.Name = "picBuscarFecha";
             this.picBuscarFecha.Size = new System.Drawing.Size(55, 55);
             this.picBuscarFecha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -505,7 +505,7 @@ namespace CapaPresentacion
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label2.Location = new System.Drawing.Point(153, 21);
+            this.label2.Location = new System.Drawing.Point(166, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(27, 15);
             this.label2.TabIndex = 3;
@@ -514,7 +514,7 @@ namespace CapaPresentacion
             // txtfechainicio
             // 
             this.txtfechainicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txtfechainicio.Location = new System.Drawing.Point(23, 41);
+            this.txtfechainicio.Location = new System.Drawing.Point(36, 41);
             this.txtfechainicio.Name = "txtfechainicio";
             this.txtfechainicio.Size = new System.Drawing.Size(111, 21);
             this.txtfechainicio.TabIndex = 13;
@@ -523,7 +523,7 @@ namespace CapaPresentacion
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label1.Location = new System.Drawing.Point(20, 21);
+            this.label1.Location = new System.Drawing.Point(33, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 15);
             this.label1.TabIndex = 2;

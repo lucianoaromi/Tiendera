@@ -350,7 +350,7 @@ namespace CapaPresentacion
             // txttotalpagar
             // 
             this.txttotalpagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttotalpagar.Location = new System.Drawing.Point(391, 20);
+            this.txttotalpagar.Location = new System.Drawing.Point(412, 20);
             this.txttotalpagar.Multiline = true;
             this.txttotalpagar.Name = "txttotalpagar";
             this.txttotalpagar.ReadOnly = true;
@@ -361,7 +361,7 @@ namespace CapaPresentacion
             // txtnumventa
             // 
             this.txtnumventa.BackColor = System.Drawing.Color.White;
-            this.txtnumventa.Location = new System.Drawing.Point(283, 20);
+            this.txtnumventa.Location = new System.Drawing.Point(304, 20);
             this.txtnumventa.Name = "txtnumventa";
             this.txtnumventa.ReadOnly = true;
             this.txtnumventa.Size = new System.Drawing.Size(49, 20);
@@ -371,7 +371,7 @@ namespace CapaPresentacion
             // txtidproducto
             // 
             this.txtidproducto.BackColor = System.Drawing.Color.White;
-            this.txtidproducto.Location = new System.Drawing.Point(338, 20);
+            this.txtidproducto.Location = new System.Drawing.Point(359, 20);
             this.txtidproducto.Name = "txtidproducto";
             this.txtidproducto.ReadOnly = true;
             this.txtidproducto.Size = new System.Drawing.Size(43, 20);
@@ -383,7 +383,7 @@ namespace CapaPresentacion
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Gold;
-            this.label11.Location = new System.Drawing.Point(62, 14);
+            this.label11.Location = new System.Drawing.Point(83, 14);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(218, 31);
             this.label11.TabIndex = 29;

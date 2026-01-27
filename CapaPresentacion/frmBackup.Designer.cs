@@ -59,12 +59,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Leelawadee", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Gold;
             this.label1.Location = new System.Drawing.Point(320, 34);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(232, 32);
+            this.label1.Size = new System.Drawing.Size(239, 31);
             this.label1.TabIndex = 2;
             this.label1.Text = "Backup / Restore";
             // 
@@ -239,7 +239,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Black;
             this.panel2.Controls.Add(this.panel1);
-            this.panel2.Location = new System.Drawing.Point(61, 62);
+            this.panel2.Location = new System.Drawing.Point(137, 71);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(903, 489);
             this.panel2.TabIndex = 100;
@@ -252,7 +252,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(20, 607);
+            this.panel5.Size = new System.Drawing.Size(20, 650);
             this.panel5.TabIndex = 101;
             // 
             // textBox3
@@ -281,9 +281,9 @@
             this.panel3.Controls.Add(this.textBox1);
             this.panel3.Controls.Add(this.textBox2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(1020, 0);
+            this.panel3.Location = new System.Drawing.Point(1165, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(20, 607);
+            this.panel3.Size = new System.Drawing.Size(20, 650);
             this.panel3.TabIndex = 102;
             // 
             // textBox1
@@ -311,7 +311,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1040, 607);
+            this.ClientSize = new System.Drawing.Size(1185, 650);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel2);
