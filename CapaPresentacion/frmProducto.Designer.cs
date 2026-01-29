@@ -34,8 +34,8 @@ namespace CapaPresentacion
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProducto));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -78,6 +78,11 @@ namespace CapaPresentacion
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btn_examinar_backup = new System.Windows.Forms.Button();
+            this.btn_backup = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -85,11 +90,6 @@ namespace CapaPresentacion
             this.panel5 = new System.Windows.Forms.Panel();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btn_examinar_backup = new System.Windows.Forms.Button();
-            this.btn_backup = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -100,9 +100,9 @@ namespace CapaPresentacion
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -361,15 +361,15 @@ namespace CapaPresentacion
             // dgvdata
             // 
             this.dgvdata.AllowUserToAddRows = false;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle13.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvdata.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.btnseleccionar,
@@ -388,9 +388,9 @@ namespace CapaPresentacion
             this.dgvdata.Name = "dgvdata";
             this.dgvdata.ReadOnly = true;
             this.dgvdata.RowHeadersWidth = 51;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvdata.RowsDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvdata.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvdata.RowTemplate.Height = 28;
             this.dgvdata.Size = new System.Drawing.Size(817, 588);
             this.dgvdata.TabIndex = 21;
@@ -563,6 +563,84 @@ namespace CapaPresentacion
             this.panel3.Size = new System.Drawing.Size(965, 588);
             this.panel3.TabIndex = 28;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(58)))));
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.btn_examinar_backup);
+            this.groupBox2.Controls.Add(this.txtPorcentaje);
+            this.groupBox2.Controls.Add(this.btn_backup);
+            this.groupBox2.Controls.Add(this.pictureBox6);
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
+            this.groupBox2.Location = new System.Drawing.Point(817, -6);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(145, 591);
+            this.groupBox2.TabIndex = 65;
+            this.groupBox2.TabStop = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(12, 60);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(81, 13);
+            this.label11.TabIndex = 65;
+            this.label11.Text = "Porcentaje ( % )";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(58)))));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(7, 29);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(131, 16);
+            this.label6.TabIndex = 64;
+            this.label6.Text = "Actualizar precios";
+            // 
+            // btn_examinar_backup
+            // 
+            this.btn_examinar_backup.BackColor = System.Drawing.Color.Black;
+            this.btn_examinar_backup.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_examinar_backup.FlatAppearance.BorderSize = 0;
+            this.btn_examinar_backup.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
+            this.btn_examinar_backup.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.btn_examinar_backup.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_examinar_backup.ForeColor = System.Drawing.Color.White;
+            this.btn_examinar_backup.Image = ((System.Drawing.Image)(resources.GetObject("btn_examinar_backup.Image")));
+            this.btn_examinar_backup.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_examinar_backup.Location = new System.Drawing.Point(609, 34);
+            this.btn_examinar_backup.Name = "btn_examinar_backup";
+            this.btn_examinar_backup.Padding = new System.Windows.Forms.Padding(0, 0, 15, 0);
+            this.btn_examinar_backup.Size = new System.Drawing.Size(150, 36);
+            this.btn_examinar_backup.TabIndex = 2;
+            this.btn_examinar_backup.Text = "Examinar...";
+            this.btn_examinar_backup.UseVisualStyleBackColor = false;
+            // 
+            // btn_backup
+            // 
+            this.btn_backup.BackColor = System.Drawing.Color.Black;
+            this.btn_backup.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_backup.Enabled = false;
+            this.btn_backup.FlatAppearance.BorderSize = 0;
+            this.btn_backup.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
+            this.btn_backup.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.btn_backup.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_backup.ForeColor = System.Drawing.Color.White;
+            this.btn_backup.Image = ((System.Drawing.Image)(resources.GetObject("btn_backup.Image")));
+            this.btn_backup.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_backup.Location = new System.Drawing.Point(609, 81);
+            this.btn_backup.Name = "btn_backup";
+            this.btn_backup.Padding = new System.Windows.Forms.Padding(0, 0, 15, 0);
+            this.btn_backup.Size = new System.Drawing.Size(150, 36);
+            this.btn_backup.TabIndex = 3;
+            this.btn_backup.Text = "Backup";
+            this.btn_backup.UseVisualStyleBackColor = false;
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(58)))));
@@ -625,84 +703,6 @@ namespace CapaPresentacion
             this.textBox4.Text = "0";
             this.textBox4.Visible = false;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(58)))));
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(7, 29);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(131, 16);
-            this.label6.TabIndex = 64;
-            this.label6.Text = "Actualizar precios";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(58)))));
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.btn_examinar_backup);
-            this.groupBox2.Controls.Add(this.txtPorcentaje);
-            this.groupBox2.Controls.Add(this.btn_backup);
-            this.groupBox2.Controls.Add(this.pictureBox6);
-            this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(817, -6);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(145, 591);
-            this.groupBox2.TabIndex = 65;
-            this.groupBox2.TabStop = false;
-            // 
-            // btn_examinar_backup
-            // 
-            this.btn_examinar_backup.BackColor = System.Drawing.Color.Black;
-            this.btn_examinar_backup.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_examinar_backup.FlatAppearance.BorderSize = 0;
-            this.btn_examinar_backup.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.btn_examinar_backup.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
-            this.btn_examinar_backup.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_examinar_backup.ForeColor = System.Drawing.Color.White;
-            this.btn_examinar_backup.Image = ((System.Drawing.Image)(resources.GetObject("btn_examinar_backup.Image")));
-            this.btn_examinar_backup.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_examinar_backup.Location = new System.Drawing.Point(609, 34);
-            this.btn_examinar_backup.Name = "btn_examinar_backup";
-            this.btn_examinar_backup.Padding = new System.Windows.Forms.Padding(0, 0, 15, 0);
-            this.btn_examinar_backup.Size = new System.Drawing.Size(150, 36);
-            this.btn_examinar_backup.TabIndex = 2;
-            this.btn_examinar_backup.Text = "Examinar...";
-            this.btn_examinar_backup.UseVisualStyleBackColor = false;
-            // 
-            // btn_backup
-            // 
-            this.btn_backup.BackColor = System.Drawing.Color.Black;
-            this.btn_backup.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_backup.Enabled = false;
-            this.btn_backup.FlatAppearance.BorderSize = 0;
-            this.btn_backup.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.btn_backup.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
-            this.btn_backup.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_backup.ForeColor = System.Drawing.Color.White;
-            this.btn_backup.Image = ((System.Drawing.Image)(resources.GetObject("btn_backup.Image")));
-            this.btn_backup.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_backup.Location = new System.Drawing.Point(609, 81);
-            this.btn_backup.Name = "btn_backup";
-            this.btn_backup.Padding = new System.Windows.Forms.Padding(0, 0, 15, 0);
-            this.btn_backup.Size = new System.Drawing.Size(150, 36);
-            this.btn_backup.TabIndex = 3;
-            this.btn_backup.Text = "Backup";
-            this.btn_backup.UseVisualStyleBackColor = false;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(12, 60);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(75, 13);
-            this.label11.TabIndex = 65;
-            this.label11.Text = "Porcentaje (%)";
-            // 
             // frmProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -730,12 +730,12 @@ namespace CapaPresentacion
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel3.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }

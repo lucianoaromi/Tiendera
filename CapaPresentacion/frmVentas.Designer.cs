@@ -42,12 +42,6 @@ namespace CapaPresentacion
             this.txtcambio = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.dgvdata = new System.Windows.Forms.DataGridView();
-            this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btneliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.cbometodopago = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -103,6 +97,12 @@ namespace CapaPresentacion
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btneliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPDF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picComprar)).BeginInit();
@@ -267,55 +267,6 @@ namespace CapaPresentacion
             this.dgvdata.TabIndex = 21;
             this.dgvdata.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdata_CellContentClick);
             this.dgvdata.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvdata_CellPainting);
-            // 
-            // IdProducto
-            // 
-            this.IdProducto.HeaderText = "IdProducto";
-            this.IdProducto.MinimumWidth = 6;
-            this.IdProducto.Name = "IdProducto";
-            this.IdProducto.ReadOnly = true;
-            this.IdProducto.Visible = false;
-            this.IdProducto.Width = 125;
-            // 
-            // Producto
-            // 
-            this.Producto.HeaderText = "Producto";
-            this.Producto.MinimumWidth = 6;
-            this.Producto.Name = "Producto";
-            this.Producto.ReadOnly = true;
-            this.Producto.Width = 200;
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.MinimumWidth = 6;
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
-            this.Precio.Width = 90;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.MinimumWidth = 6;
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            this.Cantidad.Width = 80;
-            // 
-            // SubTotal
-            // 
-            this.SubTotal.HeaderText = "SubTotal";
-            this.SubTotal.MinimumWidth = 6;
-            this.SubTotal.Name = "SubTotal";
-            this.SubTotal.ReadOnly = true;
-            this.SubTotal.Width = 90;
-            // 
-            // btneliminar
-            // 
-            this.btneliminar.HeaderText = "";
-            this.btneliminar.MinimumWidth = 6;
-            this.btneliminar.Name = "btneliminar";
-            this.btneliminar.ReadOnly = true;
-            this.btneliminar.Width = 40;
             // 
             // label6
             // 
@@ -619,24 +570,24 @@ namespace CapaPresentacion
             // txtcantidad
             // 
             this.txtcantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcantidad.Location = new System.Drawing.Point(616, 55);
+            this.txtcantidad.Location = new System.Drawing.Point(646, 55);
             this.txtcantidad.Name = "txtcantidad";
-            this.txtcantidad.Size = new System.Drawing.Size(108, 21);
+            this.txtcantidad.Size = new System.Drawing.Size(75, 21);
             this.txtcantidad.TabIndex = 32;
             // 
             // txtpreciounidad
             // 
             this.txtpreciounidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpreciounidad.Location = new System.Drawing.Point(340, 55);
+            this.txtpreciounidad.Location = new System.Drawing.Point(405, 55);
             this.txtpreciounidad.Name = "txtpreciounidad";
             this.txtpreciounidad.ReadOnly = true;
-            this.txtpreciounidad.Size = new System.Drawing.Size(113, 21);
+            this.txtpreciounidad.Size = new System.Drawing.Size(96, 21);
             this.txtpreciounidad.TabIndex = 10;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(337, 37);
+            this.label15.Location = new System.Drawing.Point(402, 37);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(99, 15);
             this.label15.TabIndex = 9;
@@ -645,7 +596,7 @@ namespace CapaPresentacion
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(613, 37);
+            this.label13.Location = new System.Drawing.Point(643, 37);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(59, 15);
             this.label13.TabIndex = 7;
@@ -654,7 +605,7 @@ namespace CapaPresentacion
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(483, 37);
+            this.label14.Location = new System.Drawing.Point(525, 37);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(94, 15);
             this.label14.TabIndex = 6;
@@ -663,10 +614,10 @@ namespace CapaPresentacion
             // txtstock
             // 
             this.txtstock.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtstock.Location = new System.Drawing.Point(486, 55);
+            this.txtstock.Location = new System.Drawing.Point(528, 55);
             this.txtstock.Name = "txtstock";
             this.txtstock.ReadOnly = true;
-            this.txtstock.Size = new System.Drawing.Size(100, 21);
+            this.txtstock.Size = new System.Drawing.Size(91, 21);
             this.txtstock.TabIndex = 5;
             // 
             // txtnombreproducto
@@ -675,7 +626,7 @@ namespace CapaPresentacion
             this.txtnombreproducto.Location = new System.Drawing.Point(162, 55);
             this.txtnombreproducto.Name = "txtnombreproducto";
             this.txtnombreproducto.ReadOnly = true;
-            this.txtnombreproducto.Size = new System.Drawing.Size(148, 21);
+            this.txtnombreproducto.Size = new System.Drawing.Size(218, 21);
             this.txtnombreproducto.TabIndex = 4;
             // 
             // label2
@@ -701,7 +652,7 @@ namespace CapaPresentacion
             this.txtcodigoproducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcodigoproducto.Location = new System.Drawing.Point(32, 55);
             this.txtcodigoproducto.Name = "txtcodigoproducto";
-            this.txtcodigoproducto.Size = new System.Drawing.Size(100, 21);
+            this.txtcodigoproducto.Size = new System.Drawing.Size(110, 21);
             this.txtcodigoproducto.TabIndex = 1;
             this.txtcodigoproducto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtcodigoproducto_KeyDown);
             // 
@@ -911,6 +862,55 @@ namespace CapaPresentacion
             this.textBox2.Text = "0";
             this.textBox2.Visible = false;
             // 
+            // IdProducto
+            // 
+            this.IdProducto.HeaderText = "IdProducto";
+            this.IdProducto.MinimumWidth = 6;
+            this.IdProducto.Name = "IdProducto";
+            this.IdProducto.ReadOnly = true;
+            this.IdProducto.Visible = false;
+            this.IdProducto.Width = 125;
+            // 
+            // Producto
+            // 
+            this.Producto.HeaderText = "Producto";
+            this.Producto.MinimumWidth = 6;
+            this.Producto.Name = "Producto";
+            this.Producto.ReadOnly = true;
+            this.Producto.Width = 250;
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.MinimumWidth = 6;
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            this.Precio.Width = 90;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.MinimumWidth = 6;
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            this.Cantidad.Width = 80;
+            // 
+            // SubTotal
+            // 
+            this.SubTotal.HeaderText = "SubTotal";
+            this.SubTotal.MinimumWidth = 6;
+            this.SubTotal.Name = "SubTotal";
+            this.SubTotal.ReadOnly = true;
+            this.SubTotal.Width = 90;
+            // 
+            // btneliminar
+            // 
+            this.btneliminar.HeaderText = "";
+            this.btneliminar.MinimumWidth = 6;
+            this.btneliminar.Name = "btneliminar";
+            this.btneliminar.ReadOnly = true;
+            this.btneliminar.Width = 40;
+            // 
             // frmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1010,12 +1010,6 @@ namespace CapaPresentacion
         private PictureBox picAgregarProducto;
         private PictureBox picComprar;
         private PictureBox picPDF;
-        private DataGridViewTextBoxColumn IdProducto;
-        private DataGridViewTextBoxColumn Producto;
-        private DataGridViewTextBoxColumn Precio;
-        private DataGridViewTextBoxColumn Cantidad;
-        private DataGridViewTextBoxColumn SubTotal;
-        private DataGridViewButtonColumn btneliminar;
         private TextBox txtOutput;
         private Label label5;
         private Label label18;
@@ -1032,5 +1026,11 @@ namespace CapaPresentacion
         private GroupBox groupBox5;
         private Label label20;
         private Button btnlimpiarcompra;
+        private DataGridViewTextBoxColumn IdProducto;
+        private DataGridViewTextBoxColumn Producto;
+        private DataGridViewTextBoxColumn Precio;
+        private DataGridViewTextBoxColumn Cantidad;
+        private DataGridViewTextBoxColumn SubTotal;
+        private DataGridViewButtonColumn btneliminar;
     }
 }

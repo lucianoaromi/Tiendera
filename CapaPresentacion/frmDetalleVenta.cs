@@ -19,18 +19,15 @@ using SpreadsheetColor = DocumentFormat.OpenXml.Spreadsheet.Color; //------ para
 using System.Globalization; //------
 using DrawingColor = System.Drawing.Color; //---------- para cambiar color el fondo
 
-
 namespace CapaPresentacion
 {
     public partial class frmDetalleVenta : Form
     {
-
         public string TextBoxValue
         {
             get { return txtbusqueda.Text; }
             set { txtbusqueda.Text = value; }
         }
-
 
         public frmDetalleVenta()
         {
@@ -47,8 +44,9 @@ namespace CapaPresentacion
         {
             txtfecha.ReadOnly = true;
             txttipodocumento.ReadOnly = true;
-            txtusuarioapellido.ReadOnly = true;
+
             txtusuarionombre.ReadOnly = true;
+
             txtdoccliente.ReadOnly = true;
             txtapellidocliente.ReadOnly = true;
             txtnombrecliente.ReadOnly = true;
@@ -56,6 +54,13 @@ namespace CapaPresentacion
             txtmontopago.ReadOnly = true;
             txtmontocambio.ReadOnly = true;
             txtmetodopago.ReadOnly = true;
+
+            // ✅ SOLO forzar texto negro sin cambiar estilos (fondo, headers, selección, etc.)
+            dgvdata.DefaultCellStyle.ForeColor = Color.Black;
+            dgvdata.RowsDefaultCellStyle.ForeColor = Color.Black;
+            dgvdata.AlternatingRowsDefaultCellStyle.ForeColor = Color.Black;
+            // Si también querés asegurar el header negro (sin cambiar fondo):
+            // dgvdata.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
 
             txtbusqueda.Select();
 
@@ -68,8 +73,13 @@ namespace CapaPresentacion
                 // Informacion del Vendedor
                 txtfecha.Text = oVenta.FechaRegistro;
                 txttipodocumento.Text = oVenta.TipoDocumento;
-                txtusuarioapellido.Text = oVenta.oUsuario.Apellido;
-                txtusuarionombre.Text = oVenta.oUsuario2.Nombre;
+
+                // ✅ Nombre + Apellido en un solo textbox
+                string nombreVendedor = oVenta.oUsuario2?.Nombre ?? "";
+                string apellidoVendedor = oVenta.oUsuario?.Apellido ?? "";
+                string vendedorCompleto = $"{nombreVendedor} {apellidoVendedor}".Trim();
+
+                txtusuarionombre.Text = vendedorCompleto;
 
                 // Informacion del Cliente
                 txtdoccliente.Text = oVenta.DocumentoCliente;
@@ -89,15 +99,14 @@ namespace CapaPresentacion
                 }
 
                 // Informacion de los distintos montos
-                txtmontototal.Text = oVenta.MontoTotal.ToString("#,0.00"); // Formato con separador de miles
-                txtmontopago.Text = oVenta.MontoPago.ToString("#,0.00"); // Formato con separador de miles
-                txtmontocambio.Text = oVenta.MontoCambio.ToString("#,0.00"); // Formato con separador de miles
+                txtmontototal.Text = oVenta.MontoTotal.ToString("#,0.00");
+                txtmontopago.Text = oVenta.MontoPago.ToString("#,0.00");
+                txtmontocambio.Text = oVenta.MontoCambio.ToString("#,0.00");
                 txtmetodopago.Text = oVenta.DesMetPago;
 
-                // Desmarca cualquier fila seleccionada
                 dgvdata.ClearSelection();
 
-                this.BackColor = System.Drawing.Color.FromArgb(42, 47, 58); //---------- para cambiar color el fondo
+                this.BackColor = System.Drawing.Color.FromArgb(42, 47, 58);
             }
         }
 
@@ -106,8 +115,6 @@ namespace CapaPresentacion
         private void btnpdf_Click_1(object sender, EventArgs e)
         {
             SaveFileDialog savefile = new SaveFileDialog();
-
-            //savefile.FileName = string.Format("{0}.pdf", DateTime.Now.ToString("ddMMyyyyHHmmss"));
             savefile.FileName = string.Format("{0}.pdf", DateTime.Now.ToString("dd-MM-yyyy_(HHmmss)"));
 
             string PaginaHTML_Texto = Properties.Resources.Plantilla.ToString();
@@ -125,13 +132,11 @@ namespace CapaPresentacion
                 filas += "<tr>";
                 filas += "<td>" + row.Cells["Producto"].Value.ToString() + "</td>";
 
-                // Formateo de Precio y Subtotal
                 string precioFormatted = Convert.ToDecimal(row.Cells["Precio"].Value).ToString("#,0.00").Replace(",", ".");
                 filas += "<td>" + precioFormatted + "</td>";
 
                 filas += "<td>" + row.Cells["Cantidad"].Value.ToString() + "</td>";
 
-                // Formateo de SubTotal
                 string subTotalFormatted = Convert.ToDecimal(row.Cells["SubTotal"].Value).ToString("#,0.00").Replace(",", ".");
                 filas += "<td>" + subTotalFormatted + "</td>";
 
@@ -139,33 +144,22 @@ namespace CapaPresentacion
                 total += Convert.ToDecimal(row.Cells["SubTotal"].Value);
             }
 
-
-            // Formato de miles y decimales para el total
-            string totalFormatted = total.ToString("#,0.00", CultureInfo.InvariantCulture);  // 1,000.50
-
-            // Reemplazar la coma por el punto decimal (en caso de querer usar coma como separador de decimales)
+            string totalFormatted = total.ToString("#,0.00", CultureInfo.InvariantCulture);
             totalFormatted = totalFormatted.Replace(",", ".");
-            //totalFormatted = totalFormatted.Replace(".", ","); // Esto cambiará el punto por la coma en el formato
 
             PaginaHTML_Texto = PaginaHTML_Texto.Replace("@TOTAL", totalFormatted);
-
-
-
             PaginaHTML_Texto = PaginaHTML_Texto.Replace("@FILAS", filas);
-            //PaginaHTML_Texto = PaginaHTML_Texto.Replace("@TOTAL", total.ToString());
 
             if (savefile.ShowDialog() == DialogResult.OK)
             {
                 using (FileStream stream = new FileStream(savefile.FileName, FileMode.Create))
                 {
-                    //Creamos un nuevo documento y lo definimos como PDF
                     Document pdfDoc = new Document(PageSize.A4, 25, 25, 25, 25);
 
                     PdfWriter writer = PdfWriter.GetInstance(pdfDoc, stream);
                     pdfDoc.Open();
                     pdfDoc.Add(new Phrase(""));
 
-                    //Agregamos la imagen del banner al documento
                     iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(Properties.Resources.tienda, System.Drawing.Imaging.ImageFormat.Png);
                     img.ScaleToFit(60, 60);
                     img.Alignment = iTextSharp.text.Image.UNDERLYING;
@@ -174,7 +168,6 @@ namespace CapaPresentacion
                     img.SetAbsolutePosition(pdfDoc.LeftMargin, pdfDoc.Top - 60);
                     pdfDoc.Add(img);
 
-                    //pdfDoc.Add(new Phrase("Hola Mundo"));
                     using (StringReader sr = new StringReader(PaginaHTML_Texto))
                     {
                         XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdfDoc, sr);
@@ -183,7 +176,6 @@ namespace CapaPresentacion
                     pdfDoc.Close();
                     stream.Close();
                 }
-
             }
         }
 
@@ -200,8 +192,10 @@ namespace CapaPresentacion
                 // Información del Vendedor
                 txtfecha.Text = oVenta.FechaRegistro;
                 txttipodocumento.Text = oVenta.TipoDocumento;
-                txtusuarioapellido.Text = oVenta.oUsuario.Apellido;
-                txtusuarionombre.Text = oVenta.oUsuario2.Nombre;
+
+                string nombreVendedor = oVenta.oUsuario2?.Nombre ?? "";
+                string apellidoVendedor = oVenta.oUsuario?.Apellido ?? "";
+                txtusuarionombre.Text = $"{nombreVendedor} {apellidoVendedor}".Trim();
 
                 // Información del Cliente
                 txtdoccliente.Text = oVenta.DocumentoCliente;
@@ -215,18 +209,8 @@ namespace CapaPresentacion
                     dgvdata.Rows.Add(new object[] { dv.oProducto.Nombre, dv.Precio, dv.Cantidad, dv.SubTotal });
                 }
 
-                // Restablecer colores de todas las filas
-                foreach (DataGridViewRow row in dgvdata.Rows)
-                {
-                    row.DefaultCellStyle.BackColor = dgvdata.DefaultCellStyle.BackColor;
-                    row.DefaultCellStyle.ForeColor = dgvdata.DefaultCellStyle.ForeColor;
-                }
-
-                // Deseleccionar la primera fila
                 if (dgvdata.Rows.Count > 0)
-                {
                     dgvdata.ClearSelection();
-                }
 
                 // Información de los distintos montos
                 txtmontototal.Text = oVenta.MontoTotal.ToString("#,0.00");
@@ -244,10 +228,12 @@ namespace CapaPresentacion
             txtnumerodocumento.Text = "";
             txtfecha.Text = "";
             txttipodocumento.Text = "";
-            txtusuarioapellido.Text = "";
+            txtusuarionombre.Text = "";
 
             txtdoccliente.Text = "";
             txtapellidocliente.Text = "";
+            txtnombrecliente.Text = "";
+
             dgvdata.Rows.Clear();
             txtmontototal.Text = "0.00";
             txtmontopago.Text = "0.00";
@@ -263,19 +249,16 @@ namespace CapaPresentacion
             if (box != null)
             {
                 int borderWidth = 1;
-                System.Drawing.Color borderColor = System.Drawing.Color.White; // Personalizar color del borde
+                System.Drawing.Color borderColor = System.Drawing.Color.White;
 
-                // Dibujar el fondo
                 e.Graphics.Clear(this.BackColor);
 
-                // Dibujar el borde
                 using (Pen pen = new Pen(borderColor, borderWidth))
                 {
                     e.Graphics.DrawRectangle(pen, box.ClientRectangle.X, box.ClientRectangle.Y + 6,
-                                              box.ClientRectangle.Width -1, box.ClientRectangle.Height - 8);
+                                              box.ClientRectangle.Width - 1, box.ClientRectangle.Height - 8);
                 }
 
-                // Dibujar el texto
                 TextRenderer.DrawText(
                     e.Graphics,
                     box.Text,

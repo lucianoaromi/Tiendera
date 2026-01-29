@@ -38,10 +38,6 @@ namespace CapaPresentacion
             this.txtmetodopago = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.dgvdata = new System.Windows.Forms.DataGridView();
-            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtmontopago = new System.Windows.Forms.TextBox();
             this.txtmontocambio = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -58,10 +54,8 @@ namespace CapaPresentacion
             this.txtapellidocliente = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.txtusuarionombre = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtusuarioapellido = new System.Windows.Forms.TextBox();
             this.txtfecha = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -74,6 +68,10 @@ namespace CapaPresentacion
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.txtbusqueda = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).BeginInit();
@@ -184,38 +182,6 @@ namespace CapaPresentacion
             this.dgvdata.Size = new System.Drawing.Size(722, 249);
             this.dgvdata.TabIndex = 43;
             // 
-            // Producto
-            // 
-            this.Producto.HeaderText = "Producto";
-            this.Producto.MinimumWidth = 6;
-            this.Producto.Name = "Producto";
-            this.Producto.ReadOnly = true;
-            this.Producto.Width = 180;
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.MinimumWidth = 6;
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
-            this.Precio.Width = 130;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.MinimumWidth = 6;
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            this.Cantidad.Width = 130;
-            // 
-            // SubTotal
-            // 
-            this.SubTotal.HeaderText = "Sub Total";
-            this.SubTotal.MinimumWidth = 6;
-            this.SubTotal.Name = "SubTotal";
-            this.SubTotal.ReadOnly = true;
-            this.SubTotal.Width = 130;
-            // 
             // txtmontopago
             // 
             this.txtmontopago.Location = new System.Drawing.Point(241, 534);
@@ -298,7 +264,7 @@ namespace CapaPresentacion
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(329, 28);
+            this.label10.Location = new System.Drawing.Point(354, 28);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(55, 15);
             this.label10.TabIndex = 20;
@@ -306,10 +272,10 @@ namespace CapaPresentacion
             // 
             // txtnombrecliente
             // 
-            this.txtnombrecliente.Location = new System.Drawing.Point(332, 46);
+            this.txtnombrecliente.Location = new System.Drawing.Point(357, 46);
             this.txtnombrecliente.Name = "txtnombrecliente";
             this.txtnombrecliente.ReadOnly = true;
-            this.txtnombrecliente.Size = new System.Drawing.Size(160, 20);
+            this.txtnombrecliente.Size = new System.Drawing.Size(164, 20);
             this.txtnombrecliente.TabIndex = 19;
             // 
             // txtnumerodocumento
@@ -323,10 +289,10 @@ namespace CapaPresentacion
             // 
             // txtdoccliente
             // 
-            this.txtdoccliente.Location = new System.Drawing.Point(31, 46);
+            this.txtdoccliente.Location = new System.Drawing.Point(29, 46);
             this.txtdoccliente.Name = "txtdoccliente";
             this.txtdoccliente.ReadOnly = true;
-            this.txtdoccliente.Size = new System.Drawing.Size(107, 20);
+            this.txtdoccliente.Size = new System.Drawing.Size(118, 20);
             this.txtdoccliente.TabIndex = 17;
             // 
             // label4
@@ -334,7 +300,7 @@ namespace CapaPresentacion
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(152, 27);
+            this.label4.Location = new System.Drawing.Point(169, 27);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(54, 15);
             this.label4.TabIndex = 16;
@@ -345,7 +311,7 @@ namespace CapaPresentacion
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(28, 27);
+            this.label5.Location = new System.Drawing.Point(27, 27);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(74, 15);
             this.label5.TabIndex = 2;
@@ -353,19 +319,17 @@ namespace CapaPresentacion
             // 
             // txtapellidocliente
             // 
-            this.txtapellidocliente.Location = new System.Drawing.Point(155, 46);
+            this.txtapellidocliente.Location = new System.Drawing.Point(171, 46);
             this.txtapellidocliente.Name = "txtapellidocliente";
             this.txtapellidocliente.ReadOnly = true;
-            this.txtapellidocliente.Size = new System.Drawing.Size(160, 20);
+            this.txtapellidocliente.Size = new System.Drawing.Size(164, 20);
             this.txtapellidocliente.TabIndex = 6;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label14);
-            this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.txtusuarionombre);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.txtusuarioapellido);
             this.groupBox2.Controls.Add(this.txtfecha);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label6);
@@ -388,23 +352,12 @@ namespace CapaPresentacion
             this.label14.TabIndex = 60;
             this.label14.Text = "Informacion Venta";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(295, 28);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(100, 15);
-            this.label11.TabIndex = 21;
-            this.label11.Text = "Apellido Usuario:";
-            // 
             // txtusuarionombre
             // 
-            this.txtusuarionombre.Location = new System.Drawing.Point(474, 46);
+            this.txtusuarionombre.Location = new System.Drawing.Point(313, 46);
             this.txtusuarionombre.Name = "txtusuarionombre";
             this.txtusuarionombre.ReadOnly = true;
-            this.txtusuarionombre.Size = new System.Drawing.Size(160, 20);
+            this.txtusuarionombre.Size = new System.Drawing.Size(211, 20);
             this.txtusuarionombre.TabIndex = 20;
             // 
             // label7
@@ -412,19 +365,11 @@ namespace CapaPresentacion
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(471, 28);
+            this.label7.Location = new System.Drawing.Point(311, 27);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(101, 15);
+            this.label7.Size = new System.Drawing.Size(63, 15);
             this.label7.TabIndex = 19;
-            this.label7.Text = "Nombre Usuario:";
-            // 
-            // txtusuarioapellido
-            // 
-            this.txtusuarioapellido.Location = new System.Drawing.Point(298, 46);
-            this.txtusuarioapellido.Name = "txtusuarioapellido";
-            this.txtusuarioapellido.ReadOnly = true;
-            this.txtusuarioapellido.Size = new System.Drawing.Size(160, 20);
-            this.txtusuarioapellido.TabIndex = 18;
+            this.label7.Text = "Vendedor:";
             // 
             // txtfecha
             // 
@@ -439,7 +384,7 @@ namespace CapaPresentacion
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(159, 28);
+            this.label2.Location = new System.Drawing.Point(168, 28);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(101, 15);
             this.label2.TabIndex = 16;
@@ -458,7 +403,7 @@ namespace CapaPresentacion
             // 
             // txttipodocumento
             // 
-            this.txttipodocumento.Location = new System.Drawing.Point(162, 46);
+            this.txttipodocumento.Location = new System.Drawing.Point(171, 46);
             this.txttipodocumento.Name = "txttipodocumento";
             this.txttipodocumento.ReadOnly = true;
             this.txttipodocumento.Size = new System.Drawing.Size(118, 20);
@@ -547,6 +492,38 @@ namespace CapaPresentacion
             this.panel2.Size = new System.Drawing.Size(799, 583);
             this.panel2.TabIndex = 1;
             // 
+            // Producto
+            // 
+            this.Producto.HeaderText = "Producto";
+            this.Producto.MinimumWidth = 6;
+            this.Producto.Name = "Producto";
+            this.Producto.ReadOnly = true;
+            this.Producto.Width = 250;
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.MinimumWidth = 6;
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            this.Precio.Width = 130;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.MinimumWidth = 6;
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            this.Cantidad.Width = 130;
+            // 
+            // SubTotal
+            // 
+            this.SubTotal.HeaderText = "Sub Total";
+            this.SubTotal.MinimumWidth = 6;
+            this.SubTotal.Name = "SubTotal";
+            this.SubTotal.ReadOnly = true;
+            this.SubTotal.Width = 130;
+            // 
             // frmDetalleVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -592,7 +569,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtapellidocliente;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtusuarioapellido;
         private System.Windows.Forms.TextBox txtfecha;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtmontopago;
@@ -602,13 +578,8 @@ namespace CapaPresentacion
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txtmontototal;
         private System.Windows.Forms.DataGridView dgvdata;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SubTotal;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtnombrecliente;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtusuarionombre;
         private System.Windows.Forms.TextBox txtmetodopago;
         private System.Windows.Forms.Label label12;
@@ -621,5 +592,9 @@ namespace CapaPresentacion
         private Label label15;
         private Label label14;
         private Label label13;
+        private DataGridViewTextBoxColumn Producto;
+        private DataGridViewTextBoxColumn Precio;
+        private DataGridViewTextBoxColumn Cantidad;
+        private DataGridViewTextBoxColumn SubTotal;
     }
 }
