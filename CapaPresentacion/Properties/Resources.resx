@@ -160,6 +160,12 @@
   <data name="herramientas40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\herramientas40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="manual40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\manual40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="manualnegro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\manualnegro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Manual_de_Usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Manual_de_Usuario.pdf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>

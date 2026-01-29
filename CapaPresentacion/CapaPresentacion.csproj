@@ -512,6 +512,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icono.ico" />
+    <None Include="Resources\manualnegro.png" />
+    <None Include="Resources\manual40.png" />
     <None Include="Properties\Resourses\tienda.png" />
     <None Include="Resources\PRODUCTOcAJA.png" />
   </ItemGroup>

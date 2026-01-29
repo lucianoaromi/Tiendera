@@ -102,6 +102,7 @@ namespace CapaPresentacion
                 menumantenedor.Image = Properties.Resources.herramientas40;
                 menuusuarios.Image = Properties.Resources.vendedorBorde;
                 menubackup.Image = Properties.Resources.guardar_datos;
+                menuacercade.Image = Properties.Resources.manualnegro;
 
 
             }
